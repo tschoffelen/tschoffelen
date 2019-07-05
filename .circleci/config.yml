@@ -13,7 +13,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - aws-s3/sync:
-          from: dist
+          from: out
           to: 's3://schof.co'
           arguments: --acl public-read --cache-control "max-age=86400"
           overwrite: true
