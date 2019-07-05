@@ -4,9 +4,8 @@
   "private": true,
   "license": "ISC",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "build": "next export",
+    "start": "next"
   },
   "dependencies": {
     "axios": "^0.19.0",
