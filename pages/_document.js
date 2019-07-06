@@ -22,7 +22,7 @@ class MyDocument extends Document {
           Looking for my company info?
 
           Company name:              Thomas Schoffelen B.V.
-          Contact email:             thomas@includable.com
+          Contact email:             thomas@schof.co
           NL Chamber of Commerce:    67640516
           VAT number:                NL857104779B01
 

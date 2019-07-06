@@ -1,13 +1,14 @@
+import React from 'react'
+import Link from 'next/link'
 import axios from 'axios'
 import moment from 'moment'
-import Link from 'next/link'
 
 import Layout from '../components/layout'
 
 const Index = ({ posts }) => (
   <Layout>
     <div className="content-inner h-card">
-      <h2 className="p-name">Hi, I'm Thomas.</h2>
+      <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
 
       <p className="p-note">
         I create simple solutions for day-to-day problems in business and communication.
@@ -17,8 +18,8 @@ const Index = ({ posts }) => (
 
       <div className="links">
         {posts.map((post) => (
-          <a href={`https://medium.com/p/${post.id}`} rel="noopener" target="_blank">
-            {moment(post.createdAt).format('YYYY/MM')} &ndash; {post.title}
+          <a href={`https://medium.com/p/${post.id}`} key={post.id} rel="noopener" target="_blank">
+            {`${moment(post.createdAt).format('YYYY/MM')} – ${post.title}`}
           </a>
         ))}
       </div>
@@ -31,21 +32,21 @@ const Index = ({ posts }) => (
 
       <div className="links">
         <a
-          href="http://near.st/?utm_source=thomasschoffelen.com"
+          href="http://near.st/?utm_source=schof.co"
           className="p-org"
           rel="noopener"
           target="_blank">
           NearSt: providing shops a new generation of customers
         </a>
         <a
-          href="http://infowijs.nl/?utm_source=thomasschoffelen.com"
+          href="http://infowijs.nl/?utm_source=schof.co"
           className="p-org"
           rel="noopener"
           target="_blank">
           Infowijs: enabling schools to communicate better
         </a>
         <a
-          href="https://streetartcities.com/?utm_source=thomasschoffelen.com"
+          href="https://streetartcities.com/?utm_source=schof.co"
           className="p-org"
           rel="noopener"
           target="_blank">
@@ -60,24 +61,24 @@ const Index = ({ posts }) => (
       </p>
 
       <div className="links">
-        <a href="mailto:thomas@includable.com" className="u-email" rel="author">
-          Send me an email
-        </a>
         <a href="https://github.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
           See my code on Github
         </a>
         <a href="https://instagram.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
           Follow me on Instagram
         </a>
+        <a href="mailto:thomas@schof.co" className="u-email" rel="author">
+          Send me an email
+        </a>
         <Link href="/pgp">
-          Grab my PGP key
+          <a>Grab my PGP key</a>
         </Link>
       </div>
 
-      <div style={{ display: 'none' }} aria-hidden="true">
-        <img className="u-photo" src="/static/avatar.png"/>
-        <a href="https://thomasschoffelen.com" className="u-url u-uid">Thomas Schoffelen</a>
-      </div>
+      <img style={{ display: 'none' }} aria-hidden="true" className="u-photo" src="/static/avatar.png"/>
+      <a style={{ display: 'none' }} aria-hidden="true" href="https://schof.co" className="u-url u-uid">
+        Thomas Schoffelen
+      </a>
     </div>
   </Layout>
 )
