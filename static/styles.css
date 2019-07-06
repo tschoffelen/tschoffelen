@@ -15,7 +15,6 @@ html {
 }
 
 a {
-    transition: all 0.3s linear;
     color: #000;
     text-decoration: none !important;
 }
@@ -45,6 +44,7 @@ header .logo a {
     line-height: 24px;
     padding: 0 8px;
     padding-left: 11px;
+    transition: background-color 0.3s linear, color 0.3s linear;
 }
 
 header .logo a:hover {
@@ -67,7 +67,7 @@ header .logo a:hover {
     display: block;
     padding: 16px 0;
     font-weight: 600;
-    transition: all 0.3s linear;
+    transition: opacity 0.3s linear;
 }
 
 .links a:hover {
