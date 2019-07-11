@@ -75,7 +75,7 @@ const Index = ({ posts }) => (
         </Link>
       </div>
 
-      <img style={{ display: 'none' }} aria-hidden="true" className="u-photo" src="/static/avatar.png"/>
+      <img style={{ display: 'none' }} aria-hidden="true" className="u-photo" src="/avatar.png"/>
       <a style={{ display: 'none' }} aria-hidden="true" href="https://schof.co" className="u-url u-uid">
         Thomas Schoffelen
       </a>
