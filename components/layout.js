@@ -11,6 +11,7 @@ export default ({ children, title = 'Thomas Schoffelen' }) => (
       <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
       <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32"/>
 
+      <link href='https://rsms.me/inter/inter.css' rel='stylesheet'/>
       <link href='/styles.css' rel='stylesheet'/>
 
       <meta name="google-site-verification" content="PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE"/>

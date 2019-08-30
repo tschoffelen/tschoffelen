@@ -8,15 +8,19 @@ import Layout from '../components/layout'
 const Index = ({ posts }) => (
   <Layout>
     <div className="content-inner h-card">
-      <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
+      <h1 className="p-name">{`Hi, I'm Thomas.`}</h1>
 
       <p className="p-note">
-        I create simple solutions for day-to-day problems in business and communication.
-        I build apps, design interfaces, draft technical documentation and
-        occasionally write articles.
+        I'm a technical co-founder of several startups, building tools to help small businesses and educators.
+        I love consulting founders and engineers on everthing from getting started with creating your own
+        company to setting up complex application architectures.
+      </p>
+      <p>
+        In my spare time I write about life, friendship, engineering and design.
       </p>
 
       <div className="links">
+        <h3>Recent posts</h3>
         {posts.map((post) => (
           <a href={`https://medium.com/p/${post.id}`} key={post.id} rel="noopener" target="_blank">
             {`${moment(post.createdAt).format('YYYY/MM')} – ${post.title}`}
@@ -24,13 +28,8 @@ const Index = ({ posts }) => (
         ))}
       </div>
 
-      <p>
-        I've co-founded a few companies, some of which are doing really cool
-        things in really interesting spaces. Or so I think, it might be possible
-        that I'm slightly biased.
-      </p>
-
       <div className="links">
+        <h3>What I'm working on</h3>
         <a
           href="http://near.st/?utm_source=schof.co"
           className="p-org"
@@ -54,13 +53,8 @@ const Index = ({ posts }) => (
         </a>
       </div>
 
-      <p>
-        I'm always looking for new challenges, new people to meet or new things
-        to learn. Also, I'm always available for a cup of coffee somewhere near
-        Amsterdam or London.
-      </p>
-
       <div className="links">
+        <h3>Find me online</h3>
         <a href="https://github.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
           See my code on Github
         </a>
