@@ -41,10 +41,30 @@ class MyDocument extends Document {
                 'name': 'Thomas Schoffelen',
                 'familyName': 'Schoffelen',
                 'givenName': 'Thomas',
-                'worksFor': 'NearSt',
+                'worksFor': [{
+                  '@type': 'Role',
+                  'roleName': 'Head of Platform Innovation',
+                  'startDate': '2016',
+                  'worksFor': {
+                    '@type': 'Organization',
+                    'name': 'NearSt'
+                  }
+                }, {
+                  '@type': 'Role',
+                  'roleName': 'Foundeer',
+                  'startDate': '2017',
+                  'worksFor': {
+                    '@type': 'Organization',
+                    'name': 'Thomas Schoffelen BV',
+                    'brand': 'schof.co',
+                    'taxID': '67640516',
+                    'duns': '492180704',
+                    'email': 'info@schof.co',
+                    'vatID': 'NL857104779B01'
+                  }
+                }],
                 'url': 'https://schof.co',
                 'jobTitle': 'Head of Platform Innovation',
-                'alumniOf': 'University of Amsterdam',
                 'gender': 'male',
                 'image': 'https://schof.co/avatar.png',
                 'sameAs': [
