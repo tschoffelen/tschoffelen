@@ -51,7 +51,7 @@ class MyDocument extends Document {
                   }
                 }, {
                   '@type': 'Role',
-                  'roleName': 'Foundeer',
+                  'roleName': 'Founder',
                   'startDate': '2017',
                   'worksFor': {
                     '@type': 'Organization',
