@@ -31,23 +31,28 @@ class MyDocument extends Document {
 
 
 
-*/`}</script><script type='application/ld+json'>{JSON.stringify({
-            '@context': 'http://schema.org',
-            '@type': 'Person',
-            'name': 'Thomas Schoffelen',
-            'familyName': 'Schoffelen',
-            'givenName': 'Thomas',
-            'worksFor': 'NearSt',
-            'url': 'https://schof.co',
-            'jobTitle': 'Head of Platform Innovation',
-            'alumniOf': 'University of Amsterdam',
-            'gender': 'male',
-            'image': 'https://schof.co/avatar.png',
-            'sameAs': [
-              'https://twitter.com/tschoffelen',
-              'https://linkedin.com/in/tschoffelen'
-            ]
-          })}</script>
+*/`}</script>
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'http://schema.org',
+                '@type': 'Person',
+                'name': 'Thomas Schoffelen',
+                'familyName': 'Schoffelen',
+                'givenName': 'Thomas',
+                'worksFor': 'NearSt',
+                'url': 'https://schof.co',
+                'jobTitle': 'Head of Platform Innovation',
+                'alumniOf': 'University of Amsterdam',
+                'gender': 'male',
+                'image': 'https://schof.co/avatar.png',
+                'sameAs': [
+                  'https://twitter.com/tschoffelen',
+                  'https://linkedin.com/in/tschoffelen'
+                ]
+              })
+            }}/>
         </Head>
         <body className="homepage day">
           <Main/>
