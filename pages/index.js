@@ -13,7 +13,7 @@ const Index = ({ posts }) => (
       <p className="p-note">
         I'm a technical co-founder of several startups, building tools to help small businesses and educators.
         I love consulting founders and engineers on everthing from getting started with creating your own
-        company to setting up complex application architectures.
+        company to setting up complex tech infrastructures.
       </p>
       <p>
         In my spare time I write about life, friendship, engineering and design.
