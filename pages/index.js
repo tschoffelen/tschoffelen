@@ -11,7 +11,7 @@ const Index = ({ posts }) => (
       <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
 
       <p className="p-note">
-        I'm a technical co-founder of several startups, building tools to help small businesses and educators.
+        I'm a co-founder of several tech startups, building tools to help small businesses and educators.
         I love consulting founders and engineers on everthing from getting started with their own company to
         designing complex applications.
       </p>
