@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 const Index = ({ posts }) => (
   <Layout>
     <div className="content-inner h-card">
-      <h1 className="p-name">{`Hi, I'm Thomas.`}</h1>
+      <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
 
       <p className="p-note">
         I'm a technical co-founder of several startups, building tools to help small businesses and educators.
