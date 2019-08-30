@@ -28,7 +28,15 @@ jobs:
       uses: actions/aws/cli@master
       with:
         args: s3 sync "out" "s3://schof.co" --delete --acl public-read --cache-control "max-age=86400"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
     - name: invalidate cloudfront cache
       uses: actions/aws/cli@master
       with:
         args: cloudfront create-invalidation --distribution-id EO1YEJXL0AGGJ --paths /\*
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
