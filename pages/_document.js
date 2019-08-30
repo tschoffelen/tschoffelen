@@ -31,8 +31,7 @@ class MyDocument extends Document {
 
 
 
-*/`}</script>
-          <script type='application/ld+json'>{JSON.stringify({
+*/`}</script><script type='application/ld+json'>{JSON.stringify({
             '@context': 'http://schema.org',
             '@type': 'Person',
             'name': 'Thomas Schoffelen',
