@@ -1,11 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import axios from 'axios'
 import moment from 'moment'
 
 import Layout from '../components/layout'
 
-const Index = ({ posts }) => (
+import posts from '../public/posts.json'
+
+const Index = () => (
   <Layout>
     <div className="content-inner h-card">
       <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
@@ -21,8 +22,8 @@ const Index = ({ posts }) => (
 
       <div className="links">
         <h3>Recent posts</h3>
-        {posts.map((post) => (
-          <a href={`https://medium.com/p/${post.id}`} key={post.id} rel="noopener" target="_blank">
+        {posts.slice(0, 6).map((post) => (
+          <a href={`https://medium.com/p/${post.id}`} key={post.id} target="_blank">
             {`${moment(post.createdAt).format('YYYY/MM')} – ${post.title}`}
           </a>
         ))}
@@ -76,16 +77,5 @@ const Index = ({ posts }) => (
     </div>
   </Layout>
 )
-
-Index.getInitialProps = async () => {
-  let data = await axios.get('https://medium.com/@tschoffelen/latest?format=json&limit=6')
-  data = JSON.parse(data.data.replace('])}while(1);</x>', ''))
-
-  return {
-    posts: Object
-      .values(data.payload.references.Post)
-      .map(({ id, title, createdAt }) => ({ id, title, createdAt }))
-  }
-}
 
 export default Index

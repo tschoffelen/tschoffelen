@@ -2,3 +2,4 @@
 /.next
 /out
 /yarn.lock
+/public/posts.json

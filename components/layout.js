@@ -7,7 +7,7 @@ export default ({ children, title = 'Thomas Schoffelen' }) => (
       <meta charSet='utf-8'/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
       <title>{title}</title>
-      <meta name="description" content="I create simple solutions for day-to-day problems in business and communication. I build apps, design interfaces, draft technical documentation and occasionally write articles."/>
+      <meta name="description" content="Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators."/>
       <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
       <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32"/>
 
@@ -24,6 +24,49 @@ export default ({ children, title = 'Thomas Schoffelen' }) => (
       <link rel="me" href="https://instagram.com/tschoffelen"/>
       <link rel="me" href="https://github.com/tschoffelen"/>
       <link rel="pgpkey" href="/pgp.txt"/>
+
+      <script
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'http://schema.org',
+            '@type': 'Person',
+            'name': 'Thomas Schoffelen',
+            'familyName': 'Schoffelen',
+            'givenName': 'Thomas',
+            'worksFor': [{
+              '@type': 'Role',
+              'roleName': 'Head of Platform Innovation',
+              'startDate': '2016',
+              'worksFor': {
+                '@type': 'Organization',
+                'name': 'NearSt'
+              }
+            }, {
+              '@type': 'Role',
+              'roleName': 'Founder',
+              'startDate': '2017',
+              'worksFor': {
+                '@type': 'Organization',
+                'name': 'Thomas Schoffelen BV',
+                'brand': 'schof.co',
+                'taxID': '67640516',
+                'duns': '492180704',
+                'email': 'info@schof.co',
+                'vatID': 'NL857104779B01'
+              }
+            }],
+            'url': 'https://schof.co',
+            'jobTitle': 'Head of Platform Innovation',
+            'gender': 'male',
+            'image': 'https://schof.co/avatar.png',
+            'sameAs': [
+              'https://github.com/tschoffelen',
+              'https://twitter.com/tschoffelen',
+              'https://linkedin.com/in/tschoffelen'
+            ]
+          })
+        }}/>
     </Head>
     <header>
       <h1 className="logo" title="Thomas Schoffelen">

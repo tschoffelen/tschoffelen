@@ -4,8 +4,9 @@
   "private": true,
   "license": "ISC",
   "scripts": {
-    "build": "next build && next export",
-    "start": "next"
+    "download-posts": "node ./scripts/download-posts.js",
+    "build": "npm run download-posts && next build && next export",
+    "start": "npm run download-posts && next"
   },
   "dependencies": {
     "axios": "^0.19.0",
