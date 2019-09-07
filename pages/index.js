@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import moment from 'moment'
 
 import Layout from '../components/layout'
 
@@ -23,8 +22,8 @@ const Index = () => (
       <div className="links">
         <h3>Recent posts</h3>
         {posts.slice(0, 6).map((post) => (
-          <a href={`https://medium.com/p/${post.id}`} key={post.id} target="_blank">
-            {`${moment(post.createdAt).format('YYYY/MM')} – ${post.title}`}
+          <a href={post.link} key={post.link} target="_blank">
+            {`${post.createdAt} – ${post.title}`}
           </a>
         ))}
       </div>

@@ -1,18 +1,15 @@
 const fs = require('fs')
 const axios = require('axios')
+const moment = require('moment')
 
 axios
-  .get('https://medium.com/@tschoffelen/latest?format=json&limit=10')
+  .get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40tschoffelen')
   .then(res => {
-    let data = JSON.parse(res.data.replace('])}while(1);</x>', ''))
-    data = Object.values(data.payload.references.Post).map(({ id, title, slug, createdAt, ...post }) => ({
-      id,
+    data = res.data.items.map(({ title, pubDate, link, guid }) => ({
+      id: guid,
       title,
-      slug,
-      createdAt,
-      collection: post.homeCollectionId || null,
-      subtitle: post.previewContent.subtitle,
-      tags: post.virtuals.tags.map(tag => tag.name)
+      link,
+      createdAt: moment(pubDate).format('YYYY/MM')
     }))
 
     fs.writeFileSync('./public/posts.json', JSON.stringify(data), 'utf8')
