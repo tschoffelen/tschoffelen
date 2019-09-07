@@ -9,7 +9,7 @@ axios
       id: guid,
       title,
       link,
-      createdAt: moment(pubDate).format('YYYY/MM')
+      createdAt: moment(pubDate).format('YYYY/MM/DD')
     }))
 
     fs.writeFileSync('./public/posts.json', JSON.stringify(data), 'utf8')
