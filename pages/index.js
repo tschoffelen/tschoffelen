@@ -58,6 +58,9 @@ const Index = () => (
         <a href="https://github.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
           See my code on Github
         </a>
+        <a href="https://twitter.com.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
+          Read my tweets
+        </a>
         <a href="https://instagram.com/tschoffelen" className="u-url" rel="noopener" target="_blank">
           Follow me on Instagram
         </a>
