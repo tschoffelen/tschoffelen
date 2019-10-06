@@ -7,7 +7,7 @@ axios
   .then(res => {
     data = res.data.items.map(({ title, pubDate, link, guid }) => ({
       id: guid,
-      title,
+      title: title.replace('&amp;', '&'),
       link,
       createdAt: moment(pubDate).format('YYYY/MM/DD')
     }))
