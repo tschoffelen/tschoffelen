@@ -21,8 +21,8 @@ jobs:
       uses: chrislennon/action-aws-cli@1.1
     - name: npm install and build
       run: |
-        npm install
-        npm run build
+        yarn
+        yarn build
     - name: upload to s3
       run: aws s3 sync "public" "s3://schof.co" --delete --acl public-read --cache-control "max-age=86400"
       env:
