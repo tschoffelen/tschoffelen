@@ -2,15 +2,15 @@
 
 My personal website, which shows a list of recent writings and my current projects. Not much more to it.
 
-Built using [next.js](https://github.com/zeit/next.js).
+Built using [Gatsby](https://www.gatsbyjs.org/).
 
 ## local development
 
 ```shell
-npm i
-npm start
+yarn
+yarn start
 ```
 
 ## deployment
 
-Deployment happens automatically on push to master thanks to [CircleCI](https://circleci.com/gh/tschoffelen/schof.co).
+Deployment happens automatically on push to master thanks to Github Actions.

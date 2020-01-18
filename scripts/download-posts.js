@@ -12,7 +12,8 @@ axios
       createdAt: moment(pubDate).format('YYYY/MM/DD')
     }))
 
-    fs.writeFileSync('./public/posts.json', JSON.stringify(data), 'utf8')
+    fs.writeFileSync('./src/data/posts.json', JSON.stringify(data), 'utf8')
+    fs.writeFileSync('./static/posts.json', JSON.stringify(data), 'utf8')
 
     console.log(`Downloaded ${data.length} posts`)
   })
