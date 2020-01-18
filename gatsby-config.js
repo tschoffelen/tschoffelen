@@ -2,20 +2,17 @@ module.exports = {
   siteMetadata: {
     title: `Thomas Schoffelen`,
     description: `Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.`,
-    author: `@tschoffelen`
+    author: `@tschoffelen`,
+    siteUrl: `https://schof.co/`
   },
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`
-      }
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-json`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -28,15 +25,11 @@ module.exports = {
         icon: `src/images/icon.png`
       }
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./src/data/`
       }
     }
-    // TODO: this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 };

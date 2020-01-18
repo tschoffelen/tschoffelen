@@ -24,7 +24,7 @@ jobs:
         yarn
         yarn build
     - name: upload to s3
-      run: aws s3 sync "public" "s3://schof.co" --delete --acl public-read --cache-control "max-age=86400"
+      run: aws s3 sync "public" "s3://schof.co" --delete --acl public-read --cache-control "max-age=31536000"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
