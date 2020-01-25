@@ -13,11 +13,11 @@ const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
       <p className="p-note">
         I'm a co-founder of several tech startups, building tools to help small
         businesses and educators. I love consulting founders and engineers on
-        everthing from getting started with their own company to designing
-        complex applications.
+        everthing from starting their own company to designing complex
+        applications.
       </p>
       <p>
-        In my spare time I write about life, friendship, engineering and design.
+        In my spare time I write about engineering, life, friendships and design.
       </p>
 
       <div className="links">
@@ -39,18 +39,18 @@ const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
           NearSt: providing shops a new generation of customers
         </a>
         <a
-          href="http://infowijs.nl/?utm_source=schof.co"
-          className="p-org"
-          rel="noopener noreferrer"
-          target="_blank">
-          Infowijs: enabling schools to communicate better
-        </a>
-        <a
           href="https://streetartcities.com/?utm_source=schof.co"
           className="p-org"
           rel="noopener noreferrer"
           target="_blank">
           Street Art Cities: documenting street art across the world
+        </a>
+        <a
+          href="http://infowijs.nl/?utm_source=schof.co"
+          className="p-org"
+          rel="noopener noreferrer"
+          target="_blank">
+          Infowijs: enabling schools to communicate better
         </a>
       </div>
 
