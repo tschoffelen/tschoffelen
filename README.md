@@ -4,13 +4,13 @@ My personal website, which shows a list of recent writings and my current projec
 
 Built using [Gatsby](https://www.gatsbyjs.org/).
 
-## local development
+## Local development
 
 ```shell
 yarn
 yarn start
 ```
 
-## deployment
+## Deployment
 
 Deployment happens automatically on push to master thanks to Github Actions.
