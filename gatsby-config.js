@@ -30,6 +30,13 @@ module.exports = {
       options: {
         path: `./src/data/`
       }
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://schof.co`,
+        stripQueryString: true
+      }
     }
   ]
 };
