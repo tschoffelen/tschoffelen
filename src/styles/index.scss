@@ -205,6 +205,10 @@ h3 {
   h3 {
     margin-bottom: 4px;
   }
+
+  .homepage header {
+    padding: 12px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -216,5 +220,9 @@ h3 {
   .homepage main {
     padding-left: 24px;
     padding-bottom: 0;
+  }
+
+  .homepage header {
+    padding: 6px;
   }
 }
