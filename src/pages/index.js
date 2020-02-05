@@ -15,7 +15,7 @@ const IndexPage = ({
       <div className="avatar-inner" />
     </div>
     <div>
-      <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
+      <h2 className="p-name">Hi, I'm Thomas.</h2>
 
       <p className="p-note">
         I'm a co-founder of several tech startups, building tools to help small

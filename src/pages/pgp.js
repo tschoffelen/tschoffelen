@@ -2,10 +2,14 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import Header from "../components/Header"
 
 const PgpPage = () => (
   <Layout>
     <SEO title="PGP key" />
+
+    <Header />
+
     <h2>My public key.</h2>
     <p>Fingerprint:</p>
     <pre className="pgp">EE0F 4B84 A58A 3FF0 5728 9044 7599 4EE6 D0F1 FD7F</pre>
