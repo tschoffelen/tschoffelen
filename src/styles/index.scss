@@ -4,6 +4,7 @@
   src: url('./fonts/regular.woff') format('woff'), url('./fonts/regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   src: url('./fonts/semibold.woff') format('woff'), url('./fonts/semibold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 $background-light: #faf8f9;
