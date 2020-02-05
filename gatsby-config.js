@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     `gatsby-plugin-remove-generator`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
