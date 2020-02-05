@@ -5,9 +5,12 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
-  <Layout>
+  <Layout className="homepage h-card">
     <SEO/>
-    <div className="h-card">
+    <div className="avatar">
+      <img alt='Thomas Schoffelen' className="u-photo" src="/avatar.png"/>
+    </div>
+    <div>
       <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
 
       <p className="p-note">
@@ -43,7 +46,7 @@ const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
           className="p-org"
           rel="noopener noreferrer"
           target="_blank">
-          Street Art Cities: documenting street art across the world
+          Street Art Cities: collecting street art across the world
         </a>
         <a
           href="http://infowijs.nl/?utm_source=schof.co"
@@ -79,7 +82,6 @@ const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
         <Link to="/pgp">Grab my PGP key</Link>
       </div>
 
-      <img style={{ display: "none" }} alt="Avatar" aria-hidden="true" className="u-photo" src="/avatar.png"/>
       <a style={{ display: "none" }} aria-hidden="true" href="https://schof.co" className="u-url u-uid">
         Thomas Schoffelen
       </a>
