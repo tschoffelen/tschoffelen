@@ -139,7 +139,7 @@ function SEO({ description, lang, meta, title }) {
   "url": "https://schof.co",
   "jobTitle": "Head of Platform Innovation",
   "gender": "male",
-  "image": "https://schof.co/avatar.png",
+  "image": "https://schof.co/avatar.jpg",
   "sameAs": [
     "https://github.com/tschoffelen",
     "https://twitter.com/tschoffelen",
