@@ -29,7 +29,7 @@ const IndexPage = ({
       </p>
 
       <div className="links">
-        <h3>Recent writings</h3>
+        <h3>Recent posts</h3>
         {nodes.map(post => (
           <a
             href={post.link}
