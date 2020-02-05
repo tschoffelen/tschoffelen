@@ -12,7 +12,7 @@ const IndexPage = ({
   <Layout className="homepage h-card">
     <SEO />
     <div className="avatar">
-      <img alt="Thomas Schoffelen" className="u-photo" src="/avatar.png?x=1" />
+      <div className="avatar-inner" />
     </div>
     <div>
       <h2 className="p-name">{`Hi, I'm Thomas.`}</h2>
