@@ -86,6 +86,7 @@ const IndexPage = ({ data: { allPostsJson: { nodes } } }) => (
         Thomas Schoffelen
       </a>
     </div>
+    <script src="/cleanup-sw.js"/>
   </Layout>
 );
 
