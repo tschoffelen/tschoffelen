@@ -24,7 +24,7 @@ const IndexPage = ({
         applications.
       </p>
       <p>
-        In my spare time I write about engineering, life, friendships and
+        In my spare time I write about life, friendships, engineering and
         design.
       </p>
 
