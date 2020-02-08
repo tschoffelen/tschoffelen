@@ -60,7 +60,7 @@ const IndexPage = ({
               {renderPost(post)}
             </a>
           ) : (
-            <Link to={post.link}>
+            <Link to={post.link} key={post.link}>
               {renderPost(post)}
             </Link>
           ))}
