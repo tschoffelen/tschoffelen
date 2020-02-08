@@ -70,3 +70,4 @@ yarn-error.log
 
 src/data/posts.json
 static/posts.json
+.serverless
