@@ -188,9 +188,10 @@ main {
 
     &:hover {
       color: $link-hover-light;
+
       .link-date {
         opacity: 0.7;
-        background-color: rgba(53,95,197, 0.25);
+        background-color: rgba(53, 95, 197, 0.25);
       }
     }
   }
@@ -240,5 +241,17 @@ main {
     @media (max-width: 640px) {
       margin-top: 16px;
     }
+  }
+}
+
+.link {
+  font-weight: 600;
+  transition: background-color 0.3s linear;
+  color: $link-hover-light;
+  padding: 5px 7px;
+  margin: -5px -7px;
+
+  &:hover {
+    background-color: rgba(53, 95, 197, 0.25);
   }
 }
