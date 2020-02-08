@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-remove-generator`,
     `gatsby-plugin-offline`,
     {
@@ -30,6 +31,12 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./src/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./content/`,
       },
     },
     {

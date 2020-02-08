@@ -205,3 +205,15 @@ main {
     background: $link-hover-light;
   }
 }
+
+
+.blog-post {
+  padding-bottom: 24px;
+
+  .blog-post-date {
+    margin-top: 0;
+    margin-bottom: 32px;
+    opacity: 0.3;
+    font-size: 13px;
+  }
+}

@@ -1,18 +1,19 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
+import React from "react";
+import { graphql, Link } from "gatsby";
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const IndexPage = ({
   data: {
-    allPostsJson: { nodes },
-  },
+    allPostsJson: { nodes: mediumPosts },
+    allMarkdownRemark: { nodes: blogPosts }
+  }
 }) => (
   <Layout className="homepage h-card">
-    <SEO />
+    <SEO/>
     <div className="avatar">
-      <div className="avatar-inner" />
+      <div className="avatar-inner"/>
     </div>
     <div>
       <h2 className="p-name">Hi, I'm Thomas.</h2>
@@ -30,16 +31,29 @@ const IndexPage = ({
 
       <div className="links">
         <h3>Recent posts</h3>
-        {nodes.map(post => (
-          <a
-            href={post.link}
-            key={post.link}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {`${post.createdAt} – ${post.title}`}
-          </a>
-        ))}
+        {[...mediumPosts, ...blogPosts]
+          .map((post) => ({
+            ...post,
+            date: post.createdAt || post.frontmatter.date,
+            title: post.title || post.frontmatter.title,
+            external: !!post.link,
+            link: post.link || `/posts${post.fields.slug}`
+          }))
+          .sort((a, b) => a.date < b.date ? 1 : -1)
+          .map(post => post.external ? (
+            <a
+              href={post.link}
+              key={post.link}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {`${post.date} – ${post.title}`}
+            </a>
+          ) : (
+            <Link to={post.link}>
+              {`${post.date} – ${post.title}`}
+            </Link>
+          ))}
       </div>
 
       <div className="links">
@@ -112,18 +126,34 @@ const IndexPage = ({
       </a>
     </div>
   </Layout>
-)
+);
 
 export const query = graphql`
-  query posts {
-    allPostsJson(limit: 6) {
-      nodes {
-        link
-        title
-        createdAt
+    query posts {
+      allPostsJson (
+        limit: 6
+      ) {
+        nodes {
+          link
+          title
+          createdAt
+        }
+      }
+      allMarkdownRemark (
+        sort: { fields: [frontmatter___date], order: DESC }
+        limit: 1000
+      ) {
+        nodes {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY/MM/DD")
+          }
+        }
       }
     }
-  }
-`
+`;
 
-export default IndexPage
+export default IndexPage;
