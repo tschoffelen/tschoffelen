@@ -1,0 +1,81 @@
+service: schofco-website
+
+plugins:
+  - serverless-s3-sync
+  - serverless-cloudfront-invalidate
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-1'}
+
+  config:
+    boxBucket: schof-box
+
+  s3Sync:
+    - bucketName: schof.co
+      localDir: public/
+      acl: public-read
+      followSymlinks: true
+      defaultContentType: text/html
+  cloudfrontInvalidate:
+    distributionId: EO1YEJXL0AGGJ
+    items:
+      - "/*"
+
+# Provider config
+provider:
+  name: aws
+  stage: ${self:custom.stage}
+  region: ${self:custom.region}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:PutObjectAcl
+        - s3:GetObject
+        - s3:ListBucket
+        - s3:ListBucketVersions
+      Resource:
+        - 'arn:aws:s3:::${self:custom.config.boxBucket}'
+        - 'arn:aws:s3:::${self:custom.config.boxBucket}/*'
+  environment:
+    NODE_ENV: ${self:custom.stage}
+    BOX_BUCKET: schof-box
+
+# Deployment packaging settings
+package:
+  individually: true
+  excludeDevDependencies: false
+  exclude:
+    - '**'
+  include:
+    - src/functions/*.js
+
+# Lambda functions
+functions:
+  box:
+    handler: src/functions/box.handler
+    memorySize: 128
+    timeout: 30
+    events:
+      - http:
+          path: /box/get-url
+          method: get
+          cors: true
+
+# CloudFormation resources
+resources:
+  Resources:
+    BoxBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.config.boxBucket}
+        AccelerateConfiguration:
+          AccelerationStatus: Enabled
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders: ['*']
+              AllowedMethods: [GET, PUT]
+              AllowedOrigins: ['*']
+              Id: CORSRuleId1
+              MaxAge: '3600'

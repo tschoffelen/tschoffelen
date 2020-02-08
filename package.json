@@ -27,7 +27,11 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "aws-sdk": "^2.614.0",
+    "prettier": "^1.19.1",
+    "serverless": "^1.63.0",
+    "serverless-cloudfront-invalidate": "^1.4.0",
+    "serverless-s3-sync": "^1.10.2"
   },
   "scripts": {
     "prep": "node scripts/download-posts.js",
@@ -37,6 +41,7 @@
     "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "yarn format"
+    "test": "yarn format",
+    "deploy": "serverless deploy --region eu-west-1 --stage production"
   }
 }
