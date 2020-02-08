@@ -74,7 +74,7 @@ const IndexPage = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          NearSt: providing shops a new generation of customers
+          NearSt – providing shops a new generation of customers
         </a>
         <a
           href="https://streetartcities.com/?utm_source=schof.co"
@@ -82,7 +82,7 @@ const IndexPage = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          Street Art Cities: collecting street art across the world
+          Street Art Cities – collecting street art across the world
         </a>
         <a
           href="http://infowijs.nl/?utm_source=schof.co"
@@ -90,7 +90,7 @@ const IndexPage = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          Infowijs: enabling schools to communicate better
+          Infowijs – enabling schools to communicate better
         </a>
       </div>
 
