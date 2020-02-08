@@ -11,7 +11,7 @@ axios
       id: guid,
       title: title.replace("&amp;", "&"),
       link,
-      createdAt: moment(pubDate).format("YYYY/MM/DD"),
+      createdAt: moment(pubDate).toISOString(),
     }))
 
     fs.writeFileSync("./src/data/posts.json", JSON.stringify(data), "utf8")

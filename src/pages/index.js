@@ -1,8 +1,17 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { format } from "date-fns";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+
+const renderPost = (post) => (
+  <>
+    {post.title}
+    <span className="ssr">{`, written on `}</span>
+    <span className="link-date">{post.date}</span>
+  </>
+);
 
 const IndexPage = ({
   data: {
@@ -40,6 +49,7 @@ const IndexPage = ({
             link: post.link || `/posts${post.fields.slug}`
           }))
           .sort((a, b) => a.date < b.date ? 1 : -1)
+          .map(post => ({ ...post, date: format(new Date(post.date), "MMM d") }))
           .map(post => post.external ? (
             <a
               href={post.link}
@@ -47,11 +57,11 @@ const IndexPage = ({
               rel="noopener noreferrer"
               target="_blank"
             >
-              {`${post.date} – ${post.title}`}
+              {renderPost(post)}
             </a>
           ) : (
             <Link to={post.link}>
-              {`${post.date} – ${post.title}`}
+              {renderPost(post)}
             </Link>
           ))}
       </div>
@@ -149,7 +159,7 @@ export const query = graphql`
           }
           frontmatter {
             title
-            date(formatString: "YYYY/MM/DD")
+            date
           }
         }
       }

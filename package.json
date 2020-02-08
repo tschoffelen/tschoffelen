@@ -6,6 +6,7 @@
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "dependencies": {
     "axios": "^0.19.1",
+    "date-fns": "^2.9.0",
     "gatsby": "^2.19.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-canonical-urls": "^2.1.20",
