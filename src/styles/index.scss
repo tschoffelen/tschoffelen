@@ -235,12 +235,26 @@ main {
   .blog-post-date {
     margin-top: 0;
     margin-bottom: 32px;
-    opacity: 0.3;
+    opacity: 0.6;
     font-size: 13px;
+
+    strong {
+      font-weight: normal;
+      opacity: 0.6;
+    }
 
     @media (max-width: 640px) {
       margin-top: 16px;
     }
+  }
+
+  .blog-post-category {
+    background-color: rgba(53, 95, 197, 0.25);
+    color: $link-hover-light;
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 5px;
   }
 }
 

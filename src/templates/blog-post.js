@@ -18,7 +18,17 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => (
         {post.frontmatter.title}
       </h2>
       <p className="blog-post-date">
-        {post.frontmatter.date}
+        {post.frontmatter.category ? (
+          <span>
+            <span className="blog-post-category">
+              {post.frontmatter.category}
+            </span>
+            {' '}
+          </span>
+        ) : null}
+        <strong>
+          {post.frontmatter.date}
+        </strong>
       </p>
       <section dangerouslySetInnerHTML={{ __html: post.html }}/>
     </article>
@@ -40,6 +50,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        category
         date(formatString: "MMMM D, YYYY")
       }
     }
