@@ -241,6 +241,22 @@ main {
 .blog-post {
   padding-bottom: 24px;
 
+  blockquote {
+    background: #eee;
+    margin: 20px 0;
+    padding: 24px 36px;
+    padding-top: 1px;
+    font-weight: bold;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: -20px;
+    padding-left: 10px;
+  }
+
   .blog-post-date {
     margin-top: 0;
     margin-bottom: 32px;
