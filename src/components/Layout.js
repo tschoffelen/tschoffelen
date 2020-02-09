@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "../styles/index.scss";
+import "../assets/index.scss";
 
 const Layout = ({ children, className }) => (
   <main className={className}>

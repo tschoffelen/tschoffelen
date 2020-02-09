@@ -6,11 +6,11 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
 const renderPost = (post) => (
-  <>
+  <span>
     {post.title}
     <span className="ssr">{`, written on `}</span>
     <span className="link-date">{post.date}</span>
-  </>
+  </span>
 );
 
 const IndexPage = ({
