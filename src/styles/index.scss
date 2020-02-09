@@ -52,6 +52,11 @@ p {
   margin-top: 24px;
 }
 
+main ::selection {
+  background-color: $link-hover-light;
+  color: $background-light;
+}
+
 h2 {
   font-size: 48px;
   margin-bottom: 0;
@@ -76,6 +81,7 @@ h3 {
 
 header {
   padding: 24px;
+  user-select: none;
 
   .logo {
     margin: 0;
@@ -145,7 +151,7 @@ main {
   margin-right: 108px;
   flex-basis: 30%;
   min-width: 24%;
-  margin-top: 64px;
+  margin-top: 68px;
   min-height: 200px;
   background: transparent url("../images/avatar.svg") no-repeat top;
   background-size: contain;
@@ -169,6 +175,7 @@ main {
 
   a {
     display: block;
+    outline: 0;
     padding: 12px 0;
     font-weight: 600;
     transition: color 0.3s linear;
@@ -235,12 +242,13 @@ main {
   .blog-post-date {
     margin-top: 0;
     margin-bottom: 32px;
-    opacity: 0.6;
+    opacity: 0.7;
     font-size: 13px;
+    user-select: none;
 
     strong {
       font-weight: normal;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     @media (max-width: 640px) {
