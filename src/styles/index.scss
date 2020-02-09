@@ -67,7 +67,8 @@ h2 {
   }
 }
 
-h3 {
+.homepage h3 {
+  user-select: none;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -191,6 +192,7 @@ main {
       padding-bottom: 3px;
       opacity: 0.3;
       transition: opacity 0.3s linear, background-color 0.3s linear;
+      user-select: none;
     }
 
     &:hover {
