@@ -124,7 +124,6 @@ const IndexPage = ({
         <a href="mailto:thomas@schof.co" className="u-email" rel="author">
           Send me an email
         </a>
-        <Link to="/pgp">Grab my PGP key</Link>
       </div>
 
       <a
