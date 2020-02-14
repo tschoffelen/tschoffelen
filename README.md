@@ -1,4 +1,4 @@
-# schof.co
+# [schof.co](https://schof.co/)
 
 My personal website, which shows a list of recent writings and my current projects. Not much more to it.
 
