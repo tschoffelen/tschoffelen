@@ -15,7 +15,7 @@ const PgpPage = () => {
           const file = files[0];
           setText(`Preparing ${file.name}...`);
 
-          fetch(`${boxUrl}${file.name}&contentType=${file.type}`)
+          fetch(`${boxUrl}${encodeURIComponent(file.name)}&contentType=${encodeURIComponent(file.type)}`)
             .then((res) => res.json())
             .then(({ key, url }) => {
               setText(`Uploading ${file.name}...`);
