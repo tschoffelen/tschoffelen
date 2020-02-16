@@ -10,7 +10,7 @@ const PgpPage = () => (
 
     <Header />
 
-    <h2>My public key.</h2>
+    <h2>My public key</h2>
     <p>Fingerprint:</p>
     <pre className="pgp">EE0F 4B84 A58A 3FF0 5728 9044 7599 4EE6 D0F1 FD7F</pre>
 

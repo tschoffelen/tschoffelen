@@ -11,6 +11,7 @@ const PrivacyPage = () => (
     <Header/>
 
     <h2>Privacy Policy</h2>
+    <br/>
     <h3>1. Introduction</h3>
     <ol>
       <li>This is our privacy policy. It tells you how we collect and process data received from you on our

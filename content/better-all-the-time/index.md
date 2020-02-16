@@ -1,6 +1,7 @@
 ---
 title: Better all the time
 date: 2018-11-27
+category: Road to me
 ---
 
 I’ve been extremely lucky in life so far. I’ve been given so many great opportunities, and I’ve received most of them with open arms and then ran with them. The fact that I’m here right now, having friends that know and love me, having built a great company with a team that I adore, having lived in great places and having met so many beautiful people, part of that is luck. But I think part of that, as well, is me giving nearly all I can to chase those opportunities, to use them in the best way possible, to make the most of them.

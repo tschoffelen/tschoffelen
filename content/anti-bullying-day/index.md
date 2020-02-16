@@ -1,6 +1,7 @@
 ---
 title: The anti-bullying day
 date: 2020-02-09
+category: Road to me
 ---
 
 Almost exactly 13 years ago today was _my_ day. A few months earlier, as a 10-year-old, I had started an anti-bullying club. Not because I was bullied that much; that lasted only about a day or two, after which I started responding in such a way that the bullies got bored with me. No, I started that club because I wanted to start something. I didn't know that starting a business was something people could actually do back then, but looking back it was the first entrepreneurial thing I ever did.

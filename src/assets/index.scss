@@ -67,7 +67,8 @@ h2 {
   }
 }
 
-.homepage h3 {
+.homepage h3,
+.posts h3 {
   user-select: none;
   font-weight: 600;
   font-size: 13px;
@@ -77,6 +78,12 @@ h2 {
 
   @media (max-width: 640px) {
     margin-bottom: 4px;
+  }
+
+  a {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
   }
 }
 

@@ -1,6 +1,7 @@
 ---
 title: Twenty-one
 date: 2018-03-11
+category: Road to me
 ---
 
 This is it. Tomorrow is the start of a new life, of a new chapter, a new section with a new rhythm, a new feel, a new baseline. We’ve just heard the refrain, this is the bridge, and tomorrow starts the full-length guitar solo, maybe with a trumpet or two, perhaps some breaks.

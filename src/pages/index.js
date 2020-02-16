@@ -5,11 +5,12 @@ import { format } from "date-fns";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
-const renderPost = (post) => (
+const renderPost = ({ title, date, category }) => (
   <span>
-    {post.title}
+    {title}
     <span className="ssr">{`, written on `}</span>
-    <span className="link-date">{post.date}</span>
+    <span className="link-date">{date}</span>
+    {category && (<span className="ssr">{` in category ${category}.`}</span>)}
   </span>
 );
 
@@ -39,13 +40,14 @@ const IndexPage = ({
       </p>
 
       <div className="links">
-        <h3>Recent posts</h3>
+        <h3><Link to="/posts">Recent posts</Link></h3>
         {[...mediumPosts, ...blogPosts]
           .map((post) => ({
             ...post,
             date: post.createdAt || post.frontmatter.date,
             title: post.title || post.frontmatter.title,
             external: !!post.link,
+            category: post.frontmatter && post.frontmatter.category,
             link: post.link || `/posts${post.fields.slug}`
           }))
           .sort((a, b) => a.date < b.date ? 1 : -1)
@@ -160,6 +162,7 @@ export const query = graphql`
           frontmatter {
             title
             date
+            category
           }
         }
       }
