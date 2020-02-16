@@ -4,7 +4,7 @@ date: 2019-11-04
 category: Life in London
 ---
 
-When I first lived in London about 4-5 years ago, I lived with housemates. That was pretty fun: I was able to help my housemate who was learning programming and trying to find a job in tech and we often had long spirited discussions about politics and the economy. It also, however, meant less privacy and less of a place that really felt like my own.
+When I first lived in London about four years ago, I lived with housemates. That was pretty fun: I was able to help my housemate who was learning programming and trying to find a job in tech and we often had long spirited discussions about politics and the economy. It also, however, meant less privacy and less of a place that really felt like my own.
 
 When I moved to Amsterdam, I got an apartment of my own, and loved the space and freedom it gave me. When moving back to London I wanted to keep that, but also knew the rental market was even worse than Amsterdam, with weekly rent prices that are about equal to what my mom pays a month for an apartment at least three times the size (she lives in a relatively small city in the south of the Netherlands).
 

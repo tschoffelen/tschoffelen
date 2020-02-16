@@ -1,21 +1,21 @@
-import React from "react";
-import { graphql, Link } from "gatsby";
+import React from "react"
+import { graphql, Link } from "gatsby"
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import { organizePosts, renderPost } from "../utils";
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import { organizePosts, renderPost } from "../utils"
 
 const IndexPage = ({
   data: {
     allPostsJson: { nodes: mediumPosts },
-    allMarkdownRemark: { nodes: blogPosts }
-  }
+    allMarkdownRemark: { nodes: blogPosts },
+  },
 }) => (
   <Layout className="homepage h-card">
-    <SEO/>
+    <SEO />
 
     <div className="avatar">
-      <div className="avatar-inner"/>
+      <div className="avatar-inner" />
     </div>
 
     <div>
@@ -33,7 +33,9 @@ const IndexPage = ({
       </p>
 
       <div className="links">
-        <h3><Link to="/posts">Recent posts</Link></h3>
+        <h3>
+          <Link to="/posts">Recent posts</Link>
+        </h3>
         {organizePosts([...mediumPosts, ...blogPosts])
           .slice(0, 7)
           .map(post => renderPost(post))}
@@ -108,35 +110,33 @@ const IndexPage = ({
       </a>
     </div>
   </Layout>
-);
+)
 
 export const query = graphql`
-    query posts {
-      allPostsJson (
-        limit: 8
-      ) {
-        nodes {
-          link
-          title
-          createdAt
-        }
+  query posts {
+    allPostsJson(limit: 8) {
+      nodes {
+        link
+        title
+        createdAt
       }
-      allMarkdownRemark (
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 8
-      ) {
-        nodes {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            category
-          }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 8
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          date
+          category
         }
       }
     }
-`;
+  }
+`
 
-export default IndexPage;
+export default IndexPage

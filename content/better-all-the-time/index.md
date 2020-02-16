@@ -8,6 +8,6 @@ I’ve been extremely lucky in life so far. I’ve been given so many great oppo
 
 One of the reasons I am where I am right now also stems from the fact I’m never really satisfied with who I am as a human being, as a person. I can always be better. I can always be a better friend, a better family member, a better co-founder. I’ve wondered for a while if that feeling is just part of being twenty-two, being young and restless. I hope that I never change though, that I will always keep pushing myself, never start feeling content with who I am and what I’ve done.
 
-I’m getting better all the time. 
-It’s getting better all the time.
+I’m getting better all the time.<br />
+It’s getting better all the time.<br />
 Better, better, better, all the time. ♬

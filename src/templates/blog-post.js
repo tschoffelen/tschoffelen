@@ -1,41 +1,33 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from "gatsby"
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import Header from "../components/Header";
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Header from "../components/Header"
 
 const BlogPostTemplate = ({ data: { markdownRemark: post } }) => (
   <Layout>
-    <SEO
-      title={post.frontmatter.title}
-      description={post.excerpt}
-    />
+    <SEO title={post.frontmatter.title} description={post.excerpt} />
 
-    <Header/>
+    <Header />
     <article className="blog-post">
-      <h2>
-        {post.frontmatter.title}
-      </h2>
+      <h2>{post.frontmatter.title}</h2>
       <p className="blog-post-date">
         {post.frontmatter.category ? (
           <span>
             <span className="blog-post-category">
               {post.frontmatter.category}
-            </span>
-            {' '}
+            </span>{" "}
           </span>
         ) : null}
-        <strong>
-          {post.frontmatter.date}
-        </strong>
+        <strong>{post.frontmatter.date}</strong>
       </p>
-      <section dangerouslySetInnerHTML={{ __html: post.html }}/>
+      <section dangerouslySetInnerHTML={{ __html: post.html }} />
     </article>
   </Layout>
-);
+)
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -55,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`
