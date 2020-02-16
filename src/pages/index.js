@@ -1,18 +1,9 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { format } from "date-fns";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-
-const renderPost = ({ title, date, category }) => (
-  <span>
-    {title}
-    <span className="ssr">{`, written on `}</span>
-    <span className="link-date">{date}</span>
-    {category && (<span className="ssr">{` in category ${category}.`}</span>)}
-  </span>
-);
+import { organizePosts, renderPost } from "../utils";
 
 const IndexPage = ({
   data: {
@@ -22,9 +13,11 @@ const IndexPage = ({
 }) => (
   <Layout className="homepage h-card">
     <SEO/>
+
     <div className="avatar">
       <div className="avatar-inner"/>
     </div>
+
     <div>
       <h2 className="p-name">Hi, I'm Thomas.</h2>
 
@@ -41,32 +34,9 @@ const IndexPage = ({
 
       <div className="links">
         <h3><Link to="/posts">Recent posts</Link></h3>
-        {[...mediumPosts, ...blogPosts]
-          .map((post) => ({
-            ...post,
-            date: post.createdAt || post.frontmatter.date,
-            title: post.title || post.frontmatter.title,
-            external: !!post.link,
-            category: post.frontmatter && post.frontmatter.category,
-            link: post.link || `/posts${post.fields.slug}`
-          }))
-          .sort((a, b) => a.date < b.date ? 1 : -1)
+        {organizePosts([...mediumPosts, ...blogPosts])
           .slice(0, 7)
-          .map(post => ({ ...post, date: format(new Date(post.date), "MMM d") }))
-          .map(post => post.external ? (
-            <a
-              href={post.link}
-              key={post.link}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {renderPost(post)}
-            </a>
-          ) : (
-            <Link to={post.link} key={post.link}>
-              {renderPost(post)}
-            </Link>
-          ))}
+          .map(post => renderPost(post))}
       </div>
 
       <div className="links">

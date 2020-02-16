@@ -1,20 +1,11 @@
 import React from "react";
 import groupBy from "lodash.groupby";
-import { graphql, Link } from "gatsby";
-import { format } from "date-fns";
+import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
-
-const renderPost = ({ title, date, category }) => (
-  <span>
-    {title}
-    <span className="ssr">{`, written on `}</span>
-    <span className="link-date">{date}</span>
-    {category && (<span className="ssr">{` in category ${category}.`}</span>)}
-  </span>
-);
+import { organizePosts, renderPost } from "../utils";
 
 const PostsPage = ({
   data: {
@@ -24,47 +15,18 @@ const PostsPage = ({
 }) => (
   <Layout className="posts">
     <SEO title="Posts"/>
-
     <Header/>
 
-    <h2>Posts archive</h2>
+    <h2>Recent posts</h2>
 
-    {
-      Object.entries(groupBy([...mediumPosts, ...blogPosts]
-        .map((post) => ({
-          ...post,
-          date: post.createdAt || post.frontmatter.date,
-          title: post.title || post.frontmatter.title,
-          external: !!post.link,
-          category: post.frontmatter && post.frontmatter.category,
-          link: post.link || `/posts${post.fields.slug}`
-        }))
-        .sort((a, b) => a.date < b.date ? 1 : -1)
-        .map(post => ({
-          ...post,
-          month: format(new Date(post.date), "MMM yyyy"),
-          date: format(new Date(post.date), "MMM d")
-        })), "month"))
-        .map(([key, value]) => (
-            <div className="links">
-            <h3>{key}</h3>
-              {value.map(post => post.external ? (
-                <a
-                  href={post.link}
-                  key={post.link}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {renderPost(post)}
-                </a>
-              ) : (
-                <Link to={post.link} key={post.link}>
-                  {renderPost(post)}
-                </Link>
-              ))}
-            </div>
-        ))
-    }
+    {Object
+      .entries(groupBy(organizePosts([...mediumPosts, ...blogPosts]), "month"))
+      .map(([key, value]) => (
+        <div className="links">
+          <h3>{key}</h3>
+          {value.map(post => renderPost(post))}
+        </div>
+      ))}
   </Layout>
 );
 
