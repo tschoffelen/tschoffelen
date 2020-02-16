@@ -49,7 +49,7 @@ const IndexPage = ({
             link: post.link || `/posts${post.fields.slug}`
           }))
           .sort((a, b) => a.date < b.date ? 1 : -1)
-          .slice(0, 6)
+          .slice(0, 7)
           .map(post => ({ ...post, date: format(new Date(post.date), "MMM d") }))
           .map(post => post.external ? (
             <a
@@ -141,7 +141,7 @@ const IndexPage = ({
 export const query = graphql`
     query posts {
       allPostsJson (
-        limit: 6
+        limit: 8
       ) {
         nodes {
           link
@@ -151,7 +151,7 @@ export const query = graphql`
       }
       allMarkdownRemark (
         sort: { fields: [frontmatter___date], order: DESC }
-        limit: 6
+        limit: 8
       ) {
         nodes {
           fields {
