@@ -355,7 +355,7 @@ main {
   h3 {
     font-weight: 600;
     margin-top: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     @media (max-width: 440px) {
       margin-top: 16px;
     }
@@ -381,6 +381,7 @@ main {
 
     h4 {
       margin: 0 90px;
+      margin-bottom: 4px;
       @media (max-width: 440px) {
         margin: 0 48px;
       }

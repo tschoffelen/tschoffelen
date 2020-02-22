@@ -3,7 +3,7 @@ title: Just done
 date: 2020-02-22
 category: Screenplaying
 fountain: true
-unlisted: true
+unlisted: false
 ---
 
 INT. BEDROOM - NIGHT
@@ -40,7 +40,7 @@ Just done.
 Daniella moves her head from John’s chest to her pillow.
 
 DANIELLA
-Goodnight darling.
+Good night John.
 
 JOHN
 Good night.
