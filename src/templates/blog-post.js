@@ -29,7 +29,24 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
             </span>{" "}
           </span>
           ) : null}
-          <strong>{post.frontmatter.date}</strong>
+          <strong>
+            {post.frontmatter.date}
+          </strong>
+          {useFountain ? (
+            <>
+              <strong>
+                {" • "}
+                formatted using
+              </strong>
+              {" "}
+              <a
+                target="_blank"
+                className="blog-post-attribution"
+                href="https://fountain.io/">
+                Fountain
+              </a>
+            </>
+          ) : null}
         </p>
         <section
           className={useFountain ? "fountain-body" : ""}

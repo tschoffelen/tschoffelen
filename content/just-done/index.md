@@ -8,7 +8,7 @@ unlisted: false
 
 INT. BEDROOM - NIGHT
 
-JOHN and DANIELLA, both in their twenties, young souls, lie in bed. Daniella is resting her head on John’s chest.
+JOHN and DANIELLA, both in their twenties, young souls, are in bed. Daniella is resting her head on John’s chest.
 
 JOHN
 I’m so done. I’m done.
