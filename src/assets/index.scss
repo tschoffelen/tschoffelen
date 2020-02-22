@@ -337,8 +337,9 @@ main {
   "Segoe UI", Helvetica, Arial, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  line-height: 1.6;
   font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.2px;
 
   @media (max-width: 640px) {
     font-size: 14px;
