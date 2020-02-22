@@ -388,3 +388,9 @@ main {
     }
   }
 }
+
+@media (max-width: 440px) {
+  .hide-phone {
+    display: none;
+  }
+}

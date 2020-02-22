@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
             {post.frontmatter.date}
           </strong>
           {useFountain ? (
-            <>
+            <span className="hide-phone">
               <strong>
                 {" • "}
                 formatted using
@@ -45,7 +45,7 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
                 href="https://fountain.io/">
                 Fountain
               </a>
-            </>
+            </span>
           ) : null}
         </p>
         <section
