@@ -1,48 +1,47 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from "gatsby"
 
-import Layout from "../components/Layout";
-import SEO from "../components/SEO";
-import Header from "../components/Header";
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
+import Header from "../components/Header"
 
-import fountain from "../utils/fountain";
+import fountain from "../utils/fountain"
 
 const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
-  let html = post.html;
-  let useFountain = post.frontmatter.fountain;
+  let html = post.html
+  let useFountain = post.frontmatter.fountain
   if (useFountain) {
-    html = fountain(post.rawMarkdownBody).html.script;
+    html = fountain(post.rawMarkdownBody).html.script
   }
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.excerpt}/>
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
 
-      <Header/>
+      <Header />
       <article className="blog-post">
         <h2>{post.frontmatter.title}</h2>
         <p className="blog-post-date">
           {post.frontmatter.category ? (
             <span>
-            <span className="blog-post-category">
-              {post.frontmatter.category}
-            </span>{" "}
-          </span>
+              <span className="blog-post-category">
+                {post.frontmatter.category}
+              </span>{" "}
+            </span>
           ) : null}
-          <strong>
-            {post.frontmatter.date}
-          </strong>
+          <strong>{post.frontmatter.date}</strong>
           {useFountain ? (
             <span className="hide-phone">
               <strong>
                 {" • "}
                 formatted using
-              </strong>
-              {" "}
+              </strong>{" "}
               <a
                 target="_blank"
                 className="blog-post-attribution"
-                href="https://fountain.io/">
+                rel="noopener noreferrer"
+                href="https://fountain.io/"
+              >
                 Fountain
               </a>
             </span>
@@ -50,13 +49,14 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
         </p>
         <section
           className={useFountain ? "fountain-body" : ""}
-          dangerouslySetInnerHTML={{ __html: html }}/>
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </article>
     </Layout>
-  );
-};
+  )
+}
 
-export default BlogPostTemplate;
+export default BlogPostTemplate
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -78,4 +78,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

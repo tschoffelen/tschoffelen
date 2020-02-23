@@ -20,7 +20,7 @@ JOHN
 I think just for the day.
 
 DIANIELLA
-Let’s start again fresh tomorrow. 
+Let’s start again fresh tomorrow.
 
 JOHN
 I hope at the end of the day I’ll feel as done with everything as I feel today.

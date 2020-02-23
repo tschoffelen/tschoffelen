@@ -24,8 +24,8 @@ module.exports = {
               maxWidth: 980,
               quality: 90,
               linkImagesToOriginal: false,
-              backgroundColor: 'transparent',
-              disableBgImageOnAlpha: true
+              backgroundColor: "transparent",
+              disableBgImageOnAlpha: true,
             },
           },
           `gatsby-remark-prismjs`,
