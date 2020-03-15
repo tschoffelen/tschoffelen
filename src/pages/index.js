@@ -122,18 +122,9 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      sort: {
-        fields: [frontmatter___date], 
-        order: DESC
-      }, 
-      limit: 8, 
-      filter: {
-        frontmatter: {
-          unlisted: {
-            ne: true
-          }
-        }
-      }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 8
+      filter: { frontmatter: { unlisted: { ne: true } } }
     ) {
       nodes {
         fields {

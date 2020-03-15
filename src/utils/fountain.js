@@ -1,10 +1,10 @@
 const regex = {
-  title_page: /^((?:title|credit|author[s]?|source|notes|draft date|date|contact|copyright)\:)/gim,
+  title_page: /^((?:title|credit|author[s]?|source|notes|draft date|date|contact|copyright):)/gim,
 
   scene_heading: /^((?:\*{0,3}_?)?(?:(?:int|ext|est|i\/e)[. ]).+)|^(?:\.(?!\.+))(.+)/i,
   scene_number: /( *#(.+)# *)/,
 
-  transition: /^((?:FADE (?:TO BLACK|OUT)|CUT TO BLACK)\.|.+ TO\:)|^(?:> *)(.+)/,
+  transition: /^((?:FADE (?:TO BLACK|OUT)|CUT TO BLACK)\.|.+ TO:)|^(?:> *)(.+)/,
 
   dialogue: /^([A-Z*_]+[0-9A-Z (._\-,')]*)(\^?)?(?:\n(?!\n+))([\s\S]+)/,
   parenthetical: /^(\(.+\))$/,
@@ -13,13 +13,13 @@ const regex = {
   centered: /^(?:> *)(.+)(?: *<)(\n.+)*/g,
 
   section: /^(#+)(?: *)(.*)/,
-  synopsis: /^(?:\=(?!\=+) *)(.*)/,
+  synopsis: /^(?:=(?!=+) *)(.*)/,
 
   note: /^(?:\[{2}(?!\[+))(.+)(?:\]{2}(?!\[+))$/,
   note_inline: /(?:\[{2}(?!\[+))([\s\S]+?)(?:\]{2}(?!\[+))/g,
   boneyard: /(^\/\*|^\*\/)$/g,
 
-  page_break: /^\={3,}$/,
+  page_break: /^={3,}$/,
   line_break: /^ {2}$/,
 
   emphasis: /(_|\*{1,3}|_\*{1,3}|\*{1,3}_)(.+)(_|\*{1,3}|_\*{1,3}|\*{1,3}_)/g,
@@ -34,282 +34,358 @@ const regex = {
   splitter: /\n{2,}/g,
   cleaner: /^\n+|\n+$/,
   standardizer: /\r\n|\r/g,
-  whitespacer: /^\t+|^ {3,}/gm
-};
+  whitespacer: /^\t+|^ {3,}/gm,
+}
 
 const lexer = function(script) {
-  return script.replace(regex.boneyard, "\n$1\n")
+  return script
+    .replace(regex.boneyard, "\n$1\n")
     .replace(regex.standardizer, "\n")
     .replace(regex.cleaner, "")
-    .replace(regex.whitespacer, "");
-};
+    .replace(regex.whitespacer, "")
+}
 
 const tokenize = function(script) {
   const src = lexer(script).split(regex.splitter)
-  ;let i = src.length, line, match, parts, text, meta, x, xlen, dual
-  ;const tokens = [];
+  let i = src.length,
+    line,
+    match,
+    parts,
+    text,
+    meta,
+    x,
+    xlen,
+    dual
+  const tokens = []
 
   while (i--) {
-    line = src[i];
+    line = src[i]
 
     // title page
     if (regex.title_page.test(line)) {
-      match = line.replace(regex.title_page, "\n$1").split(regex.splitter).reverse();
+      match = line
+        .replace(regex.title_page, "\n$1")
+        .split(regex.splitter)
+        .reverse()
       for (x = 0, xlen = match.length; x < xlen; x++) {
-        parts = match[x].replace(regex.cleaner, "").split(/\:\n*/);
-        tokens.push({ type: parts[0].trim().toLowerCase().replace(" ", "_"), text: parts[1].trim() });
+        parts = match[x].replace(regex.cleaner, "").split(/:\n*/)
+        tokens.push({
+          type: parts[0]
+            .trim()
+            .toLowerCase()
+            .replace(" ", "_"),
+          text: parts[1].trim(),
+        })
       }
-      continue;
+      continue
     }
 
     // scene headings
-    if (match = line.match(regex.scene_heading)) {
-      text = match[1] || match[2];
+    match = line.match(regex.scene_heading)
+    if (match) {
+      text = match[1] || match[2]
 
       if (text.indexOf("  ") !== text.length - 2) {
-        if (meta = text.match(regex.scene_number)) {
-          meta = meta[2];
-          text = text.replace(regex.scene_number, "");
+        meta = text.match(regex.scene_number)
+        if (meta) {
+          meta = meta[2]
+          text = text.replace(regex.scene_number, "")
         }
-        tokens.push({ type: "scene_heading", text: text, scene_number: meta || undefined });
+        tokens.push({
+          type: "scene_heading",
+          text: text,
+          scene_number: meta || undefined,
+        })
       }
-      continue;
+      continue
     }
 
     // centered
-    if (match = line.match(regex.centered)) {
-      tokens.push({ type: "centered", text: match[0].replace(/>|</g, "") });
-      continue;
+    match = line.match(regex.centered)
+    if (match) {
+      tokens.push({ type: "centered", text: match[0].replace(/>|</g, "") })
+      continue
     }
 
     // transitions
-    if (match = line.match(regex.transition)) {
-      tokens.push({ type: "transition", text: match[1] || match[2] });
-      continue;
+    match = line.match(regex.transition)
+    if (match) {
+      tokens.push({ type: "transition", text: match[1] || match[2] })
+      continue
     }
 
     // dialogue blocks - characters, parentheticals and dialogue
-    if (match = line.match(regex.dialogue)) {
+    match = line.match(regex.dialogue)
+    if (match) {
       if (match[1].indexOf("  ") !== match[1].length - 2) {
         // we're iterating from the bottom up, so we need to push these backwards
         if (match[2]) {
-          tokens.push({ type: "dual_dialogue_end" });
+          tokens.push({ type: "dual_dialogue_end" })
         }
 
-        tokens.push({ type: "dialogue_end" });
+        tokens.push({ type: "dialogue_end" })
 
-        parts = match[3].split(/(\(.+\))(?:\n+)/).reverse();
+        parts = match[3].split(/(\(.+\))(?:\n+)/).reverse()
 
         for (x = 0, xlen = parts.length; x < xlen; x++) {
-          text = parts[x];
+          text = parts[x]
 
           if (text.length > 0) {
-            tokens.push({ type: regex.parenthetical.test(text) ? "parenthetical" : "dialogue", text: text });
+            tokens.push({
+              type: regex.parenthetical.test(text)
+                ? "parenthetical"
+                : "dialogue",
+              text: text,
+            })
           }
         }
 
-        tokens.push({ type: "character", text: match[1].trim() });
-        tokens.push({ type: "dialogue_begin", dual: match[2] ? "right" : dual ? "left" : undefined });
+        tokens.push({ type: "character", text: match[1].trim() })
+        tokens.push({
+          type: "dialogue_begin",
+          dual: match[2] ? "right" : dual ? "left" : undefined,
+        })
 
         if (dual) {
-          tokens.push({ type: "dual_dialogue_begin" });
+          tokens.push({ type: "dual_dialogue_begin" })
         }
 
-        dual = !!match[2];
-        continue;
+        dual = !!match[2]
+        continue
       }
     }
 
     // section
-    if (match = line.match(regex.section)) {
-      tokens.push({ type: "section", text: match[2], depth: match[1].length });
-      continue;
+    match = line.match(regex.section)
+    if (match) {
+      tokens.push({ type: "section", text: match[2], depth: match[1].length })
+      continue
     }
 
     // synopsis
-    if (match = line.match(regex.synopsis)) {
-      tokens.push({ type: "synopsis", text: match[1] });
-      continue;
+    match = line.match(regex.synopsis)
+    if (match) {
+      tokens.push({ type: "synopsis", text: match[1] })
+      continue
     }
 
     // notes
-    if (match = line.match(regex.note)) {
-      tokens.push({ type: "note", text: match[1] });
-      continue;
+    match = line.match(regex.note)
+    if (match) {
+      tokens.push({ type: "note", text: match[1] })
+      continue
     }
 
     // boneyard
-    if (match = line.match(regex.boneyard)) {
-      tokens.push({ type: match[0][0] === "/" ? "boneyard_begin" : "boneyard_end" });
-      continue;
+    match = line.match(regex.boneyard)
+    if (match) {
+      tokens.push({
+        type: match[0][0] === "/" ? "boneyard_begin" : "boneyard_end",
+      })
+      continue
     }
 
     // page breaks
     if (regex.page_break.test(line)) {
-      tokens.push({ type: "page_break" });
-      continue;
+      tokens.push({ type: "page_break" })
+      continue
     }
 
     // line breaks
     if (regex.line_break.test(line)) {
-      tokens.push({ type: "line_break" });
-      continue;
+      tokens.push({ type: "line_break" })
+      continue
     }
 
-    tokens.push({ type: "action", text: line });
+    tokens.push({ type: "action", text: line })
   }
 
-  return tokens;
-};
+  return tokens
+}
 
 const inline = {
   note: "<!-- $1 -->",
 
   line_break: "<br />",
 
-  bold_italic_underline: "<span class=\"bold italic underline\">$2</span>",
-  bold_underline: "<span class=\"bold underline\">$2</span>",
-  italic_underline: "<span class=\"italic underline\">$2</span>",
-  bold_italic: "<span class=\"bold italic\">$2</span>",
-  bold: "<span class=\"bold\">$2</span>",
-  italic: "<span class=\"italic\">$2</span>",
-  underline: "<span class=\"underline\">$2</span>"
-};
+  bold_italic_underline: '<span class="bold italic underline">$2</span>',
+  bold_underline: '<span class="bold underline">$2</span>',
+  italic_underline: '<span class="italic underline">$2</span>',
+  bold_italic: '<span class="bold italic">$2</span>',
+  bold: '<span class="bold">$2</span>',
+  italic: '<span class="italic">$2</span>',
+  underline: '<span class="underline">$2</span>',
+}
 
 inline.lexer = function(s) {
   if (!s) {
-    return;
+    return
   }
 
-  const styles = ["underline", "italic", "bold", "bold_italic", "italic_underline", "bold_underline", "bold_italic_underline"]
-  ;let i = styles.length, style, match;
+  const styles = [
+    "underline",
+    "italic",
+    "bold",
+    "bold_italic",
+    "italic_underline",
+    "bold_underline",
+    "bold_italic_underline",
+  ]
+  let i = styles.length,
+    style,
+    match
 
-  s = s.replace(regex.note_inline, inline.note).replace(/\\\*/g, "[star]").replace(/\\_/g, "[underline]").replace(/\n/g, inline.line_break);
+  s = s
+    .replace(regex.note_inline, inline.note)
+    .replace(/\\\*/g, "[star]")
+    .replace(/\\_/g, "[underline]")
+    .replace(/\n/g, inline.line_break)
 
   while (i--) {
-    style = styles[i];
-    match = regex[style];
+    style = styles[i]
+    match = regex[style]
 
     if (match.test(s)) {
-      s = s.replace(match, inline[style]);
+      s = s.replace(match, inline[style])
     }
   }
 
-  return s.replace(/\[star\]/g, "*").replace(/\[underline\]/g, "_").trim();
-};
+  return s
+    .replace(/\[star\]/g, "*")
+    .replace(/\[underline\]/g, "_")
+    .trim()
+}
 
 const parse = function(script) {
   const tokens = tokenize(script)
-  ;let i = tokens.length, token
-    , title;
-  const title_page = [], html = [];
-  let output;
+  let i = tokens.length,
+    token,
+    title
+  const title_page = [],
+    html = []
+  let output
 
   while (i--) {
-    token = tokens[i];
-    token.text = inline.lexer(token.text);
+    token = tokens[i]
+    token.text = inline.lexer(token.text)
 
     switch (token.type) {
       case "title":
-        title_page.push("<h1>" + token.text + "</h1>");
-        title = token.text.replace("<br />", " ").replace(/<(?:.|\n)*?>/g, "");
-        break;
+        title_page.push("<h1>" + token.text + "</h1>")
+        title = token.text.replace("<br />", " ").replace(/<(?:.|\n)*?>/g, "")
+        break
       case "credit":
-        title_page.push("<p class=\"credit\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="credit">' + token.text + "</p>")
+        break
       case "author":
-        title_page.push("<p class=\"authors\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="authors">' + token.text + "</p>")
+        break
       case "authors":
-        title_page.push("<p class=\"authors\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="authors">' + token.text + "</p>")
+        break
       case "source":
-        title_page.push("<p class=\"source\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="source">' + token.text + "</p>")
+        break
       case "notes":
-        title_page.push("<p class=\"notes\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="notes">' + token.text + "</p>")
+        break
       case "draft_date":
-        title_page.push("<p class=\"draft-date\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="draft-date">' + token.text + "</p>")
+        break
       case "date":
-        title_page.push("<p class=\"date\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="date">' + token.text + "</p>")
+        break
       case "contact":
-        title_page.push("<p class=\"contact\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="contact">' + token.text + "</p>")
+        break
       case "copyright":
-        title_page.push("<p class=\"copyright\">" + token.text + "</p>");
-        break;
+        title_page.push('<p class="copyright">' + token.text + "</p>")
+        break
 
       case "scene_heading":
-        html.push("<h3" + (token.scene_number ? " id=\"" + token.scene_number + "\">" : ">") + token.text + "</h3>");
-        break;
+        html.push(
+          "<h3" +
+            (token.scene_number ? ' id="' + token.scene_number + '">' : ">") +
+            token.text +
+            "</h3>"
+        )
+        break
       case "transition":
-        html.push("<h2>" + token.text + "</h2>");
-        break;
+        html.push("<h2>" + token.text + "</h2>")
+        break
 
       case "dual_dialogue_begin":
-        html.push("<div class=\"dual-dialogue\">");
-        break;
+        html.push('<div class="dual-dialogue">')
+        break
       case "dialogue_begin":
-        html.push("<div class=\"dialogue" + (token.dual ? " " + token.dual : "") + "\">");
-        break;
+        html.push(
+          '<div class="dialogue' + (token.dual ? " " + token.dual : "") + '">'
+        )
+        break
       case "character":
-        html.push("<h4>" + token.text + "</h4>");
-        break;
+        html.push("<h4>" + token.text + "</h4>")
+        break
       case "parenthetical":
-        html.push("<p class=\"parenthetical\">" + token.text + "</p>");
-        break;
+        html.push('<p class="parenthetical">' + token.text + "</p>")
+        break
       case "dialogue":
-        html.push("<p>" + token.text + "</p>");
-        break;
+        html.push("<p>" + token.text + "</p>")
+        break
       case "dialogue_end":
-        html.push("</div> ");
-        break;
+        html.push("</div> ")
+        break
       case "dual_dialogue_end":
-        html.push("</div> ");
-        break;
+        html.push("</div> ")
+        break
 
       case "section":
-        html.push("<p class=\"section\" data-depth=\"" + token.depth + "\">" + token.text + "</p>");
-        break;
+        html.push(
+          '<p class="section" data-depth="' +
+            token.depth +
+            '">' +
+            token.text +
+            "</p>"
+        )
+        break
       case "synopsis":
-        html.push("<p class=\"synopsis\">" + token.text + "</p>");
-        break;
+        html.push('<p class="synopsis">' + token.text + "</p>")
+        break
 
       case "note":
-        html.push("<!-- " + token.text + "-->");
-        break;
+        html.push("<!-- " + token.text + "-->")
+        break
       case "boneyard_begin":
-        html.push("<!-- ");
-        break;
+        html.push("<!-- ")
+        break
       case "boneyard_end":
-        html.push(" -->");
-        break;
+        html.push(" -->")
+        break
 
       case "action":
-        html.push("<p>" + token.text + "</p>");
-        break;
+        html.push("<p>" + token.text + "</p>")
+        break
       case "centered":
-        html.push("<p class=\"centered\">" + token.text + "</p>");
-        break;
+        html.push('<p class="centered">' + token.text + "</p>")
+        break
 
       case "page_break":
-        html.push("<hr />");
-        break;
+        html.push("<hr />")
+        break
       case "line_break":
-        html.push("<br />");
-        break;
+        html.push("<br />")
+        break
+
+      default:
+        html.push(" ")
     }
   }
 
   output = {
     title: title,
-    html: { title_page: title_page.join(""), script: html.join("") }
-  };
+    html: { title_page: title_page.join(""), script: html.join("") },
+  }
 
-  return output;
-};
+  return output
+}
 
-module.exports = parse;
+module.exports = parse
