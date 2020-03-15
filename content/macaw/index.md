@@ -1,6 +1,6 @@
 ---
 title: Transactional emails at scale
-date: 2020-02-24
+date: 2020-03-15
 category: Open source
 ---
 
