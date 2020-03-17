@@ -4,31 +4,34 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
 
-let loaded = false
+const MeetPage = () => (
+  <Layout>
+    <SEO title="Schedule a meeting" />
 
-const MeetPage = () => {
-  if (!loaded && typeof window !== `undefined`) {
-    var script = window.document.createElement("script")
-    script.src = "https://assets.calendly.com/assets/external/widget.js"
-    window.document.head.appendChild(script)
-    loaded = true
-  }
+    <Header />
 
-  return (
-    <Layout>
-      <SEO title="Schedule a meeting" />
+    <h1>Let's talk.</h1>
+    <p>
+      Let's have a 30 minute call via Zoom or a coffee break some place in the
+      beautiful Hoxton area (London, UK).
+    </p>
 
-      <Header />
-
-      <div
-        className="calendly-inline-widget"
-        data-url="https://calendly.com/tschof/30min?background_color=faf8f9&primary_color=355fc5"
-        style={{ minWidth: 300, height: 658 }}
-      />
-      <style>{`main { max-width: none; }`}</style>
-      <script src="https://assets.calendly.com/assets/external/widget.js" />
-    </Layout>
-  )
-}
+    <div
+      style={{
+        minWidth: 300,
+        height: 658,
+        marginTop: 64,
+        border: "1px solid #f2f2f2",
+      }}
+    >
+      <iframe
+        src="https://calendly.com/tschof/30min?embed_domain=localhost%3A8000&amp;embed_type=Inline&amp;background_color=faf8f9&amp;primary_color=355fc5"
+        width="100%"
+        height="100%"
+        frameborder="0"
+      ></iframe>
+    </div>
+  </Layout>
+)
 
 export default MeetPage
