@@ -7,10 +7,11 @@ import Header from "../components/Header"
 let loaded = false
 
 const MeetPage = () => {
-  if(!loaded && document){
-    var script = document.createElement('script');
+  if(!loaded && typeof window !== `undefined`){
+    var script = window.document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    document.head.appendChild(script);
+    window.document.head.appendChild(script);
+    loaded = true;
   }
 
   return (
