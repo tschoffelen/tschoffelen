@@ -1,7 +1,7 @@
 ---
 title: Places to go in London
 date: 2020-03-01
-category: London
+category: Life in London
 unlisted: true
 ---
 
