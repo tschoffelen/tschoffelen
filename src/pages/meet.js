@@ -22,9 +22,11 @@ const MeetPage = () => (
         height: 658,
         marginTop: 64,
         border: "1px solid #f2f2f2",
+        background: "#fff"
       }}
     >
       <iframe
+        title="Schedule a call or coffee meeting."
         src="https://calendly.com/tschof/30min?embed_domain=localhost%3A8000&amp;embed_type=Inline&amp;background_color=faf8f9&amp;primary_color=355fc5"
         width="100%"
         height="100%"
