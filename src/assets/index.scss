@@ -97,6 +97,12 @@ h2 {
   }
 }
 
+h4 {
+  font-size: 24px;
+  margin-bottom: -10px;
+  margin-top: 48px;
+}
+
 .homepage h3,
 .posts h3 {
   user-select: none;
@@ -274,7 +280,6 @@ main {
   }
 }
 
-
 .blog-post {
   padding-bottom: 24px;
 
@@ -340,6 +345,7 @@ main {
         margin-top: 44px;
       }
     }
+
     p {
       a {
         color: $link-hover-light;
@@ -427,6 +433,94 @@ main {
   &:hover {
     background-color: rgba(53, 95, 197, 0.25);
   }
+}
+
+.hero {
+  background-color: #c1cae8;
+
+  @media (min-width: 720px) {
+    background: #c1cae8 url('../pages/thumbnails-cloud/hero.svg') no-repeat 100% 100%;
+    background-size: contain;
+    padding-bottom: 24px;
+  }
+
+  main h1 {
+    font-size: 20px;
+    color: $link-hover-light;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 40px;
+  }
+
+  button {
+    outline: 0;
+    border: 2px solid $foreground-light;
+    background: transparent;
+    color: $foreground-light;
+    display: inline-block;
+    padding: 3px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 26px;
+    margin-top: 64px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover {
+      background: #000;
+      color: #c1cae8;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-spacing: 0;
+  margin-top: 12px;
+  margin-bottom: 24px;
+
+  img {
+    width: 100%;
+  }
+
+  th {
+    font-weight: 600;
+    text-align: left;
+    color: $link-hover-light;
+    background: #c2cae6;
+  }
+
+  td,
+  th {
+    border-left: 1px solid #c2cae6;
+    border-top: 1px solid #c2cae6;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin: 0;
+    vertical-align: top;
+  }
+
+  tr td:last-child,
+  tr th:last-child {
+    border-right: 1px solid #c2cae6;
+  }
+  tr:last-child td {
+    border-bottom: 1px solid #c2cae6;
+  }
+}
+
+.code-block {
+  background: #eee;
+  border: 1px solid #e7e7e7;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-bottom: 24px;
 }
 
 @media (max-width: 440px) {
