@@ -18,9 +18,12 @@ const ProductPage = () => (
 
     <main>
       <h4>Features</h4>
-      <p>The <strong>thumbnails.cloud</strong> API generates JPG
-        file previews for all common document formats, using a simple API. Get an API token for $8/mo, and
-        create an unlimited number of thumbnails!</p>
+      <p>
+        The <strong>thumbnails.cloud</strong> API generates JPG and PDF file previews for all common document
+        formats, using a simple API. Get an API token for $8/mo for personal and small-scale projects, and
+        create an unlimited number of preview images! For large-scale and enterprise licensing,
+        please <a href="mailto:info@schof.co?subject=Thumbnails%20Cloud%20pricing%20inquiry">contact us</a>.
+      </p>
 
       <h4>Examples</h4>
       <p>The API supports a ton of formats, but here are some examples:</p>
