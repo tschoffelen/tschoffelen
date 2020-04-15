@@ -2,7 +2,7 @@
   "name": "@tschoffelen/homepage",
   "private": true,
   "description": "My personal site.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "dependencies": {
     "axios": "^0.19.1",
