@@ -28,9 +28,12 @@ module.exports = {
               disableBgImageOnAlpha: true,
             },
           },
+          {
+            resolve: require.resolve('./plugins/gatsby-remark-fountain')
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          `gatsby-remark-smartypants`
         ],
       },
     },

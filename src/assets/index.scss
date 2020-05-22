@@ -359,7 +359,7 @@ main {
     "Segoe UI", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     letter-spacing: -0.2px;
 
@@ -377,15 +377,15 @@ main {
       padding-top: 16px;
       font-weight: 600;
       margin-top: 12px;
-      margin-bottom: 6px;
-      @media (max-width: 440px) {
+      margin-bottom: 20px;
+      @media (max-width: 510px) {
         margin-top: 0;
       }
     }
 
     p {
       margin-bottom: 32px;
-      @media (max-width: 440px) {
+      @media (max-width: 510px) {
         margin-bottom: 16px;
       }
     }
@@ -396,17 +396,33 @@ main {
     }
 
     .dialogue {
-      margin: 0 90px;
-      @media (max-width: 440px) {
+      margin: 0 110px;
+      @media (max-width: 510px) {
         margin: 0 48px;
       }
 
       h4 {
-        margin: 0 90px;
+        margin: 0 110px;
         margin-bottom: 4px;
-        @media (max-width: 440px) {
+        @media (max-width: 510px) {
           margin: 0 48px;
         }
+      }
+    }
+
+    &.fountain-body-inline {
+      background: #ebe9ea;
+      margin: 48px -24px;
+      padding: 20px 24px;
+
+      & > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
       }
     }
   }

@@ -2,12 +2,11 @@
 title: Go to / on it
 date: 2020-05-21
 category: Screenplaying
-fountain: true
 ---
 
 I've been watching some old episodes of NCIS in the background while doing some mundane admin tasks for work (only outside office hours of course!) - mostly just to have some background noise. But some of their little snippets of dialogue between the characters are pretty good...
 
-
+```fountain
 INT. NICS OFFICE - DAY
 
 GIBBS
@@ -47,3 +46,4 @@ GIBBS
 Too!
 
 Ziva quickly gets up from her chair, grabs her backpack and follows Tony.
+```
