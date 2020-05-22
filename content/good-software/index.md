@@ -33,8 +33,6 @@ Your users are probably not computer science graduates or developers, so don’t
 
 Don’t reinvent the wheel. Use established patterns wherever possible.
 
-Some examples:
-
 * If there’s a rich text editor, I’ll expect to be able to mark text as bold or italic. 
 * If there’s a modal window, I expect to be able to click outside of it to close it. 
 * If I’m on a web page, I expect to be able to share the URL in the address bar in such a way that my recipient sees the same thing that I do.
