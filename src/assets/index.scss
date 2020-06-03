@@ -346,7 +346,8 @@ main {
       }
     }
 
-    p {
+    p,
+    li {
       a {
         color: $link-hover-light;
       }
@@ -393,6 +394,10 @@ main {
     h2 {
       text-align: right;
       margin: 32px 0;
+    }
+
+    hr {
+      border: null;
     }
 
     .dialogue {
