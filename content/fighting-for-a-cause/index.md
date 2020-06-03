@@ -22,7 +22,7 @@ What I should be doing at the moment is educating myself, reading and listening.
 Some interesting reading material I’ve come across so far:
 
 * **[Letter From a Region in My Mind](https://www.newyorker.com/magazine/1962/11/17/letter-from-a-region-in-my-mind)** - one of the many insightful essays by James Baldwin.
-* **[When Feminism is White Supremacy in Heels](https://www.harpersbazaar.com/culture/politics/a22717725/what-is-toxic-white-feminism/)** – a friend of mine pointed out that feminism isn’t always intersectional.
+* **[When Feminism is White Supremacy in Heels](https://www.harpersbazaar.com/culture/politics/a22717725/what-is-toxic-white-feminism/)** – a friend of mine pointed out that feminism isn’t necessarily intersectional.
 * **[The Validity of Violence](https://timeline.com/by-the-end-of-his-life-martin-luther-king-realized-the-validity-of-violence-4de177a8c87b)** - “Nonviolence — as it is discussed and fetishized in proximity to the poor and/or marginalized — is so often only dragged out in response to any uprising of those people.”
 
 
