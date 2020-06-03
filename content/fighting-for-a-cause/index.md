@@ -6,7 +6,9 @@ category: Road to me
 
 I was thinking the other day about the fact that I haven’t really fought for a cause since I was in primary school. 
 
-Back then, when I was around 11, I started an ‘anti-bullying club’ and wrote an anti-bullying song and recorded it with all of my fifth-grade classmates in my dad’s garage. I co-organised an anti-bullying day with my schools headmaster, which consisted of a market, games, watching a documentary, singing the song we had written, and the most awkward speech given by a mini version of yours truly in front of the whole school.
+Back then, when I was around 11, I started an ‘anti-bullying club’ with some classmates and wrote an anti-bullying song. We recorded it with all of my fifth-grade classmates on a sunny summer's day in my dad’s garage. 
+
+A month or so later, I co-organised an anti-bullying day with my schools headmaster, which consisted of a market, games, watching a documentary, singing the song we had written, and the most awkward speech given by a mini version of yours truly in front of the whole school.
 
 ![Me, 2008](mini-me.jpg)
 
