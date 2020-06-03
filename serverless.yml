@@ -17,10 +17,13 @@ custom:
       acl: public-read
       followSymlinks: true
       defaultContentType: text/html
+
   cloudfrontInvalidate:
     distributionId: EO1YEJXL0AGGJ
     items:
+      - "/"
       - "/*"
+      - "page-data/index/page-data.json"
 
 # Provider config
 provider:
