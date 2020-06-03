@@ -23,7 +23,7 @@ custom:
     items:
       - "/"
       - "/*"
-      - "page-data/index/page-data.json"
+      - "/page-data/index/page-data.json"
 
 # Provider config
 provider:
