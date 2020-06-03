@@ -14,7 +14,7 @@ A month or so later, I co-organised an anti-bullying day with my schools headmas
 
 <br />
 
-I felt bad this week about not doing more. I don’t want to be one of those people that posts a black square on Instagram and calls it a day. This topic is way too interesting and enraging for that.
+I felt bad about not doing more this week. I don’t want to be one of those people that posts a black square on Instagram and calls it a day. This topic is way too interesting and enraging for that.
 
 I’ve noticed that this topic makes me feel depressed and say things in the lines of “sad that this is still a problem in 2020“. I think that feeling is coming from the right place, but not at all a productive approach.
 
