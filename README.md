@@ -1,16 +1,7 @@
-# [schof.co](https://schof.co/)
+### Hi, I'm Thomas.
 
-My personal website, which shows a list of recent writings and my current projects. Not much more to it.
+I'm a co-founder of several tech startups, building tools to help small businesses and educators. I love consulting founders and engineers on everthing from starting their own company to designing complex applications.
 
-Built using [Gatsby](https://www.gatsbyjs.org/).
+In my spare time I write about life, friendships, engineering and design.
 
-## Local development
-
-```shell
-yarn
-yarn start
-```
-
-## Deployment
-
-Deployment happens automatically on push to master thanks to Github Actions.
+www.schof.co
