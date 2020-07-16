@@ -44,22 +44,22 @@ const ProductPage = () => (
             <td width="25%"><a
               data-mediabox="doc"
               href="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/bf7/598f234dbb76-0037a0222e/example.doc&size=1200">
-              <img src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/bf7/598f234dbb76-0037a0222e/example.doc&size=1200"/>
+              <img alt=".doc example" src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/bf7/598f234dbb76-0037a0222e/example.doc&size=1200"/>
             </a></td>
             <td width="25%"><a
               data-mediabox="docx"
               href="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/a4b/5054667bf29b-00397017f1/example-docx.docx&size=1200">
-              <img src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/a4b/5054667bf29b-00397017f1/example-docx.docx&size=1200"/>
+              <img alt=".docx example" src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/a4b/5054667bf29b-00397017f1/example-docx.docx&size=1200"/>
             </a></td>
             <td width="25%"><a
               data-mediabox="ai"
               href="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/756/f6d9194b1767-0051f03200/example.ai&size=1200">
-              <img src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/756/f6d9194b1767-0051f03200/example.ai&size=1200"/>
+              <img alt=".ai example" src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/756/f6d9194b1767-0051f03200/example.ai&size=1200"/>
             </a></td>
             <td width="25%"><a
               data-mediabox="eps"
               href="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/7a7/edfb731fd240-00aff01a99/example.eps&size=1200">
-              <img src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/7a7/edfb731fd240-00aff01a99/example.eps&size=1200"/>
+              <img alt=".eps example" src="https://thumbnails.cloud/v1/jpg?token=example&url=https://lowcdn.com/2x/7a7/edfb731fd240-00aff01a99/example.eps&size=1200"/>
             </a></td>
           </tr>
         </tbody>
@@ -86,7 +86,7 @@ const ProductPage = () => (
               className="icon has-text-success"
               title="Required"><i className="fas fa-check-square"/></span></td>
             <td>The URL of the original document. Should be publicly available via HTTP or HTTPS. Make sure
-              to <a href="https://en.wikipedia.org/wiki/Percent-encoding" target="_blank">urlencode</a> your
+              to <a rel="noreferrer noopener" href="https://en.wikipedia.org/wiki/Percent-encoding" target="_blank">urlencode</a> your
               URL!
             </td>
           </tr>
@@ -130,7 +130,7 @@ const ProductPage = () => (
       <p>
         <a
           href="https://www.producthunt.com/posts/thumbnails-cloud?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-thumbnails-cloud"
-          target="_blank">
+          target="_blank" rel="noreferrer noopener">
           <img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=164600&theme=dark"
             alt="Thumbnails Cloud - The simplest API for generating file thumbnails | Product Hunt Embed"/>

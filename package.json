@@ -7,7 +7,7 @@
   "dependencies": {
     "axios": "^0.19.1",
     "date-fns": "^2.9.0",
-    "gatsby": "^2.19.12",
+    "gatsby": "^2.24.3",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-canonical-urls": "^2.1.20",
     "gatsby-plugin-feed": "^2.3.27",
@@ -41,8 +41,8 @@
     "aws-sdk": "^2.614.0",
     "prettier": "^1.19.1",
     "serverless": "^1.63.0",
-    "serverless-cloudfront-invalidate": "^1.4.0",
-    "serverless-s3-sync": "^1.10.2"
+    "serverless-cloudfront-invalidate": "^1.5.0",
+    "serverless-s3-sync": "^1.14.4"
   },
   "scripts": {
     "prep": "node .github/download-posts.js",
