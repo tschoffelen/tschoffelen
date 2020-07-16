@@ -17,10 +17,6 @@ custom:
       acl: public-read
       followSymlinks: true
       defaultContentType: text/html
-      params:
-        - "*.json":
-          CacheControl: "public, max-age=3600"
-          ContentType: "application/json"
 
   cloudfrontInvalidate:
     distributionId: EO1YEJXL0AGGJ
