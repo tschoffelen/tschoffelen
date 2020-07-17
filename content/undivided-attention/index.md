@@ -1,6 +1,6 @@
 ---
 title: Undivided attention
-date: 2020-07-16
+date: 2020-07-17
 category: Road to me
 ---
 
