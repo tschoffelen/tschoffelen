@@ -1,10 +1,10 @@
 ---
 title: Undivided attention
-date: 2020-07-17
+date: 2020-07-19
 category: Road to me
 ---
 
-My granddad passed away earlier today at age 95. It didn’t come as much of a surprise, he had not been anywhere close to well in the last dozen or so months. When I let that first call from my mom go to voicemail because I was in a meeting, and then saw a second call coming in from her less than 15 minutes later, I knew what to expect when I picked up the phone.
+My granddad passed away earlier this week at age 95. It didn’t come as much of a surprise, he had not been anywhere close to well in the last dozen or so months. When I let that first call from my mom go to voicemail because I was in a meeting, and then saw a second call coming in from her less than 15 minutes later, I knew what to expect when I picked up the phone.
 
 The first thing I felt was a strange kind of relief. He hadn’t been able to truly be himself in the last year. His lack of any physical strength, the pain and the confusion brought on by medication didn’t allow much of his playful personality to shine through. “He can finally rest in peace,” was the first thought this atheist, nihilist mind of mine produced.
 
