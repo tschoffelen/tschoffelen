@@ -14,7 +14,7 @@ My biggest lesson:
 
 > Find a letting agency you like, and build a relationship.
 
-There’s no need to involve a relocation company or one of those agencies that you pay to actively search for places. Most letting agencies already offer that as a service for free! Find one or two agencies that look good to you and that operate in the areas of the city you want to live in, and give them a call to tell them about your preferences. They’ll usually email or Whatsapp you a few times per week if new properties come on the market that fit your budget and preferences.
+There’s no need to involve a relocation company or one of those agencies that you pay to actively search for places. Most letting agencies already offer that as a free service. Find one or two agencies that look good to you and that operate in the areas of the city you want to live in, and give them a call to tell them about your preferences. They’ll usually email or Whatsapp you a few times per week if new properties come on the market that fit your budget and preferences.
 
 I finally found my (awesome!) apartment via a letting agent that I had done a viewing with earlier, and who felt bad about me not ending up getting that place, although I really liked it. She then immediately scheduled a viewing for me when she came across a similar property. Within a few hours after that viewing my offer was accepted, and a week later I got the keys for my new apartment.
 

@@ -8,7 +8,7 @@ I’ve been kind of running all of the past few years, even sprinting maybe. Now
 
 What I do know, however, is, albeit in broad strokes, what I find important. I find it important to create things, to be creative, and to solve problems.
 
-To connect that to who I am, I think I need to figure out the ‘why’. Why do I get so much intrinsic energy out of building companies? Why do I feel like I have to get out of bed at the crack of dawn every day and work until I don’t have any energy left? And why am I able to find the energy to do those things, but can’t muster the energy for certain other things?
+To connect that to who I am, I think I need to figure out the ‘why’. Why do I get so much intrinsic energy out of building companies? Why do I feel like I have to get out of bed at dawn every day and work until I don’t have any energy left? And why am I able to find the energy to do those things, but can’t muster the energy for certain other things?
 
 The ‘why’ will get me to the ‘what’ in what I am as a person, I think.
 

@@ -6,7 +6,7 @@ category: User experience
 
 A lot has been written on this subject, and if you want the definitive guide on product design and software development (if there is such a thing), this is definitely not it. What this is however, is my personal vision on what’s important for building quality tech products and user experiences.
 
-Good software...
+Good software…
 
 ## Abstracts the logic
 
@@ -31,7 +31,7 @@ Your users are probably not computer science graduates or developers, so don’t
 
 ## Adheres to expectations
 
-Don’t reinvent the wheel. Use established patterns wherever possible.
+Use established patterns wherever possible.
 
 * If there’s a rich text editor, I’ll expect to be able to mark text as bold or italic. 
 * If there’s a modal window, I expect to be able to click outside of it to close it. 

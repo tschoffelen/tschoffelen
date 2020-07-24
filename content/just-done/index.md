@@ -29,7 +29,7 @@ DANIELLA
 Fulfilled?
 
 JOHN
-Maybe, but at the very least just done, complete, slightly complacent about all that’s left to do. I think that’s the right way to feel at the end of a day.
+Maybe, but at least just done, complete, slightly complacent about all that’s left to do. I think that’s the right way to feel when the day is complete.
 
 DANIELLA
 Done.
