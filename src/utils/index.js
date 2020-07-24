@@ -18,8 +18,12 @@ export const renderPost = ({ title, created, category, link, external }) =>
     </Link>
   )
 
-export const organizePosts = posts =>
-  posts
+export const organizePosts = posts => {
+  const titles = posts
+    .filter(post => post.frontmatter)
+    .map(post => post.frontmatter.title + format(new Date(post.frontmatter.date), "MMM yyyy"))
+
+  return posts
     .map(post => {
       const date = new Date(post.createdAt || post.frontmatter.date)
       return {
@@ -33,4 +37,6 @@ export const organizePosts = posts =>
         month: format(date, "MMM yyyy"),
       }
     })
+    .filter(post => post.frontmatter || !titles.includes(post.title + post.month))
     .sort((a, b) => (a.date < b.date ? 1 : -1))
+}
