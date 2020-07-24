@@ -1,0 +1,14 @@
+name: Proselint
+
+on: [push]
+
+jobs:
+  proselint:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: checkout
+      uses: actions/checkout@v1
+    - name: install proselint
+      run: pip3 install proselint
+    - name: run proselint
+      run: proselint content/*/index.md
