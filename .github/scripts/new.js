@@ -27,7 +27,7 @@ category: Writing
 ;(async () => {
   await exec("git checkout master")
   await exec("git pull")
-  await exec(`git checkout -b '${name}'`)
+  await exec(`git checkout -b 'post/${name}'`)
 
   if (fs.existsSync(dir)) {
     console.error("\nError: that post name already exists.\n")
