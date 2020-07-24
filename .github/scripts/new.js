@@ -2,8 +2,8 @@ const fs = require("fs")
 const path = require("path")
 const slug = require("slug")
 const { format } = require("date-fns")
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const util = require("util")
+const exec = util.promisify(require("child_process").exec)
 
 const base = path.join(__dirname, "..", "..", "content")
 
