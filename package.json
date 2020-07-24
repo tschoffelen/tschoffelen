@@ -45,9 +45,8 @@
     "serverless-s3-sync": "^1.14.4"
   },
   "scripts": {
-    "prep": "node .github/download-posts.js",
-    "build": "yarn prep && gatsby build",
-    "develop": "yarn prep && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn develop",
     "serve": "gatsby serve",
