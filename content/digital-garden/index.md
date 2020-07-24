@@ -4,9 +4,9 @@ date: 2020-07-24
 category: Writing
 ---
 
-Something that I recently came across is the concept of a **digital garden**. It's by no means a new concept, although this terminology for it seems to be gaining some traction this year.
+Something that I recently came across is the concept of a **digital garden**. It's not a new concept, although this terminology for it seems to be gaining some traction this year.
 
-In very basic terms, it is a different format for written content on the web. It's about moving away from blog posts ordered by dates and categories, into more of an interlinked web of notes.
+In basic terms, it is a different format for written content on the web. It's about moving away from blog posts ordered by dates and categories, into more of an interlinked web of notes.
 
 One of the main ingredients is bi-directional links between those notes, creating a network of notes, similar to Wikipedia. A common way of doing that is linking using a link syntax that looks similar to what Wikipedia uses: `[[Digital gardens]]` would be how you'd link from another post to the one you're reading right now.
 
