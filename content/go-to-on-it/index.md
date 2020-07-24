@@ -4,7 +4,7 @@ date: 2020-05-21
 category: Screenplaying
 ---
 
-I've been watching some old episodes of NCIS in the background while doing some mundane admin tasks for work (only outside office hours of course!) - mostly just to have some background noise. But some of their little snippets of dialogue between the characters are pretty good…
+I've been watching some old episodes of NCIS in the background while doing some mundane admin tasks for work (only outside office hours of course) - mostly just to have some background noise. But some of their little snippets of dialogue between the characters are pretty good…
 
 ```fountain
 INT. NICS OFFICE - DAY
@@ -19,7 +19,7 @@ GIBBS
 DiNozzo, talk to his manager.
 
 TONY
-Go to, boss!
+Go to, boss.
 
 Gibbs stops in his tracks. McGee looks up.
 
@@ -27,7 +27,7 @@ GIBBS
 What?
 
 TONY
-‘Go to’! It’s the new ‘on it’. New catch phase, just came up with it. You like it?
+‘Go to’. It’s the new ‘on it’. New catch phase, just came up with it. You like it?
 
 GIBBS
 No - The manager?

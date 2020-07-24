@@ -23,7 +23,7 @@ DIANIELLA
 Let’s start again fresh tomorrow.
 
 JOHN
-I hope at the end of the day I’ll feel as done with everything as I feel today.
+I hope at the end of tomorrow I’ll feel as done with everything as I feel today.
 
 DANIELLA
 Fulfilled?

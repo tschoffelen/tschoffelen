@@ -16,7 +16,7 @@ unlisted: true
 
 * **Camden Lock Market**<br />Bit touristy, but lots of small fun shops and some food places
 * **Spitalfields Market**<br />Market hall with stalls, some nice restaurants in the area
-* **Southbank book market**<br />Nice outdoors book market, open daily from 10am to 6pm, right under Waterloo Bridge on Queen's Walk
+* **Southbank book market**<br />Nice outdoors book market, open daily from 10 a.m. to 6 p.m., right under Waterloo Bridge on Queen's Walk
 
 ## Breakfast/Lunch
 
@@ -53,5 +53,5 @@ unlisted: true
 ## Coffee
 
 * **All Bar One**<br />Has locations all over London, usually much space to sit during mornings or afternoons on weekdays. Avoid around lunch time
-* **Serata Hall**<br />Usually lots of space, very close to Old Street Station
+* **Serata Hall**<br />Usually lots of space, close to Old Street Station
 * **The Book Club Hackney**<br />Chill coffee spot

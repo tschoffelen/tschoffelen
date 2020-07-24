@@ -8,7 +8,7 @@ When I first lived in London about four years ago, I lived with housemates. That
 
 When I moved to Amsterdam, I got an apartment of my own, and loved the space and freedom it gave me. When moving back to London I wanted to keep that, but also knew the rental market was even worse than Amsterdam, with weekly rent prices that are about equal to what my mom pays a month for an apartment at least three times the size (she lives in a relatively small city in the south of the Netherlands).
 
-I was also very limited in the time I had available to do viewings in London. Every day away from Amsterdam was a day I couldn’t be spending on finishing projects at my Amsterdam company, and the weeks were counting down quickly.
+I was also limited in the time I had available to do viewings in London. Every day away from Amsterdam was a day I couldn’t be spending on finishing projects at my Amsterdam company, and the weeks were counting down quickly.
 
 My biggest lesson:
 
@@ -23,4 +23,4 @@ Other things to know when you’re looking to rent in London:
 - Rent prices are often listed per week, instead of per calendar month. To get the monthly price, you multiply by 52, then divide by 12.
 - A letting agency will usually ask you to place a bid. It’s common to outbid the listing price.
 - UK letting contracts usually have a finite duration. 12 or 24 month contracts are pretty standard. If you need to negotiate on price, you could try going for a lower price but a longer contract (e.g. 36 months). If a contract is longer than 24 months, it’s pretty usual to build in a break clause after 24 months, where both the tenant and landlord have the ability to get out of the agreement if they wish to.
-- The market moves very fast. If you see something you like, immediately call the agency to schedule a viewing!
+- The market moves fast. If you see something you like, immediately call the agency to schedule a viewing.

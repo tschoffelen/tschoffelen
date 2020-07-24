@@ -21,7 +21,7 @@ That's why I started building a toolkit named [Macaw](https://github.com/macaw-e
 It introduces a neat structure for managing email templates, separating out copy and layouts as re-usable components:
 
 - In Macaw, an email **template** is a simple Markdown file with some frontmatter to choose what layout to use, and optionally set a subject, etc. This makes it easy to edit the copy of emails, even for non-developers.
-- A **layout** is written in [MJML](https://mjml.io/), a very simple HTML-like markup language that allows you to design responsive and cross-client compatible emails.
+- A **layout** is written in [MJML](https://mjml.io/), a simple HTML-like markup language that allows you to design responsive and cross-client compatible emails.
 
 Keeping these two things separate allows easy editing by each stakeholder (designers can work on the layout files, partnerships can work on the actual templates).
 
@@ -35,6 +35,6 @@ It currently consists of the following tools:
 - **In-browser preview tool** to help you view what your emails will look like while editing them, in real-time.
 - **Command-line utility** that automates the process of setting up the email templates structure in your project.
 
-I'm very excited for people to see this, and look forward to extending it in the coming months with additional functionality.
+I'm excited for people to see this, and look forward to extending it in the coming months with additional functionality.
 
 <a class="button" rel="noopener noreferrer" href="https://github.com/macaw-email/macaw" target="_blank">View on Github</a>
