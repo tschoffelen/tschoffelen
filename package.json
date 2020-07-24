@@ -42,7 +42,8 @@
     "prettier": "^1.19.1",
     "serverless": "^1.63.0",
     "serverless-cloudfront-invalidate": "^1.5.0",
-    "serverless-s3-sync": "^1.14.4"
+    "serverless-s3-sync": "^1.14.4",
+    "slug": "^3.3.2"
   },
   "scripts": {
     "build": "gatsby build",
@@ -52,6 +53,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "yarn format",
+    "new": "node .github/scripts/new.js",
     "deploy": "serverless deploy --region eu-west-1 --stage production"
   }
 }
