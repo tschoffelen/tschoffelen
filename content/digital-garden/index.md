@@ -24,3 +24,8 @@ This idea of maintaining a repository of interlinked notes goes beyond just publ
 * [Obsidian](https://obsidian.md/) is similar, but in the form of a desktop app that has some cool features, including a visual representation of your network of notes.
 
 ![Obsidian app](obsidian.png)
+
+Some additional resources:
+
+* Joel Hooks on turning his blog [into a digital garden](https://joelhooks.com/digital-garden)
+* A [long list](https://github.com/KasperZutterman/Second-Brain) of public 'second brains'
