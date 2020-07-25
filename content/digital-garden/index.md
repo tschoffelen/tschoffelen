@@ -18,9 +18,17 @@ Some really impressive examples of digital gardens:
 
 Maggie also maintains a **[🌱 GitHub repo](https://github.com/MaggieAppleton/digital-gardeners)** with a list of 'digital gardeners' and tools you can use to create your own digital garden.
 
+
+## Private gardens
+
 This idea of maintaining a repository of interlinked notes goes beyond just publishing them to the web. There are also many tools to maintain a 'private garden' of notes, sometimes referred to as a 'second brain' or 'zettelkasten':
 
 * [Roam](https://roamresearch.com/) is a web-based tool to maintain a personal set of interlinked and daily notes.
 * [Obsidian](https://obsidian.md/) is similar, but in the form of a desktop app that has some cool features, including a visual representation of your network of notes.
 
 ![Obsidian app](obsidian.png)
+
+Some additional resources:
+
+* Joel Hooks on turning his blog [into a digital garden](https://joelhooks.com/digital-garden)
+* A [long list](https://github.com/KasperZutterman/Second-Brain) of public 'second brains'
