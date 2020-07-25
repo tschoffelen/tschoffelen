@@ -1,17 +1,17 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path")
+const slug = require("slug")
+const fs = require("fs")
+const axios = require("axios")
+const moment = require("moment")
+const { createFilePath } = require("gatsby-source-filesystem")
 
 const downloadPosts = async () => {
-  const fs = require("fs")
-  const axios = require("axios")
-  const moment = require("moment")
-
   const res = await axios.get(
-      "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40tschoffelen"
-    )
+    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40tschoffelen"
+  )
 
   const data = res.data.items
-    .filter(({categories}) => categories.length)
+    .filter(({ categories }) => categories.length)
     .map(({ title, pubDate, link, guid }) => ({
       id: guid,
       title: title.replace("&amp;", "&"),
@@ -20,7 +20,6 @@ const downloadPosts = async () => {
     }))
 
   fs.writeFileSync("./src/data/posts.json", JSON.stringify(data), "utf8")
-  fs.writeFileSync("./static/posts.json", JSON.stringify(data), "utf8")
 
   console.log(`Downloaded ${data.length} posts`)
 }
