@@ -1,0 +1,37 @@
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-spacing: 0;
+  margin-top: 12px;
+  margin-bottom: 24px;
+
+  img {
+    width: 100%;
+  }
+
+  th {
+    font-weight: 600;
+    text-align: left;
+    color: $link-hover-light;
+    background: #c2cae6;
+  }
+
+  td,
+  th {
+    border-left: 1px solid #c2cae6;
+    border-top: 1px solid #c2cae6;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin: 0;
+    vertical-align: top;
+  }
+
+  tr td:last-child,
+  tr th:last-child {
+    border-right: 1px solid #c2cae6;
+  }
+  tr:last-child td {
+    border-bottom: 1px solid #c2cae6;
+  }
+}
