@@ -40,6 +40,10 @@ function SEO({ description, lang, meta, title }) {
           content: `PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE`,
         },
         {
+          name: `title`,
+          content: title,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
@@ -56,8 +60,12 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          name: `og:image`,
+          content: `https://schof.co/social.png`,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -70,6 +78,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `https://schof.co/social.png`,
         },
       ].concat(meta)}
     >
