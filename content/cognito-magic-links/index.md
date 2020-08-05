@@ -1,5 +1,5 @@
 ---
-title: Magic links with AWS Cognito
+title: Serverless magic links with AWS Cognito
 date: 2020-07-27
 category: Serverless
 ---
