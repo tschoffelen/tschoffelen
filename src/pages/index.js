@@ -80,7 +80,7 @@ const IndexPage = ({
           See my code on Github
         </a>
         <a
-          href="https://twitter.com.com/tschoffelen"
+          href="https://twitter.com/tschoffelen"
           className="u-url"
           rel="noopener noreferrer"
           target="_blank"
