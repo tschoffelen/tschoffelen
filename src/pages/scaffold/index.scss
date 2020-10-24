@@ -1,0 +1,121 @@
+.scaffold {
+  h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  label,
+  .label {
+    color: #777;
+    font-size: 16px;
+    display: block;
+
+    &.checkbox {
+      color: #000;
+    }
+  }
+
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    display: block;
+    box-sizing: border-box;
+    height: 36px;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 2px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 0 12px;
+    border: 1px solid #ddd;
+
+    &:invalid {
+      border-color: #f92672;
+      outline-color: #f92672;
+    }
+  }
+
+  button {
+    outline: 0;
+    border: 0;
+    background: #355fc5;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px 20px;
+    height: 36px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    select:first-child {
+      margin-right: 8px;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      margin-bottom: 0;
+    }
+    span {
+      display: flex;
+      flex: 0;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      margin-left: 11px;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .well {
+    border-radius: 4px;
+    background-color: #eeeeee;
+    padding: 14px 20px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+
+    button {
+      background: #555;
+    }
+
+    .summary {
+      margin: -6px 0;
+      font-size: 12px;
+    }
+
+    h4 {
+      margin: 0;
+      margin-bottom: 4px;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-left: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
