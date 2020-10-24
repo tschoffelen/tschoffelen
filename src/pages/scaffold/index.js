@@ -10,7 +10,7 @@ import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 
 import "./index.scss";
-import { Checkboxes, TextInput, TriggerEditor } from "./inputs";
+import { Checkboxes, TextInput, TriggerEditor } from "../../components/inputs";
 
 const defaultFunc = (first = false) => ({
   id: uuid(),
@@ -216,6 +216,7 @@ yarn test
     zip.file(".gitignore", `node_modules
 *.log
 .serverless
+.build
 .idea
 /build
 coverage
