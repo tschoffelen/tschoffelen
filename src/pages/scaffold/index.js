@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { ArrowDownCircle, ArrowUpCircle, Trash } from "react-feather";
-import Zip from "jszip";
-import yaml from "yaml";
-import { saveAs } from "file-saver";
 
 import SEO from "../../components/SEO";
 import Header from "../../components/Header";
@@ -11,6 +8,8 @@ import Layout from "../../components/Layout";
 
 import "./index.scss";
 import { Checkboxes, TextInput, TriggerEditor } from "../../components/inputs";
+import { createTriggerPreview } from "../../utils/scaffold/createTriggerPreview";
+import { exportZip } from "../../utils/scaffold/exportZip";
 
 const defaultFunc = (first = false) => ({
   id: uuid(),
@@ -24,271 +23,22 @@ const defaultFunc = (first = false) => ({
   collapsed: false
 });
 
-const createTriggerPreview = (events) => {
-  return events.map((event) => {
-    switch (event.type) {
-      case "httpGet":
-      case "httpPost":
-      case "httpPut":
-      case "httpDelete":
-      case "httpAny":
-        return `${event.type.substring(4).toUpperCase()} ${event.path}`;
-      case "scheduleRate":
-        return `Every ${event.rate}`;
-      case "scheduleCron":
-        return `Cron ${event.cron}`;
-      case "s3ObjectCreated":
-        return `S3 object created in ${event.bucket}`;
-      case "eventBridgeBus":
-        return `EventBridge`;
-      case "eventBridgeSource":
-        return `EventBridge ${event.source}`;
-      default:
-        return null;
-    }
-  }).filter((event) => !!event).join(", ");
-};
-
-const generateSls = (extensions, functions, { name, domain, cert }) => {
-  const compiledFunctions = functions.map(func => {
-    const name = func.name.toLowerCase().trim();
-    return {
-      name,
-      sls: {
-        [name]: {
-          handler: `src/functions/${name}/handler.handler`,
-          events: func.triggers.map((event) => {
-            switch (event.type) {
-              case "httpGet":
-              case "httpPost":
-              case "httpPut":
-              case "httpDelete":
-              case "httpAny":
-                return {
-                  http: {
-                    path: event.path,
-                    method: event.type.substring(4).toLowerCase()
-                  }
-                };
-              case "scheduleRate":
-                return {
-                  schedule: `rate(${event.rate})`
-                };
-              case "scheduleCron":
-                return {
-                  schedule: `cron(${event.cron})`
-                };
-              case "s3ObjectCreated":
-                return {
-                  s3: {
-                    bucket: event.bucket,
-                    event: "s3:ObjectCreated:*",
-                    existing: true
-                  }
-                };
-              case "eventBridgeBus":
-                return {
-                  eventBridge: {
-                    eventBus: event.bus || "default"
-                  }
-                };
-              case "eventBridgeSource":
-                return {
-                  eventBridge: {
-                    pattern: {
-                      source: [event.source]
-                    }
-                  }
-                };
-              default:
-                return null;
-            }
-          })
-        }
-      }
-    };
-  });
-  const slsObject = {
-    service: name,
-    plugins: [
-      "serverless-offline",
-      ...extensions
-    ],
-    custom: {
-      stage: `\${opt:stage, 'dev'}`,
-      region: `\${opt:region, 'eu-west-1'}`
-    },
-    provider: {
-      name: "aws",
-      runtime: "nodejs10.x",
-      timeout: 30,
-      region: `\${self:custom.region}`,
-      stage: `\${self:custom.stage}`,
-      environment: {
-        SERVICE: `\${self:service}`,
-        STAGE: `\${self:custom.stage}`,
-        REGION: `\${self:custom.region}`,
-        NODE_ENV: `\${self:custom.stage}`
-      },
-      iamRoleStatements: []
-    },
-    functions: functions
-      .map((func) => `\${file(./src/functions/${func.name.toLowerCase().trim()}/function.yml)}`)
-  };
-
-  extensions.forEach((ext) => {
-    switch (ext) {
-      case "serverless-prune-plugin":
-        slsObject.custom.prune = {
-          automatic: true,
-          number: 20
-        };
-        break;
-      case "serverless-esbuild":
-        slsObject.custom.esbuild = {
-          packager: "yarn"
-        };
-        slsObject.package = {
-          individually: true
-        };
-        break;
-      case "serverless-domain-manager":
-        slsObject.custom.customDomain = {
-          domainName: domain,
-          stage: "production",
-          certificateName: cert || domain,
-          createRoute53Record: true,
-          endpointType: "regional",
-          autoDomain: true
-        };
-        break;
-      default:
-        break;
-    }
-  });
-
-  const sls = yaml.stringify(slsObject, { indent: 2 }).replace(/\n(\w+):\n/gi, "\n\n$1:\n");
-  console.log(sls, compiledFunctions);
-
-  return { sls, compiledFunctions };
-};
-
 const ScaffoldPage = () => {
   const [name, setName] = useState("");
   const [domain, setDomain] = useState("");
   const [cert, setCert] = useState("");
+  const [sentryDsn, setSentryDsn] = useState("");
   const [extensions, setExtensions] = useState([]);
   const [functions, setFunctions] = useState(() => [defaultFunc(true)]);
 
-  const exportZip = () => {
-    const realName = name.toLowerCase().trim();
-    const zip = new Zip();
-    const { sls, compiledFunctions } = generateSls(extensions, functions, {
-      name: realName,
-      domain,
-      cert
-    });
-    const titleName = realName
-      .split(/([\s_-]+)/gi)
-      .map((part) => part[0].toUpperCase() + part.substring(1).toLowerCase()).join(" ");
-    zip.file("serverless.yml", sls);
-    zip.file("README.md", `# ${titleName}
-
-A serverless project.
-
-
-### Running locally
-
-Start serverless-offline:
-
-\`\`\`
-yarn
-yarn start
-\`\`\`
-
-Run jest tests:
-
-\`\`\`
-yarn test
-\`\`\`
-
-
-### Deployment
-
-Deploy to \`dev\` stage:
-
-\`\`\`
-yarn deploy
-\`\`\`
-
-Deploy to \`production\` stage:
-
-\`\`\`
-yarn deploy --stage production
-\`\`\`
-
-`);
-    zip.file("package.json", `{
-  "name": "${realName}",
-  "version": "1.0.0",
-  "license": "proprietary",
-  "private": true,
-  "scripts": {
-    "start": "serverless offline",
-    "deploy": "serverless deploy",
-    "test": "jest"
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
-    "serverless": "^2.8.0",
-    "serverless-offline": "^6.8.0",` +
-      (extensions.includes("serverless-esbuild") ? `\n    "serverless-esbuild": "^1.4.0",` : "") +
-      (extensions.includes("serverless-domain-manager") ? `\n    "serverless-domain-manager": "^5.0.0",` : "") +
-      (extensions.includes("serverless-dotenv-plugin") ? `\n    "serverless-dotenv-plugin": "^3.1.0",` : "") +
-      (extensions.includes("serverless-prune-plugin") ? `\n    "serverless-prune-plugin": "^1.4.1",` : "") +
-      `
-    "jest": "^26.6.1"
-  }
-}
-`);
-    zip.file(".gitignore", `node_modules
-*.log
-.serverless
-.build
-.idea
-/build
-coverage
-.DS_Store
-.env
-.env.*
-`);
-    const src = zip.folder("src");
-    src.folder("lib");
-    const funcs = src.folder("functions");
-    Object.values(compiledFunctions).forEach((func) => {
-      const dir = funcs.folder(func.name);
-      dir.file("function.yml", yaml.stringify(func.sls, { indent: 2 }));
-      dir.file("test.js", `const { handler } = require("./handler");
-
-test("${func.name}", async () => {
-  // add your tests here
-  // const result = await handler();
-});
-`);
-      dir.file("handler.js", `module.exports.handler = async (event) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      status: "hello world!"
-    })
-  };
-};
-`);
-    });
-
-    zip.generateAsync({ type: "blob" }).then((content) => saveAs(content, `${realName}.zip`));
-  };
+  const submit = () => exportZip({
+    extensions,
+    functions,
+    name,
+    domain,
+    cert,
+    sentryDsn
+  });
 
   const addFunction = () => {
     setFunctions([
@@ -336,14 +86,30 @@ test("${func.name}", async () => {
           pattern="[\w-]{2,36}"/>
 
         <Checkboxes
-          title="Plugins"
+          title="Extensions"
           value={extensions}
           onChange={setExtensions}
           options={[
-            "serverless-dotenv-plugin",
-            "serverless-domain-manager",
-            "serverless-esbuild",
-            "serverless-prune-plugin"
+            {
+              id: "serverless-domain-manager",
+              title: "Custom domain – serverless-domain-manager"
+            },
+            {
+              id: "serverless-esbuild",
+              title: "ESbuild – serverless-esbuild"
+            },
+            {
+              id: "sentry",
+              title: "Sentry – @sentry/serverless"
+            },
+            {
+              id: "serverless-prune-plugin",
+              title: "Prune old versions – serverless-prune-plugin"
+            },
+            {
+              id: "serverless-dotenv-plugin",
+              title: "Load .env into serverless – serverless-dotenv-plugin"
+            }
           ]}/>
 
         {extensions.includes("serverless-domain-manager") && (
@@ -358,6 +124,15 @@ test("${func.name}", async () => {
               value={cert}
               onChange={setCert}
               placeholder="*.myapp.com"/>
+          </>
+        )}
+        {extensions.includes("sentry") && (
+          <>
+            <TextInput
+              title="Sentry DSN"
+              value={sentryDsn}
+              onChange={setSentryDsn}
+              placeholder="https://xxx@xxx.ingest.sentry.io/xxx"/>
           </>
         )}
 
@@ -390,7 +165,9 @@ test("${func.name}", async () => {
                 )}
               </h4>
               {func.collapsed ? (
-                <div className="summary" onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
+                <div
+                  className="summary"
+                  onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
                   {createTriggerPreview(func.triggers)}
                 </div>
               ) : (
@@ -412,7 +189,7 @@ test("${func.name}", async () => {
         <button onClick={addFunction}>Add function</button>
 
         <h3>Export</h3>
-        <button onClick={exportZip}>Export scaffolding</button>
+        <button onClick={submit}>Export scaffolding</button>
       </div>
     </Layout>
   );

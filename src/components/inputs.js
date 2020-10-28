@@ -25,25 +25,34 @@ export const Checkboxes = ({ title, options, value = [], onChange, ...props }) =
     <>
       <div className="label">{title}</div>
       <div className="checkboxes">
-        {options.map((opt) => (
-          <label for={opt} className="checkbox">
-            <input
-              {...props}
-              id={opt}
-              type="checkbox"
-              checked={(value || []).includes(opt)}
-              onClick={() => {
-                if ((value || []).includes(opt)) {
-                  onChange((value || []).filter((v) => v !== opt));
-                } else {
-                  onChange([...(value || []), opt]);
-                }
-              }}
-              value={opt}
-            />
-            {opt}
-          </label>
-        ))}
+        {options.map((opt) => {
+          if (typeof opt === "string") {
+            opt = {
+              id: opt,
+              title: opt
+            };
+          }
+          return (
+            <label for={opt.id} className="checkbox">
+              <input
+                {...props}
+                id={opt.id}
+                type="checkbox"
+                disabled={!!opt.disabled}
+                checked={(value || []).includes(opt.id)}
+                onClick={() => {
+                  if ((value || []).includes(opt.id)) {
+                    onChange((value || []).filter((v) => v !== opt.id));
+                  } else {
+                    onChange([...(value || []), opt.id]);
+                  }
+                }}
+                value={opt.id}
+              />
+              {opt.title}
+            </label>
+          );
+        })}
       </div>
     </>
   );
@@ -174,29 +183,29 @@ export const TriggerProperties = ({ event, onChange }) => {
     case "eventBridgeSource":
       return (
         <>
-        <input
-          type="text"
-          title="Event source filter"
-          value={event.source || ""}
-          onChange={(e) => onChange("source", e.target.value)}
-          placeholder="my.source"/>
-      <span>
+          <input
+            type="text"
+            title="Event source filter"
+            value={event.source || ""}
+            onChange={(e) => onChange("source", e.target.value)}
+            placeholder="my.source"/>
+          <span>
             <HelpCircle
               size={18}
               color='#355fc5'
               onClick={() => window.open("https://docs.aws.amazon.com/eventbridge/latest/userguide/filtering-examples-structure.html#filtering-match-values")}/>
           </span>
-    </>
+        </>
       );
     case "eventBridgeBus":
       return (
         <>
-        <input
-          type="text"
-          title="Event bus"
-          value={event.bus || "default"}
-          onChange={(e) => onChange("bus", e.target.value)}
-          placeholder="default"/>
+          <input
+            type="text"
+            title="Event bus"
+            value={event.bus || "default"}
+            onChange={(e) => onChange("bus", e.target.value)}
+            placeholder="default"/>
           <span>
             <HelpCircle
               size={18}
@@ -208,12 +217,12 @@ export const TriggerProperties = ({ event, onChange }) => {
     case "s3ObjectCreated":
       return (
         <>
-        <input
-          type="text"
-          title="Bucket name"
-          value={event.bucket || ""}
-          onChange={(e) => onChange("bucket", e.target.value)}
-          placeholder="bucket name"/>
+          <input
+            type="text"
+            title="Bucket name"
+            value={event.bucket || ""}
+            onChange={(e) => onChange("bucket", e.target.value)}
+            placeholder="bucket name"/>
           <span>
             <HelpCircle
               size={18}
