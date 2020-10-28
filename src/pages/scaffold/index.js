@@ -34,13 +34,9 @@ const createTriggerPreview = (events) => {
       case "httpAny":
         return `${event.type.substring(4).toUpperCase()} ${event.path}`;
       case "scheduleRate":
-        return {
-          schedule: `Every ${event.rate}`
-        };
+        return `Every ${event.rate}`;
       case "scheduleCron":
-        return {
-          schedule: `Cron ${event.cron}`
-        };
+        return `Cron ${event.cron}`;
       case "s3ObjectCreated":
         return `S3 object created in ${event.bucket}`;
       case "eventBridgeBus":
