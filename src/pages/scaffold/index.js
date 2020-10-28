@@ -33,8 +33,14 @@ const createTriggerPreview = (events) => {
       case "httpDelete":
       case "httpAny":
         return `${event.type.substring(4).toUpperCase()} ${event.path}`;
-      case "schedule":
-        return `Schedule ${event.exp}`;
+      case "scheduleRate":
+        return {
+          schedule: `Every ${event.rate}`
+        };
+      case "scheduleCron":
+        return {
+          schedule: `Cron ${event.cron}`
+        };
       case "s3ObjectCreated":
         return `S3 object created in ${event.bucket}`;
       case "eventBridgeBus":
@@ -116,9 +122,6 @@ const generateSls = (name, extensions, functions) => {
       stage: `\${opt:stage, 'dev'}`,
       region: `\${opt:region, 'eu-west-1'}`
     },
-    package: {
-      individually: true
-    },
     provider: {
       name: "aws",
       runtime: "nodejs10.x",
@@ -149,6 +152,9 @@ const generateSls = (name, extensions, functions) => {
         slsObject.custom.esbuild = {
           packager: "yarn"
         };
+        slsObject.package = {
+          individually: true
+        };
         break;
       default:
         break;
@@ -178,18 +184,37 @@ const ScaffoldPage = () => {
 
 A serverless project.
 
+
 ### Running locally
+
+Start serverless-offline:
 
 \`\`\`
 yarn
 yarn start
 \`\`\`
 
-### Running tests
+Run jest tests:
 
 \`\`\`
 yarn test
 \`\`\`
+
+
+### Deployment
+
+Deploy to \`dev\` stage:
+
+\`\`\`
+yarn deploy
+\`\`\`
+
+Deploy to \`production\` stage:
+
+\`\`\`
+yarn deploy --stage production
+\`\`\`
+
 `);
     zip.file("package.json", `{
   "name": "${realName}",
@@ -206,8 +231,9 @@ yarn test
   "devDependencies": {
     "serverless": "^2.8.0",
     "serverless-offline": "^6.8.0",` +
-      (extensions.includes("serverless-prune-plugin") ? `\n    "serverless-prune-plugin": "^1.4.1",` : "") +
       (extensions.includes("serverless-esbuild") ? `\n    "serverless-esbuild": "^1.4.0",` : "") +
+      (extensions.includes("serverless-dotenv-plugin") ? `\n    "serverless-dotenv-plugin": "^3.1.0",` : "") +
+      (extensions.includes("serverless-prune-plugin") ? `\n    "serverless-prune-plugin": "^1.4.1",` : "") +
       `
     "jest": "^26.6.1"
   }
@@ -230,10 +256,11 @@ coverage
     Object.values(compiledFunctions).forEach((func) => {
       const dir = funcs.folder(func.name);
       dir.file("function.yml", yaml.stringify(func.sls, { indent: 2 }));
-      dir.file("test.js", `const { handler } = require("./handler.js");
+      dir.file("test.js", `const { handler } = require("./handler");
 
-it("${func.name}", () => {
+test("${func.name}", async () => {
   // add your tests here
+  // const result = await handler();
 });
 `);
       dir.file("handler.js", `module.exports.handler = async (event) => {
@@ -301,6 +328,7 @@ it("${func.name}", () => {
           onChange={setExtensions}
           options={[
             "serverless-prune-plugin",
+            "serverless-dotenv-plugin",
             "serverless-esbuild"
           ]}/>
 
