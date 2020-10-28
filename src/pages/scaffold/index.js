@@ -49,7 +49,7 @@ const createTriggerPreview = (events) => {
   }).filter((event) => !!event).join(", ");
 };
 
-const generateSls = (name, extensions, functions) => {
+const generateSls = (extensions, functions, { name, domain, cert }) => {
   const compiledFunctions = functions.map(func => {
     const name = func.name.toLowerCase().trim();
     return {
@@ -152,6 +152,16 @@ const generateSls = (name, extensions, functions) => {
           individually: true
         };
         break;
+      case "serverless-domain-manager":
+        slsObject.custom.customDomain = {
+          domainName: domain,
+          stage: "production",
+          certificateName: cert || domain,
+          createRoute53Record: true,
+          endpointType: "regional",
+          autoDomain: true
+        };
+        break;
       default:
         break;
     }
@@ -165,13 +175,19 @@ const generateSls = (name, extensions, functions) => {
 
 const ScaffoldPage = () => {
   const [name, setName] = useState("");
+  const [domain, setDomain] = useState("");
+  const [cert, setCert] = useState("");
   const [extensions, setExtensions] = useState([]);
   const [functions, setFunctions] = useState(() => [defaultFunc(true)]);
 
   const exportZip = () => {
     const realName = name.toLowerCase().trim();
     const zip = new Zip();
-    const { sls, compiledFunctions } = generateSls(realName, extensions, functions);
+    const { sls, compiledFunctions } = generateSls(extensions, functions, {
+      name: realName,
+      domain,
+      cert
+    });
     const titleName = realName
       .split(/([\s_-]+)/gi)
       .map((part) => part[0].toUpperCase() + part.substring(1).toLowerCase()).join(" ");
@@ -228,6 +244,7 @@ yarn deploy --stage production
     "serverless": "^2.8.0",
     "serverless-offline": "^6.8.0",` +
       (extensions.includes("serverless-esbuild") ? `\n    "serverless-esbuild": "^1.4.0",` : "") +
+      (extensions.includes("serverless-domain-manager") ? `\n    "serverless-domain-manager": "^5.0.0",` : "") +
       (extensions.includes("serverless-dotenv-plugin") ? `\n    "serverless-dotenv-plugin": "^3.1.0",` : "") +
       (extensions.includes("serverless-prune-plugin") ? `\n    "serverless-prune-plugin": "^1.4.1",` : "") +
       `
@@ -323,20 +340,38 @@ test("${func.name}", async () => {
           value={extensions}
           onChange={setExtensions}
           options={[
-            "serverless-prune-plugin",
             "serverless-dotenv-plugin",
-            "serverless-esbuild"
+            "serverless-domain-manager",
+            "serverless-esbuild",
+            "serverless-prune-plugin"
           ]}/>
+
+        {extensions.includes("serverless-domain-manager") && (
+          <>
+            <TextInput
+              title="Domain name for your API"
+              value={domain}
+              onChange={setDomain}
+              placeholder="api.myapp.com"/>
+            <TextInput
+              title="Certificate name (needs to exist in us-east-1)"
+              value={cert}
+              onChange={setCert}
+              placeholder="*.myapp.com"/>
+          </>
+        )}
 
         <h3>Functions</h3>
         <div className="functions">
           {functions.map(func => (
             <div key={func.id} className="well">
               <h4>
-                <span>{func.name || "Untitled function"}</span>
+                <span onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
+                  {func.name || "Untitled function"}
+                </span>
                 {func.collapsed ? (
                   <span>
-                      <ArrowUpCircle
+                      <ArrowDownCircle
                         onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}
                         color='#777'
                         size={18}/>
@@ -347,7 +382,7 @@ test("${func.name}", async () => {
                       onClick={() => removeFunction(func.id)}
                       color='#f92672'
                       size={18}/>
-                    <ArrowDownCircle
+                    <ArrowUpCircle
                       onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}
                       color='#333'
                       size={18}/>
@@ -355,7 +390,7 @@ test("${func.name}", async () => {
                 )}
               </h4>
               {func.collapsed ? (
-                <div className="summary">
+                <div className="summary" onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
                   {createTriggerPreview(func.triggers)}
                 </div>
               ) : (
@@ -375,6 +410,7 @@ test("${func.name}", async () => {
           ))}
         </div>
         <button onClick={addFunction}>Add function</button>
+
         <h3>Export</h3>
         <button onClick={exportZip}>Export scaffolding</button>
       </div>

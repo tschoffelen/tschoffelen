@@ -12,6 +12,7 @@
     color: #777;
     font-size: 16px;
     display: block;
+    user-select: none;
 
     &.checkbox {
       color: #000;
@@ -25,6 +26,7 @@
   input[type="text"],
   textarea,
   select {
+    user-select: initial;
     display: block;
     box-sizing: border-box;
     height: 36px;
@@ -40,6 +42,10 @@
       border-color: #f92672;
       outline-color: #f92672;
     }
+  }
+
+  .checkboxes {
+    margin-bottom: 15px;
   }
 
   button {
@@ -90,6 +96,8 @@
     padding-bottom: 20px;
     margin-bottom: 15px;
 
+    user-select: none;
+
     button {
       background: #555;
     }
@@ -116,6 +124,11 @@
           cursor: pointer;
         }
       }
+    }
+
+    h4 span:first-child,
+    .summary {
+      cursor: pointer;
     }
   }
 }
