@@ -1,5 +1,10 @@
-export const generateSentry = () => `const Sentry = require("@sentry/serverless");
+export const generateSentry = () => `import * as Sentry from "@sentry/serverless";
+import * as SentryTracing from '@sentry/tracing';
+import { error } from "./output";
+
 const { SENTRY_DSN, NODE_ENV, STAGE } = process.env;
+
+SentryTracing.addExtensionMethods();
 
 Sentry.init({
   dsn: SENTRY_DSN,
@@ -10,5 +15,13 @@ Sentry.init({
   ]
 });
 
-module.exports = Sentry.AWSLambda.wrapHandler;
+export default (handler) => async(...args) => {
+  try {
+    return await Sentry.AWSLambda.wrapHandler(handler)(...args);
+  } catch (e) {
+    e.args = args;
+    console.error(e);
+    return error(e.message || 'Internal server error.', 500);
+  }
+}
 `

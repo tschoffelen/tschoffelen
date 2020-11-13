@@ -5,32 +5,39 @@ import { saveAs } from "file-saver";
 import { generateSls } from "./generateSls";
 import { generateReadme } from "./generateReadme";
 import { generateGitignore } from "./generateGitignore";
-import { generateSentry } from "./generateSentry";
 import { generateTest } from "./generateTest";
 import { generateHandler } from "./generateHandler";
+import { generateInfra } from "./generateInfra";
 
 export const exportZip = async (options) => {
   options.name = options.name.toLowerCase().trim();
-  const zip = new Zip();
   const { sls, compiledFunctions, packageJson } = generateSls(options);
 
-  zip.file("serverless.yml", sls);
+  const zip = new Zip();
   zip.file("README.md", generateReadme(options.name));
-  zip.file("package.json", packageJson);
   zip.file(".gitignore", generateGitignore());
+
   const src = zip.folder("src");
-  const lib = src.folder("lib");
-  if (options.extensions.includes("sentry")) {
-    lib.file("sentry.js", generateSentry());
-  }
   const funcs = src.folder("functions");
+
+  generateInfra(zip, options, sls, packageJson, compiledFunctions);
+
   Object.values(compiledFunctions).forEach((func) => {
-    const dir = funcs.folder(func.name);
+    let dir = funcs;
+    const pathParts = func.path.split("/");
+    for (const pathPart of pathParts) {
+      dir = dir.folder(pathPart);
+    }
     dir.file("function.yml", yaml.stringify(func.sls, { indent: 2 }));
-    dir.file("test.js", generateTest(func, options.extensions));
     dir.file("handler.js", generateHandler(func, options.extensions));
+    if (options.extensions.includes("jest")) {
+      dir.file("test.js", generateTest(func, options.extensions));
+    }
   });
 
-  const content = await zip.generateAsync({ type: "blob" })
+  zip.file("serverless.yml", yaml.stringify(sls, { indent: 2 }).replace(/\n(\w+):\n/gi, "\n\n$1:\n"));
+  zip.file("package.json", JSON.stringify(packageJson, null, 2));
+
+  const content = await zip.generateAsync({ type: "blob" });
   saveAs(content, `${options.name}.zip`);
 };

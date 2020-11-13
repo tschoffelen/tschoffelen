@@ -28,17 +28,24 @@ const ScaffoldPage = () => {
   const [domain, setDomain] = useState("");
   const [cert, setCert] = useState("");
   const [sentryDsn, setSentryDsn] = useState("");
-  const [extensions, setExtensions] = useState([]);
+  const [extensions, setExtensions] = useState(["jest", "webpack"]);
   const [functions, setFunctions] = useState(() => [defaultFunc(true)]);
 
-  const submit = () => exportZip({
-    extensions,
-    functions,
-    name,
-    domain,
-    cert,
-    sentryDsn
-  });
+  const submit = () => {
+    if (!name) {
+      alert("Enter a project name.");
+      return;
+    }
+
+    return exportZip({
+      extensions,
+      functions,
+      name,
+      domain,
+      cert,
+      sentryDsn
+    });
+  };
 
   const addFunction = () => {
     setFunctions([
@@ -91,12 +98,30 @@ const ScaffoldPage = () => {
           onChange={setExtensions}
           options={[
             {
-              id: "serverless-domain-manager",
-              title: "Custom domain – serverless-domain-manager"
+              id: "jest",
+              title: "Unit tests – Jest"
+            },
+            {
+              id: "webpack",
+              title: "Webpack – serverless-webpack-plugin",
+              disabled: extensions.includes('serverless-esbuild')
+            },
+            {
+              id: "dynamodb",
+              title: "Database storage – DynamoDB table"
+            },
+            {
+              id: "cognito",
+              title: "Authentication – Cognito user pool"
             },
             {
               id: "serverless-esbuild",
-              title: "ESbuild – serverless-esbuild"
+              title: "ESbuild – serverless-esbuild",
+              disabled: extensions.includes('webpack')
+            },
+            {
+              id: "serverless-domain-manager",
+              title: "Custom domain – serverless-domain-manager"
             },
             {
               id: "sentry",
@@ -176,7 +201,7 @@ const ScaffoldPage = () => {
                     title="Function name"
                     value={func.name}
                     onChange={(v) => updateFunction(func.id, "name", v)}
-                    pattern="[\w-]{2,36}"/>
+                    pattern="[\w\/-]{2,36}"/>
                   <TriggerEditor
                     name={func.name}
                     value={func.triggers}

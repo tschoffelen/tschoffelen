@@ -1,13 +1,13 @@
-import yaml from "yaml";
-
 export const generateSls = ({ extensions, functions, name, domain, cert, sentryDsn }) => {
   const compiledFunctions = functions.map(func => {
-    const name = func.name.toLowerCase().trim();
+    const name = func.name.replace(/\//g, "-").toLowerCase().trim();
+    const path = func.name.toLowerCase().trim();
     return {
       name,
+      path,
       sls: {
         [name]: {
-          handler: `src/functions/${name}/handler.handler`,
+          handler: `src/functions/${path}/handler.handler`,
           events: func.triggers.map((event) => {
             switch (event.type) {
               case "httpGet":
@@ -16,7 +16,7 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
               case "httpDelete":
               case "httpAny":
                 return {
-                  http: {
+                  httpApi: {
                     path: event.path,
                     method: event.type.substring(4).toLowerCase()
                   }
@@ -65,13 +65,16 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
       "serverless-offline"
     ],
     custom: {
-      stage: `\${opt:stage, 'dev'}`,
+      stage: `\${opt:stage, 'local'}`,
       region: `\${opt:region, 'eu-west-1'}`
+    },
+    package: {
+      individually: true
     },
     provider: {
       name: "aws",
       runtime: "nodejs10.x",
-      timeout: 30,
+      timeout: 25,
       region: `\${self:custom.region}`,
       stage: `\${self:custom.stage}`,
       environment: {
@@ -82,8 +85,9 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
       },
       iamRoleStatements: []
     },
-    functions: functions
-      .map((func) => `\${file(./src/functions/${func.name.toLowerCase().trim()}/function.yml)}`)
+    functions: compiledFunctions
+      .map((func) => `\${file(./src/functions/${func.path}/function.yml)}`),
+    resources: []
   };
 
   const packageJson = {
@@ -93,19 +97,21 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
     "private": true,
     "scripts": {
       "start": "serverless offline",
-      "deploy": "serverless deploy",
-      "test": "jest"
+      "deploy": "serverless deploy"
     },
     "dependencies": {},
     "devDependencies": {
       "serverless": "^2.8.0",
-      "serverless-offline": "^6.8.0",
-      "jest": "^26.6.1"
+      "serverless-offline": "^6.8.0"
     }
   };
 
   extensions.forEach((ext) => {
     switch (ext) {
+      case "jest":
+        packageJson.devDependencies.jest = "^26.6.1";
+        packageJson.scripts.test = "jest";
+        break;
       case "serverless-prune-plugin":
         packageJson.devDependencies["serverless-prune-plugin"] = "^1.4.1";
         slsObject.plugins.push("serverless-prune-plugin");
@@ -150,6 +156,5 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
   });
 
   console.log({ slsObject, compiledFunctions, packageJson });
-  const sls = yaml.stringify(slsObject, { indent: 2 }).replace(/\n(\w+):\n/gi, "\n\n$1:\n");
-  return { sls, compiledFunctions, packageJson: JSON.stringify(packageJson, null, 2) };
+  return { sls: slsObject, compiledFunctions, packageJson };
 };
