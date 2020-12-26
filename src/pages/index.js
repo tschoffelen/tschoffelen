@@ -49,7 +49,7 @@ const IndexPage = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          NearSt – providing shops a new generation of customers
+          NearSt – making in-store inventory visible online
         </a>
         <a
           href="https://streetartcities.com/?utm_source=schof.co"
@@ -65,7 +65,7 @@ const IndexPage = ({
           rel="noopener noreferrer"
           target="_blank"
         >
-          Infowijs – enabling schools to communicate better
+          Infowijs – allowing schools to communicate effectively
         </a>
       </div>
 
