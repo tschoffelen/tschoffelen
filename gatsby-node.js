@@ -1,8 +1,6 @@
 const path = require("path")
-const slug = require("slug")
 const fs = require("fs")
 const axios = require("axios")
-const moment = require("moment")
 const { createFilePath } = require("gatsby-source-filesystem")
 
 const downloadPosts = async () => {
@@ -16,7 +14,7 @@ const downloadPosts = async () => {
       id: guid,
       title: title.replace("&amp;", "&"),
       link,
-      createdAt: moment(pubDate).toISOString(),
+      createdAt: (new Date(pubDate)).toISOString(),
     }))
 
   fs.writeFileSync("./src/data/posts.json", JSON.stringify(data), "utf8")

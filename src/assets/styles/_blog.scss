@@ -3,10 +3,8 @@
 
   blockquote {
     background: #eee;
-    margin: 20px 0;
-    margin-bottom: 32px;
-    padding: 24px 36px;
-    padding-top: 1px;
+    margin: 20px 0 32px;
+    padding: 1px 36px 24px;
     font-weight: bold;
   }
 
@@ -37,12 +35,13 @@
   }
 
   .blog-post-category {
-    background-color: rgba(53, 95, 197, 0.25);
-    color: $link-hover-light;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: $foreground-light;
+    border-radius: .3rem;
     margin-right: 8px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 4px 5px;
+    padding: 4px 7px;
   }
 
   .gatsby-resp-image-wrapper {
@@ -120,7 +119,7 @@
     }
 
     hr {
-      border: null;
+      border: 0;
     }
 
     .dialogue {
@@ -130,8 +129,7 @@
       }
 
       h4 {
-        margin: 0 110px;
-        margin-bottom: 4px;
+        margin: 0 110px 4px;
         @media (max-width: 510px) {
           margin: 0 48px;
         }

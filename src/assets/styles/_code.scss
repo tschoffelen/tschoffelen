@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
 .code-block {
   background: #eee;
   padding: 10px 16px;
@@ -9,12 +11,14 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
+  -webkit-font-smoothing: subpixel-antialiased;
   color: #f8f8f2;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: "Source Code Pro", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
+  font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+  font-size: 15px;
   text-align: left;
+  border-radius: .3rem;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
@@ -22,7 +26,6 @@ pre[class*="language-"] {
   line-height: 1.5;
 
   -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
 
   -webkit-hyphens: none;
@@ -34,7 +37,6 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 16px;
-  font-size: 15px;
   margin-top: 12px;
   margin-bottom: 24px;
   overflow: auto;
@@ -48,81 +50,145 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  font-size: 15px;
-  padding: 3px 5px;
+  font-size: 0.85em;
+  padding: 5px 5px 4px;
+  background: rgba(0, 0, 0, .08);
   white-space: normal;
+
+  color: #1b1d25 !important;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.gatsby-highlight-code-line {
+  background-color: #191919;
+  display: block;
+  margin-right: -1rem;
+  margin-left: -1.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.25rem;
+  border-left: 0.25rem solid #748ffc;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata {
-  color: slategray;
+.token.cdata,
+.token.important {
+  color: $code-comment;
 }
 
 .token.punctuation {
-  color: #f8f8f2;
+  color: $code-punctuation;
 }
 
 .token.namespace {
-  opacity: .7;
+  opacity: 0.7;
 }
 
-.token.property,
+.token.property {
+  color: $code-property;
+}
+
 .token.tag,
 .token.constant,
 .token.symbol,
 .token.deleted {
-  color: #f92672;
+  color: $code-tag;
 }
 
-.token.boolean,
 .token.number {
-  color: #ae81ff;
+  color: $code-number;
 }
 
-.token.selector,
-.token.attr-name,
-.token.string,
 .token.char,
 .token.builtin,
+.token.url,
 .token.inserted {
-  color: #a6e22e;
+  color: $code-font-color;
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
+.token.attr-name,
+.token.selector {
+  color: $code-attribute;
+}
+
+.token.attr-value,
+.token.string {
+  color: $code-string;
+}
+
+.token.operator {
+  color: $code-operator;
 }
 
 .token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: #e6db74;
-}
-
 .token.keyword {
-  color: #66d9ef;
+  color: $code-keyword;
 }
 
-.token.regex,
-.token.important {
-  color: #fd971f;
+.token.function {
+  color: $code-function;
 }
 
-.token.important,
+.language-css,
+.token.boolean,
+.token.class-name {
+  color: $code-class !important;
+}
+
+.token.regex {
+  color: $code-keyword;
+}
+
+.token.variable {
+  color: $code-variable;
+}
+
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
 
 .token.entity {
   cursor: help;
+}
+
+pre::-moz-selection,
+pre::-moz-selection,
+code::-moz-selection,
+code::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre::selection,
+pre::selection,
+code::selection,
+code::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
 }

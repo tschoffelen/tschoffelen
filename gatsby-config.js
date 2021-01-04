@@ -13,7 +13,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     `gatsby-plugin-remove-generator`,
-    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
