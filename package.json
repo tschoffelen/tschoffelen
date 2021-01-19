@@ -5,7 +5,7 @@
   "version": "2.0.1",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "date-fns": "^2.9.0",
     "file-saver": "^2.0.2",
     "gatsby": "^2.29.3",
