@@ -17,7 +17,7 @@
     line-height: 1.35;
   }
 
-  .block-bullet-view .roam-block:before {
+  .block-bullet-view > .rm-block-children .roam-block:before {
     content: "• ";
     position: absolute;
     top: 0;
@@ -76,7 +76,11 @@
     color: #92d192;
   }
 
-  .rm-block-children {
+  .rm-attr-ref {
+    font-weight: 600;
+  }
+
+  .rm-block-children .rm-block-children {
     margin-left: 1.6rem;
   }
 
@@ -97,5 +101,4 @@
   div[style="margin-left: -20px;"] {
     margin-left: 0 !important;
   }
-
 }

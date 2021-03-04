@@ -13,10 +13,10 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v1
-    - name: use node 10
+    - name: use node 14
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 14
     - name: install aws cli
       uses: chrislennon/action-aws-cli@1.1
     - name: install dependencies
