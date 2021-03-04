@@ -37,6 +37,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/notes/*`] }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Thomas Schoffelen`,

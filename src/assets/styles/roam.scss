@@ -1,5 +1,5 @@
 .roam-article {
-  .rm-zoom, .hoveronly {
+  .rm-zoom, .hoveronly, .rm-reference-main {
     display: none;
   }
 
@@ -18,6 +18,8 @@
     position: absolute;
     top: 0;
     left: -1rem;
+    font-size: 16px;
+    line-height: 1.8rem;
   }
 
   .rm-block--closed > .rm-block-main > .roam-block:before {
@@ -27,6 +29,34 @@
     left: -1rem;
     font-size: 12px;
     line-height: 1.9rem;
+  }
+
+  .rm-heading-level-2 > .rm-block-main {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    .roam-block:before {
+      line-height: 2.2rem;
+    }
+  }
+
+
+  .rm-heading-level-1 > .rm-block-main {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    .roam-block:before {
+      line-height: 2.5rem;
+    }
+  }
+
+  .rm-heading-level-3 > .rm-block-main {
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    .roam-block:before {
+      line-height: 2.1rem;
+    }
   }
 
   .rm-block--closed > .rm-block-main > .roam-block > span:after {
@@ -44,7 +74,6 @@
 
   .rm-block-children {
     margin-left: 1.6rem;
-    display: none;
   }
 
   .rm-block--open > .rm-block-children {
@@ -65,20 +94,4 @@
     margin-left: 0 !important;
   }
 
-  & > div > div > div > .rm-block-main:first-child {
-    .hoverparent:before {
-      content: "";
-    }
-
-    .rm-page-ref {
-      color: inherit;
-    }
-
-    .hoverparent {
-      font-size: 2rem;
-      line-height: 1.3;
-      font-weight: 600;
-      margin: 2rem 0;
-    }
-  }
 }

@@ -31,7 +31,8 @@ exports.createPages = async ({ graphql, actions }) => {
   createPage({
     path: `/notes/`,
     matchPath: `/notes/*`,
-    component: require.resolve(`./src/templates/note.js`)
+    component: require.resolve(`./src/templates/note.js`),
+    context: {}
   });
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)

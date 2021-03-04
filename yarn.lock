@@ -7086,6 +7086,13 @@ gatsby-plugin-canonical-urls@^2.7.0:
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+gatsby-plugin-create-client-paths@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-create-client-paths/-/gatsby-plugin-create-client-paths-3.0.0.tgz#f4293924e03a714d4bfa7c452d3947729808bd21"
+  integrity sha512-frWerYXgrb0Q/0O+BlnbLNwmnDmnF35Dwefoug31y/PI4AVH+FSfMcnkOA+PI7bAuCkPv7z0rKQqDc9CJsuFOA==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+
 gatsby-plugin-feed@^2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.10.0.tgz#c11b5daacfdc5f51bdd77ced12eacd50ea2d7821"
