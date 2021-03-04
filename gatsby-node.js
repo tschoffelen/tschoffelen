@@ -27,6 +27,13 @@ exports.onPreBootstrap = downloadPosts
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
+  // Notes pages
+  createPage({
+    path: `/notes/`,
+    matchPath: `/notes/*`,
+    component: require.resolve(`./src/templates/note.js`)
+  });
+
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   const result = await graphql(
     `
