@@ -13,9 +13,13 @@ const NotePage = ({ ["*"]: noteId }) => {
   console.log(noteId, data)
 
   const html = ((data && data.data) || "Loading...")
-    .replace(/tabindex="0"/g, '')
-    .replace(/tabindex="-1"/g, '')
-    .replace(/<iframe/g, '<iframe frameborder="0"')
+    .replace(/tabindex="0"/g, "")
+    .replace(/tabindex="-1"/g, "")
+    .replace(/<iframe/g, "<iframe frameborder=\"0\"")
+
+  if (!data) {
+    return <p>Loading...</p>
+  }
 
   return (
     <Layout key="note">
