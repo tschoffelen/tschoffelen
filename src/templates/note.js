@@ -18,7 +18,7 @@ const NotePage = ({ ["*"]: noteId }) => {
     .replace(/<iframe/g, '<iframe frameborder="0"')
 
   return (
-    <Layout>
+    <Layout key="note">
       <SEO
         title="Notes"
         meta={[{ name: "robots", value: "noindex nofollow" }]} />
