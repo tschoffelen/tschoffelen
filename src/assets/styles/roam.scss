@@ -1,3 +1,5 @@
+$block-dist: 2rem;
+
 .roam-article {
   .rm-zoom, .hoveronly, .rm-reference-main {
     display: none;
@@ -15,6 +17,12 @@
 
   h1.rm-title-display {
     line-height: 1.35;
+  }
+
+  .check-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .block-bullet-view > .rm-block-children .roam-block:before {
@@ -76,12 +84,16 @@
     color: #92d192;
   }
 
-  .rm-attr-ref {
+  .rm-attr-ref, .rm-bold {
     font-weight: 600;
   }
 
+  .rm-italic {
+    font-style: italic;
+  }
+
   .rm-block-children .rm-block-children {
-    margin-left: 1.6rem;
+    margin-left: $block-dist;
   }
 
   .rm-block--open > .rm-block-children {

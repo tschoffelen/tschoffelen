@@ -8,7 +8,7 @@ import Header from "../components/Header"
 
 import "../assets/styles/roam.scss"
 
-const NotePage = ({ ["*"]: noteId }) => {
+const NotePage = ({ '*': noteId }) => {
   const { data } = useSWR(`https://schof.co/f/${noteId.replace("-", "/")}-note.md`, axios.get)
   console.log(noteId, data)
 
