@@ -10,6 +10,8 @@ import "./style.scss";
 const boxUrl =
   "https://mrm5dm6of9.execute-api.eu-west-1.amazonaws.com/production/box/get-url?filename=";
 
+const wait = async (timeout) => new Promise((resolve) => setTimeout(resolve, timeout));
+
 const BoxPage = () => {
   const [text, setText] = useState(null);
   const [className, setClassName] = useState("");
@@ -50,11 +52,13 @@ const BoxPage = () => {
             );
 
             try {
+              await wait(100);
               const range = document.createRange();
               range.selectNode(document.querySelector(".box-url"));
               window.getSelection().removeAllRanges();
               window.getSelection().addRange(range);
               document.execCommand("copy");
+              await wait(100);
               window.getSelection().removeAllRanges();
             } catch (e) {
             }
