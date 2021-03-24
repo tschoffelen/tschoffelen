@@ -29,7 +29,7 @@ const IndexPage = ({
       </p>
       <p>
         In my spare time I write about life, friendships, engineering and
-        design.
+        user experience design.
       </p>
 
       <div className="links">
