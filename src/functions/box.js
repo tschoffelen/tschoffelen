@@ -12,7 +12,8 @@ const sanitize = (input) => input
   .replace(controlRe, "-")
   .replace(reservedRe, "-")
   .replace(windowsReservedRe, "-")
-  .replace(windowsTrailingRe, "-");
+  .replace(windowsTrailingRe, "-")
+  .replace(/ /g, "-");
 
 const randomString = () =>
   Math.random()
