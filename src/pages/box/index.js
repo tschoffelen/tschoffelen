@@ -10,7 +10,7 @@ import "./style.scss";
 const boxUrl =
   "https://mrm5dm6of9.execute-api.eu-west-1.amazonaws.com/production/box/get-url?filename=";
 
-const wait = async (timeout) => new Promise((resolve) => setTimeout(resolve, timeout));
+const wait = async(timeout) => new Promise((resolve) => setTimeout(resolve, timeout));
 
 const BoxPage = () => {
   const [text, setText] = useState(null);
@@ -24,7 +24,6 @@ const BoxPage = () => {
         handleDrop={async(files) => {
           try {
             const file = files[0];
-            console.log(file);
 
             setText(
               <>
@@ -61,6 +60,7 @@ const BoxPage = () => {
               await wait(200);
               window.getSelection().removeAllRanges();
             } catch (e) {
+              console.log(e);
             }
           } catch (e) {
             if (e.message && e.message.includes("Is a directory")) {
