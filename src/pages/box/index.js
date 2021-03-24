@@ -44,9 +44,7 @@ const BoxPage = () => {
             setText(
               <>
                 <CheckCircle size={32} />
-                <span className="box-url">
-                  {box}
-                </span>
+                <span className="box-url">{box}</span>
               </>,
             );
 
