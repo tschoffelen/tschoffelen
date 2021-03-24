@@ -51,10 +51,10 @@ const BoxPage = () => {
             );
 
             try {
-              await wait(200);
+              window.getSelection().removeAllRanges();
+              await wait(100);
               const range = document.createRange();
               range.selectNode(document.querySelector(".box-area"));
-              window.getSelection().removeAllRanges();
               window.getSelection().addRange(range);
               document.execCommand("copy");
               await wait(200);
