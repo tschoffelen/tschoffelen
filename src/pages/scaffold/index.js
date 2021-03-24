@@ -8,8 +8,8 @@ import Layout from "../../components/Layout";
 
 import "./index.scss";
 import { Checkboxes, TextInput, TriggerEditor } from "../../components/inputs";
-import { createTriggerPreview } from "./_utils/createTriggerPreview";
-import { exportZip } from "./_utils/exportZip";
+import { createTriggerPreview } from "../../utils/scaffold/createTriggerPreview";
+import { exportZip } from "../../utils/scaffold/exportZip";
 
 const defaultFunc = (first = false) => ({
   id: uuid(),
