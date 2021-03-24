@@ -8,8 +8,8 @@ import Layout from "../../components/Layout";
 
 import "./index.scss";
 import { Checkboxes, TextInput, TriggerEditor } from "../../components/inputs";
-import { createTriggerPreview } from "../../utils/scaffold/createTriggerPreview";
-import { exportZip } from "../../utils/scaffold/exportZip";
+import { createTriggerPreview } from "./_utils/createTriggerPreview";
+import { exportZip } from "./_utils/exportZip";
 
 const defaultFunc = (first = false) => ({
   id: uuid(),
@@ -166,7 +166,7 @@ const ScaffoldPage = () => {
           {functions.map(func => (
             <div key={func.id} className="well">
               <h4>
-                <span onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
+                <span aria-hidden="true" onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
                   {func.name || "Untitled function"}
                 </span>
                 {func.collapsed ? (
@@ -179,10 +179,12 @@ const ScaffoldPage = () => {
                 ) : (
                   <span>
                     <Trash
+                      aria-hidden="true"
                       onClick={() => removeFunction(func.id)}
                       color='#f92672'
                       size={18}/>
                     <ArrowUpCircle
+                      aria-hidden="true"
                       onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}
                       color='#333'
                       size={18}/>
@@ -192,6 +194,7 @@ const ScaffoldPage = () => {
               {func.collapsed ? (
                 <div
                   className="summary"
+                  aria-hidden="true"
                   onClick={() => updateFunction(func.id, "collapsed", !func.collapsed)}>
                   {createTriggerPreview(func.triggers)}
                 </div>

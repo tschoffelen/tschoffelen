@@ -19,11 +19,11 @@ custom:
       defaultContentType: text/html
 
   cloudfrontInvalidate:
-    distributionId: EO1YEJXL0AGGJ
-    items:
-      - "/"
-      - "/*"
-      - "/page-data/index/page-data.json"
+    - distributionId: EO1YEJXL0AGGJ
+      items:
+        - "/"
+        - "/*"
+        - "/page-data/index/page-data.json"
 
 # Provider config
 provider:

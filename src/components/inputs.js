@@ -33,14 +33,14 @@ export const Checkboxes = ({ title, options, value = [], onChange, ...props }) =
             };
           }
           return (
-            <label for={opt.id} className="checkbox">
+            <label className="checkbox">
               <input
                 {...props}
                 id={opt.id}
                 type="checkbox"
                 disabled={!!opt.disabled}
                 checked={(value || []).includes(opt.id)}
-                onClick={() => {
+                onChange={() => {
                   if ((value || []).includes(opt.id)) {
                     onChange((value || []).filter((v) => v !== opt.id));
                   } else {

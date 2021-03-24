@@ -1,0 +1,37 @@
+$background-light: #faf8f9;
+$foreground-light: #212733;
+$link-hover-light: #355fc5;
+
+.box-area {
+  background: $foreground-light;
+  color: $background-light;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+
+  svg {
+    margin-bottom: 32px;
+    user-select: none;
+  }
+
+  &.active {
+    background: $link-hover-light;
+  }
+
+  &.success {
+    background: #27ae60;
+    ::selection {
+      background: rgba(0,0,0,0.2);
+    }
+  }
+  &.failed {
+    background: #eb4d4b;
+  }
+}

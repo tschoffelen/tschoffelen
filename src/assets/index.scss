@@ -279,25 +279,6 @@ main {
   font-size: 15px;
 }
 
-.box-area {
-  background: $foreground-light;
-  color: $background-light;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  padding: 24px;
-
-  &.active {
-    background: $link-hover-light;
-  }
-}
-
 .button {
   outline: 0;
   border: 1px solid $background-light;

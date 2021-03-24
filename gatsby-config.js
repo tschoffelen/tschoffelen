@@ -28,17 +28,23 @@ module.exports = {
             },
           },
           {
-            resolve: require.resolve('./plugins/gatsby-remark-fountain')
+            resolve: require.resolve("./plugins/gatsby-remark-fountain"),
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`
+          `gatsby-remark-smartypants`,
         ],
       },
     },
     {
+      resolve: "gatsby-plugin-exclude",
+      options: {
+        paths: ["/**/_utils/**"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/notes/*`] }
+      options: { prefixes: [`/notes/*`] },
     },
     {
       resolve: `gatsby-plugin-manifest`,
