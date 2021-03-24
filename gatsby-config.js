@@ -107,7 +107,7 @@ module.exports = {
               })),
               ...allPostsJson.nodes.map(edge => ({
                 title: edge.title,
-                description: edge.title,
+                description: edge.description || edge.title,
                 date: edge.createdAt,
                 url: edge.link,
                 guid: edge.link,
@@ -136,6 +136,7 @@ module.exports = {
                   nodes {
                     link
                     title
+                    description
                     createdAt
                   }
                 }

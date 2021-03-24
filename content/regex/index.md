@@ -129,5 +129,5 @@ console.log(regex.exec(html)) // ['<span...', '$49,95']
 
 ## Tools
 
-* Test regular expressions in the browser using [regexr.com](https://regexr.com/) or try the amazing [Expressions](apptorium.com/expressions) app for Mac.
+* Test regular expressions in the browser using [regexr.com](https://regexr.com/) or try the amazing [Expressions](https://apptorium.com/expressions) app for Mac.
 * Use this helpful [cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/).

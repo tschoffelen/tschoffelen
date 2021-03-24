@@ -10,10 +10,11 @@ const downloadPosts = async () => {
 
   const data = res.data.items
     .filter(({ categories }) => categories.length)
-    .map(({ title, pubDate, link, guid }) => ({
+    .map(({ title, pubDate, link, guid, description }) => ({
       id: guid,
       title: title.replace("&amp;", "&"),
       link,
+      description,
       createdAt: (new Date(pubDate)).toISOString(),
     }))
 
