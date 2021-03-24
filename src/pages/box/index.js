@@ -52,13 +52,13 @@ const BoxPage = () => {
             );
 
             try {
-              await wait(100);
+              await wait(200);
               const range = document.createRange();
               range.selectNode(document.querySelector(".box-url"));
               window.getSelection().removeAllRanges();
               window.getSelection().addRange(range);
               document.execCommand("copy");
-              await wait(100);
+              await wait(200);
               window.getSelection().removeAllRanges();
             } catch (e) {
             }
