@@ -37,7 +37,7 @@ const IndexPage = ({
           <Link to="/posts">Recent posts</Link>
         </h3>
         {organizePosts([...mediumPosts, ...blogPosts])
-          .slice(0, 7)
+          .slice(0, 5)
           .map(post => renderPost(post))}
       </div>
 

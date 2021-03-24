@@ -21,7 +21,7 @@ export const renderPost = ({ title, created, category, link, external }) =>
 export const organizePosts = posts => {
   const titles = posts
     .filter(post => post.frontmatter)
-    .map(post => post.frontmatter.title + format(new Date(post.frontmatter.date), "MMM yyyy"))
+    .map(post => post.frontmatter.title + Math.floor(new Date(post.frontmatter.date).getFullYear() / 2))
 
   return posts
     .map(post => {
@@ -35,8 +35,9 @@ export const organizePosts = posts => {
         link: post.link || post.fields.slug,
         created: format(date, "MMM d"),
         month: format(date, "MMM yyyy"),
+        unique: Math.floor(date.getFullYear() / 2)
       }
     })
-    .filter(post => post.frontmatter || !titles.includes(post.title + post.month))
+    .filter(post => post.frontmatter || !titles.includes(post.title + post.unique))
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
