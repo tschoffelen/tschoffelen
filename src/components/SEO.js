@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, jsonLd }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -15,10 +15,10 @@ function SEO({ description, lang, meta, title }) {
           }
         }
       }
-    `
-  )
+    `,
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -119,61 +119,61 @@ function SEO({ description, lang, meta, title }) {
       <link rel="me" href="https://instagram.com/tschoffelen" />
       <link rel="me" href="https://github.com/tschoffelen" />
       <link rel="pgpkey" href="/pgp.txt" />
-      <script type="application/ld+json">{`
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "name": "Thomas Schoffelen",
-  "familyName": "Schoffelen",
-  "givenName": "Thomas",
-  "worksFor": [{
-    "@type": "Role",
-    "roleName": "Head of Platform Innovation",
-    "startDate": "2016",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "NearSt"
-    }
-  }, {
-    "@type": "Role",
-    "roleName": "Founder",
-    "startDate": "2017",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Thomas Schoffelen BV",
-      "brand": "schof.co",
-      "taxID": "67640516",
-      "duns": "492180704",
-      "email": "info@schof.co",
-      "vatID": "NL857104779B01"
-    }
-  }],
-  "url": "https://schof.co",
-  "jobTitle": "Head of Platform Innovation",
-  "gender": "male",
-  "image": "https://schof.co/avatar.jpg",
-  "sameAs": [
-    "https://github.com/tschoffelen",
-    "https://twitter.com/tschoffelen",
-    "https://linkedin.com/in/tschoffelen"
-  ]
-}
-`}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(jsonLd || {
+          "@context": "http://schema.org",
+          "@type": "Person",
+          "name": "Thomas Schoffelen",
+          "familyName": "Schoffelen",
+          "givenName": "Thomas",
+          "worksFor": [{
+            "@type": "Role",
+            "roleName": "Head of Platform Innovation",
+            "startDate": "2016",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "NearSt",
+            },
+          }, {
+            "@type": "Role",
+            "roleName": "Founder",
+            "startDate": "2017",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Thomas Schoffelen BV",
+              "brand": "schof.co",
+              "taxID": "67640516",
+              "duns": "492180704",
+              "email": "info@schof.co",
+              "vatID": "NL857104779B01",
+            },
+          }],
+          "url": "https://schof.co",
+          "jobTitle": "Head of Platform Innovation",
+          "gender": "male",
+          "image": "https://schof.co/avatar.jpg",
+          "sameAs": [
+            "https://github.com/tschoffelen",
+            "https://twitter.com/tschoffelen",
+            "https://linkedin.com/in/tschoffelen",
+          ],
+        })}
+      </script>
     </Helmet>
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
-}
+};
 
-export default SEO
+export default SEO;

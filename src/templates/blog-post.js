@@ -1,22 +1,65 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
+import format from "date-fns/format";
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Header from "../components/Header"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
+import Header from "../components/Header";
 
-import fountain from "../utils/fountain"
+import fountain from "../utils/fountain";
 
 const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
-  let html = post.html
-  let useFountain = post.frontmatter.fountain
+  let html = post.html;
+  let useFountain = post.frontmatter.fountain;
   if (useFountain) {
-    html = fountain(post.rawMarkdownBody).html.script
+    html = fountain(post.rawMarkdownBody).html.script;
   }
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.excerpt} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        jsonLd={[{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": post.frontmatter.title,
+          "datePublished": post.frontmatter.date,
+          "about": post.frontmatter.category,
+          "author": {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            "name": "Thomas Schoffelen",
+            "familyName": "Schoffelen",
+            "givenName": "Thomas",
+            "url": "https://schof.co",
+            "image": "https://schof.co/avatar.jpg",
+            "sameAs": [
+              "https://github.com/tschoffelen",
+              "https://twitter.com/tschoffelen",
+              "https://linkedin.com/in/tschoffelen",
+            ],
+          },
+        },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Thomas Schoffelen",
+              "item": "https://schof.co/",
+            }, {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Posts",
+              "item": "https://schof.co/posts/",
+            }, {
+              "@type": "ListItem",
+              "position": 3,
+              "name": post.frontmatter.category || post.frontmatter.title,
+            }],
+          }]} />
 
       <Header />
       <article className="blog-post">
@@ -29,7 +72,7 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
               </span>{" "}
             </span>
           ) : null}
-          <strong>{post.frontmatter.date}</strong>
+          <strong>{format(new Date(post.frontmatter.date), "MMMM d, yyyy")}</strong>
           {useFountain ? (
             <span className="hide-phone">
               <strong>
@@ -53,10 +96,10 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
         />
       </article>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -73,9 +116,9 @@ export const query = graphql`
       frontmatter {
         title
         category
-        date(formatString: "MMMM D, YYYY")
+        date
         fountain
       }
     }
   }
-`
+`;
