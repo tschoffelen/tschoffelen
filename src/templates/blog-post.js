@@ -47,16 +47,11 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
             "itemListElement": [{
               "@type": "ListItem",
               "position": 1,
-              "name": "Thomas Schoffelen",
-              "item": "https://schof.co/",
-            }, {
-              "@type": "ListItem",
-              "position": 2,
               "name": "Posts",
               "item": "https://schof.co/posts/",
             }, {
               "@type": "ListItem",
-              "position": 3,
+              "position": 2,
               "name": post.frontmatter.category || post.frontmatter.title,
             }],
           }]} />
