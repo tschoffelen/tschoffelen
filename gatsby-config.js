@@ -1,24 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Thomas Schoffelen`,
-    description: `Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.`,
-    author: `@tschoffelen`,
-    siteUrl: `https://schof.co/`,
+    title: "Thomas Schoffelen",
+    description: "Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.",
+    author: "@tschoffelen",
+    siteUrl: "https://schof.co/",
   },
   plugins: [
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-json`,
-    `gatsby-plugin-remove-generator`,
+    "gatsby-plugin-sass",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-react-helmet",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-json",
+    "gatsby-plugin-remove-generator",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 980,
               quality: 90,
@@ -30,9 +30,9 @@ module.exports = {
           {
             resolve: require.resolve("./plugins/gatsby-remark-fountain"),
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants",
         ],
       },
     },
@@ -43,48 +43,48 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/notes/*`] },
+      resolve: "gatsby-plugin-create-client-paths",
+      options: { prefixes: ["/notes/*"] },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `Thomas Schoffelen`,
-        short_name: `Thomas`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#0c0d0e`,
-        display: `minimal-ui`,
-        icon: `src/assets/icon.png`,
+        name: "Thomas Schoffelen",
+        short_name: "Thomas",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#0c0d0e",
+        display: "minimal-ui",
+        icon: "src/assets/icon.png",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: `./src/data/`,
+        path: "./src/data/",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: `./content/`,
+        path: "./content/",
       },
     },
     {
-      resolve: `gatsby-plugin-canonical-urls`,
+      resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: `https://schof.co`,
+        siteUrl: "https://schof.co",
         stripQueryString: true,
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: `UA-99611142-1`,
+        trackingId: "UA-99611142-1",
       },
     },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: "gatsby-plugin-feed",
       options: {
         query: `
           {
@@ -155,4 +155,4 @@ module.exports = {
       },
     },
   ],
-}
+};
