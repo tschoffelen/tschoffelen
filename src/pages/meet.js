@@ -19,15 +19,17 @@ const MeetPage = () => (
     <div
       style={{
         minWidth: 300,
-        height: 658,
+        height: 750,
         marginTop: 64,
+        borderRadius: 8,
         border: "1px solid #f2f2f2",
-        background: "#fff"
+        background: "#fff",
+        overflow: "hidden"
       }}
     >
       <iframe
         title="Schedule a call or coffee meeting."
-        src="https://calendly.com/tschof/30min?embed_domain=localhost%3A8000&amp;embed_type=Inline&amp;background_color=faf8f9&amp;primary_color=355fc5"
+        src="https://calendly.com/tschof/30min?embed_domain=localhost%3A8000&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;background_color=fff&amp;primary_color=355fc5"
         width="100%"
         height="100%"
         frameborder="0"
