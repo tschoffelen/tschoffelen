@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Header from "../components/Header"
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
+import Header from "../components/Header";
 
 const MeetPage = () => (
   <Layout>
@@ -24,7 +24,7 @@ const MeetPage = () => (
         borderRadius: 8,
         border: "1px solid #f2f2f2",
         background: "#fff",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
       <iframe
@@ -32,10 +32,11 @@ const MeetPage = () => (
         src="https://calendly.com/tschof/30min?embed_domain=localhost%3A8000&amp;embed_type=Inline&amp;hide_event_type_details=1&amp;background_color=fff&amp;primary_color=355fc5"
         width="100%"
         height="100%"
-        frameborder="0"
-      ></iframe>
+        style={{ borderRadius: 8 }}
+        frameBorder="0"
+      />
     </div>
   </Layout>
-)
+);
 
-export default MeetPage
+export default MeetPage;
