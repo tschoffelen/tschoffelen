@@ -80,7 +80,7 @@ const IndexPage = ({
             rel="noopener noreferrer"
             target="_blank"
             onClick={(e) => {
-              if (typeof window !== "undefined") {
+              if (typeof window !== "undefined" && window.Calendly) {
                 e.preventDefault && e.preventDefault();
                 window.Calendly.initPopupWidget({ url: calendlyUrl });
                 return false;
