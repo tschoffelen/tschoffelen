@@ -6,4 +6,4 @@ You can find my open source work in the [flexible-agency organization](https://g
 
 In my spare time I write about life, friendships, engineering and design.
 
-www.schof.co
+**[schof.co →](https://schof.co/)**
