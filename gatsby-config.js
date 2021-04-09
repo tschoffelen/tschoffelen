@@ -56,6 +56,12 @@ module.exports = {
         theme_color: "#0c0d0e",
         display: "minimal-ui",
         icon: "src/assets/icon.svg",
+        icons: [
+          {
+            src: "src/assets/icon.svg",
+            type: "image/svg+xml",
+          },
+        ],
       },
     },
     {
