@@ -3,7 +3,7 @@ import { ArrowUpCircle, CheckCircle, XCircle } from "react-feather";
 
 import Layout from "../../components/Layout";
 import DragAndDrop from "../../components/DragAndDrop";
-import SEO from "../../components/SEO";
+import Seo from "../../components/Seo";
 
 import "./style.scss";
 
@@ -18,7 +18,7 @@ const BoxPage = () => {
 
   return (
     <Layout>
-      <SEO meta={[{ name: "robots", value: "noindex nofollow" }]} />
+      <Seo meta={[{ name: "robots", value: "noindex nofollow" }]} />
       <DragAndDrop
         className={className}
         handleDrop={async(files) => {

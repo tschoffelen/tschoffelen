@@ -1,12 +1,12 @@
 import React from "react";
 
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 import Header from "../components/Header";
 
 const MeetPage = () => (
   <Layout>
-    <SEO title="Schedule a meeting" />
+    <Seo title="Schedule a meeting" />
 
     <Header />
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { ArrowDownCircle, ArrowUpCircle, Trash } from "react-feather";
 
-import SEO from "../../components/SEO";
+import Seo from "../../components/Seo";
 import Header from "../../components/Header";
 import Layout from "../../components/Layout";
 
@@ -75,7 +75,7 @@ const ScaffoldPage = () => {
 
   return (
     <Layout>
-      <SEO title="Serverless Scaffold"/>
+      <Seo title="Serverless Scaffold"/>
 
       <Header/>
       <div className="scaffold">

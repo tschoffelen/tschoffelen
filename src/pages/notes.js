@@ -3,7 +3,7 @@ import axios from "axios"
 import useSWR from "swr"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Header from "../components/Header"
 
 import "../assets/styles/roam.scss"
@@ -23,7 +23,7 @@ const NotePage = ({ '*': noteId }) => {
 
   return (
     <Layout key="note">
-      <SEO
+      <Seo
         title="Notes"
         meta={[{ name: "robots", value: "noindex nofollow" }]} />
 

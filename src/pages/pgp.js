@@ -1,12 +1,12 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Header from "../components/Header"
 
 const PgpPage = () => (
   <Layout>
-    <SEO title="PGP key" />
+    <Seo title="PGP key" />
 
     <Header />
 

@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 import { organizePosts, renderPost } from "../utils";
 
 const IndexPage = ({
@@ -11,11 +11,11 @@ const IndexPage = ({
     allMarkdownRemark: { nodes: blogPosts },
   },
 }) => {
-  const calendlyUrl = "https://calendly.com/tschof/consulting?primary_color=355fc5";
+  const calendlyUrl = "https://calendly.com/tschof/consulting-30-mins?primary_color=355fc5&back=1";
 
   return (
     <Layout className="homepage h-card">
-      <SEO />
+      <Seo />
 
       <div className="avatar">
         <div className="avatar-inner" />

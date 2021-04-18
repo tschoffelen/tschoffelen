@@ -3,7 +3,7 @@ import groupBy from "lodash.groupby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Header from "../components/Header"
 import { organizePosts, renderPost } from "../utils"
 
@@ -14,7 +14,7 @@ const PostsPage = ({
   },
 }) => (
   <Layout className="posts">
-    <SEO title="Posts" />
+    <Seo title="Posts" />
     <Header />
 
     <h2>Recent posts</h2>

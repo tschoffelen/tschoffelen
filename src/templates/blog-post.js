@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import format from "date-fns/format";
 
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 import Header from "../components/Header";
 
 import fountain from "../utils/fountain";
@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
 
   return (
     <Layout>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.excerpt}
         jsonLd={[{

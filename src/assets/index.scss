@@ -246,7 +246,7 @@ main {
       user-select: none;
     }
 
-    &:hover {
+    &:hover, &.active {
       color: $link-hover-light;
 
       .link-date {
@@ -272,6 +272,7 @@ main {
 .button {
   outline: 0;
   border: 1px solid $background-light;
+  border-radius: .3rem;
   background: $foreground-light;
   color: $background-light !important;
   display: inline-block;

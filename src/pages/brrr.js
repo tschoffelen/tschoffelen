@@ -1,11 +1,11 @@
 import React from "react";
 
 import Layout from "../components/Layout";
-import SEO from "../components/SEO";
+import Seo from "../components/Seo";
 
 const BrrrPage = () => (
   <Layout>
-    <SEO title="Brrr" />
+    <Seo title="Brrr" />
 
     <div className="brrr-anim">
       <svg width="48px" height="90px" viewBox="0 0 48 90" version="1.1">

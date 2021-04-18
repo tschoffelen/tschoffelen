@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/Seo"
 import Header from "../components/Header"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="Page not found" />
+    <Seo title="Page not found" />
 
     <Header />
 
