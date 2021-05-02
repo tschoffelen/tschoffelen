@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "Thomas Schoffelen",
-    description: "Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.",
+    description:
+      "Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.",
     author: "@tschoffelen",
     siteUrl: "https://schof.co/",
   },
@@ -69,6 +70,12 @@ module.exports = {
         params: {
           TableName: "schofco-website",
         },
+        ...(process.env.AWS_ACCESS_KEY_ID
+          ? {
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+            }
+          : {}),
       },
     },
     {
@@ -104,7 +111,7 @@ module.exports = {
             serialize: ({
               query: { site, allMarkdownRemark, allDynamodb },
             }) => [
-              ...allMarkdownRemark.edges.map(edge => ({
+              ...allMarkdownRemark.edges.map((edge) => ({
                 ...edge.node.frontmatter,
                 description: edge.node.excerpt,
                 date: edge.node.frontmatter.date,
@@ -112,7 +119,7 @@ module.exports = {
                 guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                 custom_elements: [{ "content:encoded": edge.node.html }],
               })),
-              ...allDynamodb.nodes.map(edge => ({
+              ...allDynamodb.nodes.map((edge) => ({
                 title: edge.title,
                 description: edge.description || edge.title,
                 date: edge.createdAt,
