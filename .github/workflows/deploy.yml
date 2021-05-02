@@ -27,6 +27,7 @@ jobs:
           path: |
             public
             .cache
+            node_modules
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
           restore-keys: |
