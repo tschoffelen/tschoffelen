@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Header from "../components/Header";
 
-import fountain from "../utils/fountain";
+import fountain from "gatsby-remark-fountain/src/fountain";
 
 const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
   let html = post.html;
