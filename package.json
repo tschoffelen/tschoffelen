@@ -5,6 +5,7 @@
   "version": "2.0.1",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "dependencies": {
+    "@nearst/gatsby-source-dynamodb": "^0.0.2",
     "axios": "^0.21.1",
     "date-fns": "^2.19.0",
     "file-saver": "^2.0.5",
@@ -27,7 +28,6 @@
     "gatsby-remark-prismjs": "^5.1.0",
     "gatsby-remark-smartypants": "^4.1.0",
     "gatsby-source-filesystem": "^3.4.0",
-    "gatsby-transformer-json": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "jszip": "^3.6.0",

@@ -5,19 +5,12 @@ plugins:
   - serverless-cloudfront-invalidate
 
 custom:
-  stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'eu-west-1'}
-
-  config:
-    boxBucket: schof-box
-
   s3Sync:
     - bucketName: schof.co
       localDir: public/
       acl: public-read
       followSymlinks: true
       defaultContentType: text/html
-
   cloudfrontInvalidate:
     - distributionId: EO1YEJXL0AGGJ
       items:
@@ -28,22 +21,33 @@ custom:
 # Provider config
 provider:
   name: aws
-  stage: ${self:custom.stage}
-  region: ${self:custom.region}
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - s3:PutObject
-        - s3:PutObjectAcl
-        - s3:GetObject
-        - s3:ListBucket
-        - s3:ListBucketVersions
-      Resource:
-        - 'arn:aws:s3:::${self:custom.config.boxBucket}'
-        - 'arn:aws:s3:::${self:custom.config.boxBucket}/*'
+  stage: ${opt:stage, 'production'}
+  region: ${opt:region, 'eu-west-1'}
   environment:
     NODE_ENV: ${self:custom.stage}
+    TABLE_NAME: ${self:service}
     BOX_BUCKET: schof-box
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:PutObjectAcl
+            - s3:GetObject
+            - s3:ListBucket
+            - s3:ListBucketVersions
+          Resource:
+            - 'arn:aws:s3:::schof-box'
+            - 'arn:aws:s3:::schof-box/*'
+        - Effect: Allow
+          Action:
+            - dynamodb:GetItem
+            - dynamodb:Query
+            - dynamodb:PutItem
+            - dynamodb:DescribeTable
+          Resource:
+            - "*"
 
 # Deployment packaging settings
 package:
@@ -53,6 +57,7 @@ package:
     - '**'
   include:
     - src/functions/*.js
+    - node_modules/axios/**
 
 # Lambda functions
 functions:
@@ -65,6 +70,12 @@ functions:
           path: /box/get-url
           method: get
           cors: true
+  download-posts:
+    handler: src/functions/download-posts.handler
+    memorySize: 512
+    timeout: 30
+    events:
+      - schedule: rate(4 hours)
 
 # CloudFormation resources
 resources:
@@ -72,13 +83,40 @@ resources:
     BoxBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:custom.config.boxBucket}
+        BucketName: schof-box
         AccelerateConfiguration:
           AccelerationStatus: Enabled
         CorsConfiguration:
           CorsRules:
-            - AllowedHeaders: ['*']
-              AllowedMethods: [GET, PUT]
-              AllowedOrigins: ['*']
+            - AllowedHeaders: [ '*' ]
+              AllowedMethods: [ GET, PUT ]
+              AllowedOrigins: [ '*' ]
               Id: CORSRuleId1
               MaxAge: '3600'
+    Table:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+          - AttributeName: type
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: type-sk
+            KeySchema:
+              - AttributeName: type
+                KeyType: HASH
+              - AttributeName: sk
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL
+

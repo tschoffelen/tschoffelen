@@ -9,7 +9,7 @@ import { organizePosts, renderPost } from "../utils"
 
 const PostsPage = ({
   data: {
-    allPostsJson: { nodes: mediumPosts },
+    allDynamodb: { nodes: mediumPosts },
     allMarkdownRemark: { nodes: blogPosts },
   },
 }) => (
@@ -32,11 +32,16 @@ const PostsPage = ({
 
 export const query = graphql`
   query allPosts {
-    allPostsJson(limit: 100) {
+    allDynamodb(
+      filter: {type: {eq: "post"}}
+      sort: { fields: [createdAt], order: DESC }
+      limit: 100
+    ) {
       nodes {
-        link
         title
+        link
         createdAt
+        description
       }
     }
     allMarkdownRemark(

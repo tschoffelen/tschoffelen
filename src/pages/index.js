@@ -7,7 +7,7 @@ import { organizePosts, renderPost } from "../utils";
 
 const IndexPage = ({
   data: {
-    allPostsJson: { nodes: mediumPosts },
+    allDynamodb: { nodes: mediumPosts },
     allMarkdownRemark: { nodes: blogPosts },
   },
 }) => {
@@ -127,11 +127,16 @@ const IndexPage = ({
 
 export const query = graphql`
   query posts {
-    allPostsJson(limit: 8) {
+    allDynamodb(
+      filter: {type: {eq: "post"}}
+      sort: { fields: [createdAt], order: DESC }
+      limit: 8
+    ) {
       nodes {
-        link
         title
+        link
         createdAt
+        description
       }
     }
     allMarkdownRemark(

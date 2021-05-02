@@ -11,7 +11,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-json",
     "gatsby-plugin-remove-generator",
     {
       resolve: "gatsby-transformer-remark",
@@ -59,13 +58,17 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: "./src/data/",
+        path: "./content/",
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: "@nearst/gatsby-source-dynamodb",
       options: {
-        path: "./content/",
+        typeName: "dynamodb",
+        region: "eu-west-1",
+        params: {
+          TableName: "schofco-website",
+        },
       },
     },
     {
@@ -99,7 +102,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({
-              query: { site, allMarkdownRemark, allPostsJson },
+              query: { site, allMarkdownRemark, allDynamodb },
             }) => [
               ...allMarkdownRemark.edges.map(edge => ({
                 ...edge.node.frontmatter,
@@ -109,7 +112,7 @@ module.exports = {
                 guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                 custom_elements: [{ "content:encoded": edge.node.html }],
               })),
-              ...allPostsJson.nodes.map(edge => ({
+              ...allDynamodb.nodes.map(edge => ({
                 title: edge.title,
                 description: edge.description || edge.title,
                 date: edge.createdAt,
@@ -134,14 +137,14 @@ module.exports = {
                     }
                   }
                 }
-                allPostsJson (
-                  limit: 6
+                allDynamodb(
+                  filter: {type: {eq: "post"}}
                 ) {
                   nodes {
-                    link
                     title
-                    description
+                    link
                     createdAt
+                    description
                   }
                 }
               }
