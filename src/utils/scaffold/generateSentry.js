@@ -24,4 +24,4 @@ export default (handler) => async(...args) => {
     return error(e.message || 'Internal server error.', 500);
   }
 }
-`
+`;

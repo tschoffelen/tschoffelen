@@ -18,10 +18,11 @@ const MeetPage = () => (
     </p>
 
     <p>
-      If the options below aren't what you're looking for, <a href="mailto:thomas@schof.co" style={{fontWeight: 'bold'}}>
+      If the options below aren't what you're looking for,{" "}
+      <a href="mailto:thomas@schof.co" style={{ fontWeight: "bold" }}>
         let me know
-      </a> and
-      we'll see what we can do together.
+      </a>{" "}
+      and we'll see what we can do together.
     </p>
 
     <div className="links">
@@ -29,14 +30,16 @@ const MeetPage = () => (
         href="https://calendly.com/tschof/consulting-30-mins"
         rel="noopener noreferrer"
         className="active"
-        target="_blank">
+        target="_blank"
+      >
         Schedule a 30-minute session &rarr;
       </a>
       <a
         href="https://calendly.com/tschof/consulting"
         rel="noopener noreferrer"
         className="active"
-        target="_blank">
+        target="_blank"
+      >
         Schedule a 1-hour session &rarr;
       </a>
     </div>

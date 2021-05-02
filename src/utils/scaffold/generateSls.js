@@ -1,5 +1,12 @@
-export const generateSls = ({ extensions, functions, name, domain, cert, sentryDsn }) => {
-  const compiledFunctions = functions.map(func => {
+export const generateSls = ({
+  extensions,
+  functions,
+  name,
+  domain,
+  cert,
+  sentryDsn,
+}) => {
+  const compiledFunctions = functions.map((func) => {
     const name = func.name.replace(/\//g, "-").toLowerCase().trim();
     const path = func.name.toLowerCase().trim();
     return {
@@ -18,58 +25,56 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
                 return {
                   httpApi: {
                     path: event.path,
-                    method: event.type.substring(4).toLowerCase()
-                  }
+                    method: event.type.substring(4).toLowerCase(),
+                  },
                 };
               case "scheduleRate":
                 return {
-                  schedule: `rate(${event.rate})`
+                  schedule: `rate(${event.rate})`,
                 };
               case "scheduleCron":
                 return {
-                  schedule: `cron(${event.cron})`
+                  schedule: `cron(${event.cron})`,
                 };
               case "s3ObjectCreated":
                 return {
                   s3: {
                     bucket: event.bucket,
                     event: "s3:ObjectCreated:*",
-                    existing: true
-                  }
+                    existing: true,
+                  },
                 };
               case "eventBridgeBus":
                 return {
                   eventBridge: {
-                    eventBus: event.bus || "default"
-                  }
+                    eventBus: event.bus || "default",
+                  },
                 };
               case "eventBridgeSource":
                 return {
                   eventBridge: {
                     pattern: {
-                      source: [event.source]
-                    }
-                  }
+                      source: [event.source],
+                    },
+                  },
                 };
               default:
                 return null;
             }
-          })
-        }
-      }
+          }),
+        },
+      },
     };
   });
   const slsObject = {
     service: name,
-    plugins: [
-      "serverless-offline"
-    ],
+    plugins: ["serverless-offline"],
     custom: {
       stage: `\${opt:stage, 'local'}`,
-      region: `\${opt:region, 'eu-west-1'}`
+      region: `\${opt:region, 'eu-west-1'}`,
     },
     package: {
-      individually: true
+      individually: true,
     },
     provider: {
       name: "aws",
@@ -81,29 +86,30 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
         SERVICE: `\${self:service}`,
         STAGE: `\${self:custom.stage}`,
         REGION: `\${self:custom.region}`,
-        NODE_ENV: `\${self:custom.stage}`
+        NODE_ENV: `\${self:custom.stage}`,
       },
-      iamRoleStatements: []
+      iamRoleStatements: [],
     },
-    functions: compiledFunctions
-      .map((func) => `\${file(./src/functions/${func.path}/function.yml)}`),
-    resources: []
+    functions: compiledFunctions.map(
+      (func) => `\${file(./src/functions/${func.path}/function.yml)}`
+    ),
+    resources: [],
   };
 
   const packageJson = {
-    "name": name,
-    "version": "1.0.0",
-    "license": "proprietary",
-    "private": true,
-    "scripts": {
-      "start": "serverless offline",
-      "deploy": "serverless deploy"
+    name: name,
+    version: "1.0.0",
+    license: "proprietary",
+    private: true,
+    scripts: {
+      start: "serverless offline",
+      deploy: "serverless deploy",
     },
-    "dependencies": {},
-    "devDependencies": {
-      "serverless": "^2.8.0",
-      "serverless-offline": "^6.8.0"
-    }
+    dependencies: {},
+    devDependencies: {
+      serverless: "^2.8.0",
+      "serverless-offline": "^6.8.0",
+    },
   };
 
   extensions.forEach((ext) => {
@@ -117,17 +123,17 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
         slsObject.plugins.push("serverless-prune-plugin");
         slsObject.custom.prune = {
           automatic: true,
-          number: 20
+          number: 20,
         };
         break;
       case "serverless-esbuild":
         packageJson.devDependencies["serverless-esbuild"] = "^1.4.0";
         slsObject.plugins.push("serverless-esbuild");
         slsObject.custom.esbuild = {
-          packager: "yarn"
+          packager: "yarn",
         };
         slsObject.package = {
-          individually: true
+          individually: true,
         };
         break;
       case "serverless-domain-manager":
@@ -139,7 +145,7 @@ export const generateSls = ({ extensions, functions, name, domain, cert, sentryD
           certificateName: cert || domain,
           createRoute53Record: true,
           endpointType: "edge",
-          autoDomain: true
+          autoDomain: true,
         };
         break;
       case "serverless-dotenv-plugin":

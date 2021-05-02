@@ -10,7 +10,8 @@ import "./style.scss";
 const boxUrl =
   "https://mrm5dm6of9.execute-api.eu-west-1.amazonaws.com/production/box/get-url?filename=";
 
-const wait = async(timeout) => new Promise((resolve) => setTimeout(resolve, timeout));
+const wait = async (timeout) =>
+  new Promise((resolve) => setTimeout(resolve, timeout));
 
 const BoxPage = () => {
   const [text, setText] = useState(null);
@@ -21,20 +22,22 @@ const BoxPage = () => {
       <Seo meta={[{ name: "robots", value: "noindex nofollow" }]} />
       <DragAndDrop
         className={className}
-        handleDrop={async(files) => {
+        handleDrop={async (files) => {
           try {
             const file = files[0];
 
             setText(
               <>
                 <ArrowUpCircle size={32} />
-                <span>
-                Uploading {file.name}...
-              </span>
-              </>,
+                <span>Uploading {file.name}...</span>
+              </>
             );
 
-            const res = await fetch(`${boxUrl}${encodeURIComponent(file.name)}&contentType=${encodeURIComponent(file.type)}`);
+            const res = await fetch(
+              `${boxUrl}${encodeURIComponent(
+                file.name
+              )}&contentType=${encodeURIComponent(file.type)}`
+            );
             const { key, url } = await res.json();
 
             await fetch(url, { method: "PUT", body: file });
@@ -45,7 +48,7 @@ const BoxPage = () => {
               <>
                 <CheckCircle size={32} />
                 <span className="box-url">{box}</span>
-              </>,
+              </>
             );
 
             try {
@@ -68,14 +71,14 @@ const BoxPage = () => {
             setText(
               <>
                 <XCircle size={32} />
-                <span>
-                  {e.message || "Unknown error"}
-                </span>
-              </>,
+                <span>{e.message || "Unknown error"}</span>
+              </>
             );
           }
         }}
-      >{text}</DragAndDrop>
+      >
+        {text}
+      </DragAndDrop>
     </Layout>
   );
 };

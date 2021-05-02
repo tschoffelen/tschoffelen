@@ -63,19 +63,15 @@ module.exports = {
       },
     },
     {
-      resolve: "@nearst/gatsby-source-dynamodb",
+      resolve: "gatsby-source-dynamodb",
       options: {
         typeName: "dynamodb",
         region: "eu-west-1",
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         params: {
           TableName: "schofco-website",
         },
-        ...(process.env.AWS_ACCESS_KEY_ID
-          ? {
-              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-            }
-          : {}),
       },
     },
     {

@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Header from "../components/Header"
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import Header from "../components/Header";
 
 const PgpPage = () => (
   <Layout>
@@ -71,6 +71,6 @@ KAyTLUTv34SM51GMGdY6y0rg8N0ftNyDFphoutwoEiTPTPls7z14sUvcdv9e
 -----END PGP PUBLIC KEY BLOCK-----`}
     </pre>
   </Layout>
-)
+);
 
-export default PgpPage
+export default PgpPage;

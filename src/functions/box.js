@@ -7,20 +7,18 @@ const reservedRe = /^\.+$/;
 const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
 const windowsTrailingRe = /[. ]+$/;
 
-const sanitize = (input) => input
-  .replace(illegalRe, "-")
-  .replace(controlRe, "-")
-  .replace(reservedRe, "-")
-  .replace(windowsReservedRe, "-")
-  .replace(windowsTrailingRe, "-")
-  .replace(/ /g, "-");
+const sanitize = (input) =>
+  input
+    .replace(illegalRe, "-")
+    .replace(controlRe, "-")
+    .replace(reservedRe, "-")
+    .replace(windowsReservedRe, "-")
+    .replace(windowsTrailingRe, "-")
+    .replace(/ /g, "-");
 
-const randomString = () =>
-  Math.random()
-    .toString(36)
-    .substring(2, 6);
+const randomString = () => Math.random().toString(36).substring(2, 6);
 
-exports.handler = async({ queryStringParameters }) => {
+exports.handler = async ({ queryStringParameters }) => {
   const { filename, contentType } = queryStringParameters;
   const key = `f/${randomString()}/${sanitize(filename)}`;
 

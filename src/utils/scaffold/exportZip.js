@@ -35,7 +35,10 @@ export const exportZip = async (options) => {
     }
   });
 
-  zip.file("serverless.yml", yaml.stringify(sls, { indent: 2 }).replace(/\n(\w+):\n/gi, "\n\n$1:\n"));
+  zip.file(
+    "serverless.yml",
+    yaml.stringify(sls, { indent: 2 }).replace(/\n(\w+):\n/gi, "\n\n$1:\n")
+  );
   zip.file("package.json", JSON.stringify(packageJson, null, 2));
 
   const content = await zip.generateAsync({ type: "blob" });

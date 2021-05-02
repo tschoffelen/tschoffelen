@@ -1,11 +1,11 @@
-import React from "react"
-import groupBy from "lodash.groupby"
-import { graphql } from "gatsby"
+import React from "react";
+import groupBy from "lodash.groupby";
+import { graphql } from "gatsby";
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Header from "../components/Header"
-import { organizePosts, renderPost } from "../utils"
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import Header from "../components/Header";
+import { organizePosts, renderPost } from "../utils";
 
 const PostsPage = ({
   data: {
@@ -24,16 +24,16 @@ const PostsPage = ({
     ).map(([key, value]) => (
       <div className="links">
         <h3>{key}</h3>
-        {value.map(post => renderPost(post))}
+        {value.map((post) => renderPost(post))}
       </div>
     ))}
   </Layout>
-)
+);
 
 export const query = graphql`
   query allPosts {
     allDynamodb(
-      filter: {type: {eq: "post"}}
+      filter: { type: { eq: "post" } }
       sort: { fields: [createdAt], order: DESC }
       limit: 100
     ) {
@@ -60,6 +60,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default PostsPage
+export default PostsPage;

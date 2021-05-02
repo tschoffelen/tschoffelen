@@ -10,13 +10,11 @@ Cognito by is heavily focussed on username and password based login by default. 
 
 That begs the question: is there a way to work around that? Can we make that workaround simple enough to still retain all the advantages of using Cognito in the first place?
 
-
 ## The ingredients
 
 The key in the solution lies in the multi-factor login support Cognito has. This system is built in a flexible manner to not only allow it for use as a second factor, but also as a replacement for a password.
 
 The second important piece of the puzzle is that user accounts in Cognito have attributes. There's a set of default attributes (email, name, phone, etc.), but you can also add your own custom attributes, and configure those to be editable by the user or only by the admin.
-
 
 ## The solution
 
@@ -32,7 +30,6 @@ You can find **[the code for my proof-of-concept](https://github.com/leanmotherf
 4. It will call `signIn(email)` first, followed by `sendCustomChallengeAnswer(authChallenge)`. Upon completion, Amplify automatically stores the resulting JWT in a cookie.
 5. It then redirects back to the home route, where the user will now be signed in.
 
-
 ## How safe is it?
 
 You won't be able to get access to a user's account without knowing their email address and having access to their inbox.
@@ -41,15 +38,12 @@ Having the `authChallenge` as a random UUID adds enough entropy to make brute-fo
 
 Adding an expiry date to the links (30 minutes in this example) means gaining access to old emails won't give attackers access to their accounts.
 
-
 ## How scalable is this?
 
 This does a `AdminUpdateUserAttributes` request on every login. That method has a soft limit of 5 calls per second, which should be sufficient for most user bases, as the chance of more than 5 users signing in at the same second is probably very unlikely unless you have 50k+ active users.
 
 If so, you could ask AWS to raise that soft limit, and you should be good for at least another 250k MAUs. After that, it be time to start looking into something more robust to manage your authentication needs :)
 
-
 ## How can we further improve UX?
 
-* Use a more deterministic method for generating `authChallenge`, so that if the user accidentally sends themselves more than one magic link email in a short period of time, the second send doesn't make the first link invalid. However, introducing determinism might make the system less safe if done incorrectly.
-
+- Use a more deterministic method for generating `authChallenge`, so that if the user accidentally sends themselves more than one magic link email in a short period of time, the second send doesn't make the first link invalid. However, introducing determinism might make the system less safe if done incorrectly.

@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Header from "../components/Header"
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import Header from "../components/Header";
 
 const PrivacyPage = () => (
   <Layout>
@@ -183,6 +183,6 @@ const PrivacyPage = () => (
       </li>
     </ol>
   </Layout>
-)
+);
 
-export default PrivacyPage
+export default PrivacyPage;

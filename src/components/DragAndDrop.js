@@ -7,12 +7,12 @@ class DragAndDrop extends Component {
   };
 
   dropRef = React.createRef();
-  handleDrag = e => {
+  handleDrag = (e) => {
     e.preventDefault();
     e.stopPropagation();
   };
 
-  handleDragIn = e => {
+  handleDragIn = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
@@ -20,13 +20,13 @@ class DragAndDrop extends Component {
     }
   };
 
-  handleDragOut = e => {
+  handleDragOut = (e) => {
     e.preventDefault();
     e.stopPropagation();
     this.setState({ drag: false });
   };
 
-  handleDrop = e => {
+  handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
     this.setState({ drag: false });
@@ -56,31 +56,28 @@ class DragAndDrop extends Component {
     const defaultContent = (
       <>
         <Circle size={32} />
-        <span>
-          Drop your stuff
-        </span>
+        <span>Drop your stuff</span>
       </>
     );
 
     const hoverContent = (
       <>
         <ArrowDownCircle size={32} />
-        <span>
-          Drop it like it's hot
-        </span>
+        <span>Drop it like it's hot</span>
       </>
     );
 
     return (
       <div
-        className={`box-area ${this.props.className || ''} ${this.state.drag ? "active" : ""}`}
+        className={`box-area ${this.props.className || ""} ${
+          this.state.drag ? "active" : ""
+        }`}
         ref={this.dropRef}
       >
         {this.state.drag ? hoverContent : this.props.children || defaultContent}
       </div>
     );
   }
-
 }
 
 export default DragAndDrop;

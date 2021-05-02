@@ -9,7 +9,7 @@ const base = path.join(__dirname, "..", "..", "content");
 
 if (process.argv.length < 3) {
   console.error(
-    "\nEnter a post title as a parameter:\n   yarn new \"My new post\"\n",
+    '\nEnter a post title as a parameter:\n   yarn new "My new post"\n'
   );
   process.exit(1);
 }
@@ -22,9 +22,9 @@ const body = `---
 title: ${title}
 date: ${format(new Date(), "yyyy-MM-dd")}
 category: Writing
----\n\n`
+---\n\n`;
 
-;(async() => {
+(async () => {
   await exec("git checkout master");
   await exec("git pull");
   await exec(`git checkout -b 'post/${name}'`);

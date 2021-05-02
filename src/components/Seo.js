@@ -15,7 +15,7 @@ function Seo({ description, lang, meta, title, jsonLd }) {
           }
         }
       }
-    `,
+    `
   );
 
   const metaDescription = description || site.siteMetadata.description;
@@ -120,44 +120,49 @@ function Seo({ description, lang, meta, title, jsonLd }) {
       <link rel="me" href="https://github.com/tschoffelen" />
       <link rel="pgpkey" href="/pgp.txt" />
       <script type="application/ld+json">
-        {JSON.stringify(jsonLd || {
-          "@context": "http://schema.org",
-          "@type": "Person",
-          "name": "Thomas Schoffelen",
-          "familyName": "Schoffelen",
-          "givenName": "Thomas",
-          "worksFor": [{
-            "@type": "Role",
-            "roleName": "Head of Platform Innovation",
-            "startDate": "2016",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "NearSt",
-            },
-          }, {
-            "@type": "Role",
-            "roleName": "Founder",
-            "startDate": "2017",
-            "worksFor": {
-              "@type": "Organization",
-              "name": "Thomas Schoffelen BV",
-              "brand": "schof.co",
-              "taxID": "67640516",
-              "duns": "492180704",
-              "email": "info@schof.co",
-              "vatID": "NL857104779B01",
-            },
-          }],
-          "url": "https://schof.co",
-          "jobTitle": "Head of Platform Innovation",
-          "gender": "male",
-          "image": "https://schof.co/avatar.jpg",
-          "sameAs": [
-            "https://github.com/tschoffelen",
-            "https://twitter.com/tschoffelen",
-            "https://linkedin.com/in/tschoffelen",
-          ],
-        })}
+        {JSON.stringify(
+          jsonLd || {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            name: "Thomas Schoffelen",
+            familyName: "Schoffelen",
+            givenName: "Thomas",
+            worksFor: [
+              {
+                "@type": "Role",
+                roleName: "Head of Platform Innovation",
+                startDate: "2016",
+                worksFor: {
+                  "@type": "Organization",
+                  name: "NearSt",
+                },
+              },
+              {
+                "@type": "Role",
+                roleName: "Founder",
+                startDate: "2017",
+                worksFor: {
+                  "@type": "Organization",
+                  name: "Thomas Schoffelen BV",
+                  brand: "schof.co",
+                  taxID: "67640516",
+                  duns: "492180704",
+                  email: "info@schof.co",
+                  vatID: "NL857104779B01",
+                },
+              },
+            ],
+            url: "https://schof.co",
+            jobTitle: "Head of Platform Innovation",
+            gender: "male",
+            image: "https://schof.co/avatar.jpg",
+            sameAs: [
+              "https://github.com/tschoffelen",
+              "https://twitter.com/tschoffelen",
+              "https://linkedin.com/in/tschoffelen",
+            ],
+          }
+        )}
       </script>
     </Helmet>
   );

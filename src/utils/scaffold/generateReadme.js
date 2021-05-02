@@ -1,7 +1,8 @@
 export const generateReadme = (name) => {
   const titleName = name
     .split(/([\s_-]+)/gi)
-    .map((part) => part[0].toUpperCase() + part.substring(1).toLowerCase()).join(" ");
+    .map((part) => part[0].toUpperCase() + part.substring(1).toLowerCase())
+    .join(" ");
 
   return `# ${titleName}
 

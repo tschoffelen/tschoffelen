@@ -1614,13 +1614,6 @@
   resolved "https://registry.yarnpkg.com/@mikaelkristiansson/domready/-/domready-1.0.11.tgz#6a4b5891dccb6402ff4e944de843036ee1ffd4f5"
   integrity sha512-nEBLOa0JgtqahmPrnJZ18epLiFBzxhdKgo4uhN3TaBFRmM30pEVrS9FAEV4tg92d8PTdU+dYQx2lnpPyFMgMcg==
 
-"@nearst/gatsby-source-dynamodb@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@nearst/gatsby-source-dynamodb/-/gatsby-source-dynamodb-0.0.2.tgz#2df6384bfbd0d844ddae996882c2c006df718fc9"
-  integrity sha512-Kyq/I7cd8ug8MfhN5U5cJcv2EkobyBOIJXxR8i2p+TL4kxP/+KHBYfuxJWKYMCJH3FjHHBuAHLQ8zwxNmziPBg==
-  dependencies:
-    aws-sdk "^2.479.0"
-
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -7189,6 +7182,13 @@ gatsby-remark-smartypants@^4.1.0:
     retext "^7.0.1"
     retext-smartypants "^4.0.0"
     unist-util-visit "^2.0.3"
+
+gatsby-source-dynamodb@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-dynamodb/-/gatsby-source-dynamodb-0.0.2.tgz#971745b21c4c790e4e7a77d16f03fe955aaba156"
+  integrity sha512-n3k9tQP9IN4vn51ZJm/Rqb1WSx26Q8hcf7m1Kl38dBvCY0jdcKQNYahyj/OQuAOD9zcpRU4i0V19SeNIT4rb/w==
+  dependencies:
+    aws-sdk "^2.479.0"
 
 gatsby-source-filesystem@^3.4.0:
   version "3.4.0"

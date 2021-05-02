@@ -16,11 +16,9 @@ That just looks terrifying.
 
 There are a lot of simple practical applications for regular expressions though, and since almost every programming language supports them out-of-the-box, it is good to know some basics.
 
-
 ## The basics
 
 Regular expressions are used to extract or replace parts of text strings. You do that by specifying rules for what characters you want to extract.
-
 
 ## Groups of characters
 
@@ -33,44 +31,37 @@ Let's imagine we want to match the last words of every sentence in a paragraph o
 If we ran that regex on the previous paragraph, it would yield these results:
 
 ```json
-[
-    "text.",
-    "mark.",
-    "regex?"
-]
+["text.", "mark.", "regex?"]
 ```
 
 Okay, bit by bit now:
 
-* `[a-z]` means match every character between **a** and **z**
-* `+` means _at least one or more_ and applies to whatever directly precedes it
-* `()` is a way of defining a group, and the pipe characters are the different options we want to match. So `(a|b)` means any character that is either **a** or **b**.
-* `\.` and `\?` have slashes before them because those characters have special meaning in regex (`.` is similar to `+`, but means _zero or more_, `?` means the group before it is optional). The slashes are a way to _escape_ those characters, so that we can match them as a normal characters without special regex meaning.
-
+- `[a-z]` means match every character between **a** and **z**
+- `+` means _at least one or more_ and applies to whatever directly precedes it
+- `()` is a way of defining a group, and the pipe characters are the different options we want to match. So `(a|b)` means any character that is either **a** or **b**.
+- `\.` and `\?` have slashes before them because those characters have special meaning in regex (`.` is similar to `+`, but means _zero or more_, `?` means the group before it is optional). The slashes are a way to _escape_ those characters, so that we can match them as a normal characters without special regex meaning.
 
 ## Exact number of matched characters
 
 What if I want to get all the 5-letter words from this sentence? Instead of just using `+` and `.` to specify how many matches you want, you can also specify an exact number of matches:
 
-* To match all 5-letter words: `[a-z]{5}`
-* To match all words with more than 4 letters: `[a-z]{4,}`
-* To match all words between 1 and 3 letters: `[a-z]{1,3}`
-
+- To match all 5-letter words: `[a-z]{5}`
+- To match all words with more than 4 letters: `[a-z]{4,}`
+- To match all words between 1 and 3 letters: `[a-z]{1,3}`
 
 ## Matching other stuff than just letters
 
 Okay, so we know what `[a-z]` does, and also took a quick peek at `(a|b)`. But there's some other options:
 
-* `[abc]` is the same as `(a|b|c)` – matches any of **a**, **b**, **c**
-* `[0-9]` matches a character between **0** and **9**
-* `[0-9a-b]` matches a character between **0** and **9** and **a** and **z**
+- `[abc]` is the same as `(a|b|c)` – matches any of **a**, **b**, **c**
+- `[0-9]` matches a character between **0** and **9**
+- `[0-9a-b]` matches a character between **0** and **9** and **a** and **z**
 
 But there's also some shortcodes to simplify common expressions:
 
-* `\d` is the same as `[0-9]`
-* `\w` matches any word character (equal to `[a-zA-Z0-9_]`)
-* `\s` matches any type of white space (spaces, tabs, etc.)
-
+- `\d` is the same as `[0-9]`
+- `\w` matches any word character (equal to `[a-zA-Z0-9_]`)
+- `\s` matches any type of white space (spaces, tabs, etc.)
 
 ## Start and end
 
@@ -82,8 +73,8 @@ This would give you the first word in the string:
 ^\w+
 ```
 
-* `^` specifies the string has to start with your expression to match
-* `$` specifies the string has to end with your expression
+- `^` specifies the string has to start with your expression to match
+- `$` specifies the string has to end with your expression
 
 Combining these two gives you a perfect way to check if the full string matches your expression. Consider wanting to check if the input is a valid numberic string between 8 and 10 characters long:
 
@@ -91,13 +82,11 @@ Combining these two gives you a perfect way to check if the full string matches 
 ^\d{8,10}$
 ```
 
-
 ## Lookaheads, backreferences, match sets, and more
 
 These are just the basics you will most often need.
 
 There's much more in the wonderful world of regex, like being able to check if something matches your expression and is or isn't [preceded with another expression](https://www.regular-expressions.info/refcapture.html).
-
 
 ## A practical example
 
@@ -121,13 +110,12 @@ And then use the programming language of your choice to invoke it. Let's go for 
 
 ```js
 const html = '<a href="...';
-const regex = /<span class="price">([^<]+)<\/span>/
+const regex = /<span class="price">([^<]+)<\/span>/;
 
-console.log(regex.exec(html)) // ['<span...', '$49,95']
+console.log(regex.exec(html)); // ['<span...', '$49,95']
 ```
-
 
 ## Tools
 
-* Test regular expressions in the browser using [regexr.com](https://regexr.com/) or try the amazing [Expressions](https://apptorium.com/expressions) app for Mac.
-* Use this helpful [cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/).
+- Test regular expressions in the browser using [regexr.com](https://regexr.com/) or try the amazing [Expressions](https://apptorium.com/expressions) app for Mac.
+- Use this helpful [cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/).

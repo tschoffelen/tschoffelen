@@ -20,41 +20,47 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
       <Seo
         title={post.frontmatter.title}
         description={post.excerpt}
-        jsonLd={[{
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": post.frontmatter.title,
-          "datePublished": post.frontmatter.date,
-          "about": post.frontmatter.category,
-          "author": {
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "name": "Thomas Schoffelen",
-            "familyName": "Schoffelen",
-            "givenName": "Thomas",
-            "url": "https://schof.co",
-            "image": "https://schof.co/avatar.jpg",
-            "sameAs": [
-              "https://github.com/tschoffelen",
-              "https://twitter.com/tschoffelen",
-              "https://linkedin.com/in/tschoffelen",
-            ],
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.frontmatter.title,
+            datePublished: post.frontmatter.date,
+            about: post.frontmatter.category,
+            author: {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              name: "Thomas Schoffelen",
+              familyName: "Schoffelen",
+              givenName: "Thomas",
+              url: "https://schof.co",
+              image: "https://schof.co/avatar.jpg",
+              sameAs: [
+                "https://github.com/tschoffelen",
+                "https://twitter.com/tschoffelen",
+                "https://linkedin.com/in/tschoffelen",
+              ],
+            },
           },
-        },
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [{
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Posts",
-              "item": "https://schof.co/posts/",
-            }, {
-              "@type": "ListItem",
-              "position": 2,
-              "name": post.frontmatter.category || post.frontmatter.title,
-            }],
-          }]} />
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Posts",
+                item: "https://schof.co/posts/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: post.frontmatter.category || post.frontmatter.title,
+              },
+            ],
+          },
+        ]}
+      />
 
       <Header />
       <article className="blog-post">
@@ -67,7 +73,9 @@ const BlogPostTemplate = ({ data: { markdownRemark: post } }) => {
               </span>{" "}
             </span>
           ) : null}
-          <strong>{format(new Date(post.frontmatter.date), "MMMM d, yyyy")}</strong>
+          <strong>
+            {format(new Date(post.frontmatter.date), "MMMM d, yyyy")}
+          </strong>
           {useFountain ? (
             <span className="hide-phone">
               <strong>

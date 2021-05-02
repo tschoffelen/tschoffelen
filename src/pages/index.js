@@ -11,7 +11,8 @@ const IndexPage = ({
     allMarkdownRemark: { nodes: blogPosts },
   },
 }) => {
-  const calendlyUrl = "https://calendly.com/tschof/consulting-30-mins?primary_color=355fc5&back=1";
+  const calendlyUrl =
+    "https://calendly.com/tschof/consulting-30-mins?primary_color=355fc5&back=1";
 
   return (
     <Layout className="homepage h-card">
@@ -25,14 +26,14 @@ const IndexPage = ({
         <h2 className="p-name">Hi, I'm Thomas.</h2>
 
         <p className="p-note">
-          I'm a co-founder of several tech startups, building tools to help small
-          businesses and educators. I love consulting founders and engineers on
-          everthing from starting their own company to designing complex
-          applications.
+          I'm a co-founder of several tech startups, building tools to help
+          small businesses and educators. I love consulting founders and
+          engineers on everthing from starting their own company to designing
+          complex applications.
         </p>
         <p>
-          In my spare time I write about life, friendships, engineering and
-          user experience design.
+          In my spare time I write about life, friendships, engineering and user
+          experience design.
         </p>
 
         <div className="links">
@@ -41,7 +42,7 @@ const IndexPage = ({
           </h3>
           {organizePosts([...mediumPosts, ...blogPosts])
             .slice(0, 5)
-            .map(post => renderPost(post))}
+            .map((post) => renderPost(post))}
         </div>
 
         <div className="links">
@@ -119,7 +120,11 @@ const IndexPage = ({
           Thomas Schoffelen
         </a>
 
-        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async />
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        />
       </div>
     </Layout>
   );
@@ -128,7 +133,7 @@ const IndexPage = ({
 export const query = graphql`
   query posts {
     allDynamodb(
-      filter: {type: {eq: "post"}}
+      filter: { type: { eq: "post" } }
       sort: { fields: [createdAt], order: DESC }
       limit: 8
     ) {

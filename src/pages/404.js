@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
-import Header from "../components/Header"
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import Header from "../components/Header";
 
 const NotFoundPage = () => (
   <Layout>
@@ -19,6 +19,6 @@ const NotFoundPage = () => (
       </Link>
     </p>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;
