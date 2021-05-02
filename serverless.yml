@@ -23,8 +23,9 @@ provider:
   name: aws
   stage: ${opt:stage, 'production'}
   region: ${opt:region, 'eu-west-1'}
+  lambdaHashingVersion: 20201221
   environment:
-    NODE_ENV: ${self:custom.stage}
+    NODE_ENV: ${opt:stage, 'production'}
     TABLE_NAME: ${self:service}
     BOX_BUCKET: schof-box
   iam:
@@ -53,9 +54,8 @@ provider:
 package:
   individually: true
   excludeDevDependencies: false
-  exclude:
-    - '**'
-  include:
+  patterns:
+    - !**
     - src/functions/*.js
     - node_modules/axios/**
 
