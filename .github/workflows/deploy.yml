@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-    - master
+      - master
   schedule:
     - cron: '0 0 * * *'
 
@@ -11,21 +11,21 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
-    - name: use node 14
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14
-    - name: install aws cli
-      uses: chrislennon/action-aws-cli@1.1
-    - name: install dependencies
-      run: yarn
-    - name: build
-      run: yarn build
-    - name: deploy
-      run: yarn deploy
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: ${{ secrets.AWS_REGION }}
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: use node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: install aws cli
+        uses: chrislennon/action-aws-cli@1.1
+      - name: install dependencies
+        run: yarn
+      - name: build
+        run: yarn build
+      - name: deploy
+        run: yarn deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
