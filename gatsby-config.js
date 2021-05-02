@@ -6,6 +6,9 @@ module.exports = {
     author: "@tschoffelen",
     siteUrl: "https://schof.co/",
   },
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+  },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-sitemap",
