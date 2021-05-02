@@ -11,16 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v1
-      - name: use node 14
+      - name: Use node 14
         uses: actions/setup-node@v1
         with:
           node-version: 14
-      - name: get yarn cache directory path
+      - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - name: load cache
+      - name: Load cache
         id: gatsby-cache-build
         uses: actions/cache@v2
         with:
@@ -31,11 +31,11 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-      - name: install aws cli
+      - name: Install AWS CLI
         uses: chrislennon/action-aws-cli@1.1
-      - name: install dependencies
+      - name: Install dependencies
         run: yarn
-      - name: build & deploy
+      - name: Build & deploy
         run: yarn build && yarn deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
