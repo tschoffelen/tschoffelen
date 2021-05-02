@@ -21,16 +21,8 @@ jobs:
         uses: chrislennon/action-aws-cli@1.1
       - name: install dependencies
         run: yarn
-      - name: build
-        run: yarn build
-      - name: configure credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
-      - name: deploy
-        run: yarn deploy
+      - name: build & deploy
+        run: yarn build && yarn deploy
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
