@@ -13,6 +13,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
+      - name: use node 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: load cache
         id: gatsby-cache-build
         uses: actions/cache@v2
@@ -20,13 +27,10 @@ jobs:
           path: |
             public
             .cache
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: ${{ runner.os }}-gatsby-build-${{ github.run_id }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
-      - name: use node 14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
       - name: install aws cli
         uses: chrislennon/action-aws-cli@1.1
       - name: install dependencies
