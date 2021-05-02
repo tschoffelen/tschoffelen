@@ -58,6 +58,7 @@ package:
     - '!**'
     - src/functions/*.js
     - node_modules/axios/**
+    - node_modules/follow-redirects/**
 
 # Lambda functions
 functions:
