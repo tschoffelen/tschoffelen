@@ -1,4 +1,5 @@
-export const generateSentry = () => `import * as Sentry from "@sentry/serverless";
+export const generateSentry =
+  () => `import * as Sentry from "@sentry/serverless";
 import * as SentryTracing from '@sentry/tracing';
 import { error } from "./output";
 
