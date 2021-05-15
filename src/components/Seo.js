@@ -60,7 +60,7 @@ function Seo({ description, lang, meta, title, jsonLd }) {
           content: `website`,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: `https://schof.co/social.png`,
         },
         {
@@ -74,6 +74,10 @@ function Seo({ description, lang, meta, title, jsonLd }) {
         {
           name: `twitter:title`,
           content: title,
+        },
+        {
+          name: `twitter:site`,
+          content: 'tschoffelen',
         },
         {
           name: `twitter:description`,
@@ -114,11 +118,10 @@ function Seo({ description, lang, meta, title, jsonLd }) {
 
 */`}</script>
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-      <link rel="canonical" href="https://schof.co" />
       <link rel="me" href="https://twitter.com/tschoffelen" />
       <link rel="me" href="https://instagram.com/tschoffelen" />
       <link rel="me" href="https://github.com/tschoffelen" />
-      <link rel="pgpkey" href="/pgp.txt" />
+      <link rel="pgpkey" href="https://schof.co/pgp.txt" />
       <script type="application/ld+json">
         {JSON.stringify(
           jsonLd || {
