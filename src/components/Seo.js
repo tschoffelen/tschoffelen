@@ -45,6 +45,10 @@ function Seo({ description, lang, meta, title, jsonLd }) {
           content: title || site.siteMetadata.title,
         },
         {
+          name: "author",
+          content: "Thomas Schoffelen",
+        },
+        {
           name: "description",
           content: metaDescription,
         },
