@@ -53,6 +53,11 @@ function Seo({ description, lang, meta, title, jsonLd }) {
           content: metaDescription,
         },
         {
+          name: "keywords",
+          content:
+            "thomas schoffelen, thomas, schoffelen, consulting, engineer, entrepreneur, startups, young, startup",
+        },
+        {
           property: "og:title",
           content: title || site.siteMetadata.title,
         },
