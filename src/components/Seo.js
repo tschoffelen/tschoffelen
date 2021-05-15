@@ -32,60 +32,69 @@ function Seo({ description, lang, meta, title, jsonLd }) {
       }
       meta={[
         {
-          name: `viewport`,
-          content: `width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0`,
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1.0, shrink-to-fit=no, minimum-scale=1.0",
         },
         {
-          name: `google-site-verification`,
-          content: `PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE`,
+          name: "google-site-verification",
+          content: "PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE",
         },
         {
-          name: `title`,
-          content: title,
+          name: "title",
+          content: title || site.siteMetadata.title,
         },
         {
-          name: `description`,
+          name: "description",
           content: metaDescription,
         },
         {
-          property: `og:title`,
-          content: title,
+          property: "og:title",
+          content: title || site.siteMetadata.title,
         },
         {
-          property: `og:description`,
+          property: "og:description",
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: "og:type",
+          content: "website",
         },
         {
-          property: `og:image`,
-          content: `https://schof.co/social.png`,
+          property: "og:url",
+          content: "https://schof.co/",
         },
         {
-          name: `twitter:card`,
-          content: `summary_large_image`,
+          property: "og:image",
+          content: "https://schof.co/social.png",
         },
         {
-          name: `twitter:creator`,
+          property: "fb:app_id",
+          content: "3816262195139481",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          name: "twitter:creator",
           content: site.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
-          content: title,
+          name: "twitter:title",
+          content: title || site.siteMetadata.title,
         },
         {
-          name: `twitter:site`,
-          content: 'tschoffelen',
+          name: "twitter:site",
+          content: "tschoffelen",
         },
         {
-          name: `twitter:description`,
+          name: "twitter:description",
           content: metaDescription,
         },
         {
-          name: `twitter:image`,
-          content: `https://schof.co/social.png`,
+          name: "twitter:image",
+          content: "https://schof.co/social.png",
         },
       ].concat(meta)}
     >
@@ -172,9 +181,9 @@ function Seo({ description, lang, meta, title, jsonLd }) {
 }
 
 Seo.defaultProps = {
-  lang: `en`,
+  lang: "en",
   meta: [],
-  description: ``,
+  description: "",
 };
 
 Seo.propTypes = {
