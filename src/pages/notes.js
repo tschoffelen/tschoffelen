@@ -28,7 +28,7 @@ const NotePage = ({ "*": noteId }) => {
     <Layout key="note">
       <Seo
         title="Notes"
-        meta={[{ name: "robots", value: "noindex nofollow" }]}
+        meta={[{ name: "robots", content: "noindex, nofollow" }]}
       />
 
       <Header />

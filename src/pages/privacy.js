@@ -6,7 +6,9 @@ import Header from "../components/Header";
 
 const PrivacyPage = () => (
   <Layout>
-    <Seo title="Privacy Policy" />
+    <Seo
+      title="Privacy Policy"
+      meta={[{ name: "robots", content: "noindex, nofollow" }]} />
 
     <Header />
 

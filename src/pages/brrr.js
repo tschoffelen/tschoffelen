@@ -5,7 +5,7 @@ import Seo from "../components/Seo";
 
 const BrrrPage = () => (
   <Layout>
-    <Seo title="Brrr" meta={[{ name: "robots", value: "noindex nofollow" }]} />
+    <Seo title="Brrr" meta={[{ name: "robots", content: "noindex, nofollow" }]} />
 
     <div className="brrr-anim">
       <svg width="48px" height="90px" viewBox="0 0 48 90" version="1.1">

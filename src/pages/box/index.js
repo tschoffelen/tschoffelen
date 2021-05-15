@@ -19,7 +19,7 @@ const BoxPage = () => {
 
   return (
     <Layout>
-      <Seo meta={[{ name: "robots", value: "noindex nofollow" }]} />
+      <Seo meta={[{ name: "robots", content: "noindex, nofollow" }]} />
       <DragAndDrop
         className={className}
         handleDrop={async (files) => {
