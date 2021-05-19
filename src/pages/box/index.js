@@ -52,14 +52,16 @@ const BoxPage = () => {
             );
 
             try {
+              window.focus();
               window.getSelection().removeAllRanges();
               await wait(100);
               const range = document.createRange();
               range.selectNode(document.querySelector(".box-area"));
               window.getSelection().addRange(range);
+              try {
+                await navigator.clipboard.writeText(box);
+              } catch (e) {}
               document.execCommand("copy");
-              await wait(200);
-              window.getSelection().removeAllRanges();
             } catch (e) {
               console.log(e);
             }
