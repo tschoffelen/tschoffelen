@@ -57,6 +57,7 @@ export const query = graphql`
           date
           category
         }
+        excerpt
       }
     }
   }

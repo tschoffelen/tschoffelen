@@ -1,13 +1,36 @@
 import React from "react";
 import { format } from "date-fns";
 import { Link } from "gatsby";
+import { stripHtml } from "string-strip-html";
 
-export const renderPost = ({ title, created, category, link, external }) =>
+const getExcerpt = ({ description, excerpt }) => {
+  if (excerpt) {
+    if (excerpt.includes(". ")) {
+      excerpt = `${excerpt.split(". ")[0]}.`;
+    }
+    return excerpt;
+  }
+  return stripHtml(description || '').result.replace(
+    /Continue reading on ([^»]+) »/,
+    ""
+  );
+};
+
+export const renderPost = ({
+  title,
+  created,
+  category,
+  link,
+  external,
+  ...node
+}) =>
   external ? (
     <a href={link} key={link} rel="noopener noreferrer" target="_blank">
       {title}
       <span className="sr">{`, written on `}</span>
       <span className="link-date">{created}</span>
+      <span className="sr dash"> - </span>
+      <span className="link-description shortened">{getExcerpt(node)}</span>
     </a>
   ) : (
     <Link to={link} key={link}>
@@ -15,6 +38,8 @@ export const renderPost = ({ title, created, category, link, external }) =>
       <span className="sr">{`, written on `}</span>
       <span className="link-date">{created}</span>
       {category && <span className="sr">{` in category ${category}.`}</span>}
+      <span className="sr dash"> - </span>
+      <span className="link-description shortened">{getExcerpt(node)}</span>
     </Link>
   );
 
