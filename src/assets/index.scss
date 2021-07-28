@@ -171,8 +171,7 @@ header {
 }
 
 main {
-  padding: 32px;
-  padding-bottom: 64px;
+  padding: 32px 32px 64px;
   margin: 0 auto;
   position: relative;
   max-width: 560px;
@@ -205,7 +204,7 @@ main {
 }
 
 .hero {
-  background-color: #efefef;
+  background-color: #f4f4f5;
   padding: 96px 0;
 
   main {
@@ -258,16 +257,16 @@ main {
     transition: color 0.3s linear;
 
     .link-date {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: #f4f4f5;
       margin-left: 8px;
+      color: #bbb;
       font-size: 10px;
       top: -2px;
       border-radius: .3rem;
       position: relative;
       text-transform: uppercase;
       padding: 4px 5px 3px;
-      opacity: 0.3;
-      transition: opacity 0.3s linear, background-color 0.3s linear;
+      transition: color 0.3s linear, background-color 0.3s linear;
       user-select: none;
     }
 
@@ -275,8 +274,9 @@ main {
       font-weight: 400;
       font-size: 16px;
       display: block;
-      line-height: 24px;
+      line-height: 25px;
       padding-top: 1px;
+      opacity: 0.8;
 
       &.shortened {
         text-overflow: ellipsis;
@@ -284,7 +284,7 @@ main {
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
-        height: 48px;
+        height: 50px;
       }
     }
 
@@ -292,8 +292,8 @@ main {
       color: $link-hover-light;
 
       .link-date {
-        opacity: 1;
         background-color: rgba(53, 95, 197, 0.25);
+        color: $link-hover-light;
       }
     }
   }
