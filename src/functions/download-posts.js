@@ -35,26 +35,26 @@ module.exports.handler = async () => {
 
   // Download NearSt blog posts
 
-  let feed = await parser.parseURL(
-    "https://blog.near.st/author/thomas/rss.xml"
-  );
-  for (const { title, date, link, guid, content } of feed.items) {
-    await dynamo
-      .put({
-        TableName,
-        Item: {
-          pk: guid,
-          sk: "nearst",
-          type: "post",
-          id: guid,
-          title: title.replace("&amp;", "&"),
-          link,
-          description: content,
-          createdAt: new Date(date).toISOString(),
-        },
-      })
-      .promise();
-  }
+  // let feed = await parser.parseURL(
+  //   "https://blog.near.st/author/thomas/rss.xml"
+  // );
+  // for (const { title, date, link, guid, content } of feed.items) {
+  //   await dynamo
+  //     .put({
+  //       TableName,
+  //       Item: {
+  //         pk: guid,
+  //         sk: "nearst",
+  //         type: "post",
+  //         id: guid,
+  //         title: title.replace("&amp;", "&"),
+  //         link,
+  //         description: content,
+  //         createdAt: new Date(date).toISOString(),
+  //       },
+  //     })
+  //     .promise();
+  // }
 
   return "ok";
 };
