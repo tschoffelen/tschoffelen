@@ -70,4 +70,7 @@ yarn-error.log
 
 src/data/posts.json
 static/posts.json
+static/_common.css
+static/_common.css.map
+static/fonts
 .serverless
