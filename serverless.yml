@@ -10,6 +10,7 @@ custom:
       localDir: public/
       acl: public-read
       followSymlinks: true
+      deleteRemoved: false
       defaultContentType: text/html
   cloudfrontInvalidate:
     - distributionId: EO1YEJXL0AGGJ

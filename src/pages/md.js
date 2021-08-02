@@ -28,7 +28,11 @@ const MdPage = () => {
       <link href="/_common.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-      <main>${converter.makeHtml(content)}</main>
+      <main>
+        <article className="blog-post md">
+          ${converter.makeHtml(content)}
+        </article>
+      </main>
     </body>
     </html>`;
 
@@ -45,7 +49,7 @@ const MdPage = () => {
   };
 
   return (
-    <Layout>
+    <Layout className="markdown-editor">
       <Seo
         title="Markdown"
         meta={[{ name: "robots", content: "noindex, nofollow" }]}
