@@ -29,7 +29,7 @@
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-remark": "^4.2.0",
     "gatsby-transformer-sharp": "^3.5.0",
-    "jszip": "^3.6.0",
+    "jszip": "^3.7.0",
     "lodash.groupby": "^4.6.0",
     "prismjs": "^1.24.0",
     "prop-types": "^15.7.2",
