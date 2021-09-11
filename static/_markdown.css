@@ -278,7 +278,7 @@ html, body, p {
 
 .markdown-body code,
 .markdown-body pre {
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    font-family: 'yyx-mono', SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     font-size: 12px;
 }
 
@@ -368,7 +368,7 @@ html, body, p {
 .markdown-body h5,
 .markdown-body h6 {
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     font-weight: 600;
     line-height: 1.25;
 }
@@ -385,22 +385,21 @@ html, body, p {
 
 .markdown-body h2 {
     font-size: 1.5em;
-    margin-bottom: 1.2em;
 }
 
 .markdown-body h3 {
     font-size: 1.25em;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.5em;
 }
 
 .markdown-body h4 {
     font-size: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 }
 
 .markdown-body h5 {
     font-size: .875em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 }
 
 .markdown-body h6 {
