@@ -1048,3 +1048,8 @@ html, body, input, textarea, select {
     "Segoe UI", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+.markdown-body code a {
+    color: inherit;
+    text-decoration: underline !important;
+}
