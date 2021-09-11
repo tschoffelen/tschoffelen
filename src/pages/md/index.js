@@ -115,6 +115,7 @@ const MdPage = () => {
 
       <div className="markdown__editor">
         <textarea
+          autoFocus
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder="Write something..."
