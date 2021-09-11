@@ -21,24 +21,8 @@ const getHtml = (md) => {
   <title>Note</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link href="/_common.css" rel="stylesheet" type="text/css" />
   <link href="/_markdown.css" rel="stylesheet" type="text/css" />
   <link href="https://schof.co/f/gttr/prism-(1).css" rel="stylesheet" type="text/css" />
-  <style>
-    .markdown-body {
-      box-sizing: border-box;
-      min-width: 200px;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 48px;
-    }
-  
-    @media (max-width: 480px) {
-      .markdown-body {
-        padding: 16px;
-      }
-    }
-  </style>
 </head>
 <body>
 <article class="markdown-body">

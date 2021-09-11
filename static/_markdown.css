@@ -1053,3 +1053,23 @@ html, body, input, textarea, select {
     color: inherit;
     text-decoration: underline !important;
 }
+
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 48px;
+}
+
+@media (min-width: 1400px) {
+    .markdown-body {
+        padding: 72px;
+    }
+}
+
+@media (max-width: 480px) {
+    .markdown-body {
+        padding: 16px;
+    }
+}
