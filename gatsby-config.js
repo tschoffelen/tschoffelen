@@ -54,7 +54,7 @@ module.exports = {
         short_name: "Thomas",
         start_url: "/",
         background_color: "#ffffff",
-        theme_color: "#212733",
+        theme_color: "#f4f4f5",
         display: "minimal-ui",
         icon: "src/assets/icon.svg",
       },
