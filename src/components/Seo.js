@@ -135,6 +135,8 @@ function Seo({ description, lang, meta, title, jsonLd }) {
 
 
 */`}</script>
+      <meta name="theme-color" content="#f4f4f5" media="(prefers-color-scheme: light)"/>
+      <meta name="theme-color" content="#212733" media="(prefers-color-scheme: dark)"/>
       <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       <link rel="me" href="https://twitter.com/tschoffelen" />
       <link rel="me" href="https://instagram.com/tschoffelen" />
