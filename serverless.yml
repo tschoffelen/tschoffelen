@@ -60,6 +60,10 @@ package:
     - src/functions/*.js
     - node_modules/axios/**
     - node_modules/follow-redirects/**
+    - node_modules/rss/**
+    - node_modules/rss-parser/**
+    - node_modules/entities/**
+    - node_modules/xml2js/**
 
 # Lambda functions
 functions:
