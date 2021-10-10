@@ -64,6 +64,8 @@ package:
     - node_modules/rss-parser/**
     - node_modules/entities/**
     - node_modules/xml2js/**
+    - node_modules/sax/**
+    - node_modules/xmlbuilder/**
 
 # Lambda functions
 functions:
