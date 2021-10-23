@@ -66,6 +66,7 @@ package:
     - node_modules/xml2js/**
     - node_modules/sax/**
     - node_modules/xmlbuilder/**
+    - node_modules/nanoid/**
 
 # Lambda functions
 functions:

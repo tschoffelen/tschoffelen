@@ -1,4 +1,5 @@
 const AWS = require("aws-sdk");
+const { nanoid } = require("nanoid");
 const s3 = new AWS.S3({ useAccelerateEndpoint: true });
 
 const illegalRe = /[\/?<>\\:*|"]/g;
@@ -16,11 +17,9 @@ const sanitize = (input) =>
     .replace(windowsTrailingRe, "-")
     .replace(/ /g, "-");
 
-const randomString = () => Math.random().toString(36).substring(2, 6);
-
 exports.handler = async ({ queryStringParameters }) => {
   const { filename, contentType } = queryStringParameters;
-  const key = `f/${randomString()}/${sanitize(filename)}`;
+  const key = `f/${nanoid(6)}/${sanitize(filename)}`;
 
   const url = s3.getSignedUrl("putObject", {
     Bucket: process.env.BOX_BUCKET,

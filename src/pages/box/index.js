@@ -40,7 +40,17 @@ const BoxPage = () => {
             );
             const { key, url } = await res.json();
 
-            await fetch(url, { method: "PUT", body: file });
+            if (file.body) {
+              await fetch(url, {
+                method: "PUT",
+                body: file.body,
+                headers: {
+                  "Content-Type": file.type,
+                },
+              });
+            } else {
+              await fetch(url, { method: "PUT", body: file });
+            }
 
             const box = `https://schof.co/${key}`;
             setClassName("success");

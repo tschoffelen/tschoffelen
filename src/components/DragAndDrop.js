@@ -33,6 +33,23 @@ class DragAndDrop extends Component {
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       this.props.handleDrop(e.dataTransfer.files);
       e.dataTransfer.clearData();
+    } else if (
+      e.dataTransfer.items[0] &&
+      e.dataTransfer.items[0].kind === "string"
+    ) {
+      e.dataTransfer.items[0].getAsString((string) => {
+        if (string.startsWith("http://") || string.startsWith("https://")) {
+          string = `<html><meta http-equiv="refresh" content="0;URL='${string}'"/>Redirecting to ${string}...</html>`;
+        }
+        this.props.handleDrop([
+          {
+            name: "r.html",
+            type: "text/html",
+            body: string,
+          },
+        ]);
+        e.dataTransfer.clearData();
+      });
     }
   };
 
