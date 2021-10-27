@@ -107,7 +107,7 @@ const BoxPage = () => {
           <div className="promo-callout__label">NEW</div>
           <div>Need to send multiple images?</div>
           <Link to="/bin">
-            Try <code>/bin</code> instead &rarr;
+            Give <code>/bin</code> a try &rarr;
           </Link>
         </div>
       )}
