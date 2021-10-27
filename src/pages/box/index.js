@@ -18,9 +18,7 @@ const wait = async (timeout) =>
 const BoxPage = () => {
   const [text, setText] = useState(null);
   const [className, setClassName] = useState("");
-  const [dismissedBinNotice, setDismissedBinNotice] = useLocalStorage(
-    "dismissed_bin_notice"
-  );
+  const [dismissedBinNotice, setDismissedBinNotice] = useLocalStorage("dismissed_bin_notice", "0");
 
   return (
     <Layout>
@@ -96,7 +94,7 @@ const BoxPage = () => {
       >
         {text}
       </DragAndDrop>
-      {!dismissedBinNotice && (
+      {dismissedBinNotice === '0' && (
         <div className="promo-callout">
           <button
             className="promo-callout__close"
