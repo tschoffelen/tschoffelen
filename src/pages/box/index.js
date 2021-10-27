@@ -6,6 +6,8 @@ import DragAndDrop from "../../components/DragAndDrop";
 import Seo from "../../components/Seo";
 
 import "./style.scss";
+import { useLocalStorage } from "../../utils/useLocalStorage";
+import { Link } from "gatsby";
 
 const boxUrl =
   "https://mrm5dm6of9.execute-api.eu-west-1.amazonaws.com/production/box/get-url?filename=";
@@ -16,12 +18,15 @@ const wait = async (timeout) =>
 const BoxPage = () => {
   const [text, setText] = useState(null);
   const [className, setClassName] = useState("");
+  const [dismissedBinNotice, setDismissedBinNotice] = useLocalStorage(
+    "dismissed_bin_notice"
+  );
 
   return (
     <Layout>
       <Seo meta={[{ name: "robots", content: "noindex, nofollow" }]} />
       <DragAndDrop
-        className={className}
+        className={`box-area ${className}`}
         handleDrop={async (files) => {
           try {
             const file = files[0];
@@ -91,6 +96,21 @@ const BoxPage = () => {
       >
         {text}
       </DragAndDrop>
+      {!dismissedBinNotice && (
+        <div className="promo-callout">
+          <button
+            className="promo-callout__close"
+            onClick={() => setDismissedBinNotice("1")}
+          >
+            &times;
+          </button>
+          <div className="promo-callout__label">NEW</div>
+          <div>Need to send multiple images?</div>
+          <Link to="/bin">
+            Try <code>/bin</code> instead &rarr;
+          </Link>
+        </div>
+      )}
     </Layout>
   );
 };

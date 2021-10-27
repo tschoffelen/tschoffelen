@@ -3,6 +3,7 @@ service: schofco-website
 plugins:
   - serverless-s3-sync
   - serverless-cloudfront-invalidate
+  - serverless-offline
 
 custom:
   s3Sync:
@@ -28,6 +29,7 @@ provider:
   environment:
     NODE_ENV: ${opt:stage, 'production'}
     TABLE_NAME: ${self:service}
+    BINS_TABLE_NAME: ${self:service}-bins
     BOX_BUCKET: schof-box
   iam:
     role:
@@ -79,6 +81,15 @@ functions:
           path: /box/get-url
           method: get
           cors: true
+  bin:
+    handler: src/functions/bin.handler
+    memorySize: 256
+    timeout: 30
+    events:
+      - http:
+          path: /bin/{binId}
+          method: any
+          cors: true
   download-posts:
     handler: src/functions/download-posts.handler
     memorySize: 512
@@ -128,4 +139,29 @@ resources:
                 KeyType: RANGE
             Projection:
               ProjectionType: ALL
-
+    BinsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-bins
+        AttributeDefinitions:
+          - AttributeName: pk
+            AttributeType: S
+          - AttributeName: sk
+            AttributeType: S
+          - AttributeName: type
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: pk
+            KeyType: HASH
+          - AttributeName: sk
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: type-sk
+            KeySchema:
+              - AttributeName: type
+                KeyType: HASH
+              - AttributeName: sk
+                KeyType: RANGE
+            Projection:
+              ProjectionType: ALL

@@ -35,3 +35,47 @@ $link-hover-light: #355fc5;
     background: #eb4d4b;
   }
 }
+
+.promo-callout {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+  padding: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  width: 14rem;
+
+  @media (max-width: 580px) {
+    width: auto;
+    right: 2rem;
+  }
+
+  &__close {
+    float: right;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    font-size: 1rem;
+    margin-top: -0.8rem;
+    margin-right: -0.8rem;
+    cursor: pointer;
+  }
+
+  &__label {
+    background: $link-hover-light;
+    display: inline-block;
+    line-height: 1;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.4rem 0.2rem;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  a {
+    color: $link-hover-light;
+  }
+}

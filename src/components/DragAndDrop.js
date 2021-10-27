@@ -86,7 +86,7 @@ class DragAndDrop extends Component {
 
     return (
       <div
-        className={`box-area ${this.props.className || ""} ${
+        className={`${this.props.className || ""} ${
           this.state.drag ? "active" : ""
         }`}
         ref={this.dropRef}
