@@ -1,7 +1,5 @@
 const axios = require("axios");
 const AWS = require("aws-sdk");
-const Parser = require("rss-parser");
-const parser = new Parser();
 
 const TableName = process.env.TABLE_NAME;
 const dynamo = new AWS.DynamoDB.DocumentClient();
@@ -16,6 +14,22 @@ module.exports.handler = async () => {
   const data = res.data.items.filter(({ categories }) => categories.length);
 
   for (const { title, pubDate, link, guid, description } of data) {
+    const { Item } = await dynamo
+      .get({
+        TableName,
+        Key: {
+          pk: guid,
+          sk: "medium",
+        },
+      })
+      .promise();
+
+    if (!Item) {
+      console.log(`Already exists: ${title}`);
+      continue;
+    }
+
+    console.log(`Adding new: ${title}`);
     await dynamo
       .put({
         TableName,

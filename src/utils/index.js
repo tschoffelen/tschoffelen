@@ -23,12 +23,12 @@ export const renderPost = ({
   link,
   external,
   ...node
-}) =>
+}, onHomepage = false) =>
   external ? (
     <a href={link} key={link} rel="noopener noreferrer" target="_blank">
       {title}
       <span className="sr">{`, written on `}</span>
-      <span className="link-date">{created}</span>
+      <span className="link-date">{onHomepage ? (category || 'blog') : created}</span>
       <span className="sr dash"> - </span>
       <span className="link-description shortened">{getExcerpt(node)}</span>
     </a>
@@ -36,7 +36,7 @@ export const renderPost = ({
     <Link to={link} key={link}>
       {title}
       <span className="sr">{`, written on `}</span>
-      <span className="link-date">{created}</span>
+      <span className="link-date">{onHomepage ? (category || 'blog') : created}</span>
       {category && <span className="sr">{` in category ${category}.`}</span>}
       <span className="sr dash"> - </span>
       <span className="link-description shortened">{getExcerpt(node)}</span>
@@ -60,7 +60,8 @@ export const organizePosts = (posts) => {
         date,
         title: post.title || post.frontmatter.title,
         external: !!post.link,
-        category: post.frontmatter && post.frontmatter.category,
+        excerpt: post.frontmatter?.description || post.excerpt,
+        category: post.frontmatter?.category || post.category,
         link: post.link || post.fields.slug,
         created: format(date, "MMM d"),
         month: format(date, "MMM yyyy"),

@@ -51,7 +51,7 @@ const IndexPage = ({
             </h3>
             {organizePosts([...mediumPosts, ...blogPosts])
               .slice(0, 4)
-              .map((post) => renderPost(post))}
+              .map((post) => renderPost(post, true))}
           </div>
 
           <div className="links">
@@ -163,6 +163,7 @@ export const query = graphql`
         link
         createdAt
         description
+        category
       }
     }
     allMarkdownRemark(
@@ -178,6 +179,7 @@ export const query = graphql`
           title
           date
           category
+          description
         }
         excerpt
       }

@@ -23,6 +23,7 @@ exports.handler = async ({ pathParameters: { binId }, httpMethod, body }) => {
     if (!body) {
       return error("Invalid post body.");
     }
+
     // Create/update a bin
     await dynamo
       .put({
