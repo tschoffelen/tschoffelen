@@ -17,18 +17,18 @@ const converter = new showdown.Converter();
 const getHtml = (md) => {
   return `<!DOCTYPE html><html lang="en">
 <head>
-  <meta charSet="utf-8"/>
+  <meta charset="utf-8"/>
   <title>Note</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <link href="/_markdown.css" rel="stylesheet" type="text/css" />
-  <link href="https://schof.co/f/gttr/prism-(1).css" rel="stylesheet" type="text/css" />
+  <link href="https://schof.co/_markdown.css" rel="stylesheet" type="text/css" />
+  <link href="https://schof.link/gttr/prism-(1).css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <article class="markdown-body">
   ${converter.makeHtml(md)}
 </article>
-<script src="https://schof.co/f/9x70/prism-(1).js"></script>
+<script src="https://schof.link/9x70/prism-(1).js"></script>
 <!--
 
 
@@ -74,7 +74,7 @@ const MdPage = () => {
   const submit = async () => {
     const fn = shortid.generate();
     const res = await fetch(`${boxUrl}${fn}.html&contentType=text/html`);
-    const { key, url } = await res.json();
+    const { key, url, publicUrl } = await res.json();
 
     await fetch(url, {
       method: "PUT",
@@ -84,8 +84,7 @@ const MdPage = () => {
       },
     });
 
-    const box = `https://schof.co/${key}`;
-    window.open(box);
+    window.open(publicUrl);
 
     setContent("");
   };
