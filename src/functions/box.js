@@ -25,7 +25,7 @@ exports.handler = async ({ queryStringParameters }) => {
     body: JSON.stringify({
       key,
       url,
-      publicUrl: `https://schof.click/${id}`,
+      publicUrl: `https://schof.link/${id}`,
     }),
   };
 };
