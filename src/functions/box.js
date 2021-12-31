@@ -4,7 +4,7 @@ const s3 = new AWS.S3({ useAccelerateEndpoint: true });
 
 exports.handler = async ({ queryStringParameters }) => {
   const { filename, contentType } = queryStringParameters;
-  const id = nanoid(6);
+  const id = nanoid(7);
   const key = `f/${id}`;
 
   const url = s3.getSignedUrl("putObject", {
