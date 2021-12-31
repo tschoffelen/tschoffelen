@@ -55,7 +55,7 @@ const BinPage = ({ params: { id } }) => {
             file.name
           )}&contentType=${encodeURIComponent(file.type)}`
         );
-        const { key, url, publicUrl } = await res.json();
+        const { url, publicUrl } = await res.json();
 
         if (file.body) {
           await fetch(url, {
