@@ -2,30 +2,17 @@ const AWS = require("aws-sdk");
 const { nanoid } = require("nanoid");
 const s3 = new AWS.S3({ useAccelerateEndpoint: true });
 
-const illegalRe = /[\/?<>\\:*|"]/g;
-const controlRe = /[\x00-\x1f\x80-\x9f]/g;
-const reservedRe = /^\.+$/;
-const windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
-const windowsTrailingRe = /[. ]+$/;
-
-const sanitize = (input) =>
-  input
-    .replace(illegalRe, "-")
-    .replace(controlRe, "-")
-    .replace(reservedRe, "-")
-    .replace(windowsReservedRe, "-")
-    .replace(windowsTrailingRe, "-")
-    .replace(/ /g, "-");
-
 exports.handler = async ({ queryStringParameters }) => {
   const { filename, contentType } = queryStringParameters;
-  const key = `f/${nanoid(6)}/${sanitize(filename)}`;
+  const id = nanoid(6);
+  const key = `f/${id}`;
 
   const url = s3.getSignedUrl("putObject", {
     Bucket: process.env.BOX_BUCKET,
     Key: key,
-    Expires: 60,
+    Expires: 300,
     ContentType: contentType,
+    ContentDisposition: `attachment; filename=${filename}`,
     ACL: "public-read",
   });
 
@@ -38,6 +25,7 @@ exports.handler = async ({ queryStringParameters }) => {
     body: JSON.stringify({
       key,
       url,
+      publicUrl: `https://schof.link/${id}`,
     }),
   };
 };
