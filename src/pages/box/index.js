@@ -14,9 +14,6 @@ import copy from "copy-to-clipboard";
 const boxUrl =
   "https://mrm5dm6of9.execute-api.eu-west-1.amazonaws.com/production/box/get-url?filename=";
 
-const wait = async (timeout) =>
-  new Promise((resolve) => setTimeout(resolve, timeout));
-
 const BoxPage = () => {
   const [text, setText] = useState(null);
   const [className, setClassName] = useState("");
@@ -47,7 +44,7 @@ const BoxPage = () => {
                 file.name
               )}&contentType=${encodeURIComponent(file.type)}`
             );
-            const { key, url, publicUrl } = await res.json();
+            const { url, publicUrl } = await res.json();
 
             if (file.body) {
               await fetch(url, {
@@ -55,10 +52,17 @@ const BoxPage = () => {
                 body: file.body,
                 headers: {
                   "Content-Type": file.type,
+                  "Content-Disposition": `inline; filename="${file.name}"`
                 },
               });
             } else {
-              await fetch(url, { method: "PUT", body: file });
+              await fetch(url, {
+                method: "PUT",
+                body: file,
+                headers: {
+                  "Content-Disposition": `inline; filename="${file.name}"`,
+                },
+              });
             }
 
             setClassName("success");
