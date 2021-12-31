@@ -55,7 +55,7 @@ const BinPage = ({ params: { id } }) => {
             file.name
           )}&contentType=${encodeURIComponent(file.type)}`
         );
-        const { key, url } = await res.json();
+        const { key, url, publicUrl } = await res.json();
 
         if (file.body) {
           await fetch(url, {
@@ -69,14 +69,12 @@ const BinPage = ({ params: { id } }) => {
           await fetch(url, { method: "PUT", body: file });
         }
 
-        const box = `https://schof.co/${key}`;
-
         const newData = {
           ...data,
           items: [
             ...data.items,
             {
-              url: box,
+              url: publicUrl,
               filename: file.name,
               type: file.type,
             },
