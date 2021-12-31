@@ -36,6 +36,23 @@ $link-hover-light: #355fc5;
   }
 }
 
+.box-result {
+  display: flex;
+  align-items: center;
+}
+
+.box-copy {
+  opacity: 0.5;
+  margin-left: 0.65rem;
+  cursor: pointer;
+  margin-bottom: 0 !important;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.box-copy:hover {
+  opacity: 1;
+}
+
 .promo-callout {
   position: fixed;
   bottom: 2rem;
