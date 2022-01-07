@@ -24,7 +24,7 @@ module.exports.handler = async () => {
       })
       .promise();
 
-    if (!Item) {
+    if (Item) {
       console.log(`Already exists: ${title}`);
       continue;
     }
