@@ -2,8 +2,8 @@ service: schofco-website
 
 plugins:
   - serverless-s3-sync
-  - serverless-cloudfront-invalidate
   - serverless-offline
+  - serverless-cloudfront-invalidate
 
 custom:
   s3Sync:
@@ -72,15 +72,6 @@ package:
 
 # Lambda functions
 functions:
-  box:
-    handler: src/functions/box.handler
-    memorySize: 128
-    timeout: 30
-    events:
-      - http:
-          path: /box/get-url
-          method: get
-          cors: true
   bin:
     handler: src/functions/bin.handler
     memorySize: 256
