@@ -61,7 +61,7 @@
   },
   "scripts": {
     "start": "concurrently 'gatsby develop' 'serverless offline start --nos3sync'",
-    "build": "mkdir -p public && cp -rf src/assets/fonts public/fonts && yarn sass src/assets/index.scss static/_common.css && gatsby build",
+    "build": "gatsby build",
     "new": "node .github/scripts/new.js",
     "test": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "deploy": "serverless deploy --region eu-west-1 --stage production"
