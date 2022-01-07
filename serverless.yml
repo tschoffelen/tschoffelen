@@ -29,8 +29,6 @@ provider:
   environment:
     NODE_ENV: ${opt:stage, 'production'}
     TABLE_NAME: ${self:service}
-    BINS_TABLE_NAME: ${self:service}-bins
-    BOX_BUCKET: schof-box
   iam:
     role:
       statements:
