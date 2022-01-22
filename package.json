@@ -34,7 +34,7 @@
     "jszip": "^3.7.0",
     "lodash.debounce": "^4.0.8",
     "lodash.groupby": "^4.6.0",
-    "nanoid": "^3.1.30",
+    "nanoid": "^3.1.31",
     "prismjs": "^1.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
