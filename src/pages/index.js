@@ -112,20 +112,20 @@ const IndexPage = ({
               Schedule a consulting session
             </a>
             <a
-              href="https://github.com/tschoffelen"
-              className="u-url"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              See my code on Github
-            </a>
-            <a
               href="https://twitter.com/tschoffelen"
               className="u-url"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Read my tweets
+              Follow me on Twitter
+            </a>
+            <a
+              href="https://github.com/tschoffelen"
+              className="u-url"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Follow me on Github
             </a>
             <a href="mailto:thomas@schof.co" className="u-email" rel="author">
               Send me an email

@@ -1,25 +1,22 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   createRedirect({
     fromPath: `/box/`,
-    toPath: `https://schof.link/`,
-    redirectInBrowser: true,
+    toPath: `https://schof.link/`
   });
 
   createRedirect({
     fromPath: `/scaffold/`,
-    toPath: `https://serverless-scaffold.flexible.agency/`,
-    redirectInBrowser: true,
+    toPath: `https://serverless-scaffold.flexible.agency/`
   });
 
   createRedirect({
     fromPath: `/md/`,
-    toPath: `https://schof.link/md/`,
-    redirectInBrowser: true,
+    toPath: `https://schof.link/md/`
   });
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
@@ -59,8 +56,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next,
-      },
+        next
+      }
     });
   });
 };
@@ -73,7 +70,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value
     });
   }
 };

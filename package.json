@@ -16,6 +16,7 @@
     "gatsby-plugin-feed": "^4.0.0",
     "gatsby-plugin-google-analytics": "^4.0.0",
     "gatsby-plugin-manifest": "^4.0.0",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-react-helmet": "^5.0.0",
     "gatsby-plugin-remove-generator": "^1.2.0",
     "gatsby-plugin-sass": "^5.0.0",
