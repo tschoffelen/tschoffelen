@@ -9,7 +9,6 @@
     "concurrently": "^6.3.0",
     "copy-to-clipboard": "^3.3.1",
     "date-fns": "^2.21.3",
-    "file-saver": "^2.0.5",
     "gatsby": "^4.0.0",
     "gatsby-plugin-canonical-urls": "^4.0.0",
     "gatsby-plugin-create-client-paths": "^4.0.0",
@@ -31,7 +30,6 @@
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-transformer-remark": "^5.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
-    "jszip": "^3.7.0",
     "lodash.debounce": "^4.0.8",
     "lodash.groupby": "^4.6.0",
     "nanoid": "^3.1.30",
@@ -47,9 +45,7 @@
     "shortid": "^2.2.16",
     "showdown": "^1.9.1",
     "string-strip-html": "^8.3.0",
-    "swr": "^0.5.6",
-    "uuid": "^8.3.2",
-    "yaml": "^1.10.2"
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "aws-sdk": "^2.907.0",

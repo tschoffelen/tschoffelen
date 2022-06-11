@@ -10,6 +10,18 @@ exports.createPages = async ({ graphql, actions }) => {
     redirectInBrowser: true,
   });
 
+  createRedirect({
+    fromPath: `/scaffold/`,
+    toPath: `https://serverless-scaffold.flexible.agency/`,
+    redirectInBrowser: true,
+  });
+
+  createRedirect({
+    fromPath: `/md/`,
+    toPath: `https://schof.link/md/`,
+    redirectInBrowser: true,
+  });
+
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const result = await graphql(
     `
