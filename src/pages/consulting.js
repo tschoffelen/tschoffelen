@@ -6,9 +6,11 @@ import Header from "../components/Header";
 
 const MeetPage = () => (
   <Layout>
-    <Seo title="Schedule a meeting" />
+    <Seo title="Business and engineering consulting" />
 
     <Header />
+
+    <img src="/avatar.png" style={{maxWidth: 60}}/>
 
     <h1>Happy to help.</h1>
     <p>
