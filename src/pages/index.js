@@ -11,9 +11,6 @@ const IndexPage = ({
     allMarkdownRemark: { nodes: blogPosts },
   },
 }) => {
-  const calendlyUrl =
-    "https://calendly.com/tschof/consulting-30-mins?primary_color=355fc5&back=1";
-
   return (
     <div className="h-card">
       <Seo />
@@ -57,7 +54,7 @@ const IndexPage = ({
           <div className="links">
             <h3>What I'm working on</h3>
             <a
-              href="http://near.st/?utm_source=schof.co"
+              href="https://near.st/?utm_source=schof.co"
               className="p-org"
               rel="noopener noreferrer"
               target="_blank"
@@ -81,7 +78,7 @@ const IndexPage = ({
               </span>
             </a>
             <a
-              href="http://infowijs.nl/?utm_source=schof.co"
+              href="https://infowijs.nl/?utm_source=schof.co"
               className="p-org"
               rel="noopener noreferrer"
               target="_blank"
@@ -97,17 +94,10 @@ const IndexPage = ({
           <div className="links">
             <h3>Get in touch</h3>
             <a
-              href={calendlyUrl}
+              href='https://includable.com/consultancy'
               className="u-url"
               rel="noopener noreferrer"
               target="_blank"
-              onClick={(e) => {
-                if (typeof window !== "undefined" && window.Calendly) {
-                  e.preventDefault && e.preventDefault();
-                  window.Calendly.initPopupWidget({ url: calendlyUrl });
-                  return false;
-                }
-              }}
             >
               Schedule a consulting session
             </a>
@@ -140,12 +130,6 @@ const IndexPage = ({
           >
             Thomas Schoffelen
           </a>
-
-          <script
-            src="https://assets.calendly.com/assets/external/widget.js"
-            type="text/javascript"
-            async
-          />
       </Layout>
     </div>
   );

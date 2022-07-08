@@ -19,6 +19,11 @@ exports.createPages = async({ graphql, actions }) => {
     toPath: `https://schof.link/md/`
   });
 
+  createRedirect({
+    fromPath: `/consulting/`,
+    toPath: `https://includable.com/consultancy`
+  });
+
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   const result = await graphql(
     `
