@@ -287,15 +287,6 @@ main {
       line-height: 25px;
       padding-top: 1px;
       opacity: 0.8;
-
-      &.shortened {
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        height: 50px;
-      }
     }
 
     &:hover, &.active {
@@ -344,24 +335,6 @@ main {
     background-color: rgba(53, 95, 197, 0.25);
   }
 }
-
-.markdown-editor {
-  textarea {
-    border: 0;
-    padding: 0;
-    display: block;
-    width: 100%;
-    margin: 0;
-    -webkit-appearance: none;
-    line-height: 1.8;
-    font-size: 18px;
-    color: $foreground-light;
-    resize: none;
-    min-height: 60vh;
-    outline: 0;
-  }
-}
-
 
 @import "styles/blog";
 @import "styles/table";
