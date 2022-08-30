@@ -31,7 +31,7 @@ const IndexPage = ({
               <a
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://near.st/?utm_source=schof.co"
+                href="https://www.near.st/?utm_source=schof.co"
               >
                 NearSt
               </a>
