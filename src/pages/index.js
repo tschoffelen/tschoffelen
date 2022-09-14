@@ -66,6 +66,18 @@ const IndexPage = ({
               </span>
             </a>
             <a
+              href="https://includable.com/?utm_source=schof.co"
+              className="p-org"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Includable
+              <span className="sr"> - </span>
+              <span className="link-description">
+                Helping your first company take flight.
+              </span>
+            </a>
+            <a
               href="https://streetartcities.com/?utm_source=schof.co"
               className="p-org"
               rel="noopener noreferrer"
@@ -86,7 +98,7 @@ const IndexPage = ({
               Infowijs
               <span className="sr"> - </span>
               <span className="link-description">
-                Simple communication and management tools for schools.
+                Communication tools used by 100s of Dutch schools.
               </span>
             </a>
           </div>
