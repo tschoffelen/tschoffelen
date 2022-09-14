@@ -74,7 +74,7 @@ const IndexPage = ({
               Includable
               <span className="sr"> - </span>
               <span className="link-description">
-                Helping your first company take flight.
+                Helping your tech startup take flight.
               </span>
             </a>
             <a
