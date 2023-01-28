@@ -21,16 +21,11 @@ const remarkFountain = () => {
 
 export const getPostSlugs = () => {
   const posts = fs.readdirSync(postsDirectory);
-
-  return posts.map((slug) => ({
-    params: {
-      slug: slug.replace(/\.md$/, ""),
-    },
-  }));
+  return posts.map((slug) => slug.split('.')[0]).filter((slug) => slug !== 'index');
 };
 
 export const getPosts = async () => {
-  const posts = fs.readdirSync(postsDirectory);
+  const posts = getPostSlugs();
 
   const res = await axios.get(
     "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40tschoffelen"
