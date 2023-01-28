@@ -1,0 +1,159 @@
+.blog-post {
+  padding-bottom: 24px;
+
+  blockquote {
+    background: #eee;
+    margin: 20px 0 32px;
+    padding: 1px 36px 24px;
+    font-weight: bold;
+  }
+
+  ul li {
+    margin-bottom: 12px;
+    list-style-type: square;
+    list-style-position: outside;
+    margin-left: -20px;
+    padding-left: 10px;
+  }
+
+  .blog-post-date {
+    margin-top: 10px;
+    margin-bottom: 44px;
+    opacity: 0.7;
+    font-size: 13px;
+    user-select: none;
+
+    strong {
+      font-weight: normal;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 640px) {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .blog-post-category {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: $foreground-light;
+    border-radius: .3rem;
+    margin-right: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 7px;
+  }
+
+  img {
+    margin: 12px -210px;
+    width: calc(100% + 420px);
+    border-radius: 0.5rem;
+
+    @media (max-width: 640px) {
+      margin: 12px -24px;
+      width: calc(100% + 48px);
+      border-radius: 0;
+    }
+  }
+
+  section {
+    h2 {
+      font-size: 28px;
+      margin-top: 54px;
+      margin-bottom: -10px;
+
+      @media (max-width: 640px) {
+        margin-top: 44px;
+      }
+    }
+
+    h3 {
+      margin-top: 32px;
+      margin-bottom: -16px;
+    }
+
+    p,
+    li {
+      a {
+        color: $link-hover-light;
+      }
+    }
+  }
+
+  .fountain-body {
+    font-family: "yyx-mono", "Mono",
+    -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.2px;
+
+    @media (max-width: 640px) {
+      font-size: 14px;
+    }
+
+    h2, h3, h4, p {
+      font-weight: normal;
+      font-size: inherit;
+      margin: 0;
+    }
+
+    h3 {
+      padding-top: 16px;
+      font-weight: 600;
+      margin-top: 12px;
+      margin-bottom: 20px;
+      @media (max-width: 510px) {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 32px;
+      @media (max-width: 510px) {
+        margin-bottom: 16px;
+      }
+    }
+
+    h2 {
+      text-align: right;
+      margin: 32px 0;
+    }
+
+    hr {
+      border: 0;
+    }
+
+    .dialogue {
+      margin: 0 110px;
+      @media (max-width: 510px) {
+        margin: 0 48px;
+      }
+
+      h4 {
+        margin: 0 110px 4px;
+        @media (max-width: 510px) {
+          margin: 0 48px;
+        }
+      }
+    }
+
+    &.fountain-body-inline {
+      background: #ebe9ea;
+      margin: 48px -24px;
+      padding: 20px 24px;
+
+      & > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

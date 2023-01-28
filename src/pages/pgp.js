@@ -1,22 +1,23 @@
-import React from "react";
+import Header from "@/components/Header";
+import Seo from "@/components/Seo";
 
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
-import Header from "../components/Header";
+export default function Pgp() {
+  return (
+    <>
+      <Seo title="PGP key" />
 
-const PgpPage = () => (
-  <Layout>
-    <Seo title="PGP key" />
+      <Header />
 
-    <Header />
+      <main>
+        <h2>My public key</h2>
+        <p>Fingerprint:</p>
+        <pre className="pgp">
+          EE0F 4B84 A58A 3FF0 5728 9044 7599 4EE6 D0F1 FD7F
+        </pre>
 
-    <h2>My public key</h2>
-    <p>Fingerprint:</p>
-    <pre className="pgp">EE0F 4B84 A58A 3FF0 5728 9044 7599 4EE6 D0F1 FD7F</pre>
-
-    <p style={{ marginTop: 48 }}>Key:</p>
-    <pre className="pgp">
-      {`-----BEGIN PGP PUBLIC KEY BLOCK-----
+        <p style={{ marginTop: 48 }}>Key:</p>
+        <pre className="pgp">
+          {`-----BEGIN PGP PUBLIC KEY BLOCK-----
 xsFNBFlvtoQBEADCBrY9I+Vdvvi4zLF3qMBYKN8yUKYKRsUUVFvblymC//WA
 fD+13F3MOGWHRqRYBfHA0yZdSdNE6d50YZzV/UN98yBKHnaP7QLJhNlQ3qKH
 mu/NdN9tDiltSa60PvhaVwSbNlO/ksqdYIYLMkJe6uEkXzCDkGp/hs+uy3vO
@@ -69,8 +70,8 @@ KAyTLUTv34SM51GMGdY6y0rg8N0ftNyDFphoutwoEiTPTPls7z14sUvcdv9e
 2/1Fechg
 =9e0f
 -----END PGP PUBLIC KEY BLOCK-----`}
-    </pre>
-  </Layout>
-);
-
-export default PgpPage;
+        </pre>
+      </main>
+    </>
+  );
+}

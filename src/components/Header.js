@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -8,7 +8,7 @@ export default function Header() {
         <Link
           id="logo"
           tabIndex={-1}
-          to="/"
+          href="/"
           title="Thomas Schoffelen"
           aria-label="Thomas Schoffelen"
           role="img"
