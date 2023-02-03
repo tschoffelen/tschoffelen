@@ -128,6 +128,7 @@ function Seo({ title, description, jsonLd, children }) {
               "https://github.com/tschoffelen",
               "https://twitter.com/tschoffelen",
               "https://linkedin.com/in/tschoffelen",
+              "https://social.coop/@tschoffelen",
             ],
           }
         )}
