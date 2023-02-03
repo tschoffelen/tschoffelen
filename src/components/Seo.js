@@ -84,6 +84,7 @@ function Seo({ title, description, jsonLd, children }) {
       <link rel="me" href="https://twitter.com/tschoffelen" />
       <link rel="me" href="https://instagram.com/tschoffelen" />
       <link rel="me" href="https://github.com/tschoffelen" />
+      <link rel="me" href="https://social.coop/@tschoffelen" />
       <link rel="pgpkey" href="https://schof.co/pgp.txt" />
       <link rel="alternate" type="application/rss+xml" title="RSS Feed for Schof.co" href="https://schof.co/api/rss.xml" />
       <script type="application/ld+json">
