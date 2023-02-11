@@ -85,6 +85,7 @@ export const getFeed = async () => {
     link: "https://schof.co/",
     language: "en",
     favicon: "https://schof.co/favicon.ico",
+    description: "Thomas Schoffelen's personal blog.",
     generator: "SCHOF.CO",
     feedLinks: {
       rss: "https://schof.co/api/rss.xml",
