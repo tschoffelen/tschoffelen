@@ -11,7 +11,8 @@ import rehypeRaw from "rehype-raw";
 import rehypeFormat from "rehype-format";
 import rehypeStringify from "rehype-stringify";
 import gatsbyRemarkFountain from "gatsby-remark-fountain";
-import axios from "axios";
+
+import { getMediumPosts } from "@/lib/medium";
 
 const postsDirectory = join(process.cwd(), "content");
 
@@ -27,28 +28,13 @@ export const getPostSlugs = () => {
 export const getPosts = async () => {
   const posts = getPostSlugs();
 
-  const res = await axios.get(
-    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40tschoffelen"
-  );
-  const data = res.data.items.filter(({ categories }) => categories.length);
-
   const output = await Promise.all(posts.map(getPostBySlug));
-  for (const { title, pubDate, link, guid, description } of data) {
-    output.push({
-      category: "Blog",
-      title: title.replace("&amp;", "&"),
-      date: new Date(pubDate).toISOString(),
-      url: link.split("?")[0],
-      relativeUrl: null,
-      slug: guid,
-      excerpt: getExcerpt({ description }),
-    });
-  }
+  output.push(...await getMediumPosts());
 
   return output.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 };
 
-const getExcerpt = ({ description, excerpt }) => {
+export const getExcerpt = ({ description, excerpt }) => {
   if (excerpt) {
     if (excerpt.includes(". ")) {
       excerpt = `${excerpt.split(". ")[0]}.`;

@@ -11,6 +11,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@extractus/feed-extractor": "^6.2.1",
     "@next/font": "13.1.6",
     "axios": "^1.2.6",
     "date-fns": "^2.29.3",
