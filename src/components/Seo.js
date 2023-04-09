@@ -98,7 +98,7 @@ function Seo({ title, description, jsonLd, children }) {
             worksFor: [
               {
                 "@type": "Role",
-                roleName: "Head of Platform Innovation",
+                roleName: "Head of Engineering",
                 startDate: "2016",
                 worksFor: {
                   "@type": "Organization",
