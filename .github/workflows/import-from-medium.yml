@@ -5,6 +5,7 @@ on:
 
 jobs:
   import-from-medium:
+    name: Import from Medium
     env:
       POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
     runs-on: ubuntu-latest
