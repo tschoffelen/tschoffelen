@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+name: Backup posts
+
+jobs:
+  import-from-medium:
+    name: Backup posts
+    env:
+      POSTGRES_URL: ${{ secrets.POSTGRES_URL }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
+      - uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::672895027413:role/github-actions-tschoffelen-posts-backup
+          aws-region: eu-west-1
+      - run: yarn
+      - run: yarn node .github/workflows/backup-posts.mjs
