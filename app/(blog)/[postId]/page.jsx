@@ -1,22 +1,23 @@
 import { format } from "date-fns";
 import fountain from "gatsby-remark-fountain/src/fountain";
 
-import Header from "@/components/Header";
-
 import { getPosts, getSinglePost } from "@/lib/blog";
 import CodeHighlighter from "@/components/blog/CodeHighlighter";
+import { notFound } from "next/navigation";
 
 export async function getStaticPaths() {
   return {
     paths: (await getPosts())
       .filter(({ relativeUrl }) => !!relativeUrl)
       .map(({ id }) => ({ params: { postId: id } })),
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
 export default async function Post({ params: { postId } }) {
   const post = await getSinglePost(postId);
+
+  if (!post) notFound();
 
   let html = post.html;
   if (post.fountain) {
@@ -93,6 +94,7 @@ export default async function Post({ params: { postId } }) {
 
 export async function generateMetadata({ params: { postId } }) {
   const post = await getSinglePost(postId);
+  if (!post) return {};
 
   return {
     title: post.title,

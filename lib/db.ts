@@ -3,11 +3,13 @@ import { createKysely } from "@vercel/postgres-kysely";
 
 interface PostsTable {
   id: string;
+  title: string;
   category: string;
   content: string;
   excerpt: string;
   html: string;
   attributes: object;
+  editToken: string;
   createdAt: ColumnType<Date, string | undefined, never>;
 }
 
@@ -29,6 +31,7 @@ export async function seed() {
     .addColumn("content", "text")
     .addColumn("html", "text")
     .addColumn("attributes", "json")
+    .addColumn("editToken", "varchar(255)")
     .addColumn("createdAt", sql`timestamp with time zone`, (cb) =>
       cb.defaultTo(sql`current_timestamp`)
     )
