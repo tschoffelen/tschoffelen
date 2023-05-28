@@ -22,7 +22,7 @@ jobs:
           cache: yarn
       - uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::672895027413:role/github-actions-tschoffelen-posts-backup
+          role-to-assume: arn:aws:iam::672895027413:role/github-oidc-provider-Role-1DGACKD4725JB
           aws-region: eu-west-1
       - run: yarn
       - run: yarn node .github/workflows/backup-posts.mjs
