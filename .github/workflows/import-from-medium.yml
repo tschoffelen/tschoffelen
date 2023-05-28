@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '0 * * * *'
 
+name: Import from Medium
+
 jobs:
   import-from-medium:
     name: Import from Medium
