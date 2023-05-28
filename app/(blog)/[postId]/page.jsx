@@ -8,7 +8,9 @@ import CodeHighlighter from "@/components/blog/CodeHighlighter";
 
 export async function getStaticPaths() {
   return {
-    paths: (await getPosts()).map(({ id }) => ({ params: { postId: id } })),
+    paths: (await getPosts())
+      .filter(({ relativeUrl }) => !!relativeUrl)
+      .map(({ id }) => ({ params: { postId: id } })),
     fallback: false,
   };
 }
