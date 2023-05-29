@@ -20,7 +20,7 @@ export async function POST(request) {
     );
   }
 
-  if (res.html) {
+  if (res.html && !res.excerpt) {
     res.excerpt = getExcerpt({ description: res.html || res.content });
   }
 

@@ -30,7 +30,7 @@ export default async function Home() {
               <h2 className="p-name">Hi, I'm Thomas.</h2>
 
               <p className="p-note">
-                I build startups and tools to help businesses and educators.
+                I build companies and tools to support small businesses and educators.
               </p>
               <p>
                 Alongside my work at{" "}
@@ -42,7 +42,7 @@ export default async function Home() {
                   NearSt
                 </a>
                 , I consult founders and engineers on everything from setting up
-                their first business to designing modern technology platforms.
+                their first business to designing technology platforms.
               </p>
             </div>
           </main>
