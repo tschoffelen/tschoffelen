@@ -77,6 +77,10 @@
     li {
       a {
         color: var(--link);
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
