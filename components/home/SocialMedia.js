@@ -3,7 +3,7 @@ import { Github, Mail, Twitter } from "lucide-react";
 
 const SocialMedia = () => {
   return (
-    <div className="social-media" title="Get in touch">
+    <div className="social-links" title="Get in touch">
       <a
         href="mailto:thomas@schof.co"
         className="u-email"
