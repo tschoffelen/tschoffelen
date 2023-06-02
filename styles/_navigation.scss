@@ -1,0 +1,33 @@
+header {
+  height: 2rem;
+  user-select: none;
+
+  .logo {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    z-index: 100;
+
+    a {
+      display: inline-block;
+      margin-top: -1rem;
+      margin-left: -1rem;
+      padding: 1rem;
+      color: var(--text);
+      outline: 0;
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: var(--link);
+      }
+    }
+
+    @media (max-width: 42rem) {
+      position: absolute;
+      top: 3rem;
+      left: 3rem;
+    }
+  }
+}

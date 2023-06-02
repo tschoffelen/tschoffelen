@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'yyx';
+  src: url('./fonts/regular.eot');
+  src: url('./fonts/regular.woff') format('woff'), url('./fonts/regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'yyx';
+  src: url('./fonts/semibold.eot');
+  src: url('./fonts/semibold.woff') format('woff'), url('./fonts/semibold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'yyx-mono';
+  src: url('./fonts/mono-regular.woff') format('woff'), url('./fonts/mono-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'yyx-mono';
+  src: url('./fonts/mono-italic.woff') format('woff'), url('./fonts/mono-italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'yyx-mono';
+  src: url('./fonts/mono-bold.woff') format('woff'), url('./fonts/mono-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+  background-color: #ffffff;
+}
+
+html, body, input, textarea, select, button {
+  font-family: "yyx", "Graphik",
+  -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html, body, p, h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+p {
+  margin-top: 1.25rem;
+}
+
+main ::selection {
+  background-color: var(--link);
+  color: var(--background);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 0;
+
+  @media (max-width: 42rem) {
+    font-size: 1.5rem;
+    margin-bottom: -0.5rem;
+  }
+}

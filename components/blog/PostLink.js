@@ -12,10 +12,10 @@ const PostLink = ({
   showCategory = false,
 }) => {
   return (
-    <Link href={relativeUrl || url}>
+    <Link href={relativeUrl || url} className="link">
       {title}
       <span className="sr">{`, written on `}</span>
-      <span className="link-date">
+      <span className="link-category">
         {showCategory ? category : format(new Date(date), "MMM d")}
       </span>
       {category && <span className="sr">{` in category ${category}.`}</span>}

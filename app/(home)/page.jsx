@@ -3,11 +3,13 @@ import Link from "next/link";
 import PostLink from "@/components/blog/PostLink";
 
 import { getPosts } from "@/lib/blog";
+import SocialMedia from "@/components/home/SocialMedia";
+import ProjectLinks from "@/components/home/ProjectLinks";
 
 export default async function Home() {
   const allPosts = (await getPosts())
     .filter(({ unlisted }) => !unlisted)
-    .slice(0, 4)
+    .slice(0, 5)
     .map(({ url, relativeUrl, title, category, excerpt, date }) => ({
       url,
       relativeUrl,
@@ -19,7 +21,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className="h-card">
+      <section className="h-card">
         <div className="hero">
           <main className="homepage">
             <div className="avatar">
@@ -30,7 +32,8 @@ export default async function Home() {
               <h2 className="p-name">Hi, I'm Thomas.</h2>
 
               <p className="p-note">
-                I build companies and tools to support small businesses and educators.
+                I build companies and tools to support small businesses and
+                educators.
               </p>
               <p>
                 Alongside my work at{" "}
@@ -48,93 +51,20 @@ export default async function Home() {
           </main>
         </div>
         <main className="homepage-links">
-          <div className="links">
-            <h3>
-              <Link href="/posts">Recent posts ↗</Link>
-            </h3>
-
+          <div className="section">
+            <h3 className="section-title">Recent posts</h3>
             {allPosts.map((post) => (
               <PostLink key={post.url} {...post} showCategory />
             ))}
+            <Link href="/posts">
+              <span className="link-description">View all →</span>
+            </Link>
           </div>
 
-          <div className="links">
-            <h3>What I'm working on</h3>
-            <a
-              href="https://near.st/?utm_source=schof.co"
-              className="p-org"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              NearSt
-              <span className="sr"> - </span>
-              <span className="link-description">
-                Making products visible online to get more in-store customers.
-              </span>
-            </a>
-            <a
-              href="https://streetartcities.com/?utm_source=schof.co"
-              className="p-org"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Street Art Cities
-              <span className="sr"> - </span>
-              <span className="link-description">
-                The world's largest street art community platform.
-              </span>
-            </a>
-            <a
-              href="https://infowijs.nl/?utm_source=schof.co"
-              className="p-org"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Infowijs
-              <span className="sr"> - </span>
-              <span className="link-description">
-                Communication tools used by 100s of Dutch schools.
-              </span>
-            </a>
-            <a
-              href="https://sueterapp.com/?utm_source=schof.co"
-              className="p-org"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Sueter
-              <span className="sr"> - </span>
-              <span className="link-description">
-                The sustainable circular fashion network.
-              </span>
-            </a>
-          </div>
-
-          <div className="links">
-            <h3>Get in touch</h3>
-            <a href="mailto:thomas@schof.co" className="u-email" rel="author">
-              Send me an email
-            </a>
-            <a
-              href="https://github.com/tschoffelen"
-              className="u-url"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Follow me on Github
-            </a>
-          </div>
-
-          <a
-            style={{ display: "none" }}
-            aria-hidden="true"
-            href="https://schof.co"
-            className="u-url u-uid"
-          >
-            Thomas Schoffelen
-          </a>
+          <ProjectLinks />
+          <SocialMedia />
         </main>
-      </div>
+      </section>
 
       <script
         type="application/ld+json"
