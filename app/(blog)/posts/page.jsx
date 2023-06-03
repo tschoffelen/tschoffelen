@@ -7,13 +7,15 @@ export default async function Posts() {
   return (
     <>
       <h1>Posts</h1>
-      {posts.map((post) => (
-        <PostLink key={post.url} {...post} />
-      ))}
+      {posts
+        .filter(({ unlisted }) => !unlisted)
+        .map((post) => (
+          <PostLink key={post.url} {...post} />
+        ))}
     </>
   );
 }
 
 export const metadata = {
-  title: "Posts"
+  title: "Posts",
 };

@@ -22,28 +22,30 @@ export async function GET() {
   });
 
   const posts = await getPosts();
-  posts.forEach((post) => {
-    feed.addItem({
-      title: post.title,
-      id: post.url,
-      link: post.url,
-      date: new Date(post.date),
-      description: post.excerpt,
-      content: post.html || post.description,
-      author: [
-        {
-          name: "Thomas Schoffelen",
-          email: "thomas+rss@schof.co",
-          link: "https://schof.co",
-        },
-      ],
+  posts
+    .filter(({ unlisted }) => !unlisted)
+    .forEach((post) => {
+      feed.addItem({
+        title: post.title,
+        id: post.url,
+        link: post.url,
+        date: new Date(post.date),
+        description: post.excerpt,
+        content: post.html || post.description,
+        author: [
+          {
+            name: "Thomas Schoffelen",
+            email: "thomas+rss@schof.co",
+            link: "https://schof.co",
+          },
+        ],
+      });
     });
-  });
 
   const headers = new Headers();
   headers.set("Content-Type", "application/rss+xml");
 
   return new NextResponse(feed.rss2(), {
-    headers
+    headers,
   });
 }
