@@ -19,11 +19,6 @@ export default async function Post({ params: { postId } }) {
 
   if (!post) notFound();
 
-  let html = post.html;
-  if (post.fountain) {
-    html = fountain(post.content).html.script;
-  }
-
   return (
     <article className="blog-post">
       <h1>{post.title}</h1>
@@ -38,7 +33,7 @@ export default async function Post({ params: { postId } }) {
 
       <section
         className={post.fountain ? "fountain-body" : undefined}
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: post.html }}
       />
 
       <CodeHighlighter />

@@ -5,66 +5,76 @@ import PostLink from "@/components/blog/PostLink";
 import { getPosts } from "@/lib/blog";
 import SocialMedia from "@/components/home/SocialMedia";
 import ProjectLinks from "@/components/home/ProjectLinks";
+import { format } from "date-fns";
+import CodeHighlighter from "@/components/blog/CodeHighlighter";
 
 export default async function Home() {
   const allPosts = (await getPosts())
     .filter(({ unlisted }) => !unlisted)
-    .slice(0, 5)
-    .map(({ url, relativeUrl, title, category, excerpt, date }) => ({
-      url,
-      relativeUrl,
-      title,
-      category,
-      excerpt,
-      date,
-    }));
+    .filter(({relativeUrl}) => relativeUrl)
+    .slice(0, 30);
 
   return (
     <>
-      <section className="h-card">
-        <div className="hero">
-          <main className="homepage">
-            <div className="avatar">
-              <div className="avatar-inner" />
-            </div>
+      <section className="homepage">
+        <aside>
+          <div className="avatar">
+            <div className="avatar-inner" />
+          </div>
 
-            <div>
-              <h2 className="p-name">Hi, I'm Thomas.</h2>
+          <div>
+            <h2 className="p-name">Hi, I'm Thomas.</h2>
 
-              <p className="p-note">
-                I build companies and tools to support small businesses and
-                educators.
-              </p>
-              <p>
-                Alongside my work at{" "}
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.near.st/?utm_source=schof.co"
-                >
-                  NearSt
-                </a>
-                , I consult founders and engineers on everything from setting up
-                their first business to designing technology platforms.
-              </p>
-            </div>
-          </main>
-        </div>
-        <main className="homepage-links">
-          <div className="section">
-            <h3 className="section-title">Recent posts</h3>
-            {allPosts.map((post) => (
-              <PostLink key={post.url} {...post} showCategory />
-            ))}
-            <Link href="/posts">
-              <span className="link-description">View all →</span>
-            </Link>
+            <p className="p-note">
+              I build companies and tools to support small businesses and
+              educators.
+            </p>
+            <p>
+              Alongside my work at{" "}
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.near.st/?utm_source=schof.co"
+              >
+                NearSt
+              </a>
+              , I consult founders and engineers on everything from setting up
+              their first business to designing technology platforms.
+            </p>
           </div>
 
           <ProjectLinks />
           <SocialMedia />
-        </main>
+        </aside>
+        <div className="articles">
+          <main>
+            {allPosts.map((post) => (
+              <article className="blog-post">
+                <h1>
+                  <Link href={post.relativeUrl}>{post.title}</Link>
+                </h1>
+                <div className="blog-post-date">
+                  {post.category ? (
+                    <span>
+                      <span className="blog-post-category">
+                        {post.category}
+                      </span>{" "}
+                    </span>
+                  ) : null}
+                  <strong>{format(new Date(post.date), "MMMM d, yyyy")}</strong>
+                </div>
+
+                <section
+                  className={post.fountain ? "fountain-body" : undefined}
+                  dangerouslySetInnerHTML={{ __html: post.html }}
+                />
+              </article>
+            ))}
+          </main>
+        </div>
       </section>
+
+      <CodeHighlighter />
 
       <script
         type="application/ld+json"

@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 
 export async function POST(request) {
   const { token, ...res } = await request.json();
-  console.log(token);
+
   if (process.EDIT_TOKEN && token !== process.EDIT_TOKEN) {
     return NextResponse.json(
       { error: "Invalid token specified." },
