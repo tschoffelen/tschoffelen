@@ -2,7 +2,7 @@
   padding-bottom: 24px;
 
   blockquote {
-    background: #eee;
+    background: var(--background);
     margin: 1.25rem 0 2.5rem;
     padding: 0.75rem 2.25rem 1.75rem;
     border-radius: 0.25rem;
@@ -35,13 +35,10 @@
   }
 
   .blog-post-category {
-    background-color: rgba(0, 0, 0, 0.1);
     color: var(--text);
-    border-radius: .3rem;
     margin-right: 8px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 4px 7px;
   }
 
   img {
