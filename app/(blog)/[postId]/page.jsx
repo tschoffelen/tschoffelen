@@ -33,7 +33,7 @@ export default async function Post({ params: { postId } }) {
             <span className="blog-post-category">{post.category}</span>{" "}
           </span>
         ) : null}
-        <strong>{format(new Date(post.date), "MMMM d, yyyy")}</strong>
+        <strong>{format(new Date(post.date), "MMMM do, yyyy")}</strong>
       </div>
 
       <section
