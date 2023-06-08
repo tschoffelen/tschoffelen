@@ -9,6 +9,10 @@ main {
   margin: 0 auto;
   position: relative;
   max-width: 42rem;
+
+  @media (max-width: 600px) {
+    padding: 2rem;
+  }
 }
 
 @import "typography";
