@@ -33,6 +33,13 @@ export async function POST(request) {
         .where("editToken", "=", res.editToken)
         .execute();
       editToken = res.editToken;
+
+      const post = await db
+        .selectFrom("posts")
+        .select(fields)
+        .where("editToken", "=", res.editToken)
+        .executeTakeFirst();
+      res.id = post.id;
     } else {
       editToken =
         Math.random().toString(36).substring(2, 15) +
