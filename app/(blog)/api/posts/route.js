@@ -36,7 +36,7 @@ export async function POST(request) {
 
       const post = await db
         .selectFrom("posts")
-        .select(fields)
+        .select(["id"])
         .where("editToken", "=", res.editToken)
         .executeTakeFirst();
       res.id = post.id;
