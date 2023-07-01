@@ -16,6 +16,16 @@
     padding-left: 10px;
   }
 
+  hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid var(--text);
+    opacity: 0.2;
+    @media (min-width: 768px) {
+      margin: 5rem 0;
+    }
+  }
+
   .blog-post-date {
     margin-top: 10px;
     margin-bottom: 44px;
@@ -55,13 +65,14 @@
 
   section {
     h2 {
-      line-height: 1.3;
-      font-size: 28px;
-      margin-top: 54px;
+      line-height: 1.4;
+      font-size: 20px;
+      margin-top: 44px;
       margin-bottom: -10px;
 
-      @media (max-width: 640px) {
-        margin-top: 44px;
+      @media (min-width: 640px) {
+        margin-top: 54px;
+        font-size: 28px;
       }
     }
 
