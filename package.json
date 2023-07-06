@@ -7,8 +7,7 @@
   "scripts": {
     "start": "next dev",
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "next-sitemap"
+    "build": "next build"
   },
   "dependencies": {
     "@extractus/feed-extractor": "^6.2.1",
@@ -21,7 +20,6 @@
     "kysely": "^0.25.0",
     "lucide-react": "^0.233.0",
     "next": "latest",
-    "next-sitemap": "^4.1.3",
     "nextjs-google-analytics": "^2.3.3",
     "prismjs": "^1.29.0",
     "react": "latest",
@@ -31,5 +29,6 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.341.0",
     "prettier": "^2.8.3"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }
