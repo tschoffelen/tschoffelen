@@ -6,7 +6,9 @@ export default async function Posts() {
 
   return (
     <>
-      <h1>Posts</h1>
+      <div className="prose mb-10">
+        <h1>Posts</h1>
+      </div>
       {posts
         .filter(({ unlisted }) => !unlisted)
         .map((post) => (

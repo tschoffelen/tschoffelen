@@ -5,7 +5,7 @@ import { ArrowLeftCircle } from "lucide-react";
 export default function Header() {
   return (
     <header>
-      <h1 className="logo" title="Thomas Schoffelen">
+      <h1 className="p-8 pb-2" title="Thomas Schoffelen">
         <Link
           id="logo"
           tabIndex={-1}
@@ -13,6 +13,7 @@ export default function Header() {
           title="Thomas Schoffelen"
           aria-label="Thomas Schoffelen"
           role="img"
+          className="text-gray-800 hover:text-gray-600 transition-colors duration-200 ease-in-out"
         >
           <ArrowLeftCircle/>
         </Link>

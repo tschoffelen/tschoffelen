@@ -25,19 +25,19 @@ export default async function Post({ params: { postId } }) {
   }
 
   return (
-    <article className="blog-post">
-      <h1>{post.title}</h1>
-      <div className="blog-post-date">
+    <article>
+      <h1 className="font-bold text-3xl md:text-[2.5rem] leading-[1.4]">{post.title}</h1>
+      <div className="text-gray-400 text-[0.8rem] mt-4 mb-10">
         {post.category ? (
           <span>
-            <span className="blog-post-category">{post.category}</span>{" "}
+            <span className="uppercase text-gray-500 font-bold mr-2">{post.category}</span>{" "}
           </span>
         ) : null}
-        <strong>{format(new Date(post.date), "MMMM do, yyyy")}</strong>
+        {format(new Date(post.date), "MMMM do, yyyy")}
       </div>
 
       <section
-        className={post.fountain ? "fountain-body" : undefined}
+        className={post.fountain ? "fountain-body" : "prose"}
         dangerouslySetInnerHTML={{ __html: html }}
       />
 

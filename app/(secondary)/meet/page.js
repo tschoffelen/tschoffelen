@@ -11,7 +11,6 @@ export default function Meet() {
         style={{
           minWidth: 300,
           height: 1000,
-          marginTop: 64,
           borderRadius: 8,
           border: "none",
           background: "#fff",

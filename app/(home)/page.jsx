@@ -21,25 +21,24 @@ export default async function Home() {
 
   return (
     <>
-      <section className="h-card">
-        <div className="hero">
-          <main className="homepage">
-            <div className="avatar">
-              <div className="avatar-inner" />
-            </div>
+      <section className="h-card text-gray-800">
+        <div className="bg-gray-100">
+          <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:flex items-center">
+            <div className="avatar"/>
 
-            <div>
-              <h2 className="p-name">Hi, I'm Thomas.</h2>
+            <div className="prose text-[1.05rem]">
+              <h2 className="p-name font-bold text-2xl">Hi, I'm Thomas.</h2>
 
-              <p className="p-note">
+              <p className="p-note mt-6">
                 I build companies and tools to support small businesses and
                 educators.
               </p>
-              <p>
+              <p className="mt-4">
                 Alongside my work at{" "}
                 <a
                   rel="noopener noreferrer"
                   target="_blank"
+                  className="no-underline hover:underline"
                   href="https://www.near.st/?utm_source=schof.co"
                 >
                   NearSt
@@ -50,14 +49,14 @@ export default async function Home() {
             </div>
           </main>
         </div>
-        <main className="homepage-links">
+        <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
           <div className="section">
-            <h3 className="section-title">Recent posts</h3>
+            <h3 className="uppercase font-semibold text-gray-400 text-sm mb-6">Recent posts</h3>
             {allPosts.map((post) => (
               <PostLink key={post.url} {...post} showCategory />
             ))}
-            <Link href="/posts">
-              <span className="link-description">View all →</span>
+            <Link href="/posts" className="text-gray-500 hover:underline">
+              View all →
             </Link>
           </div>
 

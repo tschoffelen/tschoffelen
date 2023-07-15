@@ -2,7 +2,6 @@ export default function Privacy() {
   return (
     <>
       <h1>Privacy Policy</h1>
-      <br />
       <h3>1. Introduction</h3>
       <ol>
         <li>

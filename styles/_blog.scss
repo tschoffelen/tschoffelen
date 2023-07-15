@@ -1,172 +1,79 @@
-.blog-post {
-  padding-bottom: 24px;
+.fountain-body {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
 
-  blockquote {
-    background: var(--background);
-    margin: 1.25rem 0 2.5rem;
-    padding: 0.75rem 2.25rem 1.75rem;
-    border-radius: 0.25rem;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.2px;
+  font-weight: normal;
+
+  @media (max-width: 640px) {
+    font-size: 14px;
   }
 
-  ul li {
-    margin-bottom: 12px;
-    list-style-type: square;
-    list-style-position: outside;
-    margin-left: -20px;
-    padding-left: 10px;
+  h2,
+  h3,
+  h4,
+  p {
+    font-weight: normal;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  h3 {
+    padding-top: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    @media (max-width: 510px) {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin-bottom: 32px;
+    @media (max-width: 510px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  h2 {
+    text-align: right;
+    margin: 32px 0;
   }
 
   hr {
-    margin: 2rem 0;
     border: 0;
-    border-top: 1px solid var(--text);
-    opacity: 0.2;
-    @media (min-width: 768px) {
-      margin: 5rem 0;
-    }
   }
 
-  .blog-post-date {
-    margin-top: 10px;
-    margin-bottom: 44px;
-    opacity: 0.7;
-    font-size: 13px;
-    user-select: none;
-
-    strong {
-      font-weight: normal;
-      opacity: 0.5;
+  .dialogue {
+    margin: 0 110px;
+    @media (max-width: 510px) {
+      margin: 0 48px;
     }
 
-    @media (max-width: 640px) {
-      margin-top: 1rem;
-      margin-bottom: 24px;
-    }
-  }
-
-  .blog-post-category {
-    color: var(--text);
-    margin-right: 8px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  img {
-    margin: 12px -210px;
-    width: calc(100% + 420px);
-    border-radius: 0.5rem;
-
-    @media (max-width: 640px) {
-      margin: 12px -24px;
-      width: calc(100% + 48px);
-      border-radius: 0;
-    }
-  }
-
-  section {
-    h2 {
-      line-height: 1.4;
-      font-size: 20px;
-      margin-top: 44px;
-      margin-bottom: -10px;
-
-      @media (min-width: 640px) {
-        margin-top: 54px;
-        font-size: 28px;
-      }
-    }
-
-    h3 {
-      margin-top: 32px;
-      margin-bottom: -16px;
-    }
-
-    p,
-    li {
-      a {
-        color: var(--link);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .fountain-body {
-    font-family: "yyx-mono", "Mono",
-    -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
-    font-size: 15px;
-    line-height: 1.6;
-    letter-spacing: -0.2px;
-
-    @media (max-width: 640px) {
-      font-size: 14px;
-    }
-
-    h2, h3, h4, p {
-      font-weight: normal;
-      font-size: inherit;
-      margin: 0;
-    }
-
-    h3 {
-      padding-top: 16px;
-      font-weight: 600;
-      margin-top: 12px;
-      margin-bottom: 20px;
-      @media (max-width: 510px) {
-        margin-top: 0;
-      }
-    }
-
-    p {
-      margin-bottom: 32px;
-      @media (max-width: 510px) {
-        margin-bottom: 16px;
-      }
-    }
-
-    h2 {
-      text-align: right;
-      margin: 32px 0;
-    }
-
-    hr {
-      border: 0;
-    }
-
-    .dialogue {
-      margin: 0 110px;
+    h4 {
+      margin: 0 110px 4px;
       @media (max-width: 510px) {
         margin: 0 48px;
       }
+    }
+  }
 
-      h4 {
-        margin: 0 110px 4px;
-        @media (max-width: 510px) {
-          margin: 0 48px;
-        }
-      }
+  &.fountain-body-inline {
+    background: #ebe9ea;
+    margin: 48px -24px;
+    padding: 20px 24px;
+
+    & > *:first-child {
+      margin-top: 0;
+      padding-top: 0;
     }
 
-    &.fountain-body-inline {
-      background: #ebe9ea;
-      margin: 48px -24px;
-      padding: 20px 24px;
-
-      & > *:first-child {
-        margin-top: 0;
-        padding-top: 0;
-      }
-
-      & > *:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
+    & > *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }

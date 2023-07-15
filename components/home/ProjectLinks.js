@@ -2,56 +2,50 @@ import React from "react";
 
 const ProjectLinks = () => {
   return (
-    <div className="section">
-      <h3 className="section-title">What I'm working on</h3>
-      <div className="projects-grid">
+    <div className="border-t border-gray-200 mt-10 pt-10 md:mt-16 md:pt-16">
+      <h3 className="uppercase font-semibold text-gray-400 text-sm mb-6">
+        What I'm working on
+      </h3>
+      <div className="grid md:grid-cols-2 gap-6 md:gap-x-20">
         <a
           href="https://www.near.st/?utm_source=schof.co"
-          className="link p-org"
+          className="leading-relaxed group p-org"
           rel="noopener noreferrer"
           target="_blank"
         >
-          NearSt
-          <span className="sr"> - </span>
-          <span className="link-description">
+          <span className="block font-bold group-hover:underline">NearSt</span>
+          <span className="sr-only"> - </span>
             Making products visible online to get more in-store customers.
-          </span>
         </a>
         <a
           href="https://streetartcities.com/?utm_source=schof.co"
-          className="link p-org"
+          className="leading-relaxed group p-org"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Street Art Cities
-          <span className="sr"> - </span>
-          <span className="link-description">
-            The world's largest street art community platform and app.
-          </span>
+          <span className="block font-bold group-hover:underline">Street Art Cities</span>
+          <span className="sr-only"> - </span>
+          The world's largest street art community platform and app.
         </a>
         <a
           href="https://infowijs.nl/?utm_source=schof.co"
-          className="link p-org"
+          className="leading-relaxed group p-org"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Infowijs
-          <span className="sr"> - </span>
-          <span className="link-description">
-            Communication tools used by 100s of Dutch schools.
-          </span>
+          <span className="block font-bold group-hover:underline">Infowijs</span>
+          <span className="sr-only"> - </span>
+          Communication tools used by 100s of Dutch schools.
         </a>
         <a
           href="https://sueterapp.com/?utm_source=schof.co"
-          className="link p-org"
+          className="leading-relaxed group p-org"
           rel="noopener noreferrer"
           target="_blank"
         >
-          Sueter
-          <span className="sr"> - </span>
-          <span className="link-description">
-            A unique circular and sustainable fashion rental platform.
-          </span>
+          <span className="block font-bold group-hover:underline">Sueter</span>
+          <span className="sr-only"> - </span>A unique circular and sustainable
+          fashion rental platform.
         </a>
       </div>
     </div>
