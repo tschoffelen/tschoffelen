@@ -16,7 +16,6 @@ export async function GET() {
     },
     author: {
       name: "Thomas Schoffelen",
-      email: "thomas+rss@schof.co",
       link: "https://schof.co",
     },
   });

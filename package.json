@@ -18,12 +18,12 @@
     "feed": "^4.2.2",
     "gatsby-remark-fountain": "^1.0.3",
     "kysely": "^0.25.0",
-    "lucide-react": "^0.233.0",
-    "next": "latest",
+    "lucide-react": "^0.260.0",
+    "next": "^13.4.10",
     "nextjs-google-analytics": "^2.3.3",
     "prismjs": "^1.29.0",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.57.1"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Github, Mail, Rss, Twitter } from "lucide-react";
 
 const SocialMedia = () => {
   return (
@@ -61,6 +61,12 @@ const SocialMedia = () => {
         title="Follow me on GitHub"
       >
         <Github />
+      </a>
+      <a
+        href="/api/rss.xml"
+        title="Subscribe via RSS"
+      >
+        <Rss />
       </a>
     </div>
   );
