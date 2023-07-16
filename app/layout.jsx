@@ -1,9 +1,14 @@
+import { Analytics } from "@vercel/analytics/react";
+
 import "@/styles/globals.scss";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
@@ -17,7 +22,7 @@ export const metadata = {
   keywords:
     "thomas schoffelen, thomas, schoffelen, consulting, engineer, entrepreneur, startups, young startup",
   author: "Thomas Schoffelen",
-  category: 'technology',
+  category: "technology",
   "google-site-verification": "PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f4f4f5" },
@@ -37,7 +42,7 @@ export const metadata = {
     "https://twitter.com/tschoffelen",
     "https://instagram.com/tschoffelen",
     "https://github.com/tschoffelen",
-    'https://github.com/tschoffelen',
+    "https://github.com/tschoffelen",
   ],
   other: {
     text: `
