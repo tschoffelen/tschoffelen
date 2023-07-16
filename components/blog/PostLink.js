@@ -12,17 +12,18 @@ const PostLink = ({
   showCategory = false,
 }) => {
   return (
-    <Link href={relativeUrl || url} className="block leading-relaxed prose mb-4 group transition-all">
-      <span className="flex items-center gap-2">
-      <span className="font-bold group-hover:underline transition-all">{title}</span>
-      <span className="sr-only">{`, written on `}</span>
-      <span className="text-[0.65rem] uppercase font-bold text-gray-800 px-1 opacity-40 bg-gray-300 rounded-sm">
-        {showCategory ? category : format(new Date(date), "MMM d")}
+    <Link
+      href={relativeUrl || url}
+      className="block mb-8 prose group"
+    >
+      <span className="block flex-1">
+        <span className="border-b border-gray-800 text-gray-800 pb-0.5 group-hover:border-black group-hover:text-black transition">
+          {title}
+        </span>
+        <span className="block truncate mt-1 group-hover:text-black transition">
+          {excerpt}
+        </span>
       </span>
-      {category && <span className="sr-only">{` in category ${category}.`}</span>}
-      </span>
-      <span className="sr-only"> - </span>
-      <span className="block truncate">{excerpt}</span>
     </Link>
   );
 };

@@ -24,16 +24,18 @@ export default async function Home() {
       <section className="h-card text-gray-800">
         <div className="bg-gray-100">
           <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:flex items-center">
-            <div className="avatar"/>
+            <div className="avatar" />
 
-            <div className="prose text-[1.05rem]">
-              <h2 className="p-name font-bold text-2xl">Hi, I'm Thomas.</h2>
+            <div className="prose">
+              <p className="p-name font-semibold text-gray-800">
+                Hi, I'm Thomas.
+              </p>
 
-              <p className="p-note mt-6">
+              <p className="p-note">
                 I build companies and tools to support small businesses and
                 educators.
               </p>
-              <p className="mt-4">
+              <p>
                 Alongside my work at{" "}
                 <a
                   rel="noopener noreferrer"
@@ -49,16 +51,18 @@ export default async function Home() {
             </div>
           </main>
         </div>
+
         <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
-          <div className="section">
-            <h3 className="uppercase font-semibold text-gray-400 text-sm mb-6">Recent posts</h3>
-            {allPosts.map((post) => (
-              <PostLink key={post.url} {...post} showCategory />
-            ))}
-            <Link href="/posts" className="text-gray-500 hover:underline">
-              View all →
-            </Link>
-          </div>
+          <h3 className="font-semibold mb-6">Recent writings</h3>
+          {allPosts.map((post) => (
+            <PostLink key={post.url} {...post} showCategory />
+          ))}
+          <Link
+            href="/posts"
+            className="text-gray-500 hover:text-gray-800 transition"
+          >
+            View all →
+          </Link>
 
           <ProjectLinks />
           <SocialMedia />
