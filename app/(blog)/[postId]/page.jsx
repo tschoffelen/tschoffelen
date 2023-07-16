@@ -30,7 +30,7 @@ export default async function Post({ params: { postId } }) {
       <div className="text-gray-400 text-[0.8rem] mt-4 mb-10">
         {post.category ? (
           <span>
-            <span className="uppercase text-gray-500 font-bold mr-2">{post.category}</span>{" "}
+            <a href={`/posts/${post.categorySlug}`} className="uppercase text-gray-500 hover:text-gray-800 transition font-bold mr-2">{post.category}</a>{" "}
           </span>
         ) : null}
         {format(new Date(post.date), "MMMM do, yyyy")}

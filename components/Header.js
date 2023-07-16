@@ -4,8 +4,8 @@ import { ArrowLeftCircle } from "lucide-react";
 
 export default function Header() {
   return (
-    <header>
-      <h1 className="p-8 pb-2" title="Thomas Schoffelen">
+    <header className="lg:pb-16">
+      <h1 className="p-8 pb-2 lg:pb-8 lg:fixed t-0 l-0" title="Thomas Schoffelen">
         <Link
           id="logo"
           tabIndex={-1}

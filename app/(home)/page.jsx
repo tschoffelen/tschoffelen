@@ -55,7 +55,7 @@ export default async function Home() {
         <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
           <h3 className="font-semibold mb-6">Recent writings</h3>
           {allPosts.map((post) => (
-            <PostLink key={post.url} {...post} showCategory />
+            <PostLink key={post.url} {...post} />
           ))}
           <Link
             href="/posts"

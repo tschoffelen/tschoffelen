@@ -7,9 +7,8 @@ const PostLink = ({
   relativeUrl,
   title,
   date,
-  category,
   excerpt,
-  showCategory = false,
+  showDate = false
 }) => {
   return (
     <Link
@@ -21,6 +20,7 @@ const PostLink = ({
           {title}
         </span>
         <span className="block truncate mt-1 group-hover:text-black transition">
+          {showDate && format(new Date(date), "MMMM d, yyyy – ")}
           {excerpt}
         </span>
       </span>
