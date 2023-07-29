@@ -7,22 +7,30 @@ export default async function Posts() {
   const posts = await getPosts();
 
   const tags = Object.entries(
-    posts.reduce((acc, post) => {
-      if (acc[post.categorySlug]) {
-        acc[post.categorySlug][1] += 1;
+    posts
+      .filter(({ unlisted }) => !unlisted)
+      .reduce((acc, post) => {
+        if (acc[post.categorySlug]) {
+          acc[post.categorySlug][1] += 1;
+          if (acc[post.categorySlug][2] < post.date) {
+            acc[post.categorySlug][2] = post.date;
+          }
+          return acc;
+        }
+        acc[post.categorySlug] = [post.category, 1, post.date];
         return acc;
-      }
-      acc[post.categorySlug] = [post.category, 1];
-      return acc;
-    }, {})
+      }, {})
   )
     .map(([k, v]) => ({
       slug: k,
       title: v[0],
       count: v[1],
+      date: v[2],
     }))
     .sort((a, b) => b.count - a.count)
-    .filter(({ count }) => count >= 3);
+    .filter(
+      ({ count, date }) => count >= 3 || new Date(date) > new Date("2023-01-01")
+    );
 
   return (
     <>
