@@ -69,6 +69,7 @@ export async function POST(request) {
     revalidatePath(`/${res.id}`);
 
     return NextResponse.json({
+      ...res,
       id: res.id,
       url: `https://schof.co/${res.id}`,
       editToken,
