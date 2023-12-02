@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { getExcerpt } from "@/lib/blog";
 import { revalidatePath } from "next/cache";
+import showdown from "showdown";
 
 export async function POST(request) {
   const { token, ...res } = await request.json();
@@ -13,11 +14,16 @@ export async function POST(request) {
     );
   }
 
-  if (!res.editToken && (!res.title || !res.content || !res.html || !res.id)) {
+  if (!res.editToken && (!res.title || !res.content || !res.id)) {
     return NextResponse.json(
       { error: "Missing required fields." },
       { status: 400 }
     );
+  }
+
+  if (!res.html && res.content) {
+    const converter = new showdown.Converter();
+    res.html = converter.makeHtml(res.content);
   }
 
   if (res.html && !res.excerpt) {
