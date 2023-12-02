@@ -40,7 +40,7 @@ const nextConfig = {
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "app://obsidian.md",
+            value: "*",
           },
         ],
       },
