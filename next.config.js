@@ -32,6 +32,20 @@ const nextConfig = {
       },
     ];
   },
+
+  async headers() {
+    return [
+      {
+        source: "/api/posts",
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "app://obsidian.md",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
