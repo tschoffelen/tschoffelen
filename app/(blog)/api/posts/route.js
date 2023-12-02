@@ -4,6 +4,10 @@ import { getExcerpt } from "@/lib/blog";
 import { revalidatePath } from "next/cache";
 import showdown from "showdown";
 
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
+}
+
 export async function POST(request) {
   const { token, ...res } = await request.json();
   console.log(token);
