@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
 export const revalidate = 3600;
 
 export const metadata = {
+  metadataBase: new URL("https://schof.co"),
   title: "Thomas Schoffelen",
   description:
     "Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.",
