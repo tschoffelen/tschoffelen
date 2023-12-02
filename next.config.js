@@ -42,6 +42,10 @@ const nextConfig = {
             key: "Access-Control-Allow-Origin",
             value: "*",
           },
+          {
+            key: "Access-Control-Allow-Headers",
+            value: "*",
+          },
         ],
       },
     ];

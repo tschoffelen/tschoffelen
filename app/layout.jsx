@@ -15,6 +15,13 @@ export default function RootLayout({ children }) {
 
 export const revalidate = 3600;
 
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f4f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#212733" },
+  ],
+};
+
 export const metadata = {
   metadataBase: new URL("https://schof.co"),
   title: "Thomas Schoffelen",
@@ -25,10 +32,6 @@ export const metadata = {
   author: "Thomas Schoffelen",
   category: "technology",
   "google-site-verification": "PfK2tt-swzI7S9DjGXMWXb6BEo09M6ATCR87bR5HqQE",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f4f5" },
-    { media: "(prefers-color-scheme: dark)", color: "#212733" },
-  ],
   twitter: {
     card: "summary_large_image",
     creator: "@tschoffelen",

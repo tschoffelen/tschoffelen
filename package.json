@@ -10,32 +10,32 @@
     "build": "next build"
   },
   "dependencies": {
-    "@extractus/feed-extractor": "^6.2.1",
-    "@vercel/analytics": "^1.0.1",
-    "@vercel/postgres": "^0.3.0",
-    "@vercel/postgres-kysely": "^0.3.0",
-    "date-fns": "^2.29.3",
+    "@extractus/feed-extractor": "^6.3.0",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/postgres": "^0.5.1",
+    "@vercel/postgres-kysely": "^0.6.0",
+    "date-fns": "^2.30.0",
     "excerpt-html": "^1.2.2",
     "feed": "^4.2.2",
     "gatsby-remark-fountain": "^1.0.3",
-    "kysely": "^0.25.0",
-    "lucide-react": "^0.260.0",
-    "next": "^13.4.10",
+    "kysely": "^0.26.3",
+    "lucide-react": "^0.294.0",
+    "next": "^14.0.3",
     "nextjs-google-analytics": "^2.3.3",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.57.1",
+    "sass": "^1.69.5",
     "showdown": "^2.1.0"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.341.0",
-    "@tailwindcss/forms": "^0.5.4",
-    "@tailwindcss/typography": "^0.5.9",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.26",
-    "prettier": "^2.8.3",
-    "tailwindcss": "^3.3.3"
+    "@aws-sdk/client-s3": "^3.465.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.0",
+    "tailwindcss": "^3.3.5"
   },
   "packageManager": "yarn@3.6.1"
 }
