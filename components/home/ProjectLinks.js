@@ -2,10 +2,8 @@ import React from "react";
 
 const ProjectLinks = () => {
   return (
-    <div className="p-8 md:p-16 max-w-[50rem] mx-auto">
-      <h3 className="font-semibold mb-6">
-        What I'm working on
-      </h3>
+    <div className="p-8 md:p-16 max-w-[50rem] mx-auto md:border rounded-2xl md:my-16">
+      <h3 className="font-semibold mb-6">What I'm working on</h3>
       <div className="grid md:grid-cols-2 gap-6 md:gap-x-20">
         <a
           href="https://www.near.st/?utm_source=schof.co"

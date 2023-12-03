@@ -21,50 +21,46 @@ export default async function Home() {
   return (
     <>
       <section className="h-card text-gray-800">
-        <div className="border-b">
-          <main className="p-8 md:p-16 md:pt-6 max-w-[50rem] mx-auto md:flex items-center">
-            <div className="avatar" />
+        <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:flex items-center">
+          <div className="avatar" />
 
-            <div className="prose">
-              <p className="p-name font-semibold text-gray-800">
-                Hi, I'm Thomas.
-              </p>
+          <div className="prose">
+            <p className="p-name font-semibold text-gray-800">
+              Hi, I'm Thomas.
+            </p>
 
-              <p className="p-note">
-                I build companies and tools to support small businesses and
-                educators.
-              </p>
-              <p>
-                Alongside my work at{" "}
-                <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="no-underline hover:underline"
-                  href="https://www.near.st/?utm_source=schof.co"
-                >
-                  NearSt
-                </a>
-                , I consult founders and engineers on everything from setting up
-                their first business to designing technology platforms.
-              </p>
-            </div>
-          </main>
-        </div>
+            <p className="p-note">
+              I build companies and tools to support small businesses and
+              educators.
+            </p>
+            <p>
+              Alongside my work at{" "}
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                className="no-underline hover:underline"
+                href="https://www.near.st/?utm_source=schof.co"
+              >
+                NearSt
+              </a>
+              , I consult founders and engineers on everything from setting up
+              their first business to designing technology platforms.
+            </p>
+          </div>
+        </main>
 
-        <div className="border-b">
-          <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
-            <h3 className="font-semibold mb-6">Recent writings</h3>
-            {allPosts.map((post) => (
-              <PostLink key={post.url} {...post} />
-            ))}
-            <Link
-              href="/posts"
-              className="text-gray-500 hover:text-gray-800 transition"
-            >
-              View all →
-            </Link>
-          </main>
-        </div>
+        <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:border rounded-2xl">
+          <h3 className="font-semibold mb-6">Recent writings</h3>
+          {allPosts.map((post) => (
+            <PostLink key={post.url} {...post} />
+          ))}
+          <Link
+            href="/posts"
+            className="text-gray-500 hover:text-gray-800 transition"
+          >
+            View all →
+          </Link>
+        </main>
 
         <ProjectLinks />
       </section>
