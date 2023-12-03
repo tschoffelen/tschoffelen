@@ -1,4 +1,3 @@
-import { Feed } from "feed";
 import { getPosts } from "@/lib/blog";
 import { NextResponse } from "next/server";
 
