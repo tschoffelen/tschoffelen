@@ -1,23 +1,34 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowLeftCircle } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="lg:pb-16">
-      <h1 className="p-8 pb-2 lg:pb-8 lg:fixed t-0 l-0" title="Thomas Schoffelen">
+    <header className="p-6 px-8 md:p-8 md:px-10 text-sm flex items-center justify-between">
+      <h1>
         <Link
           id="logo"
-          tabIndex={-1}
           href="/"
           title="Thomas Schoffelen"
           aria-label="Thomas Schoffelen"
           role="img"
-          className="text-gray-800 hover:text-gray-600 transition-colors duration-200 ease-in-out"
+          className="text-gray-800 leading-tight hover:text-black transition-colors duration-200 ease-in-out font-semibold flex gap-3 items-center"
         >
-          <ArrowLeftCircle/>
+          <span className="w-4 h-4 rounded-sm bg-current" />
+          Thomas Schoffelen
         </Link>
       </h1>
+      <ul className="flex items-center gap-4 md:gap-6">
+        <li>
+          <Link href="/about" className="text-gray-500">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link href="/posts" className="text-gray-500">
+            Posts
+          </Link>
+        </li>
+      </ul>
     </header>
   );
 }
