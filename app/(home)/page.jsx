@@ -3,7 +3,6 @@ import Link from "next/link";
 import PostLink from "@/components/blog/PostLink";
 
 import { getPosts } from "@/lib/blog";
-import SocialMedia from "@/components/home/SocialMedia";
 import ProjectLinks from "@/components/home/ProjectLinks";
 
 export default async function Home() {
@@ -22,8 +21,8 @@ export default async function Home() {
   return (
     <>
       <section className="h-card text-gray-800">
-        <div className="bg-gray-100">
-          <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:flex items-center">
+        <div className="border-b">
+          <main className="p-8 md:p-16 md:pt-6 max-w-[50rem] mx-auto md:flex items-center">
             <div className="avatar" />
 
             <div className="prose">
@@ -52,21 +51,22 @@ export default async function Home() {
           </main>
         </div>
 
-        <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
-          <h3 className="font-semibold mb-6">Recent writings</h3>
-          {allPosts.map((post) => (
-            <PostLink key={post.url} {...post} />
-          ))}
-          <Link
-            href="/posts"
-            className="text-gray-500 hover:text-gray-800 transition"
-          >
-            View all →
-          </Link>
+        <div className="border-b">
+          <main className="p-8 md:p-16 max-w-[50rem] mx-auto">
+            <h3 className="font-semibold mb-6">Recent writings</h3>
+            {allPosts.map((post) => (
+              <PostLink key={post.url} {...post} />
+            ))}
+            <Link
+              href="/posts"
+              className="text-gray-500 hover:text-gray-800 transition"
+            >
+              View all →
+            </Link>
+          </main>
+        </div>
 
-          <ProjectLinks />
-          <SocialMedia />
-        </main>
+        <ProjectLinks />
       </section>
 
       <script

@@ -35,7 +35,7 @@ export default async function Posts() {
   return (
     <>
       <div className="prose mb-6">
-        <h1>Posts</h1>
+        <h1>Things I've written</h1>
       </div>
       <div className="flex flex-wrap mb-8 md:mb-12">
         {tags.map((tag) => (

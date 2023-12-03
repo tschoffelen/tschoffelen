@@ -26,17 +26,14 @@ export default async function Post({ params: { postId } }) {
 
   return (
     <article>
-      <h1 className="font-bold text-3xl md:text-[2.5rem] leading-[1.4]">
-        {post.title}
-      </h1>
-      <div className="text-gray-400 text-[0.8rem] mt-4 mb-10">
+      <div className="text-gray-800 text-[0.8rem] mb-3">
         {!post.attributes?.unlisted ? (
           <>
             {post.category ? (
               <span>
                 <a
                   href={`/posts/${post.categorySlug}`}
-                  className="uppercase text-gray-500 hover:text-gray-800 transition font-bold mr-2"
+                  className="uppercase hover:text-gray-800 transition font-bold mr-1"
                 >
                   {post.category}
                 </a>{" "}
@@ -46,6 +43,9 @@ export default async function Post({ params: { postId } }) {
           </>
         ) : null}
       </div>
+      <h1 className="text-gray-900 font-bold text-3xl md:text-[3rem] leading-[1.4] mb-9 md:mb-12">
+        {post.title}
+      </h1>
 
       <section
         className={post.fountain ? "fountain-body" : "prose"}

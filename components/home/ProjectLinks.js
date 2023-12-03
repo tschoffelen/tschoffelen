@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectLinks = () => {
   return (
-    <div className="border-t border-gray-200 mt-10 pt-10 md:mt-16 md:pt-16">
+    <div className="p-8 md:p-16 max-w-[50rem] mx-auto">
       <h3 className="font-semibold mb-6">
         What I'm working on
       </h3>
