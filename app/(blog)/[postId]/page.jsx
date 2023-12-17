@@ -109,9 +109,6 @@ export async function generateMetadata({ params: { postId } }) {
 
   return {
     title: post.title,
-    description: post.excerpt,
-    alternates: {
-      canonical: post.url,
-    },
+    description: post.excerpt
   };
 }
