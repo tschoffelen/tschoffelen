@@ -33,6 +33,15 @@ const nextConfig = {
     ];
   },
 
+  async rewrites() {
+    return [
+      {
+        source: "/f/:path*",
+        destination: "https://schof-box.s3-eu-west-1.amazonaws.com/f/:path*",
+      },
+    ];
+  },
+
   async headers() {
     return [
       {
