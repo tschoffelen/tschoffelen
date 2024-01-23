@@ -48,17 +48,17 @@ const ProjectLinks = () => {
           </span>
         </a>
         <a
-          href="https://sueterapp.com/?utm_source=schof.co"
+          href="https://ministryofurbanculture.com/?utm_source=schof.co"
           className="prose group p-org"
           rel="noopener noreferrer"
           target="_blank"
         >
           <span className="border-b border-gray-800 text-gray-800 pb-0.5 group-hover:border-black group-hover:text-black transition">
-            Sueter
+            Ministry of Urban Culture
           </span>
           <span className="sr-only"> - </span>
           <span className="block mt-1 group-hover:text-black transition">
-            A unique circular and sustainable fashion rental platform.
+            Promoting and supporting youth culture across Europe.
           </span>
         </a>
       </div>
