@@ -4,6 +4,7 @@ import PostLink from "@/components/blog/PostLink";
 
 import { getPosts } from "@/lib/blog";
 import ProjectLinks from "@/components/home/ProjectLinks";
+import Header from "@/components/Header";
 
 export default async function Home() {
   const allPosts = (await getPosts())
@@ -20,6 +21,7 @@ export default async function Home() {
 
   return (
     <>
+      <Header />
       <section className="h-card text-gray-800">
         <main className="p-8 md:p-16 max-w-[50rem] mx-auto md:flex items-center">
           <div className="avatar" />
