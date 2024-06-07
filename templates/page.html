@@ -5,7 +5,7 @@
   {% if not page.extra.unlisted %}
     <div class="post-meta">
       {% set category_url = get_taxonomy_url(kind="category", name=page.taxonomies.category.0, lang=page.lang, trailing_slash=false) %}
-      <a href="{{ category_url }}">{{ page.taxonomies.category.0 }}</a>
+      <a href="{{ category_url | safe }}">{{ page.taxonomies.category.0 }}</a>
       {{ page.date | date(format="%B %e, %Y") }}
     </div>
   {% endif %}
@@ -22,9 +22,8 @@
           {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            "headline": "{{ page.title | safe }}",
-            datePublished: post.date,
-            about: post.category,
+            "headline": "{{ page.title }}",
+            datePublished: "{{ page.date | date(format='%Y-%m-%d') }}",
             author: {
               "@context": "http://schema.org",
               "@type": "Person",
