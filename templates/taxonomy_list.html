@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <article>
+        <h1>Things I've written</h1>
+        <div class="blog-tags">
+            {% set categories = get_taxonomy(kind="category") %}
+            {% for category in categories.items %}
+                {% if category.page_count >= 2 %}
+                    <a href="{{ category.permalink }}">{{ category.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        {% set section = get_section(path="_index.md") %}
+        {% for post in section.pages %}
+            {% if not post.extra.unlisted %}
+                <a href="{% if post.extra.url %}{{ post.extra.url }}{% else %}{{ post.permalink | safe }}{% endif %}" class="post-link">
+                <span class="post-title">{{ post.title }}</span>
+                <span class="post-excerpt truncate">{{ post.date | date(format="%B %e, %Y") }} &ndash; {{ post.description }}</span>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </article>
+{% endblock content %}

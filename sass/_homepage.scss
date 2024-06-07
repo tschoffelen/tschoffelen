@@ -1,74 +1,89 @@
 .homepage {
+  padding: 0 2rem;
+  @media (min-width: 769px) {
     display: flex;
     padding: 1rem 3.5rem;
+  }
 
-    & > div:last-child {
-        flex: 1;
+  & > div:last-child {
+    flex: 1;
+  }
+
+  p {
+    margin-top: 1rem;
+    line-height: 1.7rem;
+
+    a {
+      color: $gray-900;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
-
-    p {
-        margin-top: 1rem;
-        line-height: 1.7rem;
-
-        a {
-            color: $gray-900;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+  }
 }
 
 .avatar {
-    margin-right: 4rem;
-    flex-basis: 25%;
-    min-width: 24%;
-    min-height: 14rem;
-    background: transparent url("./assets/avatar.svg") no-repeat top;
-    background-size: contain;
-  
-    @media (max-width: 42rem) {
-      width: 50%;
-      max-width: 12rem;
-      min-height: 10rem;
-      padding-top: 0;
-      margin: 0 auto 2.5rem;
-    }
+  margin-right: 4rem;
+  flex-basis: 25%;
+  min-width: 24%;
+  min-height: 14rem;
+  background: transparent url("./assets/avatar.svg") no-repeat top;
+  background-size: contain;
+
+  @media (max-width: 42rem) {
+    width: 50%;
+    max-width: 12rem;
+    min-height: 10rem;
+    padding-top: 0;
+    margin: 0 auto 2.5rem;
   }
-  
-  .homepage-section {
+}
+
+.homepage-section {
+  padding: 2rem;
+  margin-top: 2rem;
+  @media (min-width: 769px) {
     border-radius: 1rem;
     border: 1px solid $gray-100;
     padding: 3.5rem;
     margin-top: 3rem;
-
-    h2 {
-        font-size: 1rem;
-    }
   }
 
-  .post-link {
-    text-decoration: none;
-    color: inherit;
+  h2 {
+    font-size: 1rem;
+  }
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-top: 2rem;
+
+  .post-title {
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.075rem;
+  }
+  .post-excerpt {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
     display: block;
-    margin-top: 1.5rem;
-
-    .post-title {
-        border-bottom: 1px solid currentColor;
-        padding-bottom: 0.075rem;
-    }
-    .post-excerpt {
-        margin-top: 0.25rem;
-        display: block;
-        opacity: 0.9;
-    }
+    opacity: 0.9;
   }
+}
 
-  .view-more {
-    text-decoration: none;
-    color: $gray-500;
-    margin-top: 2rem;
-    display: inline-block;
-  }
+.view-more {
+  text-decoration: none;
+  color: $gray-500;
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.truncate {
+  white-space: nowrap;
+  height: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

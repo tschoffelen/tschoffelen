@@ -1,9 +1,62 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
+<article>
+  {% if not page.extra.unlisted %}
+    <div class="post-meta">
+      {% set category_url = get_taxonomy_url(kind="category", name=page.taxonomies.category.0, lang=page.lang, trailing_slash=false) %}
+      <a href="{{ category_url }}">{{ page.taxonomies.category.0 }}</a>
+      {{ page.date | date(format="%B %e, %Y") }}
+    </div>
+  {% endif %}
+
+  <h1 class="post-header-title">
+    {{ page.title }}
+  </h1>
+
+  <section class="{% if post.extra.fountain %}fountain-body{% else %}blog-body{% endif %}">
+    {{ page.content | safe }}
+  </section>
+
+      <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "{{ page.title | safe }}",
+            datePublished: post.date,
+            about: post.category,
+            author: {
+              "@context": "http://schema.org",
+              "@type": "Person",
+              name: "Thomas Schoffelen",
+              familyName: "Schoffelen",
+              givenName: "Thomas",
+              url: "https://schof.co",
+              image: "https://schof.co/avatar.jpg",
+              sameAs: [
+                "https://github.com/tschoffelen",
+                "https://twitter.com/tschoffelen",
+                "https://linkedin.com/in/tschoffelen",
+              ],
+            },
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Posts",
+                item: "https://schof.co/posts/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: post.category,
+              },
+            ],
+          }
+      </script>
+    </article>
 {% endblock content %}

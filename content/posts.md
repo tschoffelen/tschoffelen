@@ -1,7 +1,7 @@
 ---
 title: Posts
 date: 2000-01-01
-template: posts.html
+template: taxonomy_list.html
 extra:
-    hidden: true
+    unlisted: true
 ---

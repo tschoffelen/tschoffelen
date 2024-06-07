@@ -3,9 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{% if page %}{{page.title}}{%else%}Thomas Schoffelen{%endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f4f5">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#212733">
+    <title>{% if page %}{{page.title}}{% else %}Thomas Schoffelen{% endif %}</title>
+    <meta name="description" content="{% if page %}{{page.title}}{% else %}Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.{% endif %}">
+    <meta name="keywords" content="thomas schoffelen, thomas, schoffelen, consulting, engineer, entrepreneur, startups, young startup">
+    
     <link href="/index.css" rel="stylesheet" />
-    <!-- TODO: icon -->
+    
+    <link rel="bookmarks" href="https://twitter.com/tschoffelen">
+    <link rel="bookmarks" href="https://instagram.com/tschoffelen">
+    <link rel="bookmarks" href="https://github.com/tschoffelen">
+    <link rel="bookmarks" href="https://github.com/tschoffelen">
+    <meta name="category" content="technology">
+    <meta name="text" content="
+
+
+
+
+
+          Looking for my company info?
+
+          Company name:              Thomas Schoffelen B.V.
+          Contact email:             thomas@schof.co
+          NL Chamber of Commerce:    67640516
+          VAT number:                NL857104779B01
+
+
+
+
+
+    ">
+   
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image" content="https://schof.co/opengraph-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@tschoffelen">
+    <meta name="twitter:image:type" content="image/png">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="628">
+    <meta name="twitter:image" content="https://schof.co/twitter-image.png">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
 </head>
 
 <body>
@@ -61,7 +104,7 @@
                 <path d="M9 18c-4.51 2-5-2-7-2" />
             </svg>
         </a>
-        <a href="/api/rss.xml" title="Subscribe via RSS">
+        <a href="{{ get_url(path="rss.xml", trailing_slash=false) }}" title="Subscribe via RSS">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 11a9 9 0 0 1 9 9" />

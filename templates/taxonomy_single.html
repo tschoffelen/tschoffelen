@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <article>
+        <h1>{{ term.name }}</h1>
+        <div class="blog-tags">
+            <a href="/posts">All posts</a>
+        </div>
+
+        {% for post in term.pages %}
+            {% if not post.extra.unlisted %}
+                <a href="{% if post.extra.url %}{{ post.extra.url }}{% else %}{{ post.permalink | safe }}{% endif %}" class="post-link">
+                <span class="post-title">{{ post.title }}</span>
+                <span class="post-excerpt truncate">{{ post.date | date(format="%B %e, %Y") }} &ndash; {{ post.description }}</span>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </article>
+{% endblock content %}

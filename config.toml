@@ -1,5 +1,15 @@
 base_url = "https://schof.co"
+title = "Thomas Schoffelen"
+
+taxonomies = [{ name = "category", feed = true, render = true }]
+
 compile_sass = true
+
+generate_feed = true
+feed_filename = "rss.xml"
+default_language = "en"
+author = "Thomas Schoffelen"
 
 [markdown]
 highlight_code = true
+highlight_theme = "two-dark"
