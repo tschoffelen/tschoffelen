@@ -1,0 +1,148 @@
+{% extends "base.html" %} 
+
+{% block meta %}
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Thomas Schoffelen",
+    "familyName": "Schoffelen",
+    "givenName": "Thomas",
+    "worksFor": [
+      {
+        "@type": "Role",
+        "roleName": "Head of Engineering",
+        "startDate": "2016",
+        "worksFor": { "@type": "Organization", "name": "NearSt" }
+      },
+      {
+        "@type": "Role",
+        "roleName": "Founder",
+        "startDate": "2017",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Thomas Schoffelen BV",
+          "brand": "schof.co",
+          "taxID": "67640516",
+          "duns": "492180704",
+          "email": "info@schof.co",
+          "vatID": "NL857104779B01"
+        }
+      }
+    ],
+    "url": "https://schof.co",
+    "jobTitle": "Head of Platform Innovation",
+    "gender": "male",
+    "image": "https://schof.co/avatar.jpg",
+    "sameAs": [
+      "https://github.com/tschoffelen",
+      "https://twitter.com/tschoffelen",
+      "https://linkedin.com/in/tschoffelen",
+      "https://social.coop/@tschoffelen"
+    ]
+  }
+</script>
+{% endblock meta %}
+
+{% block content %}
+  <div class="homepage">
+    <div class="avatar"></div>
+    <div>
+      <p>
+        <strong>Hi, I'm Thomas.</strong>
+      </p>
+      <p class="p-note">
+        I build companies and tools to support small businesses and educators.
+      </p>
+      <p>
+        Alongside my work at
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.near.st/?utm_source=schof.co"
+          >NearSt</a>, I consult founders and engineers on 
+        everything from setting up their
+        first business to designing technology platforms.
+      </p>
+    </div>
+  </div>
+
+  <div class="homepage-section">
+    <h2>Recent writings</h2>
+    {% set index = 0 %}
+    {% for page in section.pages %} 
+      {% if index < 5 and not page.extra.hidden %}
+        <a href="{{ page.permalink | safe }}" class="post-link">
+          <span class="post-title">{{ page.title }}</span>
+          <span class="post-excerpt">{{ page.description }}</span>
+        </a>
+        {% set index = index + 1 %} 
+      {% endif %} 
+    {% endfor %}
+    <a href="/posts" class="view-more">
+      View all &rarr;
+    </a>
+  </div>
+
+  <div class="homepage-section">
+    <h2>What I'm working on</h2>
+     <div class="project-links">
+        <a
+          href="https://www.near.st/?utm_source=schof.co"
+          class="post-link p-org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span class="post-title">
+            NearSt
+          </span>
+          <span class="sr-only"> - </span>
+          <span class="post-excerpt">
+            Making products visible online to get more in-store customers.
+          </span>
+        </a>
+        <a
+          href="https://streetartcities.com/?utm_source=schof.co"
+          class="post-link p-org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span class="post-title">
+            Street Art Cities
+          </span>
+          <span class="sr-only"> - </span>
+          <span class="post-excerpt">
+            The world's largest street art community platform and app.
+          </span>
+        </a>
+        <a
+          href="https://infowijs.nl/?utm_source=schof.co"
+          class="post-link p-org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span class="post-title">
+            Infowijs
+          </span>
+          <span class="sr-only"> - </span>
+          <span class="post-excerpt">
+            Communication tools used by 100s of Dutch schools.
+          </span>
+        </a>
+        <a
+          href="https://ministryofurbanculture.com/?utm_source=schof.co"
+          class="post-link p-org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <span class="post-title">
+            Ministry of Urban Culture
+          </span>
+          <span class="sr-only"> - </span>
+          <span class="post-excerpt">
+            Promoting and supporting youth culture across Europe.
+          </span>
+        </a>
+      </div>
+  </div>
+{% endblock content %}

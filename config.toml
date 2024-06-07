@@ -1,0 +1,5 @@
+base_url = "https://schof.co"
+compile_sass = true
+
+[markdown]
+highlight_code = true
