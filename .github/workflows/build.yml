@@ -5,7 +5,7 @@ on:
       - master
 
 jobs:
-  run:
+  Publish:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
