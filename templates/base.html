@@ -35,7 +35,7 @@
     <meta name="description" content="{% if page %}{{page.title}}{% else %}Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of NearSt and Infowijs, building tools to help small businesses and educators.{% endif %}">
     <meta name="keywords" content="thomas schoffelen, thomas, schoffelen, consulting, engineer, entrepreneur, startups, young startup">
     
-    <link href="/index.css" rel="stylesheet" />
+    <link href="/index.css" rel="stylesheet">
     
     <link rel="bookmarks" href="https://twitter.com/tschoffelen">
     <link rel="bookmarks" href="https://instagram.com/tschoffelen">
@@ -60,11 +60,9 @@
 
 <body>
     <header>
-        <h1>
-            <a href="/" title="Thomas Schoffelen" aria-label="Thomas Schoffelen" role="img">
-                Thomas Schoffelen
-            </a>
-        </h1>
+        <a class="logo" href="/" title="Thomas Schoffelen" aria-label="Thomas Schoffelen">
+            Thomas Schoffelen
+        </a>
         <nav>
             <ul>
                 <li>
@@ -80,7 +78,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer title="Get in touch">
-        <a href="https://social.coop/@tschoffelen" className="u-url" rel="noopener noreferrer" target="_blank"
+        <a href="https://social.coop/@tschoffelen" class="u-url" rel="noopener noreferrer" target="_blank"
             title="Follow me on Mastodon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g stroke="none" stroke-width="1" fill="none" transform="translate(2.6712, 2)" fill-rule="nonzero">
@@ -94,7 +92,7 @@
             </svg>
         </a>
 
-        <a href="mailto:thomas@schof.co" className="u-email" rel="author" title="Send me an email">
+        <a href="mailto:thomas@schof.co" class="u-email" rel="author" title="Send me an email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -102,7 +100,7 @@
             </svg>
         </a>
 
-        <a href="https://github.com/tschoffelen" className="u-url" rel="noopener noreferrer" target="_blank"
+        <a href="https://github.com/tschoffelen" class="u-url" rel="noopener noreferrer" target="_blank"
             title="Follow me on GitHub">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
