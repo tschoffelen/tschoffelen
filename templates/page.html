@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block meta %}
+    <link rel="canonical" href="{{ page.permalink | safe }}" />
     <meta property="og:title" content="{{ page.title }}">
     <meta name="twitter:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ page.description }}">
