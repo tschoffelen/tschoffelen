@@ -31,13 +31,13 @@ This is sufficient to get Jest to generate coverage reports in the `coverage` di
 
 We want to merge these, which can be done with a tool like [istanbul-merge](https://www.npmjs.com/package/istanbul-merge):
 
-```shell
+```sh
 npx istanbul-merge --out .nyc_output/coverage.json **/coverage/coverage-final.json
 ```
 
 We save these to a directory called `.nyc_output`, so that we can use [Istanbul](https://github.com/istanbuljs/nyc)'s reporting tool to generate text summaries or HTML pages from this:
 
-```shell
+```sh
 npx nyc report --reporter=lcov --reporter=text
 ```
 

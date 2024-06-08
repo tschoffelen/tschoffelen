@@ -16,7 +16,7 @@ Regular expressions (regex) are one of those topics that a lot of developers fin
 
 There's a lot of seemingly random characters and brackets and special characters. Take this example, which matches any URI:
 
-```regex
+```re
 /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
 ```
 
@@ -32,7 +32,7 @@ Regular expressions are used to extract or replace parts of text strings. You do
 
 Let's imagine we want to match the last words of every sentence in a paragraph of text. That probably means we want to select all letters preceding a period, exclamation mark or a question mark. What would that look like in regex?
 
-```regex
+```re
 [a-z]+(\.|\?|!)
 ```
 
@@ -77,7 +77,7 @@ So we now know how to find matches anywhere in our text string. What if we want 
 
 This would give you the first word in the string:
 
-```regex
+```re
 ^\w+
 ```
 
@@ -86,7 +86,7 @@ This would give you the first word in the string:
 
 Combining these two gives you a perfect way to check if the full string matches your expression. Consider wanting to check if the input is a valid numberic string between 8 and 10 characters long:
 
-```regex
+```re
 ^\d{8,10}$
 ```
 
@@ -110,7 +110,7 @@ So how would you use all of this in practice? Well, imagine you have this bit of
 
 How would you extract the price from that? Let's write our regular expression first.
 
-```regex
+```re
 <span class="price">([^<]+)<\/span>
 ```
 

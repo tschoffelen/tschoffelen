@@ -11,7 +11,7 @@ extra:
 
 I've been watching some old episodes of NCIS in the background while doing some mundane admin tasks for work (only outside office hours of course) - mostly just to have some background noise. But some of their little snippets of dialogue between the characters are pretty good…
 
-```fountain
+```
 INT. NCIS OFFICE - DAY
 
 GIBBS

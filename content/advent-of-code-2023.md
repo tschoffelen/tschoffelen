@@ -23,7 +23,7 @@ Jupyter consists of two parts - the UI, and the underlying 'kernel' that runs yo
 
 Installing it is pretty simple. These are the commands I ran on my Mac:
 
-```shell
+```sh
 brew install jupyter
 npm install -g ijavascript
 ijsinstall

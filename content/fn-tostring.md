@@ -58,7 +58,7 @@ for (const {id, handler} of commands) {
 
 Given our earlier `commands` array, this would output:
 
-```text
+```
 Available commands:
 /slack-status [text] [snooze = false]
 ```
