@@ -55,6 +55,7 @@
     {% block meta %}{% endblock %}
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ get_url(path="sitemap.xml", trailing_slash=false) }}">
     {% if page %}<link rel="canonical" href="{{ page.permalink | safe }}" />{% endif %}
 </head>
 
