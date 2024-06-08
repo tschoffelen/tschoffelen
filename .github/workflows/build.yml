@@ -12,22 +12,18 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: taiki-e/install-action@v2
         with:
           tool: zola@0.17.2
       - name: Build
         run: zola build
       - name: Set up AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::672895027413:role/github-oidc-provider-Role-1DGACKD4725JB
           aws-region: eu-west-1
-      - name: Deploy to S3
-        uses: reggionick/s3-deploy@v4
-        with:
-          folder: public
-          bucket: schof.co
-          bucket-region: eu-west-1
-          dist-id: E1XOA26HO9HVF9
-          invalidation: /*
+      - name: Upload to S3
+        run: aws s3 sync public s3://schof.co --acl public-read --delete
+      - name: Create CloudFront invalidation
+        run: aws cloudfront create-invalidation --distribution-id E1XOA26HO9HVF9 --paths "/*"
