@@ -9,7 +9,7 @@ extra: {}
 ---
 
 
-For some time now, my personal website has been built using [Next.js](https://nextjs.org/), running on [Vercel](https://vercel.com). It was working fine, but it felt a bit slower than it should be, and quite heavy for something that is basically a static site.
+For a while now, my personal website has been built using [Next.js](https://nextjs.org/), running on [Vercel](https://vercel.com). It was working fine, but it felt a bit slower than it should be, and quite heavy for something that is basically a static site.
 
 I've also not been super happy with Vercel's reliability lately. Google's indexer doesn't seem to be super happy crawling the site, occasionally reporting network errors accessing pages in the [Search Console](https://search.google.com/search-console/about).
 
