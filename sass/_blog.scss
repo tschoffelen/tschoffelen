@@ -51,6 +51,10 @@ h1.post-header-title {
     margin: 1.5rem 0;
     font-size: 0.85rem;
     overflow: auto;
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+      padding: 1.25rem;
+    }
   }
 
   h2 {
@@ -61,6 +65,8 @@ h1.post-header-title {
   h3 {
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
+    color: $gray-500;
+    font-weight: 600;
   }
 
   p {
@@ -84,6 +90,23 @@ h1.post-header-title {
     border-top: 1px solid $gray-100;
     margin-top: 3em;
     margin-bottom: 3em;
+  }
+
+  blockquote {
+    margin: 2rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0.2rem;
+      border-radius: 0.1rem;
+      background: $gray-100;
+    }
   }
 
   ul,
