@@ -1,61 +1,68 @@
 {% extends "base.html" %}
 
+{% block meta %}
+    <meta property="og:title" content="{{ page.title }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+{% endblock %}
+
 {% block content %}
-<article>
-  {% if not page.extra.unlisted %}
-    <div class="post-meta">
-      {% set category_url = get_taxonomy_url(kind="category", name=page.taxonomies.category.0, lang=page.lang) %}
-      <a href="{{ category_url | safe }}">{{ page.taxonomies.category.0 }}</a>
-      {{ page.date | date(format="%B %e, %Y") }}
-    </div>
-  {% endif %}
+    <article>
+      {% if not page.extra.unlisted %}
+        <div class="post-meta">
+          {% set category_url = get_taxonomy_url(kind="category", name=page.taxonomies.category.0, lang=page.lang) %}
+          <a href="{{ category_url | safe }}">{{ page.taxonomies.category.0 }}</a>
+          {{ page.date | date(format="%B %e, %Y") }}
+        </div>
+      {% endif %}
 
-  <h1 class="post-header-title">
-    {{ page.title }}
-  </h1>
+      <h1 class="post-header-title">{{ page.title }}</h1>
 
-  <section class="blog-body">
-    {{ page.content | safe }}
-  </section>
+      <section class="blog-body">
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "{{ page.title }}",
-      datePublished: "{{ page.date | date(format='%Y-%m-%d') }}",
-      author: {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        name: "Thomas Schoffelen",
-        familyName: "Schoffelen",
-        givenName: "Thomas",
-        url: "https://schof.co",
-        image: "https://schof.co/avatar.jpg",
-        sameAs: [
-          "https://github.com/tschoffelen",
-          "https://twitter.com/tschoffelen",
-          "https://linkedin.com/in/tschoffelen",
-        ],
-      },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
+{{ page.content | safe }}
+
+      </section>
+
+      <script type="application/ld+json">
         {
-          "@type": "ListItem",
-          position: 1,
-          name: "Posts",
-          item: "https://schof.co/posts/",
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "headline": "{{ page.title }}",
+          datePublished: "{{ page.date | date(format='%Y-%m-%d') }}",
+          author: {
+            "@context": "http://schema.org",
+            "@type": "Person",
+            name: "Thomas Schoffelen",
+            familyName: "Schoffelen",
+            givenName: "Thomas",
+            url: "https://schof.co",
+            image: "https://schof.co/avatar.jpg",
+            sameAs: [
+              "https://github.com/tschoffelen",
+              "https://twitter.com/tschoffelen",
+              "https://linkedin.com/in/tschoffelen",
+            ],
+          },
         },
         {
-          "@type": "ListItem",
-          position: 2,
-          name: post.category,
-        },
-      ],
-    }
-  </script>
-</article>
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Posts",
+              item: "https://schof.co/posts/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: post.category,
+            },
+          ],
+        }
+      </script>
+    </article>
 {% endblock content %}
