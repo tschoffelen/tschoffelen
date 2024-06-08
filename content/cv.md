@@ -1,5 +1,6 @@
 ---
 title: Thomas Schoffelen
+description: My CV - Software Tech Lead / Entrepreneur
 date: 2000-01-01
 extra:
     unlisted: true

@@ -1,5 +1,6 @@
 ---
 title: Privacy Policy
+description: Schof.co site privacy policy
 date: 2000-01-01
 extra:
   unlisted: true

@@ -1,5 +1,6 @@
 ---
 title: My PGP public key
+description: My public PGP key, if you need to sign something or verify my identity.
 date: 2000-01-01
 extra:
   unlisted: true
