@@ -1,12 +1,10 @@
 ---
 title: Creating a Production-Ready Public API Using Serverless
-date: '{"date":"2023-01-01T00:00:00.000Z"}'
+date: 2023-01-01
 description: How to build an API using Lambda and API Gateway for use by external developers.
 taxonomies:
   category:
     - Blog
-extra: {}
-
 ---
 
 

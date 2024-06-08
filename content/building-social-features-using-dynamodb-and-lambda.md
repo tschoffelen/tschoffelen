@@ -5,8 +5,6 @@ description: How we built a personalised feeds service and following using  serv
 taxonomies:
   category:
     - Blog
-extra: {}
-
 ---
 
 
