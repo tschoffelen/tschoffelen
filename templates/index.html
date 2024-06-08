@@ -69,15 +69,13 @@
   <div class="homepage-section">
     <h2>Recent writings</h2>
     {% set index = 0 %}
-    {% for page in section.pages %}
-      {% if index < 5 and not page.extra.unlisted %}
-        <a href="{% if page.extra.url %}{{ page.extra.url }}{% else %}{{ page.permalink | safe }}{% endif %}" class="post-link">
-          <span class="post-title">{{ page.title }}</span>
-          <span class="post-excerpt truncate">{{ page.description }}</span>
-        </a>
-        {% set_global index = index + 1 %} 
-      {% endif %}
-    {% endfor %}
+    {% for page in section.pages %}{% if index < 5 and not page.extra.unlisted %}
+      <a href="{% if page.extra.url %}{{ page.extra.url }}{% else %}{{ page.permalink | safe }}{% endif %}" class="post-link">
+        <span class="post-title">{{ page.title }}</span>
+        <span class="post-excerpt truncate">{{ page.description }}</span>
+      </a>
+      {% set_global index = index + 1 %} 
+    {% endif %}{% endfor %}
     <a href="/posts" class="view-more">
       View all &rarr;
     </a>
