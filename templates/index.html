@@ -70,7 +70,7 @@
     <h2>Recent writings</h2>
     {% set index = 0 %}
     {% for page in section.pages %}{% if index < 5 and not page.extra.unlisted %}
-      <a href="{% if page.extra.url %}{{ page.extra.url }}{% else %}{{ page.permalink | safe }}{% endif %}" class="post-link">
+      <a href="{{ page.permalink | safe }}" class="post-link">
         <span class="post-title">{{ page.title }}</span>
         <span class="post-excerpt truncate">{{ page.description }}</span>
       </a>
