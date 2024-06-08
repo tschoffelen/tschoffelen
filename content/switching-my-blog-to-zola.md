@@ -1,6 +1,7 @@
 ---
 title: Switching My Blog to Zola
 date: 2024-06-08
+description: " For a while now, my personal website has been built using Next.js, running on Vercel. It was working fine, but it felt a bit slower than it should..."
 taxonomies:
   category:
     - Blog
