@@ -1,8 +1,6 @@
 ---
 title: Moving to Visual Studio Code
-description: I've been using PhpStorm as my de-facto IDE for about a decade now.
-  I don't really write much PHP anymore, but it's just the IDE I've grown the
-  most comfortable with. It has tons of features and an editor...
+description: Replacing my trusty workhorse PhpStorm, which I've been using for about a decade now.
 date: 2023-07-01T16:20:28.912Z
 taxonomies:
   category:

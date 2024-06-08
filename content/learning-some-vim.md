@@ -1,8 +1,7 @@
 ---
 title: Learning Some Vim
 description: I finally decided to start learning some of the basics of vim,
-  something that always seemed elusive to my focus. But I was also getting a bit
-  sick of the confusing `nano` I usually use when quickly editing...
+  something that always seemed elusive to my focus.
 date: 2023-09-03T15:47:23.008Z
 taxonomies:
   category:

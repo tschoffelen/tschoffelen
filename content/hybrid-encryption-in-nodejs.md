@@ -1,8 +1,7 @@
 ---
 title: Hybrid Encryption in Node.js
-description: I don't get much exposure to encryption in my day-to-day
-  engineering work, but learned recently how to implement what is called hybrid
-  encryption in Node.js, and wanted to jot down my learnings.
+description: I recently learned how to implement what is called hybrid
+  encryption in Node.js.
 date: 2023-10-21T18:59:10.263Z
 taxonomies:
   category:

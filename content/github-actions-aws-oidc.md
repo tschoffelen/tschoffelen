@@ -1,8 +1,6 @@
 ---
 title: Setting up GitHub Actions to have access to your AWS account
-description: GitHub Actions is the best CI/CD provider I've used so far. It is
-  extremely flexible, and has really quickly caught up in terms of feature set
-  with CI providers that existed for years before Actions was...
+description: OIDC AWS access in GitHub Actions allows you to do credential-less AWS auth.
 date: 2023-05-28T18:11:10.205Z
 taxonomies:
   category:

@@ -1,7 +1,6 @@
 ---
 title: Watching Lives Unfold
-description: I've been pretty sad about the state of the internet lately. But it
-  is somewhat amazing that this age of media has made it easier than ever to see
+description: It is amazing that this age of media has made it easier than ever to see
   what the lives of other people are like.
 date: 2023-07-18T18:58:19.471Z
 taxonomies:
