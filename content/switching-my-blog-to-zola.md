@@ -46,7 +46,6 @@ I love it when things are just this neat and simple. No NPM or Yarn installs, no
 In CI, my `zola build` takes less than 150ms, and about 6 seconds to upload the changes to S3.
 
 Look at the resource list that is loaded when you click on a blog post:
-<img src="https://mirri.link/84BSE20" alt="Image" />
 
 No client side navigation needed, it's just plain HTML, so it's super fast. I can probably cut it down even further if I had to, but for now this serves my purposes extremely well.
 
