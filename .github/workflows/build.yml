@@ -23,6 +23,8 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::672895027413:role/github-oidc-provider-Role-1DGACKD4725JB
           aws-region: eu-west-1
+      - name: Copy sitemap
+        run: cp public/sitemap.xml public/sitemap_index.xml
       - name: Upload to S3
         run: aws s3 sync public s3://schof.co --acl public-read --delete
       - name: Create CloudFront invalidation
