@@ -22,4 +22,7 @@ It's weirdly hard to find info on this online, so putting it here for future ref
 		OwnershipControls:
 			Rules:
 				- ObjectOwnership: BucketOwnerPreferred
+      	PublicAccessBlockConfiguration:
+			BlockPublicAcls: false
+			IgnorePublicAcls: false
 ```
