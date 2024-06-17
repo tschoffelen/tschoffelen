@@ -4,11 +4,11 @@ description: https://goo.gl/maps/HdvS7mtSuV4T6xiH8
 date: 2021-09-01T00:00:00.000Z
 taxonomies:
   category:
-    - Travel
+    - Travel log
 extra:
   title: Places to go in Madrid
   date: 2021-09-01T00:00:00.000Z
-  category: Travel
+  category: Travel log
   unlisted: true
 ---
 
