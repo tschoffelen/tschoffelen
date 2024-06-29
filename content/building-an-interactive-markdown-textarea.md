@@ -1,12 +1,13 @@
 ---
 title: Building an Interactive Markdown Textarea
 date: 2024-06-29
-description: I really love the markdown editor on GitHub, especially how easy it is to drop in files and images.  It's still all plain text, but it works...
+description: Re-creating some of the features of the GitHub markdown editor, especially image pasting and file dropping.
 taxonomies:
   category:
     - Blog
 extra: {}
 ---
+
 
 I really love the markdown editor on GitHub, especially how easy it is to drop in files and images.
 
@@ -14,7 +15,7 @@ It's still all plain text, but it works interactively. If you drag and drop a fi
 
 I was trying to replicate this behaviour recently, and realised it's a lot more straightforward then you might think initially! Here's my final end product ([video version here](https://mirri.link/5Mc5WTg)):
 
-<iframe src="https://codesandbox.io/embed/rxlc7l?view=preview&module=%2Fpackage.json&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="markdown-upload-editor" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+<iframe src="https://codesandbox.io/embed/rxlc7l?view=preview&module=%2Fpackage.json&hidenavigation=1" style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden; margin-bottom: 20px;" title="markdown-upload-editor" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
 Let's go through some of the main features and how they work:
 
