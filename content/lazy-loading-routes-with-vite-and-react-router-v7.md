@@ -23,11 +23,9 @@ import AdminRoutes from './routes/admin';
 const App = () => {
   return (
     <Routes>
-      <Route path="/dashboard">
-        <Route path="hunter/*" element={<HunterRoutes />} />
-        <Route path="admin/*" element={<AdminRoutes />} />
-        // ...
-      </Route>
+      <Route path="hunter/*" element={<HunterRoutes />} />
+      <Route path="admin/*" element={<AdminRoutes />} />
+      // ...
     </Routes>
   );
 }
@@ -58,15 +56,13 @@ const AdminRoutes = () => import('./routes/admin');
 const App = () => {
   return (
     <Routes>
-      <Route path="/dashboard">
-        <Route path="hunter/*" element={
-	      <Lazy component={HunterRoutes} />
-	    } />
-	    <Route path="admin/*" element={
-	      <Lazy component={AdminRoutes} />
-	    } />
-	    // ...
-      </Route>
+      <Route path="hunter/*" element={
+	    <Lazy component={HunterRoutes} />
+	  } />
+	  <Route path="admin/*" element={
+	    <Lazy component={AdminRoutes} />
+	  } />
+	  // ...
     </Routes>
   );
 }
