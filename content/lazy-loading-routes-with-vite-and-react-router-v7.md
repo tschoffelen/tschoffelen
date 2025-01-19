@@ -16,7 +16,7 @@ We have dashboard for various different roles - hunter, artist, country manager,
 ## Updating our router
 Previously, our main router looked like this:
 
-```jsx
+```js
 import HunterRoutes from './routes/hunter';
 import AdminRoutes from './routes/admin';
 
@@ -26,6 +26,7 @@ const App = () => {
       <Route path="/dashboard">
         <Route path="hunter/*" element={<HunterRoutes />} />
         <Route path="admin/*" element={<AdminRoutes />} />
+        // ...
       </Route>
     </Routes>
   );
@@ -36,7 +37,7 @@ This is a perfect setup for lazy loading, since the various dashboards are alrea
 
 We can combine Vite's dynamic [`import()`](https://vite.dev/guide/features.html#dynamic-import) function and React's [`lazy()`](https://react.dev/reference/react/lazy) to get this done. I've started by introducing a helper component that combines them:
 
-```jsx
+```js
 const Lazy = ({ component }) => {
   const Component = React.lazy(component);
 
@@ -50,7 +51,7 @@ const Lazy = ({ component }) => {
 
 We can use it like this:
 
-```jsx
+```js
 const HunterRoutes = () => import('./routes/hunter');
 const AdminRoutes = () => import('./routes/admin');
 
@@ -64,6 +65,7 @@ const App = () => {
 	    <Route path="admin/*" element={
 	      <Lazy component={AdminRoutes} />
 	    } />
+	    // ...
       </Route>
     </Routes>
   );
@@ -99,7 +101,7 @@ export default defineConfig({
 });
 ```
 
-The parameter `id` here refers to the full path for the input file. In this example, we match files like `...src/routes/**admin**/...` and puts them in a chunk based on the first directory within `src/routes`.
+The parameter `id` here refers to the full path for the input file. In this example, we match files like `src/routes/admin/AdminDashboard.jsx` and puts them in a chunk based on the first directory within `src/routes`.
 
 The result is a chunk per dashboard section:
 <img src="https://mirri.link/BUcRgnJ" alt="Image" />
