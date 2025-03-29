@@ -1,5 +1,5 @@
 ---
-title: "TraceStack: building an open-source serverless observability tool"
+title: "TraceStack: Building an Open-Source Serverless Observability Tool"
 date: 2025-03-29
 description: "Last summer, I started building TraceStack: A serverless observability tool for AWS Lambda."
 taxonomies:
