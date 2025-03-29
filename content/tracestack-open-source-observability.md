@@ -28,7 +28,7 @@ I wanted this to be something you could deploy from day one on a side project, w
 
 And for the most part, I was able to build a table design that didn't require any more flexibility in how I was querying the data than DynamoDB allows. There is some relationality in the data, but it's limited to only a few entities, and very hierarchical:
 
-<img src="https://mirri.link/VZQUqbw" alt="Drawing" />
+<img src="https://mirri.link/INIng2O" alt="Drawing" />
 
 By pre-computing some fields, and storing some duplicate data (each `Trace` that errored is also stored as a separate `Error` item), I was able to make this work quite performantly in DynamoDB. 
 
