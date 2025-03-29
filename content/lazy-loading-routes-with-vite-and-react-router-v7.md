@@ -1,5 +1,5 @@
 ---
-title: Lazy Loading Routes with Vite and React Router V7
+title: Lazy Loading Routes with Vite and React Router v7
 date: 2025-01-19
 description: Recently, we switched the Street Art Cities dashboard (where users upload artworks, create routes, view insights, etc.) from a massive monolithic...
 taxonomies:
