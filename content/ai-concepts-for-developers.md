@@ -4,7 +4,7 @@ date: 2025-02-01
 description: I've been doing some diagrams to explain certain AI app development concepts to my team. Here they are, if they're useful to anyone else. Created...
 taxonomies:
   category:
-    - Blog
+    - Reference
 extra: {}
 ---
 
