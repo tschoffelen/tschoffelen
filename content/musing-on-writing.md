@@ -4,9 +4,10 @@ date: 2025-04-24
 description: I've been reminiscing a lot lately. I've always done that, but these moments when you make big life changes cause that to be so much more intense. It...
 taxonomies:
   category:
-    - Blog
+    - Thought
 extra: {}
 ---
+
 
 I've been reminiscing a lot lately. I've always done that, but these moments when you make big life changes cause that to be so much more intense. It makes you appreciate what you have, what the world around you contains.
 
