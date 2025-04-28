@@ -1,10 +1,10 @@
 ---
 title: NearSt Consultancy - Schedule Call
 date: 2025-04-28
-description: https://calendar.app.google/8GydifYh9yEvGo2s9  <meta http-equiv="refresh" content="0;URL=https://calendar.app.google/8GydifYh9yEvGo2s9" /> ...
+description: Shortcut
 taxonomies:
   category:
-    - Blog
+    - Shortcuts
 extra: {}
 attributes:
   unlisted: true
