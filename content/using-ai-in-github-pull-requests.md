@@ -8,6 +8,7 @@ taxonomies:
 extra: {}
 ---
 
+
 We've been talking for a while about how we can be better at informing the [Street Art Cities](https://streetartcities.com) community about new features and changes to our platform.
 
 Our main way of sharing this info is [through our forum](https://streetart.community/), but sometimes it's hard to remember to share an update about a small change.
@@ -134,5 +135,6 @@ jobs:
             // The JS script from above
 ```
 
+What I especially love about this method is that there's no need to do anything in terms of configuring API credentials at any point, it's all just built-in!
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
