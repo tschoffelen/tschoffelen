@@ -42,8 +42,8 @@ The forum post will be a public announcement of the new feature or change, for a
 The platform this is for is called Street Art Cities, and the forum is located at https://streetart.community.
 Use informal, simple and friendly language, and make it sound exciting. Our focus is on community, street art and culture.
 
-The pull request title is: "${pr.data.title}"
-The pull request body is: "${pr.data.body || "No description provided."}"
+The pull request title is: "${pullRequest.title}"
+The pull request body is: "${pullRequest.body || "No description provided."}"
 
 Output a JSON object with the following fields:
 - title: The title of the forum post
@@ -51,7 +51,7 @@ Output a JSON object with the following fields:
 `;
 
 // Do the API call to GPT-4.1
-const { data } = await github.request({
+const { data: llmResponse } = await github.request({
 	method: "POST",
 	url: "https://models.github.ai/inference/chat/completions",
 	data: {
@@ -65,8 +65,8 @@ const { data } = await github.request({
 	},
 });
 
-// Extract the JSON response
-const response = JSON.parse(data.choices[0].message.content);
+// Extract the JSON object from the response
+const suggestion = JSON.parse(llmResponse.choices[0].message.content);
 ```
 
 The only thing left is to add our comment to the Pull Request thread:
@@ -76,8 +76,8 @@ The only thing left is to add our comment to the Pull Request thread:
 const commentBody = `
 💡 Suggested forum post for this feature update:
 	
-> **${response.title}**
-> ${response.body}
+> **${suggestion.title}**
+> ${suggestion.body}
 `;
 
 // Get existing comments on the PR
@@ -87,9 +87,9 @@ const comments = await github.rest.issues.listComments({
 	issue_number: context.issue.number,
 });
 
-// Check if we already posted a preview URL comment
+// Check if the bot already posted a comment
 const existingComment = comments.data.find((comment) =>
-	comment.body.includes("Suggested forum post for this feature update:"),
+	comment.body.includes("Suggested forum post"),
 );
 
 // If not, create a new comment, otherwise update the existing one
