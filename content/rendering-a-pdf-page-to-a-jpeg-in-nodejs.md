@@ -1,7 +1,7 @@
 ---
 title: Rendering a PDF Page to a JPEG in Node.js
 date: 2025-06-06
-description: "`PDF.js` is one of those libraries that seems amazing in its scope – it's able to render basically any PDF you throw at it into an HTML canvas, with..."
+description: I had to implement a use case where I wanted to let users select a section of a page from a PDF to embed it as a 'clipping' in their text document.
 taxonomies:
   category:
     - Reference
@@ -13,7 +13,7 @@ extra: {}
 
 It's also confusing and not super well documented.
 
-I had to implement a use case where I wanted to let users select a section of a page from a PDF to embed it as a 'clipping' in their text. My rich text editor of choice, [TipTap](https://tiptap.dev/), made it very easy to create a custom node type for that, which would allow the user (or an AI prompt response) to insert a custom HTML element that looked like this:
+I had to implement a use case where I wanted to let users select a section of a page from a PDF to embed it as a 'clipping' in their text document. My rich text editor of choice, [TipTap](https://tiptap.dev/), made it very easy to create a custom node type for that, which would allow the user (or an AI prompt response) to insert a custom HTML element that looked like this:
 
 ```html
 <page-clipping url="https://url/pdf-link.pdf" page="1" x="0.0444" y="0.2133" width="0.1022" height="0.1340"></page-clipping>
