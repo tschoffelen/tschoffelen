@@ -5,8 +5,8 @@ taxonomies = [{ name = "category", feed = true, render = true }]
 
 compile_sass = true
 
-generate_feed = true
-feed_filename = "rss.xml"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
 feed_limit = 50
 default_language = "en"
 author = "Thomas Schoffelen"

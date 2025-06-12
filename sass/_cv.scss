@@ -1,0 +1,188 @@
+
+.cv-container {
+  h2 {
+    font-size: 1.25rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+}
+
+.cv-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.cv-section {
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $gray-900;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.cv-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  color: $gray-500;
+  
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.cv-section-content {
+  p {
+    line-height: 1.75;
+    color: $gray-900;
+  }
+}
+
+.cv-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  dt {
+    font-weight: 600;
+    color: $gray-900;
+  }
+  
+  dd {
+    color: $gray-900;
+    
+    a {
+      color: $gray-900;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid currentColor;
+      
+      &:hover {
+        color: $gray-500;
+      }
+    }
+  }
+}
+
+.cv-experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cv-experience-item {
+  background: white;
+  border: 1px solid $gray-100;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  
+  h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $gray-900;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cv-company-description {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cv-role {
+    color: $gray-500;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cv-description {
+    color: $gray-900;
+    line-height: 1.6;
+  }
+}
+
+.cv-education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-education-item {
+  background: white;
+  border: 1px solid $gray-100;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  
+  h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $gray-900;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}
+
+.cv-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cv-skill-category {
+  background: white;
+  border: 1px solid $gray-100;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  
+  h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: $gray-900;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    
+    li {
+      color: $gray-900;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 1rem;
+      margin: 0;
+      
+      &:before {
+        content: "•";
+        color: $gray-500;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
