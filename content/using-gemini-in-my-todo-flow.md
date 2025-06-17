@@ -8,6 +8,7 @@ taxonomies:
 extra: {}
 ---
 
+
 Maybe it's taken too long, but I more and more am actually integrating little LLM tools into my daily workflows, other than coding and chat.
 
 This week, I've added Gemini into my flow to add tasks into [Things](https://culturedcode.com/things/). I often will receive a Slack message that contains a task, or will reply to someone saying "Okay, I'll take care of doing X later today."
@@ -22,9 +23,14 @@ The flow for this is very simple:
 An 'Arg and vars' block contains the prompt:
 
 ```text
-Extract the title of a task from the text pasted in by the user. Make it actionable, e.g. including a verb. If the text passed in is already in this format, you don't need to change anything, other than cleaning up capitalisation and punctuation. Don't include a period at the end of the task title. 
+Extract the title of a task from the text pasted in by the user. Make 
+it actionable, e.g. including a verb. If the text passed in is already 
+in this format, you don't need to change anything, other than cleaning 
+up capitalisation and punctuation. Don't include a period at the end 
+of the task title. 
 
-Be as specific as possible with the title of the task, and extract as much information from the input as possible.
+Be as specific as possible with the title of the task, and extract as 
+much information from the input as possible.
 
 User input:
 
