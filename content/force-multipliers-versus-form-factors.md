@@ -1,7 +1,7 @@
 ---
 title: Force Multipliers Versus Form Factors
 date: 2025-06-20
-description: Whenever people talk about LLMs as the 'next big thing', the lineage of previous 'big things' seems very variable on the speaker. Usually it's...
+description: Whenever people talk about GenAI as the 'next big thing', the lineage of previous 'big things' seems very variable on the speaker. Usually it's...
 taxonomies:
   category:
     - Thought
@@ -9,7 +9,7 @@ extra: {}
 ---
 
 
-Whenever people talk about LLMs as the 'next big thing', the lineage of previous 'big things' seems very variable on the speaker. Usually it's something like the personal computer, the web, smartphones, and now LLMs.
+Whenever people talk about GenAI as the 'next big thing', the lineage of previous 'big things' seems very variable on the speaker. Usually it's something like the personal computer, the web, smartphones, and now GenAI.
 
 Here's a similar version of this in [a (excellent!) deck from Benedict Evans](https://www.ben-evans.com/presentations):
 
@@ -22,7 +22,7 @@ If I think about major force multipliers for what we as humans are capable of do
 - Electromechanics
 - Integrated circuits and processors
 - The technology powering the internet
-- LLMs
+- Generative AI
 
 These are wholly separate from the form factors those things have taken over the decades:
 
