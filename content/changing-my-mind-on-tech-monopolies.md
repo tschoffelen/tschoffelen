@@ -1,7 +1,7 @@
 ---
 title: Changing My Mind on Tech Monopolies
 date: 2025-07-27
-description: 'When <a href="#internal-link" title="Internal link: John Oliver">John Oliver</a> did a segment on <a href="#internal-link" title="Internal link: Last...'
+description: When  John Oliver  did a segment on  Last Week Tonight  about tech monopolies a few years ago, I was quite hesitant about the "break up big tech"...
 taxonomies:
   category:
     - Thought
@@ -9,7 +9,7 @@ extra: {}
 ---
 
 
-When <a href="#internal-link" title="Internal link: John Oliver">John Oliver</a> did a segment on <a href="#internal-link" title="Internal link: Last Week Tonight">Last Week Tonight</a> about tech monopolies a few years ago, I was quite hesitant about the "break up big tech" message. It seemed unrealistic and difficult to achieve to me.
+When <span title="Internal link: John Oliver">John Oliver</span> did a segment on <span title="Internal link: Last Week Tonight">Last Week Tonight</span> about tech monopolies a few years ago, I was quite hesitant about the "break up big tech" message. It seemed unrealistic and difficult to achieve to me.
 
 I've fully changed my mind on this now – breaking up big tech companies, no matter how difficult (although there is sufficient relevant precedent) – is the only effective way to:
 
