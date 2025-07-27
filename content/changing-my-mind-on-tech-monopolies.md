@@ -9,7 +9,7 @@ extra: {}
 ---
 
 
-When <a href="#internal-link" title="Internal link: John Oliver">John Oliver</a> did a segment on <a href="#internal-link" title="Internal link: Last Week Tonight">Last Week Tonight</a> about tech monopolies a few years ago, I more hesitant about the "break up big tech" message.
+When <a href="#internal-link" title="Internal link: John Oliver">John Oliver</a> did a segment on <a href="#internal-link" title="Internal link: Last Week Tonight">Last Week Tonight</a> about tech monopolies a few years ago, I was quite hesitant about the "break up big tech" message. It seemed unrealistic and difficult to achieve to me.
 
 I've fully changed my mind on this now – breaking up big tech companies, no matter how difficult (although there is sufficient relevant precedent) – is the only effective way to:
 
