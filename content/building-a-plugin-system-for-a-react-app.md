@@ -8,9 +8,10 @@ taxonomies:
 extra: {}
 ---
 
+
 [Examplary](https://examplary.ai) is a new tool we're building to help teachers create better tests and exams.
 
-One of my philosophies about product development is that the more integration options you create within a product, the more opportunity you're creating for a community to flourish around it. As part of that, I wanted to make it possible to create custom question types.
+One of my philosophies about product development is that the more integration and extensibility options you create within a product, the more opportunties you're creating for a community to flourish around it. As part of that, I wanted to make it possible to create custom question types.
 
 When creating an exam, you have a few default question types you can choose from - single line text, multiple choice, essay, etc. In the future, I envision also being able to add programming questions, diagramming questions, and all sorts of subject-specific questions.
 
@@ -168,7 +169,7 @@ const buildStyles = async () => {
 
 That's all that's needed to generate a Tailwind CSS file based on the classes used in files in the current working directory.
 
-In our production version, we do a bit more to remove Tailwind's default CSS reset styles (the ['preflight styles'](https://tailwindcss.com/docs/preflight#disabling-preflight)) to ensure the bundle is as small as possible, and doesn't override any of our custom theme in the main app.
+In our production version, we do a bit more to remove Tailwind's default CSS reset styles (the ['preflight styles'](https://tailwindcss.com/docs/preflight#disabling-preflight)) to ensure the bundle is as small as possible, and so that it doesn't override any of our custom theme in the main app.
 
 
 ## Conclusion
