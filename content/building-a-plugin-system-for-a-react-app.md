@@ -17,7 +17,7 @@ When creating an exam, you have a few default question types you can choose from
 
 Rather than having to implement these all within the core platform, I wanted to give other developers the opportunity to build these question types, and make them available on the platform.
 
-So after a few weeks of thinking about it, within a few days, I built an MVP, including [developer documentation](https://developers.examplary.ai/question-types/), a CLI tool for local development and publishing, and an open-sourced [default question types](https://github.com/examplary-ai/default-questions-pack) pack.
+So after a few weeks of thinking about it, within a few days, I built an MVP, including [developer documentation](https://developers.examplary.ai/question-types/), a [CLI tool](https://www.npmjs.com/package/@examplary/question-type-bundler) for local development and publishing, and an open-sourced [default question types](https://github.com/examplary-ai/default-questions-pack) pack.
 
 <img src="https://mirri.link/4UOLnLN" alt="Image" />
 
@@ -39,7 +39,7 @@ It took me a long time to think about the best way to get arbitrary React compon
 
 I didn't want to have developers creating a question type have to deal with Vite or [Esbuild](https://esbuild.github.io) directly though, so I decided to build a simple CLI tool in Node that uses Esbuild under the hood to bundle the React components in a format I can load within the main Examplary app. It also will detect any [Tailwind CSS](https://tailwindcss.com) classes used in the component, and bundle the resulting CSS styles alongside the component.
 
-The CLI then uploads these to our file storage, and [calls the Examplary API](https://developers.examplary.ai/rest-api/post-question-types) to insert or update the question type definition in our database.
+The [CLI](https://www.npmjs.com/package/@examplary/question-type-bundler) then uploads these to our file storage, and [calls the Examplary API](https://developers.examplary.ai/rest-api/post-question-types) to insert or update the question type definition in our database.
 
 In the metadata file, you can specify whether you want to make your question type available for use by all Examplary users, or only within the workspace your API key is tied to.
 
