@@ -154,6 +154,9 @@ There are also static builds of Tailwind that include all default styles, but th
 So instead, I decided to run the Tailwind bundler over the React components as part of the question type bundling process. Again, the code is a lot simpler than you might expect:
 
 ```js
+import tailwindcss from "@tailwindcss/postcss";
+import postcss from "postcss";
+
 const buildStyles = async () => {
   const inputCSS = `@import "tailwindcss";`;
 
