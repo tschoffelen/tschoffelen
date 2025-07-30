@@ -11,7 +11,7 @@ extra: {}
 
 [Examplary](https://examplary.ai) is a new tool we're building to help teachers create better tests and exams.
 
-One of my philosophies about product development is that the more integration and extensibility options you create within a product, the more opportunties you're creating for a community to flourish around it. As part of that, I wanted to make it possible to create custom question types.
+One of my philosophies about product development is that the more integration and extensibility options you create within a product, the more opportunities you're creating for a community to flourish around it. As part of that, I wanted to make it possible to create custom question types.
 
 When creating an exam, you have a few default question types you can choose from - single line text, multiple choice, essay, etc. In the future, I envision also being able to add programming questions, diagramming questions, and all sorts of subject-specific questions.
 
