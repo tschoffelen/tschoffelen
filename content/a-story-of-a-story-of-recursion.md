@@ -11,7 +11,7 @@ extra: {}
 
 When I was a child, one time my dad told me a story about a group of robbers sitting under a blade of grass. The story went something like this:
 
-> In the depth of night, seven robbers sat hidden in the shadow of a blade of grass. The leader of the group stood up and said "Pedro, tell us a story."
+> In the depth of night, seven robbers sat hidden in the shadow of a blade of grass. The leader of the group stood up and said "Pedro, tell us a story."<br />
 > Pedro stood up and started speaking: "In the depth of night, seven robbers sat hidden in the shadow of a blade of grass..."
 
 I loved this story and the [recursive](https://en.m.wikipedia.org/wiki/Recursion) nature of it. My dad would take a lot of joy in making the story, which apparently is an old joke from the 50s, more and more elaborate, and turn it from three sentences into a 20 minute tale.
@@ -22,11 +22,11 @@ This is not just repetition – each time you actually go a level deeper. You co
 
 Recursion in storytelling still really grabs me. I found another example this morning, in the lyrics of a song by _RUBII_ called [Botb](https://genius.com/Rubii-botb-lyrics) that I really like:
 
-> I've got some big bossin' b's, and some boys on the block
-> I call them a couple G's, and they think that I'm hot
-> ...
-> There's no debating, the consensus is
-> I've got some big bossin' b's, and some boys on the block
+> I've got some big bossin' b's, and some boys on the block<br />
+> I call them a couple G's, and they think that I'm hot<br />
+> ...<br />
+> There's no debating, the consensus is<br />
+> I've got some big bossin' b's, and some boys on the block<br />
 > ...
 
 Makes an already great song even better!
