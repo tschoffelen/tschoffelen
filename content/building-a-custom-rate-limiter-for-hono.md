@@ -1,7 +1,7 @@
 ---
 title: Building a Custom Rate Limiter for Hono
 date: 2025-11-02
-description: Building a custom rate limiting middleware for our
+description: Building a custom user-based rate limiting middleware for an API built using the Hono framework.
 taxonomies:
   category:
     - Blog
