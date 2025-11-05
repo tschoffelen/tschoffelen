@@ -1,7 +1,7 @@
 ---
 title: Creating Modern Wordpress Themes
 date: 2025-08-19
-description: I started out as a developer building Wordpress websites when I was in my early teens. Since then, I haven't really touched Wordpress for a while,...
+description: The Wordpress ecosystem has changed a lot in recent years. Here's how to create modern themes that leverage the full-site editing experience.
 taxonomies:
   category:
     - Blog

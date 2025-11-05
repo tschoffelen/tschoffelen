@@ -1,7 +1,7 @@
 ---
 title: A Story of a Story of Recursion
 date: 2025-08-23
-description: "When I was a child, one time my dad told me a story about a group of robbers sitting under a blade of grass. The story went something like this:  >..."
+description: "When I was a child, one time my dad told me a story about a group of robbers sitting under a blade of grass. The story went something like this..."
 taxonomies:
   category:
     - Thought

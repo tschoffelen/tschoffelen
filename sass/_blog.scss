@@ -7,25 +7,49 @@ article {
 }
 
 .post-meta {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   margin-bottom: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #374151;
 
   a {
     color: inherit;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.8rem;
     text-transform: uppercase;
     text-decoration: none;
-    margin-right: 0.25rem;
+    background-color: #f3f4f6;
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 1rem;
   }
 }
 
 h1.post-header-title {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
+  font-weight: normal;
   margin-bottom: 3rem;
   line-height: 1.3;
 
+  text-align: center;
+  padding: 0 1.5rem;
+
+  text-wrap: pretty;
+
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 2.7rem;
+  }
+  @media (min-width: 62rem) {
+    margin-left: -4rem;
+    margin-right: -4rem;
+  }
+  @media (min-width: 72rem) {
+    margin-left: -8rem;
+    margin-right: -8rem;
   }
 }
 
@@ -60,13 +84,19 @@ h1.post-header-title {
   h2 {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    font-weight: normal;
+    @media (min-width: 769px) {
+      font-size: 2.5rem;
+      margin-top: 3.5rem;
+    }
+    font-size: 1.5rem;
   }
 
   h3 {
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
     color: $gray-500;
-    font-weight: 600;
+    font-weight: normal;
   }
 
   p {
@@ -141,4 +171,3 @@ h1.post-header-title {
     font-weight: bold;
   }
 }
-
