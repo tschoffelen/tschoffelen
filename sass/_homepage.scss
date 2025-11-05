@@ -28,7 +28,11 @@
 }
 
 .homepage-section {
-  padding: 2rem;
+  padding: 1.5rem;
+  @media (min-width: 769px) {
+    padding: 2rem;
+  }
+
   margin-top: 2rem;
 
   h2 {
