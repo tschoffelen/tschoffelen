@@ -16,6 +16,10 @@ header {
         color: $dark-gray-900;
     }
 
+    @media(max-width: 768px) {
+        padding: 1rem;
+    }
+
     a {
         text-decoration: none;
         color: inherit;
