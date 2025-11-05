@@ -10,7 +10,7 @@ extra:
 ---
 
 
-<img src="https://mirri.link/aZS_DHdzw" alt="Image" />
+<img src="https://mirri.link/WvaOxkvJ9" alt="Image" />
 
 I don’t believe software has intrinsic value, but I think it can serve as a powerful tool to help people do good in society. That’s why I love creating well-designed user interfaces for real people and crafting tools for developers to build better software.
 
