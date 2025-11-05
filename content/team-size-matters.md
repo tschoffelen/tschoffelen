@@ -1,6 +1,6 @@
 ---
 title: Team Size Matters
-date: 2023-12-13
+date: 2022-11-23
 description: With the recent wave of tech layoffs, often caused either due to scaling too fast during the pandemic, or because of a guy named Elon, there has been...
 taxonomies:
   category:
