@@ -20,7 +20,7 @@ article {
     color: $dark-gray-500;
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
     gap: 0.5rem;
     font-size: 0.9rem;
     padding-top: 0;
@@ -122,6 +122,11 @@ h1.post-header-title {
     margin-bottom: 0.5rem;
     color: $gray-500;
     font-weight: normal;
+    font-size: 1.5rem;
+
+    @media (min-width: 769px) {
+      font-size: 2rem;
+    }
 
     @media (prefers-color-scheme: dark) {
       color: $dark-gray-900;
