@@ -11,7 +11,7 @@ extra: {}
 
 Most startups conceptually start with a big, overarching idea (also known as **BHAG: a big, hairy, audacious goal**) about how to solve a problem that exists for a large group of people. The things that keep you up at night, or take up unnecessary time or resources during the day: the planet and the environment, boring administrative tasks, things that cost more money than they should.
 
-<img src="https://mirri.link/KkvMMOUpA" alt="Image" />
+<img src="https://mirri.link/9f__GmLVE" alt="Image" />
 
 And then there's a concrete idea for a solution: an app that would help with X, a physical product that can be used for Y, a service that offers Z.
 
@@ -23,7 +23,7 @@ It will also help later on to make sure your team has an easy tool to measure if
 
 Start with a simple bullet list with 4 bullets, put your abstract goal at the top, and your idea for a concrete solution at the bottom. The idea is to find a link between your abstract goal, through a more practical goal, to the product or service you want to offer.
 
-<img src="https://mirri.link/Eea4KNuBn" alt="Image" />
+<img src="https://mirri.link/djJuJpCuY" alt="Image" />
 
 Here's some rough examples of applying the purpose pyramid for two of my companies:
 
