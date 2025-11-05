@@ -12,9 +12,9 @@ extra:
 
 I'm a software engineer and startup founder from The Netherlands, currently living in London.
 
-<img src="https://mirri.link/WvaOxkvJ9" alt="Image" />
+I love creating well-designed user interfaces for real people and crafting tools for developers to build better software.
 
-I don’t believe software has intrinsic value, but I think it can serve as a powerful tool to help people do good in society. That’s why I love creating well-designed user interfaces for real people and crafting tools for developers to build better software.
+<img src="https://mirri.link/WvaOxkvJ9" alt="Image" />
 
 Looking for something fun to do while waiting for my mom, a primary school teacher, to finish grading her students’ homework, led me to start programming at age 11.
 
