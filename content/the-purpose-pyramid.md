@@ -4,7 +4,7 @@ date: 2021-03-10
 description: "Most startups conceptually start with a big, overarching idea (also known as **BHAG: a big, hairy, audacious goal**) about how to solve a problem..."
 taxonomies:
   category:
-    - Blog
+    - Standup Handbook
 extra: {}
 ---
 
