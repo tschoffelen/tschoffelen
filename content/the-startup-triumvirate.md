@@ -4,7 +4,7 @@ date: 2022-01-23
 description: Three is a magical number. We know as much. It's not as good as seven, but I guess that's just my personal opinion.  Three works extremely well in...
 taxonomies:
   category:
-    - Blog
+    - Standup Handbook
 extra: {}
 ---
 
