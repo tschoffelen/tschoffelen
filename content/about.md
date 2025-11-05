@@ -10,9 +10,7 @@ extra:
 ---
 
 
-I'm a software engineer and startup founder from The Netherlands, currently living in London.
-
-I love creating well-designed user interfaces for real people and crafting tools for developers to build better software.
+I'm a software engineer and startup founder from The Netherlands, currently living in London. I love creating well-designed user interfaces for real people and crafting tools for developers to build better software.
 
 <img src="https://mirri.link/WvaOxkvJ9" alt="Image" />
 
