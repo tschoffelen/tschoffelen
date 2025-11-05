@@ -10,7 +10,7 @@
 
 {% block content %}
     <article>
-        <h1>Things I've written</h1>
+        <h1 class="blog-listing-heading">Things I've written</h1>
         <div class="blog-tags">
             {% set categories = get_taxonomy(kind="category") %}
             {% for category in categories.items %}

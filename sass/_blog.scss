@@ -68,6 +68,11 @@ h1.post-header-title {
   }
 }
 
+.blog-listing-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .blog-body {
   pre,
   code {
@@ -201,24 +206,43 @@ h1.post-header-title {
 .blog-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  margin-bottom: 2.5rem;
-  font-size: 0.85rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 30rem;
+  margin: 1.5rem auto;
+  margin-bottom: 4.5rem;
+  font-size: 0.9rem;
+
   a {
-    border: 1px solid $gray-100;
-    border-radius: 1rem;
-    padding: 0.25rem 1rem;
+    color: inherit;
     text-decoration: none;
-    color: $gray-900;
+    border: 1px solid $gray-100;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1.5rem;
+    &:hover {
+      background-color: $gray-100;
+    }
 
     @media (prefers-color-scheme: dark) {
-      border-color: $dark-gray-100;
-      color: $dark-gray-900;
+      border: 1px solid $dark-gray-100;
+
+      &:hover {
+        background-color: $dark-gray-100;
+      }
     }
   }
-  span {
-    padding: 0.25rem 0;
-    font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+    max-width: 100%;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    gap: 0.5rem;
+
+    a {
+      padding: 0.4rem 1rem;
+    }
   }
 }
