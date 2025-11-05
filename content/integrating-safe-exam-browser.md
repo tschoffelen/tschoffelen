@@ -24,7 +24,7 @@ The easiest way to get users to open the Safe Exam Browser with the correct URL 
 sebs://domain.com/example/config.seb
 ```
 
-Would open SEB if it is installed and downloads the XML config from `https://domain.com/example/config.seb` (not the `s` in the `sebs://` URL scheme, you might want to use `seb://` if you're on localhost and need HTTP instead of HTTPS).
+Would open SEB if it is installed and downloads the XML config from `https://domain.com/example/config.seb` (note the `s` in the `sebs://` URL scheme, you might want to use `seb://` if you're on localhost and need HTTP instead of HTTPS).
 
 This file should contain a Apple-style XML [property list](https://en.wikipedia.org/wiki/Property_list):
 
