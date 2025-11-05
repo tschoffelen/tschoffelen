@@ -208,7 +208,7 @@ h1.post-header-title {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   max-width: 30rem;
   margin: 1.5rem auto;
   margin-bottom: 4.5rem;
@@ -219,7 +219,7 @@ h1.post-header-title {
     text-decoration: none;
     border: 1px solid $gray-100;
     display: inline-block;
-    padding: 0.5rem 1.2rem;
+    padding: 0.4rem 1.2rem;
     border-radius: 1.5rem;
     &:hover {
       background-color: $gray-100;
@@ -242,7 +242,7 @@ h1.post-header-title {
     gap: 0.5rem;
 
     a {
-      padding: 0.4rem 1rem;
+      padding: 0.35rem 1rem;
     }
   }
 }
