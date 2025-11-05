@@ -16,6 +16,10 @@ article {
   gap: 1rem;
   color: #374151;
 
+  @media (prefers-color-scheme: dark) {
+    color: $dark-gray-500;
+  }
+
   a {
     color: inherit;
     font-weight: 600;
@@ -26,6 +30,11 @@ article {
     display: inline-block;
     padding: 0.3rem 0.9rem;
     border-radius: 1rem;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark-bg-secondary;
+      color: $dark-gray-500;
+    }
   }
 }
 
@@ -66,6 +75,11 @@ h1.post-header-title {
     border-radius: 0.25rem;
     font-weight: 600;
     font-size: 0.8em;
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-secondary;
+      color: $dark-gray-900;
+    }
   }
 
   pre {
@@ -78,6 +92,11 @@ h1.post-header-title {
     @media (max-width: 768px) {
       font-size: 0.75rem;
       padding: 1.25rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-bg-secondary !important;
+      color: $dark-gray-900 !important;
     }
   }
 
@@ -97,6 +116,10 @@ h1.post-header-title {
     margin-bottom: 0.5rem;
     color: $gray-500;
     font-weight: normal;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-500;
+    }
   }
 
   p {
@@ -108,6 +131,10 @@ h1.post-header-title {
     color: black;
     border-bottom: 1px solid currentColor;
     text-decoration: none;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
 
   img {
@@ -121,6 +148,10 @@ h1.post-header-title {
     border-top: 1px solid $gray-100;
     margin-top: 3em;
     margin-bottom: 3em;
+
+    @media (prefers-color-scheme: dark) {
+      border-top-color: $dark-gray-100;
+    }
   }
 
   blockquote {
@@ -137,6 +168,10 @@ h1.post-header-title {
       width: 0.2rem;
       border-radius: 0.1rem;
       background: $gray-100;
+
+      @media (prefers-color-scheme: dark) {
+        background: $dark-gray-100;
+      }
     }
   }
 
@@ -165,6 +200,11 @@ h1.post-header-title {
     padding: 0.25rem 1rem;
     text-decoration: none;
     color: $gray-900;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: $dark-gray-100;
+      color: $dark-gray-900;
+    }
   }
   span {
     padding: 0.25rem 0;

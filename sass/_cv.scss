@@ -22,6 +22,10 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
 }
 
@@ -35,6 +39,11 @@
   flex-shrink: 0;
   background: #f3f4f6;
   color: $gray-500;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+    color: $dark-gray-500;
+  }
   
   svg {
     width: 1.25rem;
@@ -46,6 +55,10 @@
   p {
     line-height: 1.75;
     color: $gray-900;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
 }
 
@@ -62,19 +75,35 @@
   dt {
     font-weight: 600;
     color: $gray-900;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
   
   dd {
     color: $gray-900;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
     
     a {
       color: $gray-900;
       text-decoration: none;
       font-weight: 500;
       border-bottom: 1px solid currentColor;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-gray-900;
+      }
       
       &:hover {
         color: $gray-500;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-gray-500;
+        }
       }
     }
   }
@@ -91,12 +120,21 @@
   border: 1px solid $gray-100;
   border-radius: 0.5rem;
   padding: 1.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+    border-color: $dark-gray-100;
+  }
   
   h4 {
     font-size: 1.25rem;
     font-weight: bold;
     color: $gray-900;
     margin-bottom: 0.5rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
   
   .cv-company-description {
@@ -108,11 +146,19 @@
     color: $gray-500;
     font-weight: 600;
     margin-bottom: 0.75rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-500;
+    }
   }
   
   .cv-description {
     color: $gray-900;
     line-height: 1.6;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
 }
 
@@ -127,12 +173,21 @@
   border: 1px solid $gray-100;
   border-radius: 0.5rem;
   padding: 1.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+    border-color: $dark-gray-100;
+  }
   
   h4 {
     font-size: 1.25rem;
     font-weight: bold;
     color: $gray-900;
     margin-bottom: 0.5rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
   
   p {
@@ -152,12 +207,21 @@
   border: 1px solid $gray-100;
   border-radius: 0.5rem;
   padding: 1.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+    border-color: $dark-gray-100;
+  }
   
   h4 {
     font-size: 1.25rem;
     font-weight: bold;
     color: $gray-900;
     margin-bottom: 1rem;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-900;
+    }
   }
   
   ul {
@@ -174,6 +238,10 @@
       position: relative;
       padding-left: 1rem;
       margin: 0;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-gray-900;
+      }
       
       &:before {
         content: "•";
@@ -181,6 +249,10 @@
         font-weight: bold;
         position: absolute;
         left: 0;
+
+        @media (prefers-color-scheme: dark) {
+          color: $dark-gray-500;
+        }
       }
     }
   }

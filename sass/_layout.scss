@@ -12,6 +12,10 @@ header {
     color: $gray-900;
     font-size: 0.875rem;
 
+    @media (prefers-color-scheme: dark) {
+        color: $dark-gray-900;
+    }
+
     a {
         text-decoration: none;
         color: inherit;
@@ -25,6 +29,10 @@ header {
         align-items: center;
         gap: 0.75rem;
 
+        @media (prefers-color-scheme: dark) {
+            color: $dark-gray-900;
+        }
+
         &:before {
             content: "";
             width: 1rem;
@@ -32,6 +40,10 @@ header {
             background-color: $gray-900;
             border-radius: 0.15rem;
             margin-top: -1px;
+
+            @media (prefers-color-scheme: dark) {
+                background-color: $dark-gray-900;
+            }
         }
     }
     nav {
@@ -57,6 +69,10 @@ footer {
     a {
         color: $gray-900;
         text-decoration: none;
+
+        @media (prefers-color-scheme: dark) {
+            color: $dark-gray-900;
+        }
     }
     svg {
         width: 1.5rem;

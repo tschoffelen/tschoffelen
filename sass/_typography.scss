@@ -40,6 +40,11 @@ html {
   tab-size: 4;
   font-feature-settings: normal;
   font-variation-settings: normal;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-bg;
+    color: $dark-gray-900;
+  }
 }
 
 h1,
