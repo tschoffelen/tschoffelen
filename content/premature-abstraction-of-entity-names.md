@@ -33,9 +33,9 @@ When I started building the current iteration of the Street Art Cities platform 
   <line x1="240" y1="105" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
 </svg>
 
-A Site can have multiple Markers, and a Marker is connected to a single Site.
+A **Site** can have multiple **Markers**, and a **Marker** is connected to a single **Site**.
 
-Both of these are somewhat abstract entities. A Marker has a type attribute, which can be either `artwork` or `place`. Places are things that aren’t artworks, but still relevant to display on the map, and has a bunch of sub-types: Hall of Fame, Can Shop, Skate Park, Street Art Bookshop, etc.
+Both of these are somewhat abstract entities. A Marker has a `type` attribute, which can be either `artwork` or `place`. Places are things that aren’t artworks, but still relevant to display on the map, and has a bunch of sub-types: Hall of Fame, Can Shop, Skate Park, Street Art Bookshop, etc.
 
 Sites work the same way, but at launch there was only one type: `city`. Each Site represents a city that someone can have permission to add markers to, and holds a lot of metadata to render `streetartcities.com/cities/{siteId}`.
 
