@@ -11,7 +11,7 @@ extra: {}
 
 When I started building the current iteration of the Street Art Cities platform a few years ago, I decided on the following core entities:
 
-<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;margin:auto 0; height: auto; display: block;">
+<center><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;margin:auto 0; height: auto; display: block;">
   <!-- Site Entity (left box) -->
   <rect x="50" y="75" width="100" height="50" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
   <text x="100" y="105" text-anchor="middle" fill="currentColor" font-family="sans-serif" font-size="16">Site</text>
@@ -31,7 +31,7 @@ When I started building the current iteration of the Street Art Cities platform 
   <circle cx="230" cy="100" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
   <line x1="240" y1="95" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
   <line x1="240" y1="105" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
-</svg>
+</svg></center>
 
 A **Site** can have multiple **Markers**, and a **Marker** is connected to a single **Site**.
 
@@ -41,7 +41,7 @@ Sites work the same way, but at launch there was only one type: `city`. Each Sit
 
 In my mind, there might be other types of Sites in the future - maybe a street art festival would have their own Site, or a gallery. Maybe there would be some other type of Site that I hadn’t thought about yet. 
 
-This turned out to be a useless abstract, since all of those other structures ended up being built as separate entities, as you always want a Marker connected to a specific city, even when it’s **also** part of a festival or gallery. 
+This turned out to be a useless abstraction, since all of those other structures ended up being built as separate entities, as you always want a Marker connected to a specific city, even when it’s **also** part of a festival or gallery. 
 
 Trying to be clever here was a major distraction, and over time, as multiple people worked on the codebase, we started using the works `site` and `city` interchangeably in variable names and comments, which is a bit messy. 
 
