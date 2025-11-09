@@ -1,35 +1,36 @@
 ---
 title: Premature Abstraction of Entity Names
 date: 2025-11-09
-description: "When I started building the current iteration of the Street Art Cities platform a few years ago, I decided on the following core entities:           ..."
+description: It’s easy to name your entities something too abstract too early when designing data structures.
 taxonomies:
   category:
     - Blog
 extra: {}
 ---
 
+
 When I started building the current iteration of the Street Art Cities platform a few years ago, I decided on the following core entities:
 
 <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
   <!-- Site Entity (left box) -->
-  <rect x="50" y="75" width="100" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="50" y="75" width="100" height="50" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
   <text x="100" y="105" text-anchor="middle" fill="currentColor" font-family="sans-serif" font-size="16">Site</text>
   
   <!-- Marker Entity (right box) -->
-  <rect x="250" y="75" width="100" height="50" fill="none" stroke="currentColor" stroke-width="2"/>
+  <rect x="250" y="75" width="100" height="50" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
   <text x="300" y="105" text-anchor="middle" fill="currentColor" font-family="sans-serif" font-size="16">Marker</text>
   
   <!-- Relationship line -->
   <line x1="150" y1="100" x2="250" y2="100" stroke="currentColor" stroke-width="2"/>
   
-  <!-- Left side: || (exactly one) -->
-  <line x1="150" y1="95" x2="150" y2="105" stroke="currentColor" stroke-width="2"/>
-  <line x1="155" y1="95" x2="155" y2="105" stroke="currentColor" stroke-width="2"/>
+  <!-- Left side: || (exactly one) - moved further from box -->
+  <line x1="160" y1="95" x2="160" y2="105" stroke="currentColor" stroke-width="2"/>
+  <line x1="165" y1="95" x2="165" y2="105" stroke="currentColor" stroke-width="2"/>
   
-  <!-- Right side: o{ (zero or many) -->
-  <circle cx="245" cy="100" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-  <line x1="250" y1="95" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
-  <line x1="250" y1="105" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
+  <!-- Right side: o{ (zero or many) - moved further from box -->
+  <circle cx="230" cy="100" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="240" y1="95" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
+  <line x1="240" y1="105" x2="240" y2="100" stroke="currentColor" stroke-width="2"/>
 </svg>
 
 A Site can have multiple Markers, and a Marker is connected to a single Site.
