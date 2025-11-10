@@ -14,11 +14,11 @@ When I started building the current iteration of the Street Art Cities platform 
 <center><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="max-width:400px;margin:auto 0; height: auto; display: block;">
   <!-- Site Entity (left box) -->
   <rect x="50" y="75" width="100" height="50" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
-  <text x="100" y="105" text-anchor="middle" fill="currentColor" font-family="sans-serif" font-size="16">Site</text>
+  <text x="100" y="105" text-anchor="middle" fill="currentColor" font-family="inherit, sans-serif" font-size="16">Site</text>
   
   <!-- Marker Entity (right box) -->
   <rect x="250" y="75" width="100" height="50" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
-  <text x="300" y="105" text-anchor="middle" fill="currentColor" font-family="sans-serif" font-size="16">Marker</text>
+  <text x="300" y="105" text-anchor="middle" fill="currentColor" font-family="inherit, sans-serif" font-size="16">Marker</text>
   
   <!-- Relationship line -->
   <line x1="150" y1="100" x2="250" y2="100" stroke="currentColor" stroke-width="2"/>
