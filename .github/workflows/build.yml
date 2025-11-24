@@ -13,18 +13,27 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: taiki-e/install-action@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "yarn"
+      - name: Install Zola
+        uses: taiki-e/install-action@v2
         with:
           tool: zola@0.20.0
-      - name: Build
-        run: zola build
+      - name: Install dependencies
+        run: yarn install
       - name: Set up AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::672895027413:role/github-oidc-provider-Role-1DGACKD4725JB
           aws-region: eu-west-1
+      - name: Build site
+        run: zola build
       - name: Copy sitemap
         run: cp public/sitemap.xml public/sitemap_index.xml
+      - name: Deploy
+        run: yarn deploy
       - name: Upload to S3
         run: aws s3 sync public s3://schof.co --acl public-read --delete
       - name: Create CloudFront invalidation

@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build": "zola build",
+    "deploy": "cdk deploy --all --require-approval never"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1033.0",
+    "aws-cdk-lib": "^2.228.0",
+    "constructs": "^10.4.3"
+  }
+}
