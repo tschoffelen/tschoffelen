@@ -10,16 +10,21 @@ extra:
 
 I love to start companies and work with both small and big teams building awesome user experiences and setting up software architectures. As an entrepreneur I've co-founded both bootstrapped companies with small teams, as well as fast-growing VC-funded startups.
 
-### Personal details
+## Personal details
 
-**Full name:** Thomas Sebastiaan Schoffelen
-**Nationality:** Dutch (The Netherlands)
-**Birth date:** March 11, 1997
-**Email:** [thomas@schof.co](mailto:thomas@schof.co)
-**Website:** [schof.co](https://schof.co)
-**LinkedIn:** [linkedin.com/in/tschoffelen](https://linkedin.com/in/tschoffelen)
+- **Full name:** Thomas Sebastiaan Schoffelen
+- **Nationality:** Dutch (The Netherlands)
+- **Birth date:** March 11, 1997
+- **Email:** [thomas@schof.co](mailto:thomas@schof.co)
+- **Website:** [schof.co](https://schof.co)
+- **LinkedIn:** [linkedin.com/in/tschoffelen](https://linkedin.com/in/tschoffelen)
 
-### Experience
+## Experience
+
+#### Examplary
+*Co-Founder, CTO (2024 — Present)*
+
+Building tools to help teachers create, conduct and grade tests more efficiently, using modern technology and AI.
 
 #### NearSt
 *Head of Engineering (2015 — 2017, 2019 — 2025)*
@@ -36,7 +41,7 @@ Building tools to help schools communicate better. Infowijs supports almost 200 
 
 Open online learning platform. Scholica helps students quickly access all the tools they need to make the most of their high school years, and gives parents the tools to help their child along in the best way they can.
 
-### Education
+## Education
 
 #### University of Amsterdam
 English Literature and Linguistics (2015 — 2017)
@@ -44,7 +49,7 @@ English Literature and Linguistics (2015 — 2017)
 #### Bernardinuscollege Heerlen
 Gymnasium (2009 — 2012), Atheneum (2013 — 2015)
 
-### Skills
+## Skills
 
 #### Engineering leadership
 - Leading technical direction for engineering teams
