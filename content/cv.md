@@ -22,7 +22,7 @@ I love to start companies and work with both small and big teams building awesom
 ## Experience
 
 #### Examplary
-*Co-Founder, CTO (2024 — Present)*
+*Co-Founder, CTO (2024 — present)*
 
 Building tools to help teachers create, conduct and grade tests more efficiently, using modern technology and AI.
 
