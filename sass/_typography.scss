@@ -5,7 +5,7 @@
     url("/fonts/regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -15,7 +15,7 @@
     url("/fonts/semibold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: fallback;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   src: url("/fonts/heading.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 html {
