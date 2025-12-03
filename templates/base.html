@@ -35,8 +35,6 @@
     <meta name="description" content="{% if page %}{{page.description}}{% else %}Thomas Schoffelen is a tech entrepreneur and consultant, co-founder of Street Art Cities and Examplary, building tools to help small businesses and educators.{% endif %}">
     <meta name="keywords" content="thomas schoffelen, thomas, schoffelen, consulting, engineer, entrepreneur, startups, young startup">
     
-    <link href="/index.css?v=3" rel="stylesheet">
-    
     <link rel="bookmarks" href="https://twitter.com/tschoffelen">
     <link rel="bookmarks" href="https://instagram.com/tschoffelen">
     <link rel="bookmarks" href="https://github.com/tschoffelen">
@@ -58,6 +56,8 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="32x32">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ get_url(path="sitemap.xml", trailing_slash=false) }}">
+
+    <style>{{load_data(path="public/index.css") | safe }}</style>
 </head>
 
 <body>
