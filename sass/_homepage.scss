@@ -64,12 +64,12 @@
 
 .view-more {
   text-decoration: none;
-  color: $gray-500;
+  color: $gray-700;
   margin-top: 2rem;
   display: inline-block;
 
   @media (prefers-color-scheme: dark) {
-    color: $dark-gray-500;
+    color: $dark-gray-700;
   }
 }
 
