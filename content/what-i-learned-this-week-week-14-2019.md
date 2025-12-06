@@ -1,7 +1,7 @@
 ---
 title: What I Learned This Week (Week 14, 2019)
 date: 2019-04-05
-description: It can be frustrating as an entrepreneur that your personal wellbeing is often so entangled with how well your company and team are doing. Equally,...
+description: It can be frustrating as an entrepreneur that your personal wellbeing is often so entangled with how well your company and team are doing.
 taxonomies:
   category:
     - Blog
