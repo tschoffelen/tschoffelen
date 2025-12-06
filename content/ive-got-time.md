@@ -4,7 +4,7 @@ date: 2016-08-06
 description: Late Friday night, walking home from work at 10pm, I had a realisation. I walked throughout the centre of London, drunk and jolly people all around,...
 taxonomies:
   category:
-    - Blog
+    - Thought
 extra: {}
 ---
 
