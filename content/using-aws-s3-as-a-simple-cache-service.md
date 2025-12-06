@@ -1,12 +1,13 @@
 ---
 title: Using AWS S3 as a Simple Cache Service
-date: 2025-12-06
+date: 2021-12-06
 description: S3 is great for file storage, but it does so much more as well. I love using S3 as a simple caching mechanism for any stateless functions that need...
 taxonomies:
   category:
     - Blog
 extra: {}
 ---
+
 
 S3 is great for file storage, but it does so much more as well. I love using S3 as a simple caching mechanism for any stateless functions that need to save some ephemeral data to keep state.
 
