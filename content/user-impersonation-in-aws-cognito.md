@@ -1,7 +1,7 @@
 ---
 title: User Impersonation in AWS Cognito
 date: 2021-03-17
-description: I’ve been using AWS Cognito for quite a few recent projects. It makes a lot of sense to use when you’re building serverless applications on AWS...
+description: Impersonating users in AWS Cognito (for customer support purposes) is not something that is supported out of the box, but it's possible to implement it.
 taxonomies:
   category:
     - Blog
