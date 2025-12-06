@@ -1,7 +1,7 @@
 ---
 title: Looking Back on 2019
-date: 2023-07-14
-description: I always do this toward the end of the year… I barely write anything during the October and November, and then towards the end of December I start to...
+date: 2019-12-22
+description: Reflecting on the past 12 months of my life as an entrepreneur.
 taxonomies:
   category:
     - Blog
