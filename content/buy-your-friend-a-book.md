@@ -1,6 +1,6 @@
 ---
 title: Buy Your Friend a Book
-date: 2023-07-14
+date: 2019-08-29
 description: I’m a workaholic. That causes me to not spend as much time as I want to with my friends. And I feel shitty about that from time to time. Life’s busy,...
 taxonomies:
   category:
