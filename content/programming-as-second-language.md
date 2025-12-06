@@ -13,17 +13,17 @@ Recently, a friend asked what languages I spoke. Dutch, English, a passable amou
 
 Thinking about it, however, programming languages do have quite some commonalities with natural – spoken – languages:
 
-### Grammar
+## Grammar
 
 Like a natural language, each programming language has a grammar. You might not think about it that way, since we usually refer only to syntax while taking about the structure of a programming language, but syntax is of course part of grammar.
 
 The difference between the grammar of a natural language and a programming language is that programming languages can be seen as more strict. Whereas the grammar of a natural language allows you to express a certain sentiment in a lot of different ways, in most programming languages, such a statement can usually only be expressed in a very limited amount of ways.
 
-### In motion
+## In motion
 
 Just like natural languages constantly change to adjust to its users and usage, so do programming languages. Although this process is usually more structured – programming languages often have version numbers that show what features of the language are available in that particular version – this process is also fuelled by its users, who often will propose changes that might be incorporated in later versions of the programming language.
 
-### Writing
+## Writing
 
 There are also some differences in how we tend to think about writing in programming as opposed to natural language. Natural language allows, and often even celebrates or stimulates creativity, or finding your own way of saying things, having your own tone of voice. In programming however, consistency is often far more valued than creativity.
 
