@@ -14,14 +14,3 @@ Click here:
 https://fantastical.app/tschoffelen/30min
 
 <meta http-equiv="refresh" content="0;url=https://fantastical.app/tschoffelen/30min"/>
-
-<div style="min-width: 300px; height: 1000px; border-radius: 8px; border: none; background: #fff; overflow: hidden;">
-    <iframe
-        title="Schedule a call or coffee meeting."
-        src="https://fantastical.app/tschoffelen/30min"
-        width="100%"
-        height="100%"
-        style="border-radius: 8px; border: 0; margin: 0 -16px; width: calc(100% + 32px);"
-        frameborder="0"
-    />
-</div>
