@@ -9,6 +9,12 @@ extra:
 Let's have a 30 minute call via Zoom or a coffee break some place in the
 beautiful Hoxton area (London, UK).
 
+Click here:
+
+https://fantastical.app/tschoffelen/30min
+
+<meta http-equiv="refresh" content="0;url=https://fantastical.app/tschoffelen/30min"/>
+
 <div style="min-width: 300px; height: 1000px; border-radius: 8px; border: none; background: #fff; overflow: hidden;">
     <iframe
         title="Schedule a call or coffee meeting."
