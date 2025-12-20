@@ -16,6 +16,7 @@ One pattern that I found is essential to implement from the start is the **Repos
 
 <img src="https://mirri.link/2rCPegoEr" alt="Image" />
 
+<br>
 What does this look like in practice? Let's say we have a HTTP endpoint that returns a list of users:
 
 ```ts
