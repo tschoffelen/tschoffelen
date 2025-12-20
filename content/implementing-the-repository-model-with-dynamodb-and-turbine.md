@@ -1,7 +1,7 @@
 ---
 title: Implementing the Repository Model with DynamoDB and Turbine
 date: 2025-12-17
-description:
+description: Creating the right level of abstraction for data storage to prevent future headaches.
 taxonomies:
   category:
     - Reference
@@ -14,7 +14,7 @@ When you're building a new product at a small startup, speed and flexibility are
 ## Introducing the Repository pattern
 One pattern that I found is essential to implement from the start is the **Repository pattern** from Domain-Driven Development (DDD). This pattern states that you should keep your data access layer and data storage layers separate:
 
-<img src="https://mirri.link/7LjBw1cXD" alt="Image" />
+<img src="https://mirri.link/2rCPegoEr" alt="Image" />
 
 What does this look like in practice? Let's say we have a HTTP endpoint that returns a list of users:
 
