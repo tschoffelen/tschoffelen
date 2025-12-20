@@ -18,7 +18,7 @@ One pattern that I found is essential to implement from the start is the **Repos
 
 What does this look like in practice? Let's say we have a HTTP endpoint that returns a list of users:
 
-```js
+```ts
 app.get("/users", async (req, res) => {
 	const { Items } = await dynamodbClient.query({
 		Table: "users-production",
@@ -45,7 +45,7 @@ Either of these things would be a show-stopping amount of work if you don't abst
 ## What a good repository looks like
 Ideally, you want to have the above code look more like this:
 
-```js
+```ts
 app.get("/users", async (req, res) => {
 	const users = await Users.listByOrg(req.orgId, { limit: 10 });
 	
@@ -63,7 +63,7 @@ A few rules:
 
 An example signature of our entire users repository might look like this:
 
-```js
+```ts
 export class Users {
 	public static listAll();
 	public static listByOrg(orgId: string);
@@ -86,7 +86,7 @@ I use **[Turbine](https://github.com/tschoffelen/turbine)**, a simple layer on t
 
 To get started with it, we create a shared `table.ts` file, which specifies how Turbine should connect to the DynamoDB table:
 
-```js
+```ts
 import { defineTable } from "dynamodb-turbine";
 
 export const table = defineTable({
@@ -106,7 +106,7 @@ export const table = defineTable({
 
 We then define our entities, each in a separate file. Take this `user-entity.ts` file:
 
-```js
+```ts
 import { defineEntity, Entity } from "dynamodb-turbine";
 import { table } from "./table";
 import z from "zod";
@@ -136,7 +136,7 @@ export const userEntity = defineEntity({
 
 The great thing about this is that you can also export the type for `User`, as defined in the schema, for easy TypeScript type checking:
 
-```js
+```ts
 import { type Instance } from "dynamodb-turbine";
 
 export type User = Instance<typeof userEntity>;
@@ -144,7 +144,7 @@ export type User = Instance<typeof userEntity>;
 
 Now we can implement our actual `Users` repository:
 
-```js
+```ts
 export class Users {
 	public static async listByOrg(orgId: string): Promise<User[]> {
 		return entity.queryAll(
