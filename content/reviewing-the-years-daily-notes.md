@@ -1,7 +1,7 @@
 ---
 title: Reviewing the Year's Daily Notes
 date: 2026-01-01
-description: My daily notes in Obsidian are the cornerstone of my note taking and journaling.   I don't really review old daily notes too often, but once a year,...
+description: My daily notes in Obsidian are the cornerstone of my note taking and journaling. Every year, I take some time to review them.
 taxonomies:
   category:
     - Thought
