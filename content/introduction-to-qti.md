@@ -17,7 +17,7 @@ It's one of those standards that is really awesome, but hard to get a basic unde
 ## Packaging
 In most situations, you'll come across QTI content in the form of a QTI content package.
 
-<picture><source srcset="https://mirri.link/FdOTZQZco" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/B4diTsk2l" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/CDfBrYOta" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/osYXEdtKv" alt="Drawing" /></picture>
 
 This is a ZIP file, which at least contains at least a `imsmanifest.xml` file, and a bunch of other XML files describing the test and questions.
 
