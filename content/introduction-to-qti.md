@@ -25,10 +25,7 @@ The `imsmanifest.xml` acts as an [index card](https://www.1edtech.org/standards/
 
 It also can contain metadata about the educational content, using [Learning Object Metadata (LOM)](https://en.wikipedia.org/wiki/Learning_object_metadata).
 
-<details>
-<summary>An example <code>imsmanifest.xml</code> (simplified)</summary>
-
-<div>
+### An example <code>imsmanifest.xml</code> (simplified) %% fold %% 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -55,12 +52,13 @@ It also can contain metadata about the educational content, using [Learning Obje
 </manifest>
 ```
 
-</div>
 
-</details>
+
 
 ## Assessment structure
 One of those 
 
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
+
+<script>document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {   if (!heading.textContent.includes('%% fold %%')) return;      heading.textContent = heading.textContent.replace('%% fold %%', '').trim();      const details = document.createElement('details');   const summary = document.createElement('summary');   summary.innerHTML = heading.innerHTML;   details.appendChild(summary);      let sibling = heading.nextElementSibling;   const headingLevel = parseInt(heading.tagName[1]);      while (sibling) {     const next = sibling.nextElementSibling;     if (/^H[1-6]$/.test(sibling.tagName) && parseInt(sibling.tagName[1]) <= headingLevel) break;     details.appendChild(sibling);     sibling = next;   }      heading.replaceWith(details); });</script>
