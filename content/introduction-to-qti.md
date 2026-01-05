@@ -77,7 +77,7 @@ The cool thing about QTI is that these can be fully self-contained documents. Ea
 
 There's about two dozen built-in interaction types, which you can mix and match and use in combination with your content:
 
-```xml
+```html
 <qti-assessment-item>
   ...
   <qti-item-body>
@@ -93,6 +93,8 @@ There's about two dozen built-in interaction types, which you can mix and match 
   </qti-item-body>
 </qti-assessment-item>
 ```
+
+
 
 
 
