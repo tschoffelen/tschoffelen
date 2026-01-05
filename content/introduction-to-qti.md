@@ -5,8 +5,7 @@ description: QTI stands for **Question and Test Interoperability**, and is a sta
 taxonomies:
   category:
     - Blog
-extra:
-  unlisted: true
+extra: {}
 ---
 
 
@@ -111,6 +110,34 @@ _❧ Random note: if you export custom question type content from Examplary as Q
 ## Response mapping
 The same flexibility is afforded in terms of how responses are marked. 
 
+You can set up a simple matching system, where a specific answer leads to a specific score and a specific feedback text, but you can also be very complex with your scoring rules. 
+
+There's almost an entire programming language embedded in the QTI markup to describe almost any desired outcome. 
+
+Thankfully there are also some defaults built in, so that you don't need to define something like this for each question that simply has a "matches correct answer" scoring mechanism:
+
+```xml
+<qti-response-condition>
+	<qti-response-if>
+		<!-- If the variable 'RESPONSE' matches the correct answer -->
+		<qti-match>
+			<qti-variable identifier="RESPONSE"/>
+			<qti-correct identifier="RESPONSE"/>
+		</qti-match>
+		<!-- Set 'SCORE' to 1 -->
+		<qti-set-outcome-value identifier="SCORE">
+			<qti-base-value base-type="float">1</qti-base-value>
+		</qti-set-outcome-value>
+	</qti-response-if>
+	<qti-response-else>
+		<!-- Otherwise set 'SCORE' to 0 -->
+		<qti-set-outcome-value identifier="SCORE">
+			<qti-base-value base-type="float">0</qti-base-value>
+		</qti-set-outcome-value>
+	</qti-response-else>
+</qti-response-condition>
+```
+
 ## Reviewer content
 You can embed content into QTI items that are only visible for certain groups of users.
 
@@ -129,7 +156,23 @@ This is very useful for adding detailed scoring rubrics, which can live alongsid
 ## Further reading
 There's so much more I could cover, including response-specific feedback, companion materials, test time limits, and accessibility features, but those are better understood in context of the original specification documents.
 
+Official specification documents:
 
+- 📄 [Question and Test Interoperability (QTI) Overview](https://www.imsglobal.org/spec/qti/v3p0/oview)
+	- A quick overview of where QTI fits in the ecosystem, with links to all other relevant specification docs.
+- 📄 [QTI 3 Beginner's Guide](https://www.imsglobal.org/spec/qti/v3p0/guide)
+	- A very simple beginner's guide. I only started reading this way too late in the process. Essential reading.
+- 📄 [QTI v3 Best Practices and Implementation Guide](https://www.imsglobal.org/spec/qti/v3p0/impl)
+	- This is the core document you'd use to build any type of technical integration. It shows the full width and breadth of what's possible in QTI.
+- 📄 [Assessment, Section and Item Information Model](https://www.imsglobal.org/sites/default/files/spec/qti/v3/info/index.html)
+	- The actual technical specification of the information model. Not worth reading, unless you're implementing QTI importer/exporter yourself.
+
+Useful tools:
+
+- 🌍 [Citolab QTI Playground](https://qti.citolab.nl/landing)
+	- A great tool by our friends at Citolab, makes it easy to test your QTI packages and convert them from QTI 2 to 3.
+- 🌍 [ONYX Editor](https://www.onyx-editor.com/onyxeditor/editor?4)
+	- Online assessment editor. Only supports QTI 2.1, but was useful in helping me understand how certain concepts mapped from the XML markup to UI.
 
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
