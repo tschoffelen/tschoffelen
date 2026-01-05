@@ -131,7 +131,7 @@ Tailwind usually scans your files to dynamically only create the CSS you need, g
 
 Including a line like this in your React component:
 
-```jsx
+```js
 <input className="mt-4" />
 ```
 
@@ -147,7 +147,7 @@ Of course, Tailwind won't know about the class names used in question types, sin
 
 There are also static builds of Tailwind that include all default styles, but those are really bulky, plus they don't allow some of the more dynamic options in Tailwind I tend to rely on, like being able to specify any value by including it within square brackets:
 
-```jsx
+```js
 <input className="h-[158px]" />
 ```
 

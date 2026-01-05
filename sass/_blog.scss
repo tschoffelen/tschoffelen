@@ -35,7 +35,7 @@ article {
     display: inline-block;
     padding: 0.3rem 0.9rem;
     border-radius: 1rem;
-    
+
     border: 1px solid $gray-100;
     &:hover {
       background-color: $gray-100;
@@ -80,44 +80,55 @@ h1.post-header-title {
   margin-bottom: 2rem;
 }
 
+pre,
+code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+:not(pre) code {
+  background: #f4f4f4;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 0.8em;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+    color: $dark-gray-900;
+  }
+}
+
+pre {
+  padding: 2rem;
+  background: #212936;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  overflow: auto;
+
+  @media (max-width: 768px) {
+    font-size: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary !important;
+    color: $dark-gray-900 !important;
+  }
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
+  font-size: 0.85rem;
+  border-radius: 0;
+  font-weight: normal;
+  display: block;
+}
+
 .blog-body {
-  pre,
-  code {
-    font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
-      "Liberation Mono", "Courier New", monospace;
-  }
-
-  :not(pre) code {
-    background: #f4f4f4;
-    padding: 0.15rem 0.4rem;
-    border-radius: 0.25rem;
-    font-weight: 600;
-    font-size: 0.8em;
-
-    @media (prefers-color-scheme: dark) {
-      background: $dark-bg-secondary;
-      color: $dark-gray-900;
-    }
-  }
-
-  pre {
-    padding: 2rem;
-    background: #212936;
-    border-radius: 0.5rem;
-    margin: 1.5rem 0;
-    font-size: 0.85rem;
-    overflow: auto;
-    @media (max-width: 768px) {
-      font-size: 0.75rem;
-      padding: 1.25rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      background: $dark-bg-secondary !important;
-      color: $dark-gray-900 !important;
-    }
-  }
-
   h2 {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
@@ -164,6 +175,22 @@ h1.post-header-title {
     max-width: 100%;
     margin: 1rem 0;
     border-radius: 0.5rem;
+  }
+
+  details {
+    margin: 2.5rem 0;
+
+    summary {
+      cursor: pointer;
+      font-size: 0.95rem;
+      color: $gray-700;
+      font-weight: 600 !important;
+      margin-bottom: 0.5rem;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-gray-700;
+      }
+    }
   }
 
   hr {
