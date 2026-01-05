@@ -22,7 +22,7 @@ In most situations, you'll come across QTI content in the form of a QTI content 
 
 <picture><source srcset="https://mirri.link/TKZls2nnX" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/0KV_Ifo1b" alt="Drawing" /></picture>
 
-These content packages are ZIP file, which contains XML files describing the test and questions, and any other resources required for those questions (images, videos, style sheets).
+These content packages are ZIP files which contains XML files describing the test and questions, and any other resources required for those questions (images, videos, style sheets).
 
 There's also always a file called `imsmanifest.xml`. This file acts as an [index card](https://www.1edtech.org/standards/content-packaging), telling the system reading the file what resources are in the zip file, what types they have, and where they are located.
 
@@ -46,7 +46,7 @@ It also can contain metadata about the educational content, using [Learning Obje
         </resource>
         
         <!-- Resources for questions are referenced in assessment.xml 
-        by idenfitier, and the lines below show the target app where
+        by idenfitier, and the lines below tell the target app where
         to find the content for each question -->
         <resource identifier="question1" type="imsqti_item_xmlv3p0" href="question1.xml">
             <file href="question1.xml"/>
