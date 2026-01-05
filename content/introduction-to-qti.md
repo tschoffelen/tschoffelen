@@ -104,6 +104,8 @@ If some combination of the built-in interaction types somehow doesn't fit your n
 
 They're not as easy to set up as [Examplary custom question types](https://developers.examplary.ai/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
 
+<picture><source srcset="https://mirri.link/YFT6nY0_o" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/QZUuJ9qqQ" alt="Drawing" /></picture>
+
 _❧ Random note: if you export custom question type content from Examplary as QTI, we automatically generate a PCI version of that Examplary question type and package it up in the ZIP. This was very fun to build!_
 
 
