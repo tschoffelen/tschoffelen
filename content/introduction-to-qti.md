@@ -163,7 +163,7 @@ This is very useful for adding detailed scoring rubrics, which can live alongsid
 ## Further reading
 There's so much more I could cover, including response-specific feedback, companion materials, test time limits, and accessibility features, but those are better understood in context of the original specification documents.
 
-Official specification documents:
+**Official specification documents:**
 
 - 📄 [Question and Test Interoperability (QTI) Overview](https://www.imsglobal.org/spec/qti/v3p0/oview)
 	- A quick overview of where QTI fits in the ecosystem, with links to all other relevant specification docs.
@@ -174,7 +174,7 @@ Official specification documents:
 - 📄 [Assessment, Section and Item Information Model](https://www.imsglobal.org/sites/default/files/spec/qti/v3/info/index.html)
 	- The actual technical specification of the information model. Not worth reading, unless you're implementing QTI importer/exporter yourself.
 
-Useful tools:
+**Useful tools:**
 
 - 🌍 [Citolab QTI Playground](https://qti.citolab.nl/landing)
 	- A great tool by our friends at Citolab, makes it easy to test your QTI packages and convert them from QTI 2 to 3.
