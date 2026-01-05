@@ -26,7 +26,6 @@ The `imsmanifest.xml` acts as an [index card](https://www.1edtech.org/standards/
 It also can contain metadata about the educational content, using [Learning Object Metadata (LOM)](https://en.wikipedia.org/wiki/Learning_object_metadata).
 
 ### An example <code>imsmanifest.xml</code> (simplified) %% fold %% 
-
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns="http://www.imsglobal.org/xsd/qti/qtiv3p0/imscp_v1p1">
@@ -53,12 +52,10 @@ It also can contain metadata about the educational content, using [Learning Obje
 ```
 
 
-
-
-
-
 ## Assessment structure
-One of those 
+One of those packages can contain multiple assessments, which in turn can contain parts, sections, and assessment items (the actual questions):
+
+<picture><source srcset="https://mirri.link/ng875qkzy" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/cONFM9N_j" alt="Drawing" /></picture>
 
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
