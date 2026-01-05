@@ -68,6 +68,33 @@ This means you can create adaptive structures, for example making sure that a st
 
 <picture><source srcset="https://mirri.link/4rG4Qeftd" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/zZXGAHxUo" alt="Drawing" /></picture>
 
+## Items and interactions
+Let's dive into the items: the actual questions that make up the test.
+
+The cool thing about QTI is that these can be fully self-contained documents. Each one can be its own file, contain any HTML you want, and then use some custom XML tags to allow interaction.
+
+<picture><source srcset="https://mirri.link/_mXu8Pc3n" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/XqBYOIfQ8" alt="Drawing" /></picture>
+
+There's about two dozen built-in interaction types, which you can mix and match and use in combination with your content:
+
+```xml
+<qti-assessment-item>
+  ...
+  <qti-item-body>
+    <p>Look at the text in the picture.</p>
+    <p><img src="images/sign.png" /></p>
+    
+    <qti-choice-interaction max-choices="1" response-identifier="RESPONSE">
+      <qti-prompt>What does it say?</qti-prompt>
+      <qti-simple-choice identifier="A">You must stay with your luggage at all times.</qti-simple-choice>
+      <qti-simple-choice identifier="B">Do not let someone else look after your luggage.</qti-simple-choice>
+      <qti-simple-choice identifier="C">Remember your luggage when you leave.</qti-simple-choice>
+    </qti-choice-interaction>
+  </qti-item-body>
+</qti-assessment-item>
+```
+
+
 
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
