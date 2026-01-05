@@ -28,7 +28,7 @@ It also can contain metadata about the educational content, using [Learning Obje
 <details>
 <summary>An example <code>imsmanifest.xml</code> (simplified)</summary>
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns="http://www.imsglobal.org/xsd/qti/qtiv3p0/imscp_v1p1">
     <metadata>
@@ -54,5 +54,9 @@ It also can contain metadata about the educational content, using [Learning Obje
 ```
 
 </details>
+
+## Assessment structure
+One of those 
+
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
