@@ -57,6 +57,12 @@ One of those packages can contain multiple assessments, which in turn can contai
 
 <picture><source srcset="https://mirri.link/ng875qkzy" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/cONFM9N_j" alt="Drawing" /></picture>
 
+Within a test part, you decide how you want the student to navigate through items, e.g. either one after the other, without allowing the student to jump back and forth (`linear`) or `nonlinear` to provide more freedom.
+
+Most tests have a single part, and one or more sections about different topics.
+
+## Adaptiveness
+<picture><source srcset="https://mirri.link/oN6xGZcty" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/I6oKjMzkm" alt="Drawing" /></picture>
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
 
