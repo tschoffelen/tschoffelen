@@ -10,9 +10,13 @@ extra:
 ---
 
 
-QTI stands for **Question and Test Interoperability**, and is a standard for exchanging assessment content (and results) between systems. 
+QTI stands for **Question and Test Interoperability**, and is a standard for exchanging assessment content (and results) between systems. It has developed over the last few decades into one of the most complex, wonderful standards we have in education tech.
 
-It's one of those standards that is really awesome, but hard to get a basic understanding of, without spending lots of time reading all of the documents that make up the specification. Let me give you a short introduction, going from the outside in, and highlighting some of the things I really love about how the specification is put together.
+It's one of those standards though that is really awesome, but hard to get a basic understanding of, without spending lots of time reading all of the documents that make up the specification.
+
+I've spent the last few months learning all about it as part of building QTI 3.0 import and export into our assessment platform [Examplary](https://examplary.ai/).
+
+Let me give you a short introduction, going from the outside in, and highlighting some of the things I really love about how the specification is put together.
 
 ## Packaging
 In most situations, you'll come across QTI content in the form of a QTI content package.
@@ -94,6 +98,16 @@ There's about two dozen built-in interaction types, which you can mix and match 
 </qti-assessment-item>
 ```
 
+
+## Custom interactions
+If some combination of the built-in interaction types somehow doesn't fit your needs, QTI supports something called _Portable Custom Interactions_ (PCIs), which allow you to write scripts to display custom UIs to the user. 
+
+They're not as easy to set up as [Examplary custom question types](https://developers.examplary.ai/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
+
+_❧ Random note: if you export custom question type content from Examplary as QTI, we automatically generate a PCI version of that Examplary question type and package it up in the ZIP. This was very fun to build!_
+
+
+## Response mapping
 
 
 
