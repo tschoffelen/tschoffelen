@@ -17,7 +17,7 @@ It's one of those standards that is really awesome, but hard to get a basic unde
 ## Packaging
 In most situations, you'll come across QTI content in the form of a QTI content package.
 
-<picture><source srcset="https://mirri.link/FI745302w" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/0iKUlM12w" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/zkVoeoM3l" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/qF31v_q8p" alt="Drawing" /></picture>
 
 This is a ZIP file, which at least contains at least a `imsmanifest.xml` file, and a bunch of other XML files describing the test and questions.
 
@@ -55,7 +55,7 @@ It also can contain metadata about the educational content, using [Learning Obje
 ## Assessment structure
 One of those packages can contain multiple assessments, which in turn can contain parts, sections, and assessment items (the actual questions):
 
-<picture><source srcset="https://mirri.link/9ZcnxvAFx" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/HLIfqOqCu" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/Jjlf1TquT" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/5z1hze0oK" alt="Drawing" /></picture>
 
 Within a test part, you decide how you want the student to navigate through items, e.g. either one after the other, without allowing the student to jump back and forth (`linear`) or `nonlinear` to provide more freedom.
 
@@ -66,7 +66,7 @@ Sections, and individual items can have `preconditions` and branching rules, whi
 
 This means you can create adaptive structures, for example making sure that a student that scores poorly on a certain topic gets more follow-up questions about that topic. This is really powerful!
 
-<picture><source srcset="https://mirri.link/WFEUVZota" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/yXKKezE5K" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/uaObwboyo" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/fH--4Ygcu" alt="Drawing" /></picture>
 
 
 
