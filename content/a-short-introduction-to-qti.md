@@ -18,13 +18,13 @@ I've spent the last few months learning all about it as part of building QTI 3.0
 Let me give you a short introduction, going from the outside in, and highlighting some of the things I really love about how the specification is put together.
 
 ## Packaging
-In most situations, you'll come across QTI content in the form of a QTI content package.
+In most situations, you'll come across QTI content in the form of a QTI content package, which you would export from one system (e.g. Canvas or Examplary) to import into another system (e.g. Tao Testing or Cloud Assess).
 
 <picture><source srcset="https://mirri.link/TKZls2nnX" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/0KV_Ifo1b" alt="Drawing" /></picture>
 
-This is a ZIP file, which at least contains at least a `imsmanifest.xml` file, and a bunch of other XML files describing the test and questions.
+These content packages are ZIP file, which contains XML files describing the test and questions, and any other resources required for those questions (images, videos, style sheets).
 
-The `imsmanifest.xml` acts as an [index card](https://www.1edtech.org/standards/content-packaging), telling the system reading the file what resources are in the zip file, what types they have, and where they are located.
+There's also always a file called `imsmanifest.xml`. This file acts as an [index card](https://www.1edtech.org/standards/content-packaging), telling the system reading the file what resources are in the zip file, what types they have, and where they are located.
 
 It also can contain metadata about the educational content, using [Learning Object Metadata (LOM)](https://en.wikipedia.org/wiki/Learning_object_metadata).
 
@@ -38,11 +38,16 @@ It also can contain metadata about the educational content, using [Learning Obje
     </metadata>
     <organizations/>
     <resources>
+		 <!-- This is our main entry - the test -->
          <resource href="assessment.xml" type="imsqti_test_xmlv3p0" identifier="test1">
             <file href="assessment.xml"/>
             <dependency identifierref="question1"/>
             <dependency identifierref="question2"/>
         </resource>
+        
+        <!-- Resources for questions are referenced in assessment.xml 
+        by idenfitier, and the lines below show the target app where
+        to find the content for each question -->
         <resource identifier="question1" type="imsqti_item_xmlv3p0" href="question1.xml">
             <file href="question1.xml"/>
             <file href="images/sign.png"/>
@@ -54,6 +59,7 @@ It also can contain metadata about the educational content, using [Learning Obje
 </manifest>
 ```
 
+_❧ Misc fact: This format of packaging content is not specific to QTI. It's part of another standard that is also used for the SCORM and Common Cartridge standards, although they all have slightly different requirements for what should be contained in the manifest file._
 
 ## Assessment structure
 One of those packages can contain multiple assessments, which in turn can contain parts, sections, and assessment items (the actual questions):
@@ -177,4 +183,4 @@ Useful tools:
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
 
-<script>document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {   if (!heading.textContent.includes('%% fold %%')) return;      const details = document.createElement('details');   const summary = document.createElement('summary');   summary.innerHTML = heading.innerHTML.replace('%% fold %%', '').trim();   details.appendChild(summary);   const content = document.createElement('div');   details.appendChild(content);      let sibling = heading.nextElementSibling;   const headingLevel = parseInt(heading.tagName[1]);      while (sibling) {     const next = sibling.nextElementSibling;     if (/^H[1-6]$/.test(sibling.tagName) && parseInt(sibling.tagName[1]) <= headingLevel) break;     content.appendChild(sibling);     sibling = next;   }      heading.replaceWith(details); });</script>
+<script>document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => { if (!heading.textContent.includes('%% fold %%')) return; const details = document.createElement('details'); const summary = document.createElement('summary'); summary.innerHTML = heading.innerHTML.replace('%% fold %%', '').trim(); details.appendChild(summary); const content = document.createElement('div'); details.appendChild(content); let sibling = heading.nextElementSibling; const headingLevel = parseInt(heading.tagName[1]); while (sibling) { const next = sibling.nextElementSibling; if (/^H[1-6]$/.test(sibling.tagName) && parseInt(sibling.tagName[1]) <= headingLevel) break; if (sibling.textContent.includes('%% endfold %%') || sibling.textContent.includes('%% fold %%') || sibling.textContent.includes('❧')) break; content.appendChild(sibling); sibling = next; } heading.replaceWith(details); });</script>
