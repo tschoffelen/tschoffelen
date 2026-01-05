@@ -71,7 +71,8 @@ Within a test part, you decide how you want the student to navigate through item
 Most tests have a single part, and one or more sections about different topics.
 
 ## Adaptiveness
-Sections, and individual items can have `preconditions` and branching rules, which determine the flow of the test. 
+Sections, and individual items can have `preconditions` (e.g., "only show
+this if score < 70%") and branching rules, which determine the flow of the test. 
 
 This means you can create adaptive structures, for example making sure that a student that scores poorly on a certain topic gets more follow-up questions about that topic. This is really powerful!
 
