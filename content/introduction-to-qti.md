@@ -59,7 +59,7 @@ It also can contain metadata about the educational content, using [Learning Obje
 </manifest>
 ```
 
-_❧ Misc fact: This format of packaging content is not specific to QTI. It's part of another standard that is also used for the SCORM and Common Cartridge standards, although they all have slightly different requirements for what should be contained in the manifest file._
+_❧ Misc fact: This [format](https://www.imsglobal.org/packaging/index.html) for packaging content is not specific to QTI. It's part of another standard that is also used for the SCORM and [Common Cartridge](https://www.imsglobal.org/cc/index.html) standards, although they all have slightly different requirements for what should be contained in the manifest file._
 
 ## Assessment structure
 One of those packages can contain multiple assessments, which in turn can contain parts, sections, and assessment items (the actual questions):
