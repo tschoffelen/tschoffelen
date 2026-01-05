@@ -99,7 +99,7 @@ There's about two dozen built-in interaction types, which you can mix and match 
 ```
 
 
-## Custom interactions
+## Portable custom interactions
 If some combination of the built-in interaction types somehow doesn't fit your needs, QTI supports something called _Portable Custom Interactions_ (PCIs), which allow you to write scripts to display custom UIs to the user. 
 
 They're not as easy to set up as [Examplary custom question types](https://developers.examplary.ai/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
@@ -108,9 +108,26 @@ They're not as easy to set up as [Examplary custom question types](https://devel
 
 _❧ Random note: if you export custom question type content from Examplary as QTI, we automatically generate a PCI version of that Examplary question type and package it up in the ZIP. This was very fun to build!_
 
-
 ## Response mapping
+The same flexibility is afforded in terms of how responses are marked. 
 
+## Reviewer content
+You can embed content into QTI items that are only visible for certain groups of users.
+
+<picture><source srcset="https://mirri.link/y97N07xSO" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/Fp5LOyNLp" alt="Drawing" /></picture>
+
+'Rubric' blocks, which are meant to display things like instructions, scoring info and additional context, can be configured to be viewed only by a specific audience:
+- `author`
+- `candidate`
+- `proctor`
+- `scorer`
+- `testConstructor`
+- `tutor`
+
+This is very useful for adding detailed scoring rubrics, which can live alongside the content of the question. It can also be used for private notes by the question writer, to denote references or resources.
+
+## Further reading
+There's so much more I could cover, including response-specific feedback, companion materials, test time limits, and accessibility features, but those are better understood in context of the original specification documents.
 
 
 
