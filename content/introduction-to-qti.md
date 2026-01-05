@@ -20,7 +20,7 @@ Let me give you a short introduction, going from the outside in, and highlightin
 ## Packaging
 In most situations, you'll come across QTI content in the form of a QTI content package, which you would export from one system (e.g. Canvas or Examplary) to import into another system (e.g. Tao Testing or Cloud Assess).
 
-<picture><source srcset="https://mirri.link/TKZls2nnX" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/0KV_Ifo1b" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/hC06ZW0YD" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/7O38ljUeI" alt="Drawing" /></picture>
 
 These content packages are ZIP files which contains XML files describing the test and questions, and any other resources required for those questions (images, videos, style sheets).
 
@@ -64,7 +64,7 @@ _❧ Misc fact: This [format](https://www.imsglobal.org/packaging/index.html) fo
 ## Assessment structure
 One of those packages can contain multiple assessments, which in turn can contain parts, sections, and assessment items (the actual questions):
 
-<picture><source srcset="https://mirri.link/tFSwtOixd" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/dE_iH3YXG" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/nmOf9Fdes" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/84iog_xSP" alt="Drawing" /></picture>
 
 Within a test part, you decide how you want the student to navigate through items, e.g. either one after the other, without allowing the student to jump back and forth (`linear`) or `nonlinear` to provide more freedom.
 
@@ -76,14 +76,14 @@ this if score < 70%") and branching rules, which determine the flow of the test.
 
 This means you can create adaptive structures, for example making sure that a student that scores poorly on a certain topic gets more follow-up questions about that topic. This is really powerful!
 
-<picture><source srcset="https://mirri.link/4rG4Qeftd" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/zZXGAHxUo" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/H9vi3U5wG" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/kHxOgwLqk" alt="Drawing" /></picture>
 
 ## Items and interactions
 Let's dive into the items: the actual questions that make up the test.
 
 The cool thing about QTI is that these can be fully self-contained documents. Each one can be its own file, contain any HTML you want, and then use some custom XML tags to allow interaction.
 
-<picture><source srcset="https://mirri.link/_mXu8Pc3n" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/XqBYOIfQ8" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/1mJyxAlun" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/cmwPizi7h" alt="Drawing" /></picture>
 
 There's about two dozen built-in interaction types, which you can mix and match and use in combination with your content:
 
@@ -110,7 +110,7 @@ If some combination of the built-in interaction types somehow doesn't fit your n
 
 They're not as easy to set up as [Examplary custom question types](https://developers.examplary.ai/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
 
-<picture><source srcset="https://mirri.link/YFT6nY0_o" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/QZUuJ9qqQ" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/uiex9aVGq" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/T2_QQZH_g" alt="Drawing" /></picture>
 
 _❧ Random note: if you export custom question type content from Examplary as QTI, we automatically generate a PCI version of that Examplary question type and package it up in the ZIP. This was very fun to build!_
 
@@ -148,7 +148,7 @@ Thankfully there are also some defaults built in, so that you don't need to defi
 ## Reviewer content
 You can embed content into QTI items that are only visible for certain groups of users.
 
-<picture><source srcset="https://mirri.link/y97N07xSO" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/Fp5LOyNLp" alt="Drawing" /></picture>
+<picture><source srcset="https://mirri.link/gitGX-wz0" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/hyRAaW2kk" alt="Drawing" /></picture>
 
 'Rubric' blocks, which are meant to display things like instructions, scoring info and additional context, can be configured to be viewed only by a specific audience:
 - `author`
