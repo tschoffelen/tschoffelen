@@ -37,6 +37,16 @@ export class SchofDomainRedirectsCdkStack extends cdk.Stack {
         zoneName: "thomasschoffelen.com",
       }),
     });
+
+    // "youngurbandesign.co" domain redirect
+    new patterns.HttpsRedirect(this, "youngurbandesign.co-redirect", {
+      recordNames: ["youngurbandesign.co", "www.youngurbandesign.co"],
+      targetDomain: "schoffelen.net",
+      zone: route53.HostedZone.fromHostedZoneAttributes(this, "youngurbandesign.co-zone", {
+        hostedZoneId: "Z02288173Q43NPEZGB2SU",
+        zoneName: "youngurbandesign.co",
+      }),
+    });
   }
 }
 
