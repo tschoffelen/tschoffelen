@@ -28,7 +28,7 @@ GithubOidc:
    Type: AWS::IAM::OIDCProvider
    Condition: CreateOIDCProvider
    Properties:
-      Url: [https://token.actions.githubusercontent.com](https://token.actions.githubusercontent.com/)
+      Url: https://token.actions.githubusercontent.com
       ClientIdList: 
          - sts.amazonaws.com
       ThumbprintList:
