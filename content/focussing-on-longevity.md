@@ -1,7 +1,7 @@
 ---
 title: Focussing on Longevity
 date: 2026-02-02
-description: One of the things I really enjoy about the co-founders I've currently surrounded myself with in both of the businesses I'm spending the majority of...
+description: I want my company to be like a family farm that still exists 90 years later, not like a startup that has to lay off 200 people because it grew slightly less quick last quarter.
 taxonomies:
   category:
     - Thought
