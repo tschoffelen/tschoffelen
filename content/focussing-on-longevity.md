@@ -1,6 +1,6 @@
 ---
 title: Focussing on Longevity
-date: 2026-02-02
+date: 2026-02-03
 description: I want my company to be like a family farm that still exists 90 years later.
 taxonomies:
   category:
