@@ -1,12 +1,13 @@
 ---
 title: Conditionally Loading Native Modules in Expo
 date: 2026-02-02
-description: I used to be a 'plain' React Native guy, but I've really grown to enjoy using Expo for the last few apps I've built.   Much less compile errors to...
+description: Making sure you can debug apps in Expo Go that use optional native dependencies.
 taxonomies:
   category:
-    - Blog
+    - Reference
 extra: {}
 ---
+
 
 I used to be a 'plain' React Native guy, but I've really grown to enjoy using [Expo](https://expo.dev) for the last few apps I've built. 
 
