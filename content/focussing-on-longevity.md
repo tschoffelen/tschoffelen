@@ -1,7 +1,7 @@
 ---
 title: Focussing on Longevity
 date: 2026-02-02
-description: I want my company to be like a family farm that still exists 90 years later, not like a startup that has to lay off 200 people because it grew slightly less quick last quarter.
+description: I want my company to be like a family farm that still exists 90 years later.
 taxonomies:
   category:
     - Thought
