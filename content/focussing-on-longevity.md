@@ -9,7 +9,7 @@ extra: {}
 ---
 
 
-One of the things I really enjoy about the co-founders I've currently surrounded myself with in both of the businesses I'm spending the majority of my time on, is our shared goal of longevity.
+One of the things I really enjoy about the co-founders I've currently surrounded myself with, is our shared goal of longevity.
 
 We're not trying to build businesses that have hockeystick growth projections, or stressing about month-on-month revenue growth. We're focussing on building what we believe in, and attracting people that share those beliefs to use our products. 
 
