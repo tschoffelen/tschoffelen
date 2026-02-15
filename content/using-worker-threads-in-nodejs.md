@@ -48,7 +48,7 @@ if (isMainThread) {
 	worker.on("exit", (code) => {
 		console.log("worker exited with code", code);
 	});
-	
+
 } else {
 	// We are a worker:
 	const data = workerData;
@@ -60,6 +60,13 @@ if (isMainThread) {
 		parentPort.postMessage({ error: e.message });
 		process.exit(1);
 	}
+	
+	// Check for cancellation and exit early if needed:
+	setInterval(() => {
+		if(checkJobWasCancelled()) {
+			process.exit(130); // unique exit code to mark user cancellation
+		}
+	}, 1000);
 }
 ```
 
