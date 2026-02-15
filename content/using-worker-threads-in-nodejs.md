@@ -52,6 +52,15 @@ if (isMainThread) {
 } else {
 	// We are a worker:
 	const data = workerData;
+	
+	// Check for cancellation and exit early if needed:
+	setInterval(() => {
+		if(checkJobWasCancelled()) {
+			process.exit(130); // unique exit code to mark user cancellation
+		}
+	}, 1000);
+	
+	// Run the actual worker job:
 	try {
 		await doSomething(data);
 	} catch (e) {
@@ -60,13 +69,6 @@ if (isMainThread) {
 		parentPort.postMessage({ error: e.message });
 		process.exit(1);
 	}
-	
-	// Check for cancellation and exit early if needed:
-	setInterval(() => {
-		if(checkJobWasCancelled()) {
-			process.exit(130); // unique exit code to mark user cancellation
-		}
-	}, 1000);
 }
 ```
 
