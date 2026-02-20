@@ -46,19 +46,24 @@
   color: inherit;
   display: block;
   margin-top: 2rem;
+  transition: opacity 0.2s ease-in-out;
 
   .post-title {
     border-bottom: 1px solid currentColor;
     padding-bottom: 0.075rem;
-    font-family: "site-heading", "site-body", ui-sans-serif, system-ui,
-      sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    font-weight: 500;
   }
+
   .post-excerpt {
     margin-top: 0.4rem;
     font-size: 0.95rem;
     display: block;
     opacity: 0.9;
+  }
+
+  &:hover {
+    opacity: 0.75;
   }
 }
 

@@ -1,6 +1,13 @@
 article {
   padding: 2rem;
 
+  a {
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 0 1.5rem;
   }
@@ -35,6 +42,7 @@ article {
     display: inline-block;
     padding: 0.3rem 0.9rem;
     border-radius: 1rem;
+    transition: background-color 0.2s ease-in-out;
 
     border: 1px solid $gray-100;
     &:hover {
