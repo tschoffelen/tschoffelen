@@ -5,7 +5,8 @@ description: Explaining some of the basic concepts of the Question and Test Inte
 taxonomies:
   category:
     - Blog
-extra: {}
+extra:
+  canonical: https://examplary.ai/blog/qti-introduction
 ---
 
 

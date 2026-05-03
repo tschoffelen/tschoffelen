@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 
 {% block meta %}
-    <link rel="canonical" href="{{ page.permalink | safe }}" />
-    <meta property="og:url" content="{{ page.permalink | safe }}" />
+    {% set canonical_url = page.extra.canonical | default(value=page.permalink) %}
+    <link rel="canonical" href="{{ canonical_url | safe }}" />
+    <meta property="og:url" content="{{ canonical_url | safe }}" />
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ page.description }}">
     <meta name="twitter:title" content="{{ page.title }}">
