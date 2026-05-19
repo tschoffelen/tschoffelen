@@ -109,7 +109,7 @@ There's about two dozen built-in interaction types, which you can mix and match 
 ## Portable custom interactions
 If some combination of the built-in interaction types somehow doesn't fit your needs, QTI supports something called _Portable Custom Interactions_ (PCIs), which allow you to write scripts to display custom UIs to the user. 
 
-They're not as easy to set up as [Examplary custom question types](https://developers.examplary.ai/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
+They're not as easy to set up as [Examplary custom question types](https://examplary.ai/developers/question-types/), but the cool thing is they are completely portable - you usually include them in the ZIP file, so that they can be played even when you move over to a different LMS or assessment platform.
 
 <picture><source srcset="https://mirri.link/uiex9aVGq" media="(prefers-color-scheme: dark)"><img src="https://mirri.link/T2_QQZH_g" alt="Drawing" /></picture>
 
