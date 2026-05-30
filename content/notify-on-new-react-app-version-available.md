@@ -1,7 +1,7 @@
 ---
 title: Notify on New React App Version Available
 date: 2026-05-30
-description:
+description: Show a UI to your users when a new version of the front-end app is available.
 taxonomies:
   category:
     - Blog
