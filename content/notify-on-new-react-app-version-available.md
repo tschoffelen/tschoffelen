@@ -57,7 +57,7 @@ const fetchVersionTag = async (): Promise<string | null> => {
 I use `react-hot-toast`, one of my favourite React UI packages, to display a custom toast:
 
 ```tsx
-const promptForUpdate = (t: TFunction) => {
+const promptForUpdate = () => {
   toast(
     () => (
       <div className="flex items-center gap-3">
