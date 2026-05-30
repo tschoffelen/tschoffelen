@@ -47,7 +47,7 @@ A more universal method might be checking the `ETag` header - if you have a stat
 const fetchVersionTag = async (): Promise<string | null> => {
   const res = await fetch(`/index.html?_=${Date.now()}`, {
     method: "HEAD",
-    cache: "no-store",
+    cache: "no-store"
   });
   return res.ok ? res.headers.get("etag") : null;
 };
