@@ -1,7 +1,7 @@
 ---
 title: Why the Same Test on Paper or Digitally Leads to Different Scores
 date: 2026-08-04
-description: "The Mode effect: the same test, taken by the same students, can produce different scores depending on whether it&apos;s sat on paper or on screen. What causes this, and what can you do about it?"
+description: "The Mode effect: the same test, taken by the same students, can produce different scores depending on whether it's sat on paper or digitally."
 taxonomies:
   category:
     - Blog
