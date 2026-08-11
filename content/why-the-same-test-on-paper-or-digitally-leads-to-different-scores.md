@@ -5,7 +5,8 @@ description: "The Mode effect: the same test, taken by the same students, can pr
 taxonomies:
   category:
     - Blog
-extra: {}
+extra:
+  canonical: https://examplary.ai/blog/mode-effect
 ---
 
 
@@ -21,11 +22,11 @@ The easiest way to quantify the exact difference, is by looking at international
 
 In 2015, the PISA test moved from paper-based assessment to online assessment. Before making that switch, the OECD ran a field trial in which pupils in the same schools were randomly assigned to sit the test either on paper or on screen. In all three countries studied, every subject came out lower on screen:
 
-<img src="https://mirri.link/1W_JfjexI" alt="Image" />
+<img src="https://mirri.link/PnqWLrWPz" alt="Image" />
 
 A similar thing can be seen in the research review from ACT for the years 2010-2020, which shows a leaning towards students scoring better on paper tests. Across 42 studies, 21 found paper easier, 17 found no meaningful difference, and only 4 found students doing better online:
 
-<img src="https://mirri.link/x3ZyGMsGJ" alt="Image" />
+<img src="https://mirri.link/6AWs9xI35" alt="Image" />
 
 ## Why it happens
 When we learn, we learn in a specific context: we remember something we've handwritten more easily when handwriting it a second time, versus using a different medium - speaking the text out loud, or typing it on a keyboard.
@@ -41,7 +42,7 @@ Interestingly, there doesn't seem to be a difference here between "digital nativ
 
 The penalty isn't constant, either. A meta-analysis covering more than 170,000 participants found it concentrated almost entirely in informational text (for narrative text it disappears altogether) and roughly three times larger when students are reading against a clock:
 
-<img src="https://mirri.link/3kNMGAnSF" alt="Image" />
+<img src="https://mirri.link/iWfQ1M4xg" alt="Image" />
 
 ## What it means for you
 Unlike the examples above from organisations like PISA, you're probably not comparing tests taken across different modes with each other. Everyone in your class sits the same test in the same mode, so the mode effect moves the whole group together, and a shift that applies to everyone equally is one you can absorb when you set your grade boundaries.
