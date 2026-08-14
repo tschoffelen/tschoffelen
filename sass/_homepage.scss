@@ -14,14 +14,16 @@
 
     a {
       color: $gray-900;
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+      text-decoration-thickness: 1px;
 
       @media (prefers-color-scheme: dark) {
         color: $dark-gray-900;
       }
 
       &:hover {
-        text-decoration: underline;
+        opacity: 0.75;
       }
     }
   }

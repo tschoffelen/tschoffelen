@@ -1,0 +1,239 @@
+.consultancy {
+  padding: 0 1.5rem;
+  @media (min-width: 769px) {
+    padding: 0 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+  }
+
+  .button {
+    display: inline-block;
+    background: $gray-900;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      background: $dark-gray-900;
+      color: $dark-bg;
+    }
+  }
+}
+
+.consultancy-hero {
+  text-align: center;
+  padding-bottom: 2rem;
+
+  h1.post-header-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .lede {
+    max-width: 32rem;
+    margin: 0 auto 2rem;
+    line-height: 1.70;
+    font-size: 1.05rem;
+    color: $gray-700;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-700;
+    }
+  }
+
+  .button-note {
+    margin-top: 0.9rem;
+    font-size: 0.85rem;
+    color: $gray-500;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-500;
+    }
+  }
+}
+
+.consultancy-section {
+  margin-top: 4rem;
+}
+
+.consultancy-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card {
+  border: 1px solid $gray-100;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: $dark-gray-100;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: $gray-500;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-500;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin: 0.9rem 0 0.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: $gray-700;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-700;
+    }
+  }
+}
+
+.consultancy-technologies {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid $gray-100;
+    border-radius: 0.75rem;
+    padding: 1.1rem 0.25rem 0.9rem;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: $dark-gray-100;
+    }
+
+    img {
+      width: 2rem;
+      height: 2rem;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: 0.75rem;
+      color: $gray-500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+      padding: 0 0.25rem;
+
+      @media (prefers-color-scheme: dark) {
+        color: $dark-gray-500;
+      }
+    }
+  }
+}
+
+.consultancy-profile {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  img {
+    width: 7.5rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  p {
+    line-height: 1.75;
+  }
+
+  .profile-links {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 1rem;
+      border: 1px solid $gray-100;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        border-color: $dark-gray-100;
+
+        &:hover {
+          background-color: $dark-gray-100;
+        }
+      }
+    }
+  }
+}
+
+.consultancy-cta {
+  margin-top: 4rem;
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+
+  @media (prefers-color-scheme: dark) {
+    background: $dark-bg-secondary;
+  }
+
+  h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1.75rem;
+    color: $gray-700;
+
+    @media (prefers-color-scheme: dark) {
+      color: $dark-gray-700;
+    }
+
+    a {
+      color: inherit;
+      border-bottom: 1px solid currentColor;
+      text-decoration: none;
+    }
+  }
+}
