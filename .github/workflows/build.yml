@@ -35,5 +35,23 @@ jobs:
 
           # Upload everything else with moderate cache (1 day)
           aws s3 sync public s3://schof.co --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" --exclude "*.jpg" --exclude "*.jpeg" --exclude "*.png" --exclude "*.gif" --exclude "*.svg" --exclude "*.webp" --exclude "*.woff" --exclude "*.woff2" --exclude "*.ttf" --exclude "*.eot" --cache-control "public, max-age=86400"
+      - name: Apply redirects
+        run: |
+          # Pages with a `redirectTo` front-matter key get S3 website-redirect
+          # metadata, which the website endpoint serves as a real 301. Must run
+          # after the sync, which re-uploads these files without the metadata.
+          grep -rlE --include="*.md" "^[[:space:]]*redirectTo:" content | while read -r file; do
+            url=$(sed -nE 's/^[[:space:]]*redirectTo:[[:space:]]*//p' "$file" | head -1)
+            slug=${file#content/}
+            slug=${slug%.md}
+            slug=${slug%/index}
+            slug=${slug%/_index}
+            if [ ! -f "public/$slug/index.html" ]; then
+              echo "::warning::redirectTo set in $file but public/$slug/index.html not found, skipping"
+              continue
+            fi
+            echo "Redirecting /$slug/ -> $url"
+            aws s3 cp "public/$slug/index.html" "s3://schof.co/$slug/index.html" --acl public-read --website-redirect "$url" --cache-control "public, max-age=3600"
+          done
       - name: Create CloudFront invalidation
         run: aws cloudfront create-invalidation --distribution-id E1XOA26HO9HVF9 --paths "/*"

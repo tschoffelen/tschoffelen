@@ -4,6 +4,7 @@ date: 2000-01-01
 description: Let's have a 30 minute call via Zoom or a coffee break.
 extra:
     unlisted: true
+    redirectTo: https://fantastical.app/tschoffelen/30min
 ---
 
 Let's have a 30 minute call via Zoom or a coffee break some place in the
