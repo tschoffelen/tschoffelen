@@ -153,10 +153,10 @@ pre code {
     margin-bottom: 0.5rem;
     color: $gray-500;
     font-weight: normal;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     @media (min-width: 769px) {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -230,6 +230,34 @@ pre code {
       @media (prefers-color-scheme: dark) {
         background: $dark-gray-100;
       }
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    margin: 1.5rem 0 2rem;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+
+    th,
+    td {
+      padding: 0.5rem 1rem 0.5rem 0;
+      border-bottom: 1px solid $gray-100;
+      vertical-align: top;
+
+      @media (prefers-color-scheme: dark) {
+        border-bottom-color: $dark-gray-100;
+      }
+    }
+
+    th {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    code {
+      white-space: nowrap;
     }
   }
 
