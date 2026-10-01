@@ -1,7 +1,7 @@
 ---
 title: Not a Swarm of Agents, but Still Effective
 date: 2026-10-01
-description:
+description: Simple tweaks to make my AI development flow more effective.
 taxonomies:
   category:
     - Thought
