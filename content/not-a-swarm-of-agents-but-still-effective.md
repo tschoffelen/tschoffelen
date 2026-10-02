@@ -17,19 +17,19 @@ My recent addition has been a few snippets in [Alfred](https://www.alfredapp.com
 
 Typing `^impl` outputs this:
 
-```
+```plain
 Implement this in the simplest way. Cleanness over complexity. Minimal and simple. Extra points for making it very clean and readable code.
 ```
 
 Sometimes I want it to automatically branch and create a PR, so I use `^pr`:
 
-```
+```plain
 Create the simplest possible PR to implement this. Cleanness over complexity. Minimal and simple. Extra points for making it very clean and readable code.
 ```
 
 Sometimes I want it to absolutely not commit any code before I look at it in my local editor, `^dont`:
 
-```
+```plain
 Don't commit, branch or push yet. I'll do this later after reviewing the code myself first.
 ```
 
