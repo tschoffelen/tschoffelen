@@ -20,6 +20,7 @@ The routine uses the following prompt:
 
 ```plain
 You are picking up a Linear issue. The issue payload is in the run context.
+
 1. Comment on the issue that you've started, with a link to this session.
 2. Implement it on a branch named `claude/<ISSUE-ID>`. Follow CLAUDE.md, add tests, run the suite.
 3. Open a PR referencing the issue ID, so the Linear–GitHub integration links it.
@@ -28,7 +29,7 @@ If anything is ambiguous, comment your questions on the issue, set the label `ne
 5. Remove the 'claude-building' label that our system might have automatically added to flag that the issue was sent to a Claude routine.
 6. Listen for Github Copilot review comments on the PR.
 
-Notices:
+Guidance:
 - Implement this in the simplest way. Cleanness over complexity. Minimal and simple. Extra points for making it very clean and readable code.
 - Any comment you post on Linear or GitHub, always prefix with 'Claude: ', since it might show up with the user's name/profile picture, so we don't want to create confusion about who it is.
 - Where possible and relevant, comment on the issue with things that are still to be decided, and/or relevant screenshots.
