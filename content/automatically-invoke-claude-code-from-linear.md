@@ -16,7 +16,86 @@ Linear has their own coding agent, but I have an expensive Claude account, so I'
 3. It adds a <span style="font-size:12px;font-weight:400;border:1px solid #444; padding: 0 8px; line-height: 24px; border-radius: 22px;display:inline-flex; align-items: center;"><span style="width:9px;height:9px;background:#bf6037;border-radius:9px;margin-right:5px;"></span>claude-building</span> label to the issue and comments with the Claude session URL in case I want to follow along.
 4. Claude Code does it's normal thing, opens a PR, moves the issue to 'In review' and comments with any specifics.
 
+The routine uses the following prompt:
 
+```plain
+You are picking up a Linear issue. The issue payload is in the run context.
+1. Comment on the issue that you've started, with a link to this session.
+2. Implement it on a branch named `claude/<ISSUE-ID>`. Follow CLAUDE.md, add tests, run the suite.
+3. Open a PR referencing the issue ID, so the Linear–GitHub integration links it.
+4. Comment a summary on the issue. No need to move it to "In Review", that should happen automatically.
+If anything is ambiguous, comment your questions on the issue, set the label `needs-info`, and stop. Don't guess.
+5. Remove the 'claude-building' label that our system might have automatically added to flag that the issue was sent to a Claude routine.
+6. Listen for Github Copilot review comments on the PR.
+
+Notices:
+- Implement this in the simplest way. Cleanness over complexity. Minimal and simple. Extra points for making it very clean and readable code.
+- Any comment you post on Linear or GitHub, always prefix with 'Claude: ', since it might show up with the user's name/profile picture, so we don't want to create confusion about who it is.
+- Where possible and relevant, comment on the issue with things that are still to be decided, and/or relevant screenshots.
+```
+
+And the lambda Linear webhook listener code roughly looks like this:
+
+```ts
+import { createHmac, timingSafeEqual } from "node:crypto";
+
+const READY = 'ce149e24-dad4-4784-b540-dbc35fc76c67'; // label ID
+const BUILDING = 'e497deff-bf2f-4b95-84a8-5c4d5485eecf'; // label ID
+
+const ROUTINE_URL = 'https://api.anthropic.com/v1/claude_code/routines/.../fire';
+const ROUTINE_TOKEN = process.env.CLAUDE_ROUTINE_TOKEN;
+const LINEAR_API_KEY = process.env.LINEAR_API_KEY;
+const LINEAR_WEBHOOK_SECRET = process.env.LINEAR_WEBHOOK_SECRET;
+
+const gql = (query, variables) =>
+  fetch("https://api.linear.app/graphql", {
+    method: "POST",
+    headers: { Authorization: LINEAR_API_KEY, "Content-Type": "application/json" },
+    body: JSON.stringify({ query, variables }),
+  }).then(r => r.json());
+
+export const handler = async (event) => {
+  const raw = event.isBase64Encoded ? Buffer.from(event.body, "base64").toString() : event.body;
+
+  // 1. Verify Linear signature + freshness
+  const sig = Buffer.from(event.headers["linear-signature"] ?? "", "hex");
+  const mac = createHmac("sha256", LINEAR_WEBHOOK_SECRET).update(raw).digest();
+  if (sig.length !== mac.length || !timingSafeEqual(sig, mac)) return { statusCode: 401 };
+  const p = JSON.parse(raw);
+  if (Math.abs(Date.now() - p.webhookTimestamp) > 60_000) return { statusCode: 401 };
+
+  // 2. Only react when `ready-to-build` was just added
+  if (p.type !== "Issue") return { statusCode: 200 };
+  const now = p.data.labelIds ?? [];
+  const before = p.updatedFrom?.labelIds;
+  const justAdded = now.includes(READY) &&
+    (p.action === "create" || (before !== undefined && !before.includes(READY)));
+  if (!justAdded) return { statusCode: 200 };
+
+  // 3. Claim it: swap label so retries/duplicates don't double-fire
+  await gql(`mutation($id:String!,$r:String!,$a:String!){
+    issueRemoveLabel(id:$id,labelId:$r){success}
+    issueAddLabel(id:$id,labelId:$a){success} }`,
+    { id: p.data.id, r: READY, a: BUILDING });
+
+  // 4. Fire the routine with the issue as context
+  const res = await fetch(ROUTINE_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${ROUTINE_TOKEN}`,
+      "anthropic-version": "2023-06-01",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      text: `Linear issue ${p.data.identifier}: ${p.data.title}\nURL: ${p.url}\n\n${p.data.description ?? ""}`,
+    }),
+  });
+  if (!res.ok) console.error("routine fire failed", res.status, await res.text());
+  return { statusCode: 200 };
+};
+```
+
+Not beautiful code, but it does the job perfectly.
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
 
