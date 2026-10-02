@@ -116,6 +116,10 @@ pre {
   line-height: 1.7;
   overflow: auto;
 
+  &.language-plain {
+    white-space: pre-wrap;
+  }
+
   @media (max-width: 768px) {
     font-size: 0.75rem;
     padding: 1.25rem;
