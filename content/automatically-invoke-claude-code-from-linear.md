@@ -1,7 +1,7 @@
 ---
 title: Automatically Invoke Claude Code From Linear
 date: 2026-10-02
-description:
+description: Tag an issue in Linear, have Claude Code get started right away.
 taxonomies:
   category:
     - Blog
