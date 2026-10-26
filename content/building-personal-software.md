@@ -1,6 +1,6 @@
 ---
 title: Building Personal Software
-date: 2026-10-26
+date: 2026-10-23
 description:
 taxonomies:
   category:
