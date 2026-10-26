@@ -1,7 +1,7 @@
 ---
 title: Building Personal Software
 date: 2026-10-23
-description:
+description: Building my own perfect tasks app, with an agent I can hand tasks off to.
 taxonomies:
   category:
     - Blog
@@ -49,6 +49,12 @@ What I realised quickly though, is that quite a lot of the tasks in my todo list
 It's taken some effort to get the system to correctly judge which things can be helped by the agent, and which things are just simple tasks that are mine alone to complete.
 
 "Start thinking about Christmas gifts" was a surprising one where the agent was able to help a lot: it pulled a lot of info from my daily notes, suggesting which people to get presents for, what those people had said in the past that could be used as gift inspiration, and suggesting to move this task into the future, since it's still only October!
+
+## How to effectively vibe-code tools like this
+
+What I've learned is that for things like this, were I really don't care that much about the underlying code, the only thing I want to be more or less in charge of is the data model - that's the main lever that decides how everything else is implemented and if it makes sense. 
+
+That's why all my prompts start with the instruction to use my [DynamoDB ORM-style library](https://turbine.js.org/), descriptions of the different entities I envision, and the request to create an OpenAPI spec for the API. That allows me to inspect the internals of the system as it grows, and easily steer the AI by using the terminology it uses for the entities in the system.
 
 <style>a[href="#internal-link"] { color: #9b9b9b; text-decoration: none !important; }</style>
 
