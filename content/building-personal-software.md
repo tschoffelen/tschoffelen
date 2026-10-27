@@ -18,7 +18,7 @@ So the other day I spent a day "building" (almost entirely vibe-coding) an app t
 
 <img src="https://mirri.link/Wz8vlUfzS" alt="Image" />
 
-It's amazing how much you can get done in a day. I have a largely native iOS and Mac app, a web version, the ability to hand tasks to an agent that can read GitHub repos, talk to MCPs, and respond to webhooks. It's called Queues, for now (I like the domain queues.bot I got for it, but it also doesn't entirely fit what the app does).
+It's amazing how much you can get done in a day. I have a largely native iOS and Mac app, a web version, the ability to hand tasks to an agent that can read GitHub repos, talk to MCPs, and respond to webhooks. It's called [Queues](https://queues.bot), for now (I like the domain `queues.bot` I got for it, but it also doesn't entirely fit what the app does).
 
 There's so many flows this unlocks:
 
