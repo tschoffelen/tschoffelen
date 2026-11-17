@@ -1,7 +1,7 @@
 ---
 title: Reviving My Open-Source Lambda Observability Tool
 date: 2026-11-17
-description: I've been using  Lumigo  for a long time to trace my Lambda functions. I just find it too hard to quickly see what errors are occurring in my...
+description: "Introducing Ivy: an alternative to Lumigo for open-source AWS Lambda tracing."
 taxonomies:
   category:
     - Blog
